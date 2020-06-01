@@ -1,0 +1,557 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "title": "SLA4OAI",
+    "definitions": {
+        "Configuration": {
+            "additionalProperties": {
+                "type": "string"
+            },
+            "title": "Configuration",
+            "type": "object"
+        },
+        "Context": {
+            "additionalProperties": false,
+            "properties": {
+                "api": {
+                    "description": "Indicates a URI (absolute or relative) describing the API, described in the OpenAPI format, to be instrumented.",
+                    "examples": [
+                        "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml"
+                    ],
+                    "format": "uri",
+                    "title": "api",
+                    "type": "string"
+                },
+                "consumer": {
+                    "description": "Consumer information, data about the entity that consumes the service. This field is required in case of the context type is instance.",
+                    "examples": [
+                        "MyConsumer"
+                    ],
+                    "title": "consumer",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The identification of the SLA context.",
+                    "examples": [
+                        "PetPlans"
+                    ],
+                    "title": "id",
+                    "type": "string"
+                },
+                "provider": {
+                    "description": "Provider information: data about the owner/host of the API. This field is required in case of the context type is instance.",
+                    "examples": [
+                        "MyProvider"
+                    ],
+                    "title": "provider",
+                    "type": "string"
+                },
+                "sla": {
+                    "default": "1.0",
+                    "description": "Indicates the version of the SLA format.",
+                    "examples": [
+                        "1.0",
+                        "1.0.0"
+                    ],
+                    "pattern": "(?:^\\d.\\d.\\d$)|^(?:^\\d.\\d$)",
+                    "title": "sla",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of SLA based on the Lifecycle of Agreement (plans or instance).",
+                    "enum": [
+                        "instance",
+                        "plans"
+                    ],
+                    "examples": [
+                        "plans",
+                        "instance"
+                    ],
+                    "title": "type",
+                    "type": "string"
+                },
+                "validity": {
+                    "$ref": "#/definitions/Validity",
+                    "description": "Availability of the service expressed via time slots. This field is required in case of the context type is instance.",
+                    "title": "validity"
+                }
+            },
+            "required": [
+                "api",
+                "id",
+                "sla",
+                "type"
+            ],
+            "title": "Context",
+            "type": "object"
+        },
+        "Guarantee": {
+            "additionalProperties": {
+                "items": {
+                    "$ref": "#/definitions/GuaranteeObjective"
+                },
+                "type": "array"
+            },
+            "title": "Guarantee",
+            "type": "object"
+        },
+        "GuaranteeObjective": {
+            "additionalProperties": false,
+            "properties": {
+                "objective": {
+                    "description": "The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value\n// * @pattern \\w+\\s*((!=)?|(<=)?|(>=)?|(==)?|(<)?|(>)?)?\\s*\\d+",
+                    "examples": [
+                        "avgResponseTimeMs <= 250"
+                    ],
+                    "title": "objective",
+                    "type": "string"
+                },
+                "period": {
+                    "description": "The period of the objective (secondly, minutely, hourly, daily, monthly or yearly).",
+                    "enum": [
+                        "daily",
+                        "hourly",
+                        "minutely",
+                        "monthly",
+                        "secondly",
+                        "yearly"
+                    ],
+                    "examples": [
+                        "secondly",
+                        "minutely",
+                        "hourly",
+                        "daily",
+                        "monthly",
+                        "yearly"
+                    ],
+                    "title": "period",
+                    "type": "string"
+                },
+                "scope": {
+                    "description": "The scope of who request the service.",
+                    "examples": [
+                        "account",
+                        "tenant"
+                    ],
+                    "title": "scope",
+                    "type": "string"
+                },
+                "window": {
+                    "description": "The state of the Objective (dynamic or static)",
+                    "enum": [
+                        "dynamic",
+                        "static"
+                    ],
+                    "examples": [
+                        "dynamic ",
+                        "static"
+                    ],
+                    "title": "window",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "objective"
+            ],
+            "title": "GuaranteeObjective",
+            "type": "object"
+        },
+        "Guarantees": {
+            "additionalProperties": {
+                "$ref": "#/definitions/Guarantee"
+            },
+            "title": "Guarantees",
+            "type": "object"
+        },
+        "Infrastructure": {
+            "additionalProperties": {
+                "type": "string"
+            },
+            "properties": {
+                "monitor": {
+                    "description": "Location of the SLA Metrics endpoint accordingly to the Basic SLA Management Service spec.",
+                    "examples": [
+                        "https://monitor.sla4oai.governify.io/v1/"
+                    ],
+                    "format": "uri",
+                    "title": "monitor",
+                    "type": "string"
+                },
+                "supervisor": {
+                    "description": "Location of the SLA Check service accordingly to the Basic SLA Management Service spec.",
+                    "examples": [
+                        "https://supervisor.sla4oai.governify.io/v2/"
+                    ],
+                    "format": "uri",
+                    "title": "supervisor",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "monitor",
+                "supervisor"
+            ],
+            "title": "Infrastructure",
+            "type": "object"
+        },
+        "Limit": {
+            "additionalProperties": false,
+            "properties": {
+                "max": {
+                    "description": "Max value that can be accepted.",
+                    "examples": [
+                        "0",
+                        "5000"
+                    ],
+                    "minimum": 0,
+                    "title": "max",
+                    "type": "number"
+                },
+                "period": {
+                    "description": "The period of the objective (secondly, minutely, hourly, daily, monthly or yearly).",
+                    "enum": [
+                        "daily",
+                        "hourly",
+                        "minutely",
+                        "monthly",
+                        "secondly",
+                        "yearly"
+                    ],
+                    "examples": [
+                        "secondly",
+                        "minutely",
+                        "hourly",
+                        "daily",
+                        "monthly",
+                        "yearly"
+                    ],
+                    "title": "period",
+                    "type": "string"
+                },
+                "scope": {
+                    "description": "The scope of who request the service.",
+                    "examples": [
+                        "account",
+                        "tenant"
+                    ],
+                    "title": "scope",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "max"
+            ],
+            "title": "Limit",
+            "type": "object"
+        },
+        "Metric": {
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "description": "A brief description of the metric.",
+                    "examples": [
+                        "Number of requests"
+                    ],
+                    "title": "description",
+                    "type": "string"
+                },
+                "format": {
+                    "description": "The extending format for the previously mentioned type. See Data Type Formats for further details.",
+                    "enum": [
+                        "binary",
+                        "byte",
+                        "date",
+                        "date-time",
+                        "double",
+                        "float",
+                        "int32",
+                        "int64",
+                        "string"
+                    ],
+                    "examples": [
+                        "int32",
+                        "int64",
+                        "float",
+                        "double",
+                        "string",
+                        "byte",
+                        "binary",
+                        "date",
+                        "date-time"
+                    ],
+                    "title": "format",
+                    "type": "string"
+                },
+                "resolution": {
+                    "description": "Determine when this metric will be resolved. If value is check the metric will be sent before the calculation of SLA state, else if value is consumption the metric will be sent after consumption.",
+                    "enum": [
+                        "check",
+                        "consumption"
+                    ],
+                    "title": "resolution",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "This is the metric type accordingly to the OAI spec format column.",
+                    "enum": [
+                        "boolean",
+                        "integer",
+                        "number",
+                        "string"
+                    ],
+                    "examples": [
+                        "integer",
+                        "number",
+                        "string",
+                        "boolean"
+                    ],
+                    "title": "type",
+                    "type": "string"
+                },
+                "unit": {
+                    "description": "The unit of the metric.",
+                    "examples": [
+                        "MB/s",
+                        "GB"
+                    ],
+                    "title": "unit",
+                    "type": "string"
+                }
+            },
+            "title": "Metric",
+            "type": "object"
+        },
+        "Metrics": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/Metric"
+                    },
+                    {
+                        "type": "string"
+                    }
+                ]
+            },
+            "title": "Metrics",
+            "type": "object"
+        },
+        "Operation": {
+            "additionalProperties": {
+                "items": {
+                    "$ref": "#/definitions/Limit"
+                },
+                "type": "array"
+            },
+            "title": "Operation",
+            "type": "object"
+        },
+        "Path": {
+            "additionalProperties": {
+                "$ref": "#/definitions/Operation"
+            },
+            "title": "Path",
+            "type": "object"
+        },
+        "Plan": {
+            "additionalProperties": false,
+            "properties": {
+                "availability": {
+                    "description": "Availability of the service for this plan expressed via time slots using the ISO 8601 time intervals format.",
+                    "examples": [
+                        "2009-10-09T21:30:00.00Z"
+                    ],
+                    "format": "date-time",
+                    "title": "availability",
+                    "type": "string"
+                },
+                "configuration": {
+                    "$ref": "#/definitions/Configuration",
+                    "description": "Configuration parameters for the service tailored for the plan.",
+                    "title": "configuration"
+                },
+                "guarantees": {
+                    "$ref": "#/definitions/Guarantees",
+                    "description": "Specific guarantees data for this plan. Overrides default guarantees data defined before.",
+                    "title": "guarantees"
+                },
+                "pricing": {
+                    "$ref": "#/definitions/Pricing",
+                    "description": "Specific pricing data for this plan. Overrides default pricing data defined before.",
+                    "title": "pricing"
+                },
+                "quotas": {
+                    "$ref": "#/definitions/Quotas",
+                    "description": "Specific quotas data for this plan. Overrides default quotas data defined before.",
+                    "title": "quotas"
+                },
+                "rates": {
+                    "$ref": "#/definitions/Rates",
+                    "description": "Specific rates data for this plan. Overrides default rates data defined before.",
+                    "title": "rates"
+                }
+            },
+            "title": "Plan",
+            "type": "object"
+        },
+        "Plans": {
+            "additionalProperties": {
+                "$ref": "#/definitions/Plan"
+            },
+            "title": "Plans",
+            "type": "object"
+        },
+        "Pricing": {
+            "additionalProperties": false,
+            "properties": {
+                "billing": {
+                    "default": "monthly",
+                    "description": "Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.",
+                    "enum": [
+                        "daily",
+                        "monthly",
+                        "onepay",
+                        "quarterly",
+                        "weekly",
+                        "yearly"
+                    ],
+                    "examples": [
+                        "onepay",
+                        "daily",
+                        "weekly",
+                        "monthly",
+                        "quarterly",
+                        "yearly"
+                    ],
+                    "title": "billing",
+                    "type": "string"
+                },
+                "cost": {
+                    "default": 0,
+                    "description": "Cost associated with this service. Defaults to 0 if unspecified.",
+                    "examples": [
+                        "0",
+                        "9.99"
+                    ],
+                    "title": "cost",
+                    "type": "number"
+                },
+                "currency": {
+                    "default": "USD",
+                    "description": "Currency used to express the cost. Supported currency values are expressed in ISO 4217 format. Samples: USD, EUR, or BTC for US dollar, euro, or bitcoin, respectively. Defaults to USD if unspecified.",
+                    "examples": [
+                        "EUR",
+                        "USD"
+                    ],
+                    "pattern": "^ADF|ADP|AED|AFA|AFN|ALL|AMD|ANG|AOA|AOK|AON|AOR|ARA|ARL|ARP|ARS|ATS|AUD|AWG|AZM|AZN|BAD|BAM|BBD|BDT|BEF|BGL|BGN|BHD|BIF|BMD|BND|BOB|BOP|BOV|BRB|BRC|BRE|BRL|BRN|BRR|BSD|BTN|BWP|BYB|BYN|BYR|BZD|CAD|CDF|CHE|CHF|CHW|CLE|CLF|CLP|CNY|COP|COU|CRC|CSD|CSK|CUC|CUP|CVE|CYP|CZK|DDM|DEM|DJF|DKK|DOP|DZD|ECS|ECV|EEK|EGP|ERN|ESA|ESB|ESP|ETB|EUR|FIM|FJD|FKP|FRF|GBP|GEL|GHC|GHS|GIP|GMD|GNE|GNF|GQE|GRD|GTQ|GWP|HKD|HNL|HRD|HRK|HTG|HUF|IDR|IEP|ILP|ILR|ILS|INR|IQD|IRR|ISJ|ISK|ITL|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LBP|LKR|LRD|LSL|LTL|LUF|LVL|LYD|MAD|MAF|MCF|MDL|MGA|MGF|MKD|MKN|MLV|MMK|MNT|MOP|MRO|MTL|MUR|MVQ|MVR|MWK|MXN|MXP|MXV|MYR|MZM|MZN|NAD|NGN|NIO|NLG|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PTE|PYG|QAR|RON|RSD|RUB|RWF|SAR|SBD|SCR|SDG|SEK|SGD|SHP|SIT|SKK|SLL|SML|SOS|SRD|SSP|STD|SVC|SYP|SZL|THB|TJS|TMT|TND|TOP|TRY|TTD|TWD|TZS|UAH|UGX|USD|USN|UYI|UYU|UZS|VAL|VEF|VND|VUV|WST|XAF|XAG|XAU|XBA|XBB|XBC|XBD|XBT|XCD|XDR|XFU|XOK|XPD|XPF|XPT|XSU|XTS|XUA|YER|ZAR|ZMW|ZWL$",
+                    "title": "currency",
+                    "type": "string"
+                }
+            },
+            "title": "Pricing",
+            "type": "object"
+        },
+        "Quotas": {
+            "additionalProperties": {
+                "$ref": "#/definitions/Path"
+            },
+            "title": "Quotas",
+            "type": "object"
+        },
+        "Rates": {
+            "additionalProperties": {
+                "$ref": "#/definitions/Path"
+            },
+            "title": "Rates",
+            "type": "object"
+        },
+        "Validity": {
+            "additionalProperties": false,
+            "properties": {
+                "effectiveDate": {
+                    "description": "The starting date of the SLA agreement using the ISO 8601 time intervals format.",
+                    "examples": [
+                        "2009-10-09T21:30:00.00Z"
+                    ],
+                    "format": "date-time",
+                    "title": "effectiveDate",
+                    "type": "string"
+                },
+                "expirationDate": {
+                    "description": "The expiration date of the SLA agreement using the ISO 8601 time intervals format.",
+                    "examples": [
+                        "2015-11-15T23:30:00.00Z"
+                    ],
+                    "format": "date-time",
+                    "title": "expirationDate",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "effectiveDate"
+            ],
+            "title": "Validity",
+            "type": "object"
+        }
+    },
+    "description": "SLA4OAI",
+    "id": "SLA4OAI",
+    "properties": {
+        "availability": {
+            "description": "Define the default availability, later each plan can be override it.",
+            "title": "availability",
+            "type": "string"
+        },
+        "configuration": {
+            "$ref": "#/definitions/Configuration",
+            "description": "Define the default configurations, later each plan can be override it.",
+            "title": "configuration"
+        },
+        "context": {
+            "$ref": "#/definitions/Context",
+            "description": "Holds the main information of the SLA context.",
+            "title": "context"
+        },
+        "guarantees": {
+            "$ref": "#/definitions/Guarantees",
+            "description": "Global guarantees, these are the default guarantees, but they could be overridden by each plan later.",
+            "title": "guarantees"
+        },
+        "infrastructure": {
+            "$ref": "#/definitions/Infrastructure",
+            "description": "Provides information about tooling used for SLA storage, calculation, governance, etc.",
+            "title": "infrastructure"
+        },
+        "metrics": {
+            "$ref": "#/definitions/Metrics",
+            "description": "A list of metrics to use in the context of the SLA.",
+            "title": "metrics"
+        },
+        "plans": {
+            "$ref": "#/definitions/Plans",
+            "description": "A set of plans to define different service levels per plan.",
+            "title": "plans"
+        },
+        "pricing": {
+            "$ref": "#/definitions/Pricing",
+            "description": "Global pricing data.",
+            "title": "pricing"
+        },
+        "quotas": {
+            "$ref": "#/definitions/Quotas",
+            "description": "Global quotas, these are the default quotas, but they could be overridden by each plan later.",
+            "title": "quotas"
+        },
+        "rates": {
+            "$ref": "#/definitions/Rates",
+            "description": "Global rates, these are the default rates, but they could be overridden by each plan later.",
+            "title": "rates"
+        }
+    },
+    "required": [
+        "context",
+        "infrastructure",
+        "metrics"
+    ],
+    "type": "object"
+}
+

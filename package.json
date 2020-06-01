@@ -1,0 +1,28 @@
+{
+  "name": "sla4oai-validator",
+  "version": "1.0.0",
+  "description": "Validator for SLA4OAI files",
+  "main": "index.js",
+  "bin": {
+    "sla4oai-validator": "./src/index.js"
+  },
+  "scripts": {
+    "lint": "eslint **/*.js --fix",
+    "start": "node src/index.js"
+  },
+  "author": "Antonio Gamez <antoniogamez@us.es> ISA Resarch Group",
+  "dependencies": {
+    "commander": "^5.1.0",
+    "js-yaml": "^3.14.0",
+    "semver": "^7.3.2",
+    "typescript-json-schema": "^0.42.0",
+    "winston": "^3.2.1",
+    "z-schema": "^4.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isa-group/XXXXXXX"
+  },
+  "devDependencies": {},
+  "license": "Apache-2.0"
+}
