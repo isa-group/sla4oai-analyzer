@@ -1,0 +1,6001 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/clarifai/clarifai.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regarding the resource'
+    resolution: consumption
+  globalRequests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource'
+    resolution: consumption
+  imagesPerCall:
+    type: integer
+    format: int64
+    description: imagesPerCall
+    resolution: consumption
+  videoSizePerCall:
+    type: integer
+    format: int64
+    description: videoSizePerCall
+    resolution: consumption
+  videoLenghtPerCall:
+    type: integer
+    format: int64
+    description: videoLenghtPerCall
+    resolution: consumption
+  maxConcepts:
+    type: integer
+    format: int64
+    description: maxConcepts
+    resolution: consumption
+  concepts:
+    type: integer
+    format: int64
+    description: maxConcepts
+    resolution: consumption
+  inputHosting:
+    type: integer
+    format: int64
+    description: inputHosting
+    resolution: consumption
+  imageBatchSize:
+    type: integer
+    format: int64
+    description: imageBatchSize
+    resolution: consumption
+  videoBatchSize:
+    type: integer
+    format: int64
+    description: videoBatchSize
+  searchBatchSize:
+    type: integer
+    format: int64
+    description: searchBatchSize
+  otherBatchSize:
+    type: integer
+    format: int64
+    description: otherBatchSize
+    resolution: consumption
+pricing:
+  cost: 0
+  currency: USD
+  period:
+    amount: 1
+    unit: month
+availability: '2009-10-09T21:30:00.00Z'
+configuration: {}
+plans:
+  BeforeEmailActivation:
+    pricing:
+      cost: 0
+    quotas:
+      '/v2/models/{model_id}/outputs':
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          maxConcepts:
+            - max: 200
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          videoSizePerCall:
+            - max: 80
+              period: 
+                amount: 1
+                unit: forever
+          videoLenghtPerCall:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/inputs:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          inputHosting:
+            - max: 10000
+              period: 
+                amount: 1
+                unit: forever
+          inputs:
+            - max: 10000
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        delete:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      /v2/inputs/status:
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      '/v2/inputs/{id}':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      /v2/searches:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          inputsPerCall:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/feedback':
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches/feedback:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          concepts:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts/searches:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models/searches:
+        post:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/inputs':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/output_info':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          globalRequests:
+            - max: 100
+              period:
+                amount: 1
+                unit: month
+    rates:
+      '/v2/models/{model_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs/status:
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/inputs/{id}':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/models:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/feedback':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches/feedback:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts/searches:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/models/searches:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/output_info':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+  Community:
+    pricing:
+      cost: 0
+    quotas:
+      '/v2/models/{model_id}/outputs':
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          maxConcepts:
+            - max: 200
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          videoSizePerCall:
+            - max: 80
+              period: 
+                amount: 1
+                unit: forever
+          videoLenghtPerCall:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/inputs:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          inputHosting:
+            - max: 10000
+              period: 
+                amount: 1
+                unit: forever
+          inputs:
+            - max: 10000
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        delete:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      /v2/inputs/status:
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      '/v2/inputs/{id}':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      /v2/searches:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          inputsPerCall:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/feedback':
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches/feedback:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          concepts:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts/searches:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models/searches:
+        post:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 8
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/inputs':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/output_info':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          globalRequests:
+            - max: 5000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      '/v2/models/{model_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs/status:
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/inputs/{id}':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/models:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/feedback':
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches/feedback:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts/searches:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      /v2/models/searches:
+        post:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/output_info':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+  Essential:
+    quotas:
+      '/v2/models/{model_id}/outputs':
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          maxConcepts:
+            - max: 200
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          videoSizePerCall:
+            - max: 80
+              period: 
+                amount: 1
+                unit: forever
+          videoLenghtPerCall:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      /v2/inputs:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          inputs:
+            - max: 100000
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+        delete:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      /v2/inputs/status:
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      '/v2/inputs/{id}':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      /v2/searches:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          inputsPerCall:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/feedback':
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches/feedback:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          concepts:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts/searches:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models/searches:
+        post:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 16
+              period: 
+                amount: 1
+                unit: forever
+          videoBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          searchBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+          otherBatchSize:
+            - max: 4
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/inputs':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/output_info':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          globalRequests:
+            - max: 100000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      '/v2/models/{model_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs/status:
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/inputs/{id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/feedback':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches/feedback:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/output_info':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+  Business:
+    pricing:
+      cost: 2000
+    quotas:
+      '/v2/models/{model_id}/outputs':
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          maxConcepts:
+            - max: 200
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          videoSizePerCall:
+            - max: 80
+              period: 
+                amount: 1
+                unit: forever
+          videoLenghtPerCall:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      /v2/inputs:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          inputs:
+            - max: 1000000
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      /v2/inputs/status:
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/inputs/{id}':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      /v2/searches:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/models:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        patch:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          inputsPerCall:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/feedback':
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      /v2/searches/feedback:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+          concepts:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+        patch:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      /v2/concepts/searches:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      /v2/models/searches:
+        post:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/inputs':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/output_info':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+        delete:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          globalRequests:
+            - max: 1000000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      '/v2/models/{model_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs/status:
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/inputs/{id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/feedback':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches/feedback:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/output_info':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+  Enterprise:
+    quotas:
+      '/v2/models/{model_id}/outputs':
+        post:
+          maxConcepts:
+            - max: 200
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          videoSizePerCall:
+            - max: 80
+              period: 
+                amount: 1
+                unit: forever
+          videoLenghtPerCall:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      /v2/inputs:
+        post:
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          inputs:
+            - max: 1000000
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches:
+        post:
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          inputsPerCall:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches/feedback:
+        post:
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts:
+        post:
+          concepts:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+    rates:
+      '/v2/models/{model_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs/status:
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/inputs/{id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/feedback':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches/feedback:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/output_info':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+  PublicSector:
+    quotas:
+      '/v2/models/{model_id}/outputs':
+        post:
+          maxConcepts:
+            - max: 200
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          videoSizePerCall:
+            - max: 80
+              period: 
+                amount: 1
+                unit: forever
+          videoLenghtPerCall:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      /v2/inputs:
+        post:
+          imagesPerCall:
+            - max: 128
+              period: 
+                amount: 1
+                unit: forever
+          inputs:
+            - max: 1000000
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches:
+        post:
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          inputsPerCall:
+            - max: 32
+              period: 
+                amount: 1
+                unit: forever
+      /v2/searches/feedback:
+        post:
+          imageBatchSize:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /v2/concepts:
+        post:
+          concepts:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+    rates:
+      '/v2/models/{model_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/outputs':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/inputs/status:
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/inputs/{id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/workflows/{workflow_id}/results':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/feedback':
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/searches/feedback:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        patch:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/concepts/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /v2/models/searches:
+        post:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/output_info':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+        delete:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/v2/models/{model_id}/versions/{version_id}/inputs':
+        get:
+          imagePredictRequests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+          videoPredictRequests:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+          searchRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+          otherRequests:
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    guarantees: {}

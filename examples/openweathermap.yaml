@@ -1,0 +1,1355 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/openweathermap/openweathermap.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regarding the resource'
+    resolution: consumption
+  globalRequests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource'
+    resolution: consumption
+  updateFrequency:
+    type: integer
+    format: int64
+    description: Update frequency (hours)
+    resolution: consumption
+  timeBack:
+    type: integer
+    format: int64
+    description: Time back frequency (months)
+    resolution: consumption
+pricing:
+  cost: 0
+  currency: USD
+  period:
+    amount: 1
+    unit: month
+availability: '2009-10-09T21:30:00.00Z'
+configuration: {}
+plans:
+  Free:
+    pricing:
+      cost: 0
+    rates:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/weather:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/box/city:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/group:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+  Startup:
+    pricing:
+      cost: 40
+    rates:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 600
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/weather:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/box/city:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/group:
+        get:
+          updateFrequency:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+  Developer:
+    pricing:
+      cost: 180
+    rates:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 3000
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          updateFrequency:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/weather:
+        get:
+          updateFrequency:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/box/city:
+        get:
+          updateFrequency:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/group:
+        get:
+          updateFrequency:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+  Profesional:
+    pricing:
+      cost: 470
+    rates:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 30000
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/weather:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/box/city:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/group:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+  Enterprise:
+    pricing:
+      cost: 2000
+    rates:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 200000
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/weather:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/box/city:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/group:
+        get:
+          updateFrequency:
+            - max: 0.167
+              period: 
+                amount: 1
+                unit: forever
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          updateFrequency:
+            - max: 3
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+  Historical-Starter:
+    pricing:
+      cost: 150
+    rates:
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 5000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 5000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 5000
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          timeBack:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/accumulated_temperature:
+        get:
+          timeBack:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/city:
+        get:
+          timeBack:
+            - max: 1
+              period: 
+                amount: 1
+                unit: forever
+  Historical-Medium:
+    pricing:
+      cost: 950
+    rates:
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          timeBack:
+            - max: 12
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/accumulated_temperature:
+        get:
+          timeBack:
+            - max: 12
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/city:
+        get:
+          timeBack:
+            - max: 12
+              period: 
+                amount: 1
+                unit: forever
+  Historical-Advanced:
+    rates:
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          requests:
+            - max: 150000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/accumulated_temperature:
+        get:
+          requests:
+            - max: 150000
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/city:
+        get:
+          requests:
+            - max: 150000
+              period: 
+                amount: 1
+                unit: minute
+    quotas:
+      /data/2.5/find:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/weather:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/box/city:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/group:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/forecast/daily:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/forecast:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/uvi/history:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/3.0/triggers:
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/data/3.0/triggers/{trigger_id}/history/{history_id}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/weather/{op}/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      '/maps/2.0/relief/{z}/{x}/{y}':
+        get:
+          requests:
+            - max: 0
+              period: 
+                amount: 1
+                unit: minute
+      /data/2.5/history/accumulated_precipitation:
+        get:
+          timeBack:
+            - max: 72
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/accumulated_temperature:
+        get:
+          timeBack:
+            - max: 72
+              period: 
+                amount: 1
+                unit: forever
+      /data/2.5/history/city:
+        get:
+          timeBack:
+            - max: 72
+              period: 
+                amount: 1
+                unit: forever

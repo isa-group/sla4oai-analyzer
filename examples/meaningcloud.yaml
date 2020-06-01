@@ -1,0 +1,615 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/meaningcloud/meaningcloud.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: >-
+      Number of requests, regarding the resource. Una petición a MeaningCloud
+      equivale al análisis de un texto de hasta 500 palabras para las API
+      públicas y 125 palabras para las API Premium. Si el texto superase ese
+      número, se cobrará una petición adicional por cada 500/125 palabras de
+      más.
+    resolution: consumption
+  globalRquests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource'
+    resolution: consumption
+pricing:
+  cost: 0
+  currency: EUR
+  period:
+    amount: 1
+    unit: month
+availability: '2009-10-09T21:30:00.00Z'
+configuration: {}
+plans:
+  Free:
+    pricing:
+      cost: 0
+    quotas:
+      /documentstructure-1.0:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /parser-2.0:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /reputation-1.0:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /clustering-1.1:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 20000
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /sentiment-2.1:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /class-1.1:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /topics-2.0:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /deepcategorization-1.0:
+        get:
+          globalRequests:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /documentstructure-1.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /parser-2.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /reputation-1.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /clustering-1.1:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /sentiment-2.1:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /class-1.1:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /topics-2.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+      /deepcategorization-1.0:
+        get:
+          requests:
+            - max: 2
+              period: 
+                amount: 1
+                unit: second
+  Start-Up:
+    pricing:
+      cost: 99
+    quotas:
+      /documentstructure-1.0:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /parser-2.0:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /reputation-1.0:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /clustering-1.1:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /sentiment-2.1:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /class-1.1:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /topics-2.0:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+      /deepcategorization-1.0:
+        get:
+          globalRequests:
+            - max: 120000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /documentstructure-1.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /parser-2.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /reputation-1.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /clustering-1.1:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /sentiment-2.1:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /class-1.1:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /topics-2.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+      /deepcategorization-1.0:
+        get:
+          requests:
+            - max: 5
+              period: 
+                amount: 1
+                unit: second
+  Professional:
+    pricing:
+      cost: 399
+    quotas:
+      /documentstructure-1.0:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /parser-2.0:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /reputation-1.0:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /clustering-1.1:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 700000
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /sentiment-2.1:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /class-1.1:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /topics-2.0:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+      /deepcategorization-1.0:
+        get:
+          globalRequests:
+            - max: 700000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /documentstructure-1.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /parser-2.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /reputation-1.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /clustering-1.1:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /sentiment-2.1:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /class-1.1:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /topics-2.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+      /deepcategorization-1.0:
+        get:
+          requests:
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+  Business:
+    pricing:
+      cost: 999
+    quotas:
+      /documentstructure-1.0:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /parser-2.0:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /reputation-1.0:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /clustering-1.1:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 4200000
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /sentiment-2.1:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /class-1.1:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /topics-2.0:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+      /deepcategorization-1.0:
+        get:
+          globalRequests:
+            - max: 4200000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /documentstructure-1.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /parser-2.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /reputation-1.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /clustering-1.1:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /summarization-1.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /lang-2.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /sentiment-2.1:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /class-1.1:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /topics-2.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second
+      /deepcategorization-1.0:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: second

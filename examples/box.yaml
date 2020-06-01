@@ -1,0 +1,1432 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/box/box.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regarding the resource'
+    resolution: consumption
+  globalRequests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource and users'
+    resolution: consumption
+  storage:
+    type: integer
+    format: int64
+    description: GB of storage
+    resolution: consumption
+  maxUploadSize:
+    type: integer
+    format: int64
+    description: maximium GB of upload size
+    resolution: consumption
+  users:
+    type: integer
+    format: int64
+    description: monthly acitve users
+    resolution: consumption
+pricing:
+  cost: 0
+  currency: EUR
+  period:
+    amount: 1
+    unit: month
+availability: '2009-10-09T21:30:00.00Z'
+configuration: {}
+plans:
+  Individual:
+    pricing:
+      cost: 0
+    rates:
+      /files/content:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: second
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+        put:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/files/{FILE_ID}/content':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    quotas:
+      /files/content:
+        post:
+          maxUploadSize:
+            - max: 0.25
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}':
+        put:
+          maxUploadSize:
+            - max: 0.25
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          maxUploadSize:
+            - max: 0.25
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+      '/files/{FILE_ID}/content':
+        post:
+          maxUploadSize:
+            - max: 0.25
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          maxUploadSize:
+            - max: 0.25
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 10
+              period: 
+                amount: 1
+                unit: forever
+  PersonalPro:
+    pricing:
+      cost: 9
+    rates:
+      /files/content:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: second
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+        put:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+      '/files/{FILE_ID}/content':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    quotas:
+      /files/content:
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}':
+        put:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+      '/files/{FILE_ID}/content':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+  Starter:
+    pricing:
+      cost: 4.5
+    rates:
+      /files/content:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: second
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+        put:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+      '/files/{FILE_ID}/content':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    quotas:
+      /files/content:
+        post:
+          maxUploadSize:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+        put:
+          maxUploadSize:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          maxUploadSize:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/content':
+        post:
+          maxUploadSize:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          maxUploadSize:
+            - max: 2
+              period: 
+                amount: 1
+                unit: forever
+          storage:
+            - max: 100
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 25000
+              period:
+                amount: 1
+                unit: month
+  Business:
+    pricing:
+      cost: 13.5
+    rates:
+      /files/content:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: second
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+        put:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+      '/files/{FILE_ID}/content':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    quotas:
+      /files/content:
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+        put:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/content':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+  BusinessPlus:
+    pricing:
+      cost: 22.5
+    rates:
+      /files/content:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: second
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+        put:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+      '/files/{FILE_ID}/content':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    quotas:
+      /files/content:
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+        put:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/content':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+  Enterprise:
+    rates:
+      /files/content:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: second
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+        put:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 6
+              period: 
+                amount: 1
+                unit: second
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+      '/files/{FILE_ID}/content':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+            - max: 10
+              period: 
+                amount: 1
+                unit: second
+            - max: 4
+              period: 
+                amount: 1
+                unit: second
+    quotas:
+      /files/content:
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      /files/upload_sessions:
+        post:
+          requests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}':
+        delete:
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+        get:
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+        put:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/commit':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/upload_sessions/{SESSION_ID}/parts':
+        get:
+          requests:
+            - max: 50000
+              period: 
+                amount: 1
+                unit: day
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/content':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month
+      '/files/{FILE_ID}/upload_sessions':
+        post:
+          maxUploadSize:
+            - max: 5
+              period: 
+                amount: 1
+                unit: forever
+          globalRequests:
+            - max: 50000
+              period:
+                amount: 1
+                unit: month

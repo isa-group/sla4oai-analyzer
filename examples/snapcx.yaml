@@ -1,0 +1,137 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/snapcx/snapcx.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regarding the resource'
+    resolution: consumption
+  globalRequests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource'
+    resolution: consumption
+pricing:
+  cost: 0
+  currency: USD
+  period:
+    amount: 1
+    unit: month
+availability: '2009-10-09T21:30:00.00Z'
+configuration: {}
+plans:
+  ShippingTracking-Startup:
+    pricing:
+      cost: 5
+    quotas:
+      /tracking/v1/getTrackingDetails:
+        get:
+          requests:
+            - max: 1500
+              period:
+                amount: 1
+                unit: month
+            - max: 150
+              period: 
+                amount: 1
+                unit: day
+    rates:
+      /tracking/v1/getTrackingDetails:
+        get:
+          requests:
+            - max: 15
+              period: 
+                amount: 1
+                unit: minute
+  ShippingTracking-Serious:
+    pricing:
+      cost: 5
+    quotas:
+      /tracking/v1/getTrackingDetails:
+        get:
+          requests:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: day
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 0.002
+    rates:
+      /tracking/v1/getTrackingDetails:
+        get:
+          requests:
+            - max: 60
+              period: 
+                amount: 1
+                unit: minute
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 0.002
+  StreetValidation-Startup:
+    pricing:
+      cost: 9
+    quotas:
+      /avs/v1/validateAddress:
+        get:
+          requests:
+            - max: 1200
+              period:
+                amount: 1
+                unit: month
+            - max: 120
+              period: 
+                amount: 1
+                unit: day
+      /avs/v1/validateGlobalAddress:
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /avs/v1/validateAddress:
+        get:
+          requests:
+            - max: 12
+              period: 
+                amount: 1
+                unit: minute
+  StreetValidation-Global:
+    pricing:
+      cost: 5
+    quotas:
+      /avs/v1/validateAddress:
+        get:
+          requests:
+            - max: 500
+              period: 
+                amount: 1
+                unit: day
+              cost:
+                overage: 
+                  excess: 5000
+                  cost: 0.001
+      /avs/v1/validateGlobalAddress:
+        get:
+          requests:
+            - max: 500
+              period: 
+                amount: 1
+                unit: day
+              cost:
+                overage: 
+                  excess: 5000
+                  cost: 0.001
+    

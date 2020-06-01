@@ -1,0 +1,845 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/quickblox/quickblox.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regarding the resource'
+    resolution: consumption
+  globalRequests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource'
+    resolution: consumption
+  activeUsers:
+    type: integer
+    format: int64
+    description: Number of monthly active users
+    resolution: consumption
+  chatMessages:
+    type: integer
+    format: int64
+    description: Number of chat messages
+    resolution: consumption
+  pushNotifications:
+    type: integer
+    format: int64
+    description: Number of push notifications
+    resolution: consumption
+pricing:
+  cost: 0
+  currency: USD
+  period:
+    amount: 1
+    unit: month
+availability: '2009-10-09T21:30:00.00Z'
+configuration: {}
+plans:
+  Starter:
+    pricing:
+      cost: 0
+    quotas:
+      /users.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/by_email.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/by_facebook_id.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/by_full_name.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/by_login.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/by_tags.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/by_twitter_id.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      '/users/external/{external_user_id}.json':
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      /users/password/reset.json:
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+      '/users/{user_id}.json':
+        get:
+          activeUsers:
+            - max: 20000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /chat/Dialog:
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id1}':
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}':
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}/notifications.json':
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message:
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message/unread:
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Message/{message_id}':
+        get:
+          chatMessages:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 20
+              period: 
+                amount: 1
+                unit: second
+  Advanced:
+    pricing:
+      cost: 49
+    quotas:
+      /users.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/by_email.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/by_facebook_id.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/by_full_name.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/by_login.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/by_tags.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/by_twitter_id.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      '/users/external/{external_user_id}.json':
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      /users/password/reset.json:
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+      '/users/{user_id}.json':
+        get:
+          activeUsers:
+            - max: 35000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /chat/Dialog:
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id1}':
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}':
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}/notifications.json':
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message:
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message/unread:
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Message/{message_id}':
+        get:
+          chatMessages:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 35
+              period: 
+                amount: 1
+                unit: second
+  Pro:
+    pricing:
+      cost: 219
+    quotas:
+      /users.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/by_email.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/by_facebook_id.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/by_full_name.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/by_login.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/by_tags.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/by_twitter_id.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      '/users/external/{external_user_id}.json':
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      /users/password/reset.json:
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+      '/users/{user_id}.json':
+        get:
+          activeUsers:
+            - max: 75000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /chat/Dialog:
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id1}':
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}':
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}/notifications.json':
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message:
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message/unread:
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Message/{message_id}':
+        get:
+          chatMessages:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 50
+              period: 
+                amount: 1
+                unit: second
+  Small:
+    pricing:
+      cost: 599
+    quotas:
+      /users.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/by_email.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/by_facebook_id.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/by_full_name.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/by_login.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/by_tags.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/by_twitter_id.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      '/users/external/{external_user_id}.json':
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      /users/password/reset.json:
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+      '/users/{user_id}.json':
+        get:
+          activeUsers:
+            - max: 2500000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /chat/Dialog:
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id1}':
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}':
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}/notifications.json':
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message:
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message/unread:
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Message/{message_id}':
+        get:
+          chatMessages:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+  Medium:
+    pricing:
+      cost: 1199
+    quotas:
+      /users.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/by_email.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/by_facebook_id.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/by_full_name.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/by_login.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/by_tags.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/by_twitter_id.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      '/users/external/{external_user_id}.json':
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      /users/password/reset.json:
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+      '/users/{user_id}.json':
+        get:
+          activeUsers:
+            - max: 5000000
+              period:
+                amount: 1
+                unit: month
+    rates:
+      /chat/Dialog:
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id1}':
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}':
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Dialog/{id}/notifications.json':
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message:
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+      /chat/Message/unread:
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+      '/chat/Message/{message_id}':
+        get:
+          chatMessages:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+          pushNotifications:
+            - max: 1000
+              period: 
+                amount: 1
+                unit: second
+  Large:
+    pricing:
+      cost: 2399
+    
+    
