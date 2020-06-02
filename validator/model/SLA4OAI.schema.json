@@ -5,10 +5,14 @@
             "additionalProperties": {
                 "type": "string"
             },
+            "description": "Define the default configurations, later each plan can be override it.",
+            "id": "Configuration",
             "title": "Configuration",
             "type": "object"
         },
         "Context": {
+            "description": "Holds the main information of the SLA context",
+            "id": "Context",
             "properties": {
                 "api": {
                     "description": "Indicates a URI (absolute or relative) describing the API, described in the OpenAPI format, to be instrumented.",
@@ -70,6 +74,7 @@
                 "validity": {
                     "$ref": "#/definitions/Validity",
                     "description": "Availability of the service expressed via time slots. This field is required in case of the context type is instance.",
+                    "id": "Validity",
                     "title": "validity"
                 }
             },
@@ -83,6 +88,8 @@
             "type": "object"
         },
         "Cost": {
+            "description": "Cost associated to this plan.",
+            "id": "Cost",
             "properties": {
                 "calculated": {
                     "description": "Calculated cost",
@@ -92,11 +99,13 @@
                 "operation": {
                     "$ref": "#/definitions/OperationCost",
                     "description": "The operation cost",
+                    "id": "OperationCost",
                     "title": "operation"
                 },
                 "overage": {
                     "$ref": "#/definitions/OverageCost",
                     "description": "The overage cost",
+                    "id": "OverageCost",
                     "title": "overage"
                 }
             },
@@ -110,10 +119,14 @@
                 },
                 "type": "array"
             },
+            "description": "Describes a guarantee level supported by the plan.",
+            "id": "Guarantee",
             "title": "Guarantee",
             "type": "object"
         },
         "GuaranteeObjective": {
+            "description": "An object describes the guarantee level.",
+            "id": "GuaranteeObjective",
             "properties": {
                 "objective": {
                     "description": "The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value\n// * @pattern \\w+\\s*((!=)?|(<=)?|(>=)?|(==)?|(<)?|(>)?)?\\s*\\d+",
@@ -126,6 +139,7 @@
                 "period": {
                     "$ref": "#/definitions/Period",
                     "description": "The period of the objective",
+                    "id": "Period",
                     "title": "period"
                 },
                 "scope": {
@@ -161,6 +175,8 @@
             "additionalProperties": {
                 "$ref": "#/definitions/Guarantee"
             },
+            "description": "Global guarantees, these are the default guarantees, but they could be overridden by each plan later.",
+            "id": "Guarantees",
             "title": "Guarantees",
             "type": "object"
         },
@@ -168,6 +184,8 @@
             "additionalProperties": {
                 "type": "string"
             },
+            "description": "Provides information about tooling used for SLA storage, calculation, governance, etc.",
+            "id": "Infrastructure",
             "properties": {
                 "monitor": {
                     "description": "Location of the SLA Metrics endpoint accordingly to the Basic SLA Management Service spec.",
@@ -196,6 +214,8 @@
             "type": "object"
         },
         "Limit": {
+            "description": "The allowed limits of the request.",
+            "id": "Limit",
             "properties": {
                 "cost": {
                     "anyOf": [
@@ -207,7 +227,7 @@
                         }
                     ],
                     "default": 0,
-                    "description": "Cost associated with this plan. Defaults to 0 if unspecified.",
+                    "description": "Cost associated to this plan. Defaults to 0 if unspecified.",
                     "examples": [
                         "0",
                         "9.99"
@@ -247,6 +267,8 @@
             "type": "object"
         },
         "Metric": {
+            "description": "Definitions of metrics with name, types and descriptions",
+            "id": "Metric",
             "properties": {
                 "description": {
                     "description": "A brief description of the metric.",
@@ -341,6 +363,8 @@
                     }
                 ]
             },
+            "description": "A list of metrics to use in the context of the SLA.",
+            "id": "Metrics",
             "title": "Metrics",
             "type": "object"
         },
@@ -351,10 +375,14 @@
                 },
                 "type": "array"
             },
+            "description": "The operations attached to this path.",
+            "id": "Operation",
             "title": "Operation",
             "type": "object"
         },
         "OperationCost": {
+            "description": "The operation cost",
+            "id": "OperationCost",
             "properties": {
                 "cost": {
                     "description": "Cost associated to each volume of operations. For example, each pack of 100 requests will be billed at $0.50",
@@ -381,6 +409,8 @@
             "type": "object"
         },
         "OverageCost": {
+            "description": "The overage cost",
+            "id": "OverageCost",
             "properties": {
                 "cost": {
                     "description": "Cost to be billed as overage. For example, once hitted the quota value, each pack of 1000 requests will be billed at $1.50",
@@ -410,10 +440,14 @@
             "additionalProperties": {
                 "$ref": "#/definitions/Operation"
             },
+            "description": "Describes the API endpoint path quota or rate configurations.",
+            "id": "Path",
             "title": "Path",
             "type": "object"
         },
         "Period": {
+            "description": "The period of the limit.",
+            "id": "Period",
             "properties": {
                 "amount": {
                     "description": "Max value that can be accepted.",
@@ -466,6 +500,8 @@
             "type": "object"
         },
         "Plan": {
+            "description": "Describes a usage plan for the API with its associate costs, availability and guarantees.",
+            "id": "Plan",
             "properties": {
                 "availability": {
                     "description": "Availability of the service for this plan expressed via time slots using the ISO 8601 time intervals format.",
@@ -479,26 +515,31 @@
                 "configuration": {
                     "$ref": "#/definitions/Configuration",
                     "description": "Configuration parameters for the service tailored for the plan.",
+                    "id": "Configuration",
                     "title": "configuration"
                 },
                 "guarantees": {
                     "$ref": "#/definitions/Guarantees",
                     "description": "Specific guarantees data for this plan. Overrides default guarantees data defined before.",
+                    "id": "Guarantees",
                     "title": "guarantees"
                 },
                 "pricing": {
                     "$ref": "#/definitions/Pricing",
                     "description": "Specific pricing data for this plan. Overrides default pricing data defined before.",
+                    "id": "Pricing",
                     "title": "pricing"
                 },
                 "quotas": {
                     "$ref": "#/definitions/Quotas",
                     "description": "Specific quotas data for this plan. Overrides default quotas data defined before.",
+                    "id": "Quotas",
                     "title": "quotas"
                 },
                 "rates": {
                     "$ref": "#/definitions/Rates",
                     "description": "Specific rates data for this plan. Overrides default rates data defined before.",
+                    "id": "Rates",
                     "title": "rates"
                 }
             },
@@ -509,10 +550,14 @@
             "additionalProperties": {
                 "$ref": "#/definitions/Plan"
             },
+            "description": "A set of plans to define different service levels per plan.",
+            "id": "Plans",
             "title": "Plans",
             "type": "object"
         },
         "Pricing": {
+            "description": "Global pricing data.",
+            "id": "Pricing",
             "properties": {
                 "billing": {
                     "default": "monthly",
@@ -567,6 +612,7 @@
                 "period": {
                     "$ref": "#/definitions/Period",
                     "description": "The period of the limit",
+                    "id": "Period",
                     "title": "period"
                 }
             },
@@ -577,6 +623,8 @@
             "additionalProperties": {
                 "$ref": "#/definitions/Path"
             },
+            "description": "Global quotas, these are the default quotas, but they could be overridden by each plan later.",
+            "id": "Quotas",
             "title": "Quotas",
             "type": "object"
         },
@@ -584,10 +632,14 @@
             "additionalProperties": {
                 "$ref": "#/definitions/Path"
             },
+            "description": "Global rates, these are the default rates, but they could be overridden by each plan later.",
+            "id": "Rates",
             "title": "Rates",
             "type": "object"
         },
         "Validity": {
+            "description": "Availability of the service",
+            "id": "Validity",
             "properties": {
                 "effectiveDate": {
                     "description": "The starting date of the SLA agreement using the ISO 8601 time intervals format.",
@@ -615,7 +667,7 @@
             "type": "object"
         }
     },
-    "description": "SLA4OAI",
+    "description": "SLA4OAI root schema",
     "id": "SLA4OAI",
     "properties": {
         "availability": {
@@ -630,6 +682,7 @@
         "configuration": {
             "$ref": "#/definitions/Configuration",
             "description": "Define the default configurations, later each plan can be override it.",
+            "id": "Configuration",
             "title": "configuration"
         },
         "context": {
@@ -640,6 +693,7 @@
         "guarantees": {
             "$ref": "#/definitions/Guarantees",
             "description": "Global guarantees, these are the default guarantees, but they could be overridden by each plan later.",
+            "id": "Guarantees",
             "title": "guarantees"
         },
         "infrastructure": {
@@ -655,21 +709,25 @@
         "plans": {
             "$ref": "#/definitions/Plans",
             "description": "A set of plans to define different service levels per plan.",
+            "id": "Plans",
             "title": "plans"
         },
         "pricing": {
             "$ref": "#/definitions/Pricing",
             "description": "Global pricing data.",
+            "id": "Pricing",
             "title": "pricing"
         },
         "quotas": {
             "$ref": "#/definitions/Quotas",
             "description": "Global quotas, these are the default quotas, but they could be overridden by each plan later.",
+            "id": "Quotas",
             "title": "quotas"
         },
         "rates": {
             "$ref": "#/definitions/Rates",
             "description": "Global rates, these are the default rates, but they could be overridden by each plan later.",
+            "id": "Rates",
             "title": "rates"
         }
     },

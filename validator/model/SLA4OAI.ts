@@ -3,8 +3,8 @@
 // @TJS-minimum 5
 
 /**
- * SLA4OAI
  * @id SLA4OAI
+ * @description SLA4OAI root schema
  */
 class SLA4OAI {
     /**
@@ -65,6 +65,10 @@ class SLA4OAI {
 }
 
 
+/**
+ * @id Context
+ * @description Holds the main information of the SLA context
+ */
 class Context {
 
     /**
@@ -112,6 +116,10 @@ class Context {
     validity?: Validity
 }
 
+/**
+ * @id Infrastructure
+ * @description  Provides information about tooling used for SLA storage, calculation, governance, etc.
+ */
 class Infrastructure {
 
     /**
@@ -134,6 +142,10 @@ class Infrastructure {
     [x: string]: string
 }
 
+/**
+ * @id Pricing
+ * @description Global pricing data.
+ */
 class Pricing {
     /**
      * Cost associated with this service. Defaults to 0 if unspecified.
@@ -164,6 +176,10 @@ class Pricing {
     period?: Period
 }
 
+/**
+ * @id Metrics
+ * @description A list of metrics to use in the context of the SLA.
+ */
 class Metrics {
 
     /**
@@ -173,6 +189,10 @@ class Metrics {
     [metricName: string]: Metric | string
 }
 
+/**
+ * @id Plans
+ * @description A set of plans to define different service levels per plan.
+ */
 class Plans {
 
     /**
@@ -181,6 +201,10 @@ class Plans {
     [planName: string]: Plan
 }
 
+/**
+ * @id Quotas
+ * @description Global quotas, these are the default quotas, but they could be overridden by each plan later.
+ */
 class Quotas {
 
     /**
@@ -189,6 +213,10 @@ class Quotas {
     [pathName: string]: Path
 }
 
+/**
+ * @id Rates
+ * @description Global rates, these are the default rates, but they could be overridden by each plan later.
+ */
 class Rates {
 
     /**
@@ -197,6 +225,10 @@ class Rates {
     [pathName: string]: Path
 }
 
+/**
+ * @id Guarantees
+ * @description Global guarantees, these are the default guarantees, but they could be overridden by each plan later.
+ */
 class Guarantees {
 
     /**
@@ -205,6 +237,10 @@ class Guarantees {
     [pathName: string]: Guarantee
 }
 
+/**
+ * @id Configuration
+ * @description Define the default configurations, later each plan can be override it.
+ */
 class Configuration {
 
     /**
@@ -214,6 +250,10 @@ class Configuration {
     [name: string]: string
 }
 
+/**
+ * @id Validity
+ * @description  Availability of the service
+ */
 class Validity {
     /**
      * The starting date of the SLA agreement using the ISO 8601 time intervals format.
@@ -230,6 +270,10 @@ class Validity {
     expirationDate?: string
 }
 
+/**
+ * @id Path
+ * @description Describes the API endpoint path quota or rate configurations.
+ */
 class Path {
 
     /**
@@ -238,6 +282,10 @@ class Path {
     [methodName: string]: Operation
 }
 
+/**
+ * @id Guarantee
+ * @description Describes a guarantee level supported by the plan.
+ */
 class Guarantee {
 
     /**
@@ -246,6 +294,10 @@ class Guarantee {
     [methodName: string]: GuaranteeObjective[]
 }
 
+/**
+ * @id Metric
+ * @description Definitions of metrics with name, types and descriptions
+ */
 class Metric {
 
     /**
@@ -283,6 +335,10 @@ class Metric {
     relatedMetrics?: Metric[]
 }
 
+/**
+ * @id Plan
+ * @description Describes a usage plan for the API with its associate costs, availability and guarantees.
+ */
 class Plan {
 
     /**
@@ -319,6 +375,10 @@ class Plan {
     guarantees?: Guarantees
 }
 
+/**
+ * @id Operation
+ * @description The operations attached to this path.
+ */
 class Operation {
     /**
     * The allowed limits of the request.
@@ -326,6 +386,10 @@ class Operation {
     [metricName: string]: Limit[]
 }
 
+/**
+ * @id GuaranteeObjective
+ * @description An object describes the guarantee level.
+ */
 class GuaranteeObjective {
     /**
     * The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value
@@ -352,6 +416,10 @@ class GuaranteeObjective {
     scope?: string
 }
 
+/**
+ * @id Period
+ * @description The period of the limit.
+ */
 class Period {
 
     /**
@@ -369,6 +437,10 @@ class Period {
     unit: "millisecond" | "second" | "minute" | "hour" | "day" | "week" | "month" | "year" | "decade" | "century" | "forever"
 }
 
+/**
+ * @id Limit
+ * @description The allowed limits of the request.
+ */
 class Limit {
 
     /**
@@ -389,7 +461,7 @@ class Limit {
     */
     scope?: string
     /**
-     * Cost associated with this plan. Defaults to 0 if unspecified.
+     * Cost associated to this plan. Defaults to 0 if unspecified.
      * @default 0
      * @TJS-examples ["0","9.99"]
      */
@@ -397,6 +469,10 @@ class Limit {
 
 }
 
+/**
+ * @id Cost
+ * @description Cost associated to this plan.
+ */
 class Cost {
 
     /**
@@ -415,6 +491,10 @@ class Cost {
     calculated?: string
 }
 
+/**
+ * @id OperationCost
+ * @description The operation cost
+ */
 class OperationCost {
 
     /**
@@ -430,6 +510,10 @@ class OperationCost {
     cost: number
 }
 
+/**
+ * @id OverageCost
+ * @description The overage cost
+ */
 class OverageCost {
 
     /**
