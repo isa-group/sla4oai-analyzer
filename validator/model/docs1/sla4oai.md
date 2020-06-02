@@ -577,7 +577,7 @@ Reference this group by using
 | :---------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------- |
 | [cost](#cost)     | Merged        | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-cost.md "SLA4OAI#/definitions/Limit/properties/cost")     |
 | [max](#max)       | `number`      | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-max.md "SLA4OAI#/definitions/Limit/properties/max")       |
-| [period](#period) | Not specified | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-period.md "SLA4OAI#/definitions/Limit/properties/period") |
+| [period](#period) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-period.md "SLA4OAI#/definitions/Limit/properties/period") |
 | [scope](#scope)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-scope.md "SLA4OAI#/definitions/Limit/properties/scope")   |
 
 ### cost
@@ -599,7 +599,7 @@ merged type ([cost](sla4oai-definitions-limit-properties-cost.md))
 any of
 
 -   [SLA4OAI schema](sla4oai-definitions-limit-properties-cost-anyof-0.md "check type definition")
--   [Untitled number in SLA4OAI](sla4oai-definitions-limit-properties-cost-anyof-1.md "check type definition")
+-   [SLA4OAI number in SLA4OAI](sla4oai-definitions-limit-properties-cost-anyof-1.md "check type definition")
 
 #### cost Examples
 
@@ -648,7 +648,7 @@ The period of the limit.
 
 `period`
 
--   is required
+-   is optional
 -   Type: unknown ([period](sla4oai-definitions-limit-properties-period.md))
 -   cannot be null
 -   defined in: [SLA4OAI schema](sla4oai-definitions-limit-properties-period.md "SLA4OAI#/definitions/Limit/properties/period")
@@ -935,7 +935,7 @@ merged type ([Details](sla4oai-definitions-metrics-additionalproperties.md))
 any of
 
 -   [SLA4OAI schema](sla4oai-definitions-metrics-additionalproperties-anyof-0.md "check type definition")
--   [Untitled string in SLA4OAI](sla4oai-definitions-metrics-additionalproperties-anyof-1.md "check type definition")
+-   [SLA4OAI string in SLA4OAI](sla4oai-definitions-metrics-additionalproperties-anyof-1.md "check type definition")
 
 ## Definitions group Operation
 
@@ -1480,7 +1480,7 @@ merged type ([cost](sla4oai-definitions-pricing-properties-cost.md))
 any of
 
 -   [SLA4OAI schema](sla4oai-definitions-pricing-properties-cost-anyof-0.md "check type definition")
--   [Untitled number in SLA4OAI](sla4oai-definitions-pricing-properties-cost-anyof-1.md "check type definition")
+-   [SLA4OAI number in SLA4OAI](sla4oai-definitions-pricing-properties-cost-anyof-1.md "check type definition")
 
 #### cost Examples
 

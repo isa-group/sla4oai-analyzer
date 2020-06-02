@@ -40,4 +40,4 @@ merged type ([Details](sla4oai-definitions-metrics-additionalproperties.md))
 any of
 
 -   [SLA4OAI schema](sla4oai-definitions-metrics-additionalproperties-anyof-0.md "check type definition")
--   [Untitled string in SLA4OAI](sla4oai-definitions-metrics-additionalproperties-anyof-1.md "check type definition")
+-   [SLA4OAI string in SLA4OAI](sla4oai-definitions-metrics-additionalproperties-anyof-1.md "check type definition")

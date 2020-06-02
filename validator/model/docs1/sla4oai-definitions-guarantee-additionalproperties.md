@@ -1,4 +1,4 @@
-# Untitled array in SLA4OAI Schema
+# SLA4OAI array in SLA4OAI Schema
 
 ```txt
 SLA4OAI#/definitions/Guarantee/additionalProperties

@@ -453,7 +453,7 @@ class Limit {
     /**
     * The period of the limit.
     */
-    period: Period
+    period?: Period
 
     /**
     * The scope of who request the service.

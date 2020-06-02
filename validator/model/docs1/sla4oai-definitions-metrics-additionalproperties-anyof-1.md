@@ -1,4 +1,4 @@
-# Untitled string in SLA4OAI Schema
+# SLA4OAI string in SLA4OAI Schema
 
 ```txt
 SLA4OAI#/definitions/Metrics/additionalProperties/anyOf/1

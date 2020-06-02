@@ -1,4 +1,4 @@
-# Untitled number in SLA4OAI Schema
+# SLA4OAI number in SLA4OAI Schema
 
 ```txt
 SLA4OAI#/definitions/Limit/properties/cost/anyOf/1

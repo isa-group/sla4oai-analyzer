@@ -32,8 +32,8 @@
 
 ### Arrays
 
--   [Untitled array in SLA4OAI](./sla4oai-definitions-guarantee-additionalproperties.md) – `SLA4OAI#/definitions/Guarantee/additionalProperties`
--   [Untitled array in SLA4OAI](./sla4oai-definitions-operation-additionalproperties.md) – `SLA4OAI#/definitions/Operation/additionalProperties`
+-   [SLA4OAI array in SLA4OAI](./sla4oai-definitions-guarantee-additionalproperties.md) – `SLA4OAI#/definitions/Guarantee/additionalProperties`
+-   [SLA4OAI array in SLA4OAI](./sla4oai-definitions-operation-additionalproperties.md) – `SLA4OAI#/definitions/Operation/additionalProperties`
 -   [relatedMetrics](./sla4oai-definitions-metric-properties-relatedmetrics.md "Related metrics") – `SLA4OAI#/definitions/Metric/properties/relatedMetrics`
 
 ## Version Note

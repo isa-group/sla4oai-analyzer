@@ -247,6 +247,7 @@
                 "period": {
                     "$ref": "#/definitions/Period",
                     "description": "The period of the limit.",
+                    "id": "Period",
                     "title": "period"
                 },
                 "scope": {
@@ -260,8 +261,7 @@
                 }
             },
             "required": [
-                "max",
-                "period"
+                "max"
             ],
             "title": "Limit",
             "type": "object"
