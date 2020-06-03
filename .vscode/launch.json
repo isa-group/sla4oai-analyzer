@@ -14,7 +14,11 @@
             ],
             "program": "${workspaceFolder}\\index.js",
             // "args": ["examples/ejemploPablo.yaml"]
-            "args": ["examples/fullcontact.yaml"]
+            // "args": ["examples/fullcontact.yaml"]
+            // "args": ["examples/ejemploInconsistente.yaml"]
+            // "args": ["examples/accuweather.yaml"]
+            // "args": ["examples/dropbox.yaml"]
+            "args": ["examples/snapcx.yaml"]
             // "args": ["-d", "examples/"]
         }
     ]

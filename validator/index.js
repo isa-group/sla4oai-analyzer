@@ -46,22 +46,36 @@ function validate(argPath, cmd) {
     } else if (semver.lt(process.version, "v8.0.0")) {
         logger.error("This program is not compatible with Node.js versions lower than v8.0.0 (current: " + process.version + ")");
     } else {
+        let validFiles = [];
+        let invalidFiles = [];
+        // try {
         if (cmd.directory && fs.lstatSync(argPath).isDirectory()) {
             fs.readdir(argPath, (err, files) => {
                 files.forEach(file => {
                     file = path.resolve(argPath, file);
-                    logger.validation(`------ BEGIN CHECKING FILE: ${file} ------`);
-                    validateFile(file, cmd);
-                    logger.validation(`------ END CHECKING FILE: ${file} ------`);
+                    logger.validationProcess(`------ BEGIN CHECKING FILE: ${file} ------`);
+                    let res = validateFile(file, cmd);
+                    if (res) { validFiles.push(file); } else { invalidFiles.push(file); }
+                    logger.validationProcess(`------ END CHECKING FILE: ${file} ------`);
                 });
-                process.exit();
+                logger.validationProcess(`\nVALID FILES: ${JSON.stringify(validFiles, null, 2)}`);
+                logger.validationProcess(`\nINVALID FILES: ${JSON.stringify(invalidFiles, null, 2)}`);
             });
+        } else if (!cmd.directory && fs.lstatSync(argPath).isFile()) {
+            let file = argPath;
+            logger.validationProcess(`------ BEGIN CHECKING FILE: ${file} ------`);
+            let res = validateFile(file, cmd);
+            if (res) { validFiles.push(file); } else { invalidFiles.push(file); }
+            logger.validationProcess(`------ END CHECKING FILE: ${file} ------`);
         } else {
-            logger.validation(`------ BEGIN CHECKING FILE: ${argPath} ------`);
-            validateFile(argPath, cmd);
-            logger.validation(`------ END CHECKING FILE: ${argPath} ------`);
-            process.exit();
+            logger.error("ERROR");
         }
+
+
+        // } catch (err) {
+        // logger.error(err);
+
+        // }
     }
 }
 
@@ -72,20 +86,23 @@ function validateFile(file, cmd) {
     // logger.debug("Input oas-doc %s: %s", file, sla4oaiObject);
 
     var err = validator.validate(sla4oaiObject, sla4oaiSchema);
-    logger.validation("CHECKING SYNTAX...");
+    logger.validationProcess("CHECKING SYNTAX...");
     if (err == false) {
-        logger.validationWarning(`SYNTAX ERRORS in ${file}`);
+        logger.validationProcess(`SYNTAX ERRORS in ${file}`);
         for (const key of validator.getLastErrors()) {
-            logger.validationWarning(`  SYNTAX ERROR: (${key.code}) in path "${key.path}": ${key.message}`);
+            logger.validationProcess(`  SYNTAX ERROR: (${key.code}) in path "${key.path}": ${key.message}`);
         }
-    } else if(!cmd.syntax) {
-        logger.validation("SYNTAX OK");
-        logger.validation("CHECKING VALIDITY...");
+        return false;
+    } else if (!cmd.syntax) {
+        logger.validationProcess("SYNTAX OK");
+        logger.validationProcess("CHECKING VALIDITY...");
         const isValid = validityOperations.isValid(sla4oaiObject);
         if (isValid) {
-            logger.validation("VALIDITY OK");
+            logger.validationProcess(`VALIDITY OK in ${file}`);
+            return true;
         } else {
-            logger.validation("VALIDITY ERROR");
+            logger.validationProcess(`VALIDITY ERROR in ${file}`);
+            return false;
         }
     }
 }

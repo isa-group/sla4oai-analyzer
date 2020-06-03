@@ -3,5 +3,6 @@ production:
   #logfile: './logs/pro-logs.log'
 
 development:
-  loglevel: validation
+  # loglevel: validation
+  loglevel: validationWarning
   #logfile: './dev-logs.log' #if dir is specified before file: EXCEPTION

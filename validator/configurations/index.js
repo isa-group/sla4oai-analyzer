@@ -87,6 +87,7 @@ function createNewLogger() {
         levels: {
             error: 8,
             warning: 9,
+            validationProcess: 9,
             validationWarning: 10,
             validation: 11,
             info: 12,
@@ -95,6 +96,7 @@ function createNewLogger() {
         colors: {
             error: "red",
             warning: "yellow",
+            validationProcess: "white",
             validationWarning: "yellow",
             validation: "magenta",
             info: "white",
