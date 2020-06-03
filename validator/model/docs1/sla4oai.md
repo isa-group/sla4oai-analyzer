@@ -9,7 +9,7 @@ SLA4OAI root schema
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                     |
 | :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------ |
-| Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [SLA4OAI.schema.json](../../../out/SLA4OAI.schema.json "open original schema") |
+| Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [SLA4OAI.schema.json](../SLA4OAI.schema.json "open original schema") |
 
 ## SLA4OAI object in SLA4OAI Type
 
@@ -1400,7 +1400,7 @@ Reference this group by using
 
 ### billing
 
-Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
+(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
 
 
 `billing`
@@ -1464,6 +1464,7 @@ The default value is:
 ### cost
 
 Cost associated with this service. Defaults to 0 if unspecified.
+Custom: unknown pricing until contacting the company
 
 
 `cost`
@@ -1480,7 +1481,8 @@ merged type ([cost](sla4oai-definitions-pricing-properties-cost.md))
 any of
 
 -   [SLA4OAI schema](sla4oai-definitions-pricing-properties-cost-anyof-0.md "check type definition")
--   [SLA4OAI number in SLA4OAI](sla4oai-definitions-pricing-properties-cost-anyof-1.md "check type definition")
+-   [SLA4OAI string in SLA4OAI](sla4oai-definitions-pricing-properties-cost-anyof-1.md "check type definition")
+-   [SLA4OAI number in SLA4OAI](sla4oai-definitions-pricing-properties-cost-anyof-2.md "check type definition")
 
 #### cost Examples
 
@@ -1490,6 +1492,10 @@ any of
 
 ```json
 "9.99"
+```
+
+```json
+"custom"
 ```
 
 ### currency

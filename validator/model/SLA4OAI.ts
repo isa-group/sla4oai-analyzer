@@ -149,10 +149,11 @@ class Infrastructure {
 class Pricing {
     /**
      * Cost associated with this service. Defaults to 0 if unspecified.
+     * Custom: unknown pricing until contacting the company
      * @default 0
-     * @TJS-examples ["0","9.99"]
+     * @TJS-examples ["0","9.99","custom"]
      */
-    cost?: number | Cost
+    cost?: number | Cost | "custom"
 
     /**
      * Currency used to express the cost. Supported currency values are expressed in ISO 4217 format. Samples: USD, EUR, or BTC for US dollar, euro, or bitcoin, respectively. Defaults to USD if unspecified.
@@ -163,7 +164,7 @@ class Pricing {
     currency?: string
 
     /**
-     * Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
+     * (DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
      * @default monthly
      * @deprecated
      * @TJS-examples ["onepay","daily","weekly","monthly","quarterly","yearly"]

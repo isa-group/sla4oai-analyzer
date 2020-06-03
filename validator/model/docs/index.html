@@ -1315,7 +1315,7 @@
                                                     
                                                 </dt>
                                                 <dd>
-                                                    <p>Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.</p>
+                                                    <p>(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.</p>
                                     
                                                     <div class="json-inner-schema">
                                                         
@@ -1329,7 +1329,8 @@
                                                     
                                                 </dt>
                                                 <dd>
-                                                    <p>Cost associated with this service. Defaults to 0 if unspecified.</p>
+                                                    <p>Cost associated with this service. Defaults to 0 if unspecified.
+                                    Custom: unknown pricing until contacting the company</p>
                                     
                                                     <div class="json-inner-schema">
                                                         
@@ -1339,6 +1340,19 @@
                                                                             
                                                                             <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Cost">Cost</a>
                                                                             </span>
+                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                            
+                                                                        </dt>
+                                                                        <dd>
+                                                                            
+                                                                        </dd>
+                                                                        <dt>
+                                                                            
+                                                                            <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                                            <span class="json-property-enum-item">custom</span>
+                                                                                        
+                                                                                    }
+                                                                                    </span>
                                                                             <span class="json-property-range" title="Value limits"></span>
                                                                             
                                                                         </dt>

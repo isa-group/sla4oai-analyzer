@@ -561,7 +561,7 @@
             "properties": {
                 "billing": {
                     "default": "monthly",
-                    "description": "Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.",
+                    "description": "(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.",
                     "enum": [
                         "daily",
                         "monthly",
@@ -587,14 +587,21 @@
                             "$ref": "#/definitions/Cost"
                         },
                         {
+                            "enum": [
+                                "custom"
+                            ],
+                            "type": "string"
+                        },
+                        {
                             "type": "number"
                         }
                     ],
                     "default": 0,
-                    "description": "Cost associated with this service. Defaults to 0 if unspecified.",
+                    "description": "Cost associated with this service. Defaults to 0 if unspecified.\nCustom: unknown pricing until contacting the company",
                     "examples": [
                         "0",
-                        "9.99"
+                        "9.99",
+                        "custom"
                     ],
                     "title": "cost"
                 },
