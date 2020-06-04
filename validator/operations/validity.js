@@ -173,28 +173,34 @@ function existsLimitsConsistencyConflict(limits, planName, path, method, metric)
 function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, method, metric) {
 
     // [P1 L2.2] There are no {consistency conflicts} between any pair of its {limits}, that is, a possible situation allowed by one limit implies the violation of the other {limit}.
-    let N1 = normalizedPeriod(limit1.period);
-    let N2 = normalizedPeriod(limit2.period);
-
-    let PU1 = PU(limit1, N1);
-    let PU2 = PU(limit2, N2);
-
     let existsInconsistency;
 
-    if (PU1 !== Infinity && PU2 !== Infinity) {
-        // inconsistentes si el porcentaje de utilización de la "capacidad de la limitación con periodo más largo" es menor que "el porcentaje de utilización de la capacidad del periodo más corto"
-        if (N1 >= N2) {
-            // logger.debug(`${PU1} => ${PU2}: ${PU1 >= PU2}`);
-            existsInconsistency = PU1 > PU2;
+    if (limit1.period && limit2.period) {
 
-        } else if (N1 == N2 && PU1 == PU2) {
-            existsInconsistency = false;
+        let N1 = normalizedPeriod(limit1.period);
+        let N2 = normalizedPeriod(limit2.period);
+
+        let PU1 = PU(limit1, N1);
+        let PU2 = PU(limit2, N2);
+
+
+        if (PU1 !== Infinity && PU2 !== Infinity) {
+            // inconsistentes si el porcentaje de utilización de la "capacidad de la limitación con periodo más largo" es menor que "el porcentaje de utilización de la capacidad del periodo más corto"
+            if (N1 >= N2) {
+                // logger.debug(`${PU1} => ${PU2}: ${PU1 >= PU2}`);
+                existsInconsistency = PU1 > PU2;
+
+            } else if (N1 == N2 && PU1 == PU2) {
+                existsInconsistency = false;
+            } else {
+                // logger.debug(`${PU1} < ${PU2}: ${PU1 < PU2}`);
+                existsInconsistency = PU1 < PU2;
+            }
         } else {
-            // logger.debug(`${PU1} < ${PU2}: ${PU1 < PU2}`);
-            existsInconsistency = PU1 < PU2;
+            // logger.debug(`Skipping ${PU1} or ${PU2} due to max=unlimited`);
+            existsInconsistency = false;
         }
     } else {
-        // logger.debug(`Skipping ${PU1} or ${PU2} due to max=unlimited`);
         existsInconsistency = false;
     }
 
@@ -266,11 +272,11 @@ function existsPlanConsistencyConflict(plan, planName) {
                                             for (let [limitationsPathMethodMetricName2, limitationsPathMethodMetric2] of Object.entries(limitationsPathMethod2)) {
                                                 for (let [limit2Name, limit2] of Object.entries(limitationsPathMethodMetric2)) {
                                                     if (planLimitationsName1 !== planLimitationsName2 && limitationsPathName1 === limitationsPathName2 && limitationsPathMethodName1 === limitationsPathMethodName2 && limitationsPathMethodMetricName1 === limitationsPathMethodMetricName2) {
-
-                                                        existsConsistencyConflict = existsConsistencyConflict || existsLimitsConsistencyConflict_check(limit1, limit2, planName, limitationsPathName2, limitationsPathMethodName2, limitationsPathMethodMetricName2);
-                                                        if (existsConsistencyConflict) {
+                                                        let isLimitsConsistencyConflict = existsLimitsConsistencyConflict_check(limit1, limit2, planName, limitationsPathName2, limitationsPathMethodName2, limitationsPathMethodMetricName2);
+                                                        if (isLimitsConsistencyConflict) {
                                                             logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT in ${planName}>${planLimitationsName1}>${limitationsPathName1}>${limitationsPathMethodName1}>${limitationsPathMethodMetricName1} (${printLimit(limit1)}) AND ${planName}>${planLimitationsName2}>${limitationsPathName2}>${limitationsPathMethodName2}>${limitationsPathMethodMetricName2} (${printLimit(limit2)})`);
                                                         }
+                                                        existsConsistencyConflict = existsConsistencyConflict || isLimitsConsistencyConflict;
                                                         //TODO: implement related metrics
                                                         if (limitationsPathMethodMetric2.relatedMetrics) {
                                                             logger.error("Not implemented yet");
@@ -363,21 +369,25 @@ function existsCostConsistencyConflict(plan1, plan2) {
                                                             plan1.pricing.cost = plan1.pricing.cost ?? 0;
                                                             plan2.pricing.cost = plan2.pricing.cost ?? 0;
                                                             if (!isNaN(plan1.pricing.cost) && !isNaN(plan2.pricing.cost)) {
-                                                                // if PU_1 > PU_2 --> cost1 > cost2
-                                                                let N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
-                                                                let N2 = normalizedPeriod(limitations2PathMethodMetricLimit.period);
+                                                                if (limitations1PathMethodMetricLimit.period && limitations2PathMethodMetricLimit.period) {
+                                                                    // if PU_1 > PU_2 --> cost1 > cost2
+                                                                    let N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
+                                                                    let N2 = normalizedPeriod(limitations2PathMethodMetricLimit.period);
 
-                                                                let PU1 = PU(limitations1PathMethodMetricLimit, N1);
-                                                                let PU2 = PU(limitations2PathMethodMetricLimit, N2);
+                                                                    let PU1 = PU(limitations1PathMethodMetricLimit, N1);
+                                                                    let PU2 = PU(limitations2PathMethodMetricLimit, N2);
 
-                                                                let aHasMorePUThanB = PU1 > PU2;
-                                                                let aIsMoreExpensiveThanB = plan1.pricing.cost >= plan2.pricing.cost;
-
-                                                                existsCostConsistencyConflict = existsCostConsistencyConflict || aHasMorePUThanB && !aIsMoreExpensiveThanB; //FIXME: expand to multiple limits
-                                                                if (existsCostConsistencyConflict) {
-                                                                    logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in ${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
+                                                                    let aHasMorePUThanB = PU1 > PU2;
+                                                                    let aIsMoreExpensiveThanB = plan1.pricing.cost >= plan2.pricing.cost;
+                                                                    let isCostConsistencyConflict = aHasMorePUThanB && !aIsMoreExpensiveThanB;
+                                                                    if (isCostConsistencyConflict) {
+                                                                        logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in ${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
+                                                                    }
+                                                                    existsCostConsistencyConflict = existsCostConsistencyConflict || isCostConsistencyConflict; //FIXME: expand to multiple limits
+                                                                    // if (existsCostConsistencyConflict) break firstLimitationLoop;
+                                                                } else {
+                                                                    // logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                                 }
-                                                                // if (existsCostConsistencyConflict) break firstLimitationLoop;
                                                             } else {
                                                                 logger.warning(`existsCostConsistencyConflict - Cannot compare NaN pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                             }
@@ -507,7 +517,13 @@ function printLimitatation(limitation) {
 }
 
 function printLimit(limit) {
-    return `${limit.max} per ${limit.period.amount}/${limit.period.unit}`;
+    if (limit.max >= 0 && limit.period && limit.period.amount >= 0 && limit.period.unit) {
+        return `${limit.max} per ${limit.period.amount}/${limit.period.unit}`;
+    } else if (limit.max >= 0 && !limit.period) {
+        return `${limit.max} per request (no period)`;
+    } else {
+        return `Non formateable limit: ${JSON.stringify(limit)}`;
+    }
 }
 // ****************************** END AUX FUNCTIONS ****************************** //
 
