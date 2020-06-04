@@ -1,0 +1,49 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/fullcontact/fullcontact.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+metrics:
+  matches:
+    type: integer
+    format: int64
+    description: Number of matches
+pricing:
+  currency: USD
+plans:
+  Free:
+    pricing:
+      cost: 0
+      period: monthly            
+    rates:
+      /v3/person.enrich:
+        get:
+          matches:
+            - max: 100
+              period: secondly
+              cost:
+                operation:
+                  volume: 1000
+                  cost: 0.1
+  Premium:
+    pricing:
+      cost: 10
+      period: monthly            
+    rates:
+      /v3/person.enrich:
+        get:
+          matches:
+            - max: 100
+              period: secondly
+    quotas:
+      /v3/person.enrich:
+        get:
+          matches:
+            - max: 15000
+              period: monthly
+              cost:
+                overage: 
+                  excess: 1
+                  cost: 0.001
+    

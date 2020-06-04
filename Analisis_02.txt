@@ -1,106 +1,68 @@
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\accuweather.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\accuweather.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\accuweather.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\accuweather.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\aiception.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\accuweather.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\accuweather.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\aiception.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\aiception.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\aiception.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\aiception.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\aiception.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\azuresearch.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\box.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\azuresearch.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\azuresearch.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\box.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L2.3 AMBIGUITY CONFLICT: in  Individual>/files/content>post>requests (10 per 1/second and 4 per 1/second)
-         NOK LIMITATION VALIDITY in Individual>/files/content>post>requests (l0=50000 per 1/day; l1=10 per 1/second; l2=4 per 1/second; ) NOK
-           everyLimitIsValid=true
-           !existsConsistencyConflicts=false
-           !existsAmbiguityConflicts=false
-       NOK PLAN VALIDITY in (Individual) NOK
-         everyLimitationIsValid=false
-         !existsConsistencyConflicts=true
-             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('50000 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('50000 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>delete>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '6 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('6 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('6 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('60 per 1/minute' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '6 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('6 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('6 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('60 per 1/minute' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /search>get>globalRequests ('6 per 1/second' > '60 per 1/minute' AND NOT '0 >= 4.5')
      NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
+       everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\box.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\box.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\clarifai.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\box.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\box.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\clarifai.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\clarifai.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\clarifai.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\cloudsight.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\clarifai.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\clarifai.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\cloudsight.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\cloudsight.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\cloudsight.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\currencylayer.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\cloudsight.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\cloudsight.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\currencylayer.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\currencylayer.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\currencylayer.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dblp.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\currencylayer.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\currencylayer.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dblp.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\dblp.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dblp.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\debitoor.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dblp.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dblp.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\debitoor.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\debitoor.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\debitoor.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\docusign.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\debitoor.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\debitoor.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\docusign.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\docusign.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\docusign.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\docusign.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\docusign.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dropbox.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -221,44 +183,44 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dropbox.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dropbox.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemploPablo.yaml ------
 CHECKING SYNTAX...
-SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml
+SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemploPablo.yaml
   SYNTAX ERROR: (OBJECT_MISSING_REQUIRED_PROPERTY) in path "#/": Missing required property: infrastructure
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml ------
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemploPablo.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\eversign.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\eversign.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\eversign.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\eversign.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\faceplusplus.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\eversign.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\eversign.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\faceplusplus.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\faceplusplus.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\flightstats.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\flightstats.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\flightstats.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\fullcontact.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\fullcontact.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\fullcontact.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\fullcontact.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\fullcontact.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\fullcontact.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\georanker.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -317,9 +279,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\georanker.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\georanker.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\github.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -333,21 +295,21 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\github.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\github.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\goupdocs.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\here.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\goupdocs.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\goupdocs.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\here.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\here.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\here.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\here.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\here.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\htm2pdf.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -355,9 +317,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limitations.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\htm2pdf.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\htm2pdf.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limitations.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -368,9 +330,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limitations.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limitations.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limits.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limitations.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limitations.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limits.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -385,15 +347,15 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limits.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limits.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limits.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limits.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\lob.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\lob.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\lob.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mailchimp.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -404,21 +366,21 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mailchimp.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mailchimp.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mailgun.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mailgun.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mailgun.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mapillary.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mapillary.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\mapillary.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\meaningcloud.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -430,45 +392,45 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\moz.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\meaningcloud.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\meaningcloud.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\moz.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\moz.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\moz.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\nutritionix.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\moz.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\moz.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\nutritionix.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\nutritionix.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\nutritionix.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\openweathermap.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\nutritionix.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\nutritionix.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\openweathermap.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\openweathermap.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\openweathermap.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\quickblox.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\openweathermap.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\openweathermap.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\quickblox.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\quickblox.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\quickblox.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\scopus.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\quickblox.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\quickblox.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\scopus.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\scopus.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\scopus.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\scopus.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\scopus.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\shodan.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\shodan.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\shodan.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\snapcx.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -478,15 +440,15 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\snapcx.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\snapcx.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\soundcloud.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\soundcloud.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\soundcloud.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\sportradar.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -538,77 +500,77 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\sportradar.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\sportradar.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\surveymonkey.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\tussam.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\surveymonkey.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\surveymonkey.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\tussam.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\tussam.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\tussam.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\twilio.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\tussam.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\tussam.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\twilio.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\twilio.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\twilio.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\yummly.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\twilio.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\twilio.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\yummly.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\yummly.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\yummly.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\yummly.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\yummly.yaml ------
 
 VALID FILES: [
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\accuweather.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\aiception.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\azuresearch.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\clarifai.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\cloudsight.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\currencylayer.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\dblp.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\debitoor.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\docusign.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\emaillabs.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\eversign.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\faceplusplus.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\flightstats.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\fullcontact.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\goupdocs.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\here.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\lob.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailgun.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mapillary.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\moz.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\nutritionix.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\openweathermap.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\quickblox.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\scopus.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\shodan.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\soundcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\surveymonkey.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\tussam.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\twilio.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\yummly.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\accuweather.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\aiception.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\azuresearch.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\clarifai.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\cloudsight.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\currencylayer.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\dblp.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\debitoor.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\docusign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\emaillabs.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\eversign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\faceplusplus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\flightstats.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\fullcontact.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\goupdocs.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\here.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\lob.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\mailgun.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\mapillary.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\moz.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\nutritionix.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\openweathermap.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\quickblox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\scopus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\shodan.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\soundcloud.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\surveymonkey.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\tussam.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\twilio.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\yummly.yaml"
 ]
 
 INVALID FILES: [
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\box.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\dropbox.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\ejemploPablo.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\georanker.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\github.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\htm2pdf.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\inconsistent-limitations.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\inconsistent-limits.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailchimp.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\meaningcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\snapcx.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\sportradar.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\box.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\dropbox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\ejemploPablo.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\georanker.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\github.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\htm2pdf.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limitations.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limits.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\mailchimp.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\meaningcloud.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\snapcx.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\sportradar.yaml"
 ]

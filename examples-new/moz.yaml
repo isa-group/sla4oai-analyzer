@@ -1,0 +1,352 @@
+context:
+  id: plans
+  sla: '1.0'
+  type: plans
+  api: >-
+    http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/moz/moz.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
+  provider: ISA Group
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  rows:
+    type: integer
+    format: int64
+    description: Data rows
+    resolution: consumption
+  requests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regarding the resource'
+    resolution: consumption
+  globalRequests:
+    type: integer
+    format: int64
+    description: 'Number of requests, regardless the resource'
+    resolution: consumption
+availability: '2009-10-09T21:30:00.00Z'
+plans:
+  EntryLevel:
+    pricing:
+      cost: 250 # + Overage de 20 por cada 10000 a partir de 12
+      currency: USD
+      period:
+        amount: 1
+        unit: month
+    quotas:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 12
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 20
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 12
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 20
+      /Links:
+        get:
+          globalRequests:
+            - max: 12
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 20
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 12
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 20
+    rates:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /Links:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+  LowVolume:
+    pricing:
+      cost: 500 # + Overage de 10 por cada 10000 a partir de 50
+      currency: USD
+      period:
+        amount: 1
+        unit: month
+    quotas:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 50
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 10
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 50
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 10
+      /Links:
+        get:
+          globalRequests:
+            - max: 50
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 10
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 50
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 10
+    rates:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /Links:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+  MidVolume:
+    pricing:
+      cost: 2000 # + Overage de 5 por cada 10000 a partir de 4000
+      currency: USD
+      period:
+        amount: 1
+        unit: month
+    quotas:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 4000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 5
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 4000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 5
+      /Links:
+        get:
+          globalRequests:
+            - max: 4000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 5
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 4000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 5
+    rates:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /Links:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+  MaxVolume:
+    pricing:
+      cost: 5000 # + Overage de 3.5 por cada 10000 a partir de 40000
+      currency: USD
+      period:
+        amount: 1
+        unit: month
+    quotas:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 40000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 3.5
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 40000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 3.5
+      /Links:
+        get:
+          globalRequests:
+            - max: 40000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 3.5
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 40000
+              period: 
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 10000
+                  cost: 3.5
+    rates:
+      /URLMetrics:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /TopPages:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /Links:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
+      /AnchorText:
+        get:
+          globalRequests:
+            - max: 200
+              period: 
+                amount: 1
+                unit: second
