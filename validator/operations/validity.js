@@ -62,7 +62,7 @@ function isValid_plan(plan, planName) {
             for (let [limitationsPathName, limitationsPath] of Object.entries(planLimitations)) {
                 for (let [limitationsPathMethodName, limitationsPathMethod] of Object.entries(limitationsPath)) {
                     for (let [limitationsPathMethodMetricName, limitationsPathMethodMetric] of Object.entries(limitationsPathMethod)) {
-                        everyLimitationIsValid = everyLimitationIsValid && isValid_limitation(limitationsPathMethodMetric, planName, limitationsPathName, limitationsPathMethodName, limitationsPathMethodMetricName)
+                        everyLimitationIsValid = everyLimitationIsValid && isValid_limitation(limitationsPathMethodMetric, planName, limitationsPathName, limitationsPathMethodName, limitationsPathMethodMetricName);
                     }
                 }
             }
@@ -124,7 +124,7 @@ function isValid_limit(limit, planName, path, method, metric) {
 
     logger.validation(`         CHECKING LIMIT VALIDITY (${printLimit(limit)})...`);
     // [P1 L1.1] Its {threshold} is a natural number.
-    const isNaturalNumber = limit.max >= 0;
+    const isNaturalNumber = limit.max >= 0 || limit.max === "unlimited";
     if (!isNaturalNumber) {
         logger.validationWarning(`             !isNaturalNumber in  ${planName}>${path}>${method}>${metric}`);
     }
@@ -176,8 +176,8 @@ function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, m
     let N1 = normalizedPeriod(limit1.period);
     let N2 = normalizedPeriod(limit2.period);
 
-    let PU1 = PU(limit1);
-    let PU2 = PU(limit2);
+    let PU1 = PU(limit1, N1);
+    let PU2 = PU(limit2, N2);
 
     let existsInconsistency;
 
@@ -193,6 +193,7 @@ function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, m
         existsInconsistency = PU1 < PU2;
     }
 
+    let aHasMorePUThanB = (limit1.max / N1 > limit2.max / N2);
 
     // Merge conditions
     const condition = existsInconsistency;
@@ -250,38 +251,54 @@ function existsPlanConsistencyConflict(plan, planName) {
     let existsConsistencyConflict = false;
     let existsConsistencyRelatedMetricsConflict = false;
 
-    for (let [planLimitationsName, planLimitations] of Object.entries(plan)) {
-        if (planLimitationsName == "quotas" || planLimitationsName == "rates") {
-            for (let [limitationsPathName, limitationsPath] of Object.entries(planLimitations)) {
-                for (let [limitationsPathMethodName, limitationsPathMethod] of Object.entries(limitationsPath)) {
-                    for (let [limitationsPathMethodMetricName, limitationsPathMethodMetric] of Object.entries(limitationsPathMethod)) {
+    for (let [planLimitationsName1, planLimitations1] of Object.entries(plan)) {
+        if (planLimitationsName1 == "quotas" || planLimitationsName1 == "rates") {
+            for (let [limitationsPathName1, limitationsPath1] of Object.entries(planLimitations1)) {
+                for (let [limitationsPathMethodName1, limitationsPathMethod1] of Object.entries(limitationsPath1)) {
+                    for (let [limitationsPathMethodMetricName1, limitationsPathMethodMetric1] of Object.entries(limitationsPathMethod1)) {
+                        for (let [limit1Name, limit1] of Object.entries(limitationsPathMethodMetric1)) {
+                            for (let [planLimitationsName2, planLimitations2] of Object.entries(plan)) {
+                                if (planLimitationsName2 == "quotas" || planLimitationsName2 == "rates") {
+                                    for (let [limitationsPathName2, limitationsPath2] of Object.entries(planLimitations2)) {
+                                        for (let [limitationsPathMethodName2, limitationsPathMethod2] of Object.entries(limitationsPath2)) {
+                                            for (let [limitationsPathMethodMetricName2, limitationsPathMethodMetric2] of Object.entries(limitationsPathMethod2)) {
+                                                for (let [limit2Name, limit2] of Object.entries(limitationsPathMethodMetric2)) {
+                                                    if (planLimitationsName1 === planLimitationsName2 && limitationsPathName1 === limitationsPathName2 && limitationsPathMethodName1 === limitationsPathMethodName2 && limitationsPathMethodMetricName1 === limitationsPathMethodMetricName2) {
+                                                        continue;
+                                                    }
 
-                        for (let i = 0; i < limitationsPathMethodMetric.length; i++) {
-                            let limit1 = limitationsPathMethodMetric[i];
-                            for (let j = 0; j < limitationsPathMethodMetric.length; j++) {
-                                if (i == j) continue;
-                                let limit2 = limitationsPathMethodMetric[j];
-                                existsConsistencyConflict = existsConsistencyConflict || existsLimitsConsistencyConflict_check(limit1, limit2, planName, limitationsPathName, limitationsPathMethodName, limitationsPathMethodMetricName);
-                                if (existsConsistencyConflict) {
-                                    logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT in ${planName}>${planLimitationsName}>${limitationsPathName}>${limitationsPathMethodName}>${limitationsPathMethodMetricName} (${printLimit(limit1)} AND ${printLimit(limit2)})`);
-                                }
-                            }
-                            //TODO: 
-                            if (limitationsPathMethodMetric.relatedMetrics) {
-                                logger.error("Not implemented yet");
+                                                    // for (let i = 0; i < limitationsPathMethodMetric.length; i++) {
+                                                    //     let limit1 = limitationsPathMethodMetric[i];
+                                                    //     for (let j = 0; j < limitationsPathMethodMetric.length; j++) {
+                                                    //         if (i == j) continue;
+                                                    //         let limit2 = limitationsPathMethodMetric[j];
+                                                    existsConsistencyConflict = existsConsistencyConflict || existsLimitsConsistencyConflict_check(limit1, limit2, planName, limitationsPathName2, limitationsPathMethodName2, limitationsPathMethodMetricName2);
+                                                    if (existsConsistencyConflict) {
+                                                        logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT in ${planName}>${planLimitationsName1}>${limitationsPathName1}>${limitationsPathMethodName1}>${limitationsPathMethodMetricName1} (${printLimit(limit1)}) AND ${planName}>${planLimitationsName2}>${limitationsPathName2}>${limitationsPathMethodName2}>${limitationsPathMethodMetricName2}  (${printLimit(limit2)})`);
+                                                    }
+                                                    //     }
+                                                    //TODO: 
+                                                    if (limitationsPathMethodMetric2.relatedMetrics) {
+                                                        logger.error("Not implemented yet");
+                                                        //     for (let entry of limitationsPathMethodMetric2.relatedMetrics.entries()) {
+                                                        //         logger.info(entry[0], entry[1]);
+                                                        //         let cuerrentMetric1RelatedMetric = entry[0];
+                                                        //         let cuerrentMetric1RelatedMetricConversionFactor = entry[1];
 
-                                for (let entry of limitationsPathMethodMetric.relatedMetrics.entries()) {
-                                    logger.info(entry[0], entry[1]);
-                                    let cuerrentMetric1RelatedMetric = entry[0];
-                                    let cuerrentMetric1RelatedMetricConversionFactor = entry[1];
-
-                                    for (let j = 0; j < planLimitations.length; j++) {
-                                        let currentLimitation2 = planLimitations[i];
-                                        let currentMetric2 = currentLimitation2.metric;
-                                        if (i == j || limitationsPathMethodMetricName == currentMetric2.name || cuerrentMetric1RelatedMetric.name != currentMetric2.name) continue;
-                                        existsConsistencyRelatedMetricsConflict = existsConsistencyRelatedMetricsConflict || existsConsistencyConflict_check(limitationsPathMethodMetricName, currentLimitation2, cuerrentMetric1RelatedMetricConversionFactor);
-                                        if (existsConsistencyRelatedMetricsConflict) {
-                                            logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT in ${planName}>${planLimitationsName}>${limitationsPathName}>${limitationsPathMethodName}(${printLimit(limit1)} AND ${printLimit(cuerrentMetric1RelatedMetric.name)})`);
+                                                        //         for (let j = 0; j < planLimitations2.length; j++) {
+                                                        //             let currentLimitation2 = planLimitations[i];
+                                                        //             let currentMetric2 = currentLimitation2.metric;
+                                                        //             if (i == j || limitationsPathMethodMetricName == currentMetric2.name || cuerrentMetric1RelatedMetric.name != currentMetric2.name) continue;
+                                                        //             existsConsistencyRelatedMetricsConflict = existsConsistencyRelatedMetricsConflict || existsConsistencyConflict_check(limitationsPathMethodMetricName, currentLimitation2, cuerrentMetric1RelatedMetricConversionFactor);
+                                                        //             if (existsConsistencyRelatedMetricsConflict) {
+                                                        //                 logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT REL-METRICS in ${planName}>${planLimitationsName}>${limitationsPathName}>${limitationsPathMethodName}(${printLimit(limit1)} AND ${printLimit(cuerrentMetric1RelatedMetric.name)})`);
+                                                        //             }
+                                                        //         }
+                                                        //     }
+                                                        // }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -355,11 +372,12 @@ function existsCostConsistencyConflict(plan1, plan2) {
                                                                 let N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
                                                                 let N2 = normalizedPeriod(limitations2PathMethodMetricLimit.period);
 
-                                                                let PU1 = PU(limitations1PathMethodMetricLimit);
-                                                                let PU2 = PU(limitations2PathMethodMetricLimit);
+                                                                let PU1 = PU(limitations1PathMethodMetricLimit, N1);
+                                                                let PU2 = PU(limitations2PathMethodMetricLimit, N2);
 
-                                                                let aHasMorePUThanB = (limitations1PathMethodMetricLimit.max / N1 > limitations2PathMethodMetricLimit.max / N2);
-                                                                let aIsMoreExpensiveThanB = (plan1.pricing.cost >= plan2.pricing.cost);
+                                                                let aHasMorePUThanB = PU1 > PU2;
+                                                                let aIsMoreExpensiveThanB = plan1.pricing.cost >= plan2.pricing.cost;
+
                                                                 existsCostConsistencyConflict = existsCostConsistencyConflict || aHasMorePUThanB && !aIsMoreExpensiveThanB; //FIXME: expand to multiple limits
                                                                 if (existsCostConsistencyConflict) {
                                                                     logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in ${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
@@ -471,8 +489,15 @@ function normalizedPeriod(p) {
 }
 
 // ercentage of Usage
-function PU(limit) {
-    return limit.max / capacity.max;
+function PU(limit, normalizedPeriod) {
+    if (normalizedPeriod) {
+        return limit.max / normalizedPeriod;
+    } else if (capacity.max) {
+        return limit.max / capacity.max;
+    } else {
+        logger.error("Cannot calculate PU, missing capacity or normalized period");
+        return null;
+    }
 }
 
 function printLimitatation(limitation) {
