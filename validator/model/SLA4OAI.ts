@@ -447,9 +447,9 @@ class Limit {
     /**
     * Max value that can be accepted.
     * @minimum 0
-    * @TJS-examples ["0","5000"]
+    * @TJS-examples ["0","5000","unlimited"]
     */
-    max: number
+    max: number | "unlimited"
 
     /**
     * The period of the limit.

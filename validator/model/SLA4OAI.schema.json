@@ -235,14 +235,25 @@
                     "title": "cost"
                 },
                 "max": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "unlimited"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
                     "description": "Max value that can be accepted.",
                     "examples": [
                         "0",
-                        "5000"
+                        "5000",
+                        "unlimited"
                     ],
                     "minimum": 0,
-                    "title": "max",
-                    "type": "number"
+                    "title": "max"
                 },
                 "period": {
                     "$ref": "#/definitions/Period",

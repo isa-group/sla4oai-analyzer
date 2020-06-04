@@ -20,7 +20,7 @@ The allowed limits of the request.
 | Property          | Type          | Required | Nullable       | Defined by                                                                                                         |
 | :---------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------- |
 | [cost](#cost)     | Merged        | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-cost.md "SLA4OAI#/definitions/Limit/properties/cost")     |
-| [max](#max)       | `number`      | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-max.md "SLA4OAI#/definitions/Limit/properties/max")       |
+| [max](#max)       | Merged        | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-max.md "SLA4OAI#/definitions/Limit/properties/max")       |
 | [period](#period) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-period.md "SLA4OAI#/definitions/Limit/properties/period") |
 | [scope](#scope)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-scope.md "SLA4OAI#/definitions/Limit/properties/scope")   |
 
@@ -63,13 +63,18 @@ Max value that can be accepted.
 `max`
 
 -   is required
--   Type: `number` ([max](sla4oai-definitions-limit-properties-max.md))
+-   Type: merged type ([max](sla4oai-definitions-limit-properties-max.md))
 -   cannot be null
 -   defined in: [SLA4OAI schema](sla4oai-definitions-limit-properties-max.md "SLA4OAI#/definitions/Limit/properties/max")
 
 ### max Type
 
-`number` ([max](sla4oai-definitions-limit-properties-max.md))
+merged type ([max](sla4oai-definitions-limit-properties-max.md))
+
+any of
+
+-   [SLA4OAI string in SLA4OAI](sla4oai-definitions-limit-properties-max-anyof-0.md "check type definition")
+-   [SLA4OAI number in SLA4OAI](sla4oai-definitions-limit-properties-max-anyof-1.md "check type definition")
 
 ### max Constraints
 
@@ -83,6 +88,10 @@ Max value that can be accepted.
 
 ```json
 "5000"
+```
+
+```json
+"unlimited"
 ```
 
 ## period
