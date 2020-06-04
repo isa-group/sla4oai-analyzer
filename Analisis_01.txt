@@ -20,11 +20,10 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.y
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             existsAmbiguityConflict_check in  Individual>/files/content>post>requests
-             L2.3 AMBIGUITY CONFLICT: (10 per 1/second and 4 per 1/second)
+             L2.3 AMBIGUITY CONFLICT: in  Individual>/files/content>post>requests (10 per 1/second and 4 per 1/second)
          NOK LIMITATION VALIDITY in Individual>/files/content>post>requests (l0=50000 per 1/day; l1=10 per 1/second; l2=4 per 1/second; ) NOK
            everyLimitIsValid=true
-           !existsConsistencyConflicts=true
+           !existsConsistencyConflicts=false
            !existsAmbiguityConflicts=false
        NOK PLAN VALIDITY in (Individual) NOK
          everyLimitationIsValid=false
@@ -298,29 +297,10 @@ CHECKING VALIDITY...
        !existsCostConsistencyConflicts=false
 VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploInconsistente.yaml ------
-CHECKING SYNTAX...
-SYNTAX OK
-CHECKING VALIDITY...
-             existsAmbiguityConflict_check in  Plan1>/method1>get>requests
-             L2.3 AMBIGUITY CONFLICT: (60 per 60/second and 1 per 1/second)
-         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0=60 per 60/second; l1=1 per 1/second; ) NOK
-           everyLimitIsValid=true
-           !existsConsistencyConflicts=true
-           !existsAmbiguityConflicts=false
-       NOK PLAN VALIDITY in (Plan1) NOK
-         everyLimitationIsValid=false
-         !existsConsistencyConflicts=true
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
-       !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploInconsistente.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploInconsistente.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml ------
 CHECKING SYNTAX...
-SYNTAX OK
-CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml
+SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml
+  SYNTAX ERROR: (OBJECT_MISSING_REQUIRED_PROPERTY) in path "#/": Missing required property: infrastructure
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml ------
 CHECKING SYNTAX...
@@ -468,7 +448,17 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml
+         NOK LIMITATION VALIDITY in Free>/legacy/issues/search/{owner}/{repository}/{state}/{keyword}>get>authenticatedRequests (l0=5000 per 1/hour; l1=30 per 1/minute; ) NOK
+           everyLimitIsValid=true
+           !existsConsistencyConflicts=false
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Free) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml ------
 CHECKING SYNTAX...
@@ -492,6 +482,37 @@ CHECKING VALIDITY...
        !existsCostConsistencyConflicts=false
 VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limitations.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+                L3.2 CONSISTENCY CONFLICT in Plan1>quotas>/method1>get>requests (60 per 60/second) AND Plan1>rates>/method1>get>requests (1 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Plan1>rates>/method1>get>requests (1 per 1/second) AND Plan1>quotas>/method1>get>requests (60 per 60/second)
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=true
+         !existsConsistencyConflicts=false
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limitations.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limitations.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limits.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests (60 per 60/second and 1 per 1/second)
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0=60 per 60/second; l1=1 per 1/second; ) NOK
+           everyLimitIsValid=true
+           !existsConsistencyConflicts=false
+           !existsAmbiguityConflicts=false
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limits.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsistent-limits.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
@@ -502,7 +523,15 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml
+                L3.2 CONSISTENCY CONFLICT in Free>quotas>/templates/{template_id}/default-content>get>emailPerMonth (1200000 per 1/month) AND Free>rates>/templates/{template_id}/default-content>get>emailPerMonth (190000 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Free>rates>/templates/{template_id}/default-content>get>emailPerMonth (190000 per 1/month) AND Free>quotas>/templates/{template_id}/default-content>get>emailPerMonth (1200000 per 1/month)
+       NOK PLAN VALIDITY in (Free) NOK
+         everyLimitationIsValid=true
+         !existsConsistencyConflicts=false
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml ------
 CHECKING SYNTAX...
@@ -520,6 +549,11 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yam
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
+                L3.2 CONSISTENCY CONFLICT in Free>quotas>/summarization-1.0>get>requests (20000 per 1/second) AND Free>rates>/summarization-1.0>get>requests (2 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Free>rates>/summarization-1.0>get>requests (2 per 1/second) AND Free>quotas>/summarization-1.0>get>requests (20000 per 1/second)
+       NOK PLAN VALIDITY in (Free) NOK
+         everyLimitationIsValid=true
+         !existsConsistencyConflicts=false
              L4.2 COST CONSISTENCY CONFLICT in /summarization-1.0>get>requests ('20000 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
              L4.2 COST CONSISTENCY CONFLICT in /lang-2.0>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
              L4.2 COST CONSISTENCY CONFLICT in /sentiment-2.1>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
@@ -537,7 +571,7 @@ CHECKING VALIDITY...
              L4.2 COST CONSISTENCY CONFLICT in /topics-2.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
              L4.2 COST CONSISTENCY CONFLICT in /deepcategorization-1.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
      NOK PRICING VALIDITY NOK
-       everyPlanIsValid=true
+       everyPlanIsValid=false
        !existsCostConsistencyConflicts=false
 VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml ------
@@ -599,7 +633,119 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.ya
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NFL>get>requests (750 per 1/month) AND Basic>rates>/NFL>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/MLB>get>requests (3000 per 1/month) AND Basic>rates>/MLB>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NBA>get>requests (3500 per 1/month) AND Basic>rates>/NBA>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NHL>get>requests (4500 per 1/month) AND Basic>rates>/NHL>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NCAA-FB>get>requests (1850 per 1/month) AND Basic>rates>/NCAA-FB>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NCAA-MB>get>requests (7500 per 1/month) AND Basic>rates>/NCAA-MB>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Golf>get>requests (600 per 1/month) AND Basic>rates>/Golf>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NASCAR>get>requests (125 per 1/month) AND Basic>rates>/NASCAR>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Soccer-Europe>get>requests (3500 per 1/month) AND Basic>rates>/Soccer-Europe>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Soccer-Americas>get>requests (4000 per 1/month) AND Basic>rates>/Soccer-Americas>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Soccer-International>get>requests (3500 per 1/month) AND Basic>rates>/Soccer-International>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Soccer-Asia>get>requests (2500 per 1/month) AND Basic>rates>/Soccer-Asia>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Soccer-Other>get>requests (3500 per 1/month) AND Basic>rates>/Soccer-Other>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NCAA-WB>get>requests (4500 per 1/month) AND Basic>rates>/NCAA-WB>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NCAA-MH>get>requests (3000 per 1/month) AND Basic>rates>/NCAA-MH>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/WNBA>get>requests (1750 per 1/month) AND Basic>rates>/WNBA>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/NBA-G-League>get>requests (0 per 1/month) AND Basic>rates>/NBA-G-League>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Cricket>get>requests (0 per 1/month) AND Basic>rates>/Cricket>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Rugby>get>requests (2500 per 1/month) AND Basic>rates>/Rugby>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Tennis>get>requests (10000 per 1/month) AND Basic>rates>/Tennis>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Counter-Strike:-Global-Offensive>get>requests (1500 per 1/month) AND Basic>rates>/Counter-Strike:-Global-Offensive>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/League-of-Legends>get>requests (1200 per 1/month) AND Basic>rates>/League-of-Legends>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/DOTA2>get>requests (1000 per 1/month) AND Basic>rates>/DOTA2>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Olympics>get>requests (0 per 1/month) AND Basic>rates>/Olympics>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Arena-Football-League>get>requests (0 per 1/month) AND Basic>rates>/Arena-Football-League>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Australian-Football>get>requests (0 per 1/month) AND Basic>rates>/Australian-Football>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Badminton>get>requests (0 per 1/month) AND Basic>rates>/Badminton>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Bandy>get>requests (0 per 1/month) AND Basic>rates>/Bandy>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Beach-Soccer>get>requests (0 per 1/month) AND Basic>rates>/Beach-Soccer>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Beach-Volleyball>get>requests (0 per 1/month) AND Basic>rates>/Beach-Volleyball>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Curling>get>requests (0 per 1/month) AND Basic>rates>/Curling>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Cycling>get>requests (0 per 1/month) AND Basic>rates>/Cycling>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Darts>get>requests (0 per 1/month) AND Basic>rates>/Darts>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Field-Hockey>get>requests (0 per 1/month) AND Basic>rates>/Field-Hockey>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Floorball>get>requests (0 per 1/month) AND Basic>rates>/Floorball>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Formula-1>get>requests (0 per 1/month) AND Basic>rates>/Formula-1>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Formula-E>get>requests (0 per 1/month) AND Basic>rates>/Formula-E>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Futsal>get>requests (0 per 1/month) AND Basic>rates>/Futsal>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Global-American-Football>get>requests (0 per 1/month) AND Basic>rates>/Global-American-Football>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Global-Baseball>get>requests (0 per 1/month) AND Basic>rates>/Global-Baseball>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Global-Basketball>get>requests (0 per 1/month) AND Basic>rates>/Global-Basketball>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Global-Ice-Hockey>get>requests (0 per 1/month) AND Basic>rates>/Global-Ice-Hockey>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Handball>get>requests (0 per 1/month) AND Basic>rates>/Handball>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Indoor-Volleyball>get>requests (0 per 1/month) AND Basic>rates>/Indoor-Volleyball>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/IndyCar>get>requests (0 per 1/month) AND Basic>rates>/IndyCar>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/MotoGP>get>requests (0 per 1/month) AND Basic>rates>/MotoGP>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Motorsports>get>requests (0 per 1/month) AND Basic>rates>/Motorsports>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Odds>get>requests (0 per 1/month) AND Basic>rates>/Odds>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Pesapallo>get>requests (0 per 1/month) AND Basic>rates>/Pesapallo>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Snooker>get>requests (0 per 1/month) AND Basic>rates>/Snooker>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Squash>get>requests (0 per 1/month) AND Basic>rates>/Squash>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/UFC>get>requests (0 per 1/month) AND Basic>rates>/UFC>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>quotas>/Waterpolo>get>requests (0 per 1/month) AND Basic>rates>/Waterpolo>get>requests (0 per 1/second)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NFL>get>requests (0 per 1/second) AND Basic>quotas>/NFL>get>requests (750 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/MLB>get>requests (0 per 1/second) AND Basic>quotas>/MLB>get>requests (3000 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NBA>get>requests (0 per 1/second) AND Basic>quotas>/NBA>get>requests (3500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NHL>get>requests (0 per 1/second) AND Basic>quotas>/NHL>get>requests (4500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NCAA-FB>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-FB>get>requests (1850 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NCAA-MB>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-MB>get>requests (7500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Golf>get>requests (0 per 1/second) AND Basic>quotas>/Golf>get>requests (600 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NASCAR>get>requests (0 per 1/second) AND Basic>quotas>/NASCAR>get>requests (125 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Soccer-Europe>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Europe>get>requests (3500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Soccer-Americas>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Americas>get>requests (4000 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Soccer-International>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-International>get>requests (3500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Soccer-Asia>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Asia>get>requests (2500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Soccer-Other>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Other>get>requests (3500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NCAA-WB>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-WB>get>requests (4500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NCAA-MH>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-MH>get>requests (3000 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/WNBA>get>requests (0 per 1/second) AND Basic>quotas>/WNBA>get>requests (1750 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/NBA-G-League>get>requests (0 per 1/second) AND Basic>quotas>/NBA-G-League>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Cricket>get>requests (0 per 1/second) AND Basic>quotas>/Cricket>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Rugby>get>requests (0 per 1/second) AND Basic>quotas>/Rugby>get>requests (2500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Tennis>get>requests (0 per 1/second) AND Basic>quotas>/Tennis>get>requests (10000 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Counter-Strike:-Global-Offensive>get>requests (0 per 1/second) AND Basic>quotas>/Counter-Strike:-Global-Offensive>get>requests (1500 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/League-of-Legends>get>requests (0 per 1/second) AND Basic>quotas>/League-of-Legends>get>requests (1200 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/DOTA2>get>requests (0 per 1/second) AND Basic>quotas>/DOTA2>get>requests (1000 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Olympics>get>requests (0 per 1/second) AND Basic>quotas>/Olympics>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Arena-Football-League>get>requests (0 per 1/second) AND Basic>quotas>/Arena-Football-League>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Australian-Football>get>requests (0 per 1/second) AND Basic>quotas>/Australian-Football>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Badminton>get>requests (0 per 1/second) AND Basic>quotas>/Badminton>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Bandy>get>requests (0 per 1/second) AND Basic>quotas>/Bandy>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Beach-Soccer>get>requests (0 per 1/second) AND Basic>quotas>/Beach-Soccer>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Beach-Volleyball>get>requests (0 per 1/second) AND Basic>quotas>/Beach-Volleyball>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Curling>get>requests (0 per 1/second) AND Basic>quotas>/Curling>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Cycling>get>requests (0 per 1/second) AND Basic>quotas>/Cycling>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Darts>get>requests (0 per 1/second) AND Basic>quotas>/Darts>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Field-Hockey>get>requests (0 per 1/second) AND Basic>quotas>/Field-Hockey>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Floorball>get>requests (0 per 1/second) AND Basic>quotas>/Floorball>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Formula-1>get>requests (0 per 1/second) AND Basic>quotas>/Formula-1>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Formula-E>get>requests (0 per 1/second) AND Basic>quotas>/Formula-E>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Futsal>get>requests (0 per 1/second) AND Basic>quotas>/Futsal>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Global-American-Football>get>requests (0 per 1/second) AND Basic>quotas>/Global-American-Football>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Global-Baseball>get>requests (0 per 1/second) AND Basic>quotas>/Global-Baseball>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Global-Basketball>get>requests (0 per 1/second) AND Basic>quotas>/Global-Basketball>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Global-Ice-Hockey>get>requests (0 per 1/second) AND Basic>quotas>/Global-Ice-Hockey>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Handball>get>requests (0 per 1/second) AND Basic>quotas>/Handball>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Indoor-Volleyball>get>requests (0 per 1/second) AND Basic>quotas>/Indoor-Volleyball>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/IndyCar>get>requests (0 per 1/second) AND Basic>quotas>/IndyCar>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/MotoGP>get>requests (0 per 1/second) AND Basic>quotas>/MotoGP>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Motorsports>get>requests (0 per 1/second) AND Basic>quotas>/Motorsports>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Odds>get>requests (0 per 1/second) AND Basic>quotas>/Odds>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Pesapallo>get>requests (0 per 1/second) AND Basic>quotas>/Pesapallo>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Snooker>get>requests (0 per 1/second) AND Basic>quotas>/Snooker>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Squash>get>requests (0 per 1/second) AND Basic>quotas>/Squash>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/UFC>get>requests (0 per 1/second) AND Basic>quotas>/UFC>get>requests (0 per 1/month)
+                L3.2 CONSISTENCY CONFLICT in Basic>rates>/Waterpolo>get>requests (0 per 1/second) AND Basic>quotas>/Waterpolo>get>requests (0 per 1/month)
+       NOK PLAN VALIDITY in (Basic) NOK
+         everyLimitationIsValid=true
+         !existsConsistencyConflicts=false
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml ------
 CHECKING SYNTAX...
@@ -636,17 +782,14 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\dblp.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\debitoor.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\docusign.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\ejemploPablo.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\emaillabs.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\eversign.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\faceplusplus.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\flightstats.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\fullcontact.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\github.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\goupdocs.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\here.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\lob.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailchimp.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailgun.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mapillary.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\moz.yaml",
@@ -656,7 +799,6 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\scopus.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\shodan.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\soundcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\sportradar.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\surveymonkey.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\tussam.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\twilio.yaml",
@@ -666,9 +808,14 @@ VALID FILES: [
 INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\box.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\dropbox.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\ejemploInconsistente.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\ejemploPablo.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\georanker.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\github.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\htm2pdf.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\inconsistent-limitations.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\inconsistent-limits.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailchimp.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\meaningcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\snapcx.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\snapcx.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\sportradar.yaml"
 ]
