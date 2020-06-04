@@ -5,80 +5,46 @@ context:
     api: >-
       http://repo.designer.governify.io:10880/antgamdia/api_modeling_paper/modeling/fullcontact/fullcontact.oai-spec?accessToken=165a1761634db1e9bd304ea6f3ffcf2b
     provider: ISA Group
-infrastructure:
-  supervisor: 'http://supervisor.oai.governify.io/api/v2'
-  monitor: 'http://monitor.oai.governify.io/api/v1'
-metrics:
-  matches:
-    type: integer
-    format: int64
-    description: Number of matches
-pricing:
-  currency: USD
-plans:
+  metrics:
+    matches:
+      type: integer
+      format: int64
+      description: Number of matches
+  pricing:
+    currency:USD
+  plans:
     Free:
       pricing:
         cost: 0
-        period: 
-          amount: 1
-          unit: month           
-      rates:
-        /v3/person.enrich:
-          get:
-            matches:
-              - max: 1
-                period: 
-                  amount: 10
-                  unit: second
-                cost:
-                  operation:
-                    volume: 1000
-                    cost: 0.1
-              - max: 5000
-                period: 
-                  amount: 1
-                  unit: month
-                cost:
-                  operation:
-                    volume: 1000
-                    cost: 0.1
-    Premium:
-      pricing:
-        cost: 10
-        period: 
-          amount: 1
-          unit: month            
+        period: monthly            
       rates:
         /v3/person.enrich:
           get:
             matches:
               - max: 100
-                period: 
-                  amount: 1
-                  unit: second
-              - max: 1000
-                period: 
-                  amount: 1
-                  unit: minute
+                period: secondly
+                cost:
+                    operation:
+                        volume: 1000
+                        cost: 0.1
+    Premium:
+      pricing:
+        cost: 10
+        period: monthly            
+      rates:
+        /v3/person.enrich:
+          get:
+            matches:
+              - max: 100
+                period: secondly
       quotas:
         /v3/person.enrich:
           get:
             matches:
               - max: 15000
-                period: 
-                  amount: 1
-                  unit: month
+                period: monthly
                 cost:
-                  overage: 
-                    excess: 1
-                    cost: 0.001
-    
-              - max: 15000
-                period: 
-                  amount: 10
-                  unit: minute
-                cost:
-                  overage: 
-                    excess: 1
-                    cost: 0.001
+                    overage: 
+                        excess: 1
+                        cost: 0.001
     
