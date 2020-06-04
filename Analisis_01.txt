@@ -1,0 +1,674 @@
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\accuweather.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\accuweather.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\accuweather.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\aiception.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\aiception.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\aiception.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\box.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             existsAmbiguityConflict_check in  Individual>/files/content>post>requests
+             L2.3 AMBIGUITY CONFLICT: (10 per 1/second and 4 per 1/second)
+         NOK LIMITATION VALIDITY in Individual>/files/content>post>requests (l0=50000 per 1/day; l1=10 per 1/second; l2=4 per 1/second; ) NOK
+           everyLimitIsValid=true
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=false
+       NOK PLAN VALIDITY in (Individual) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('4 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>requests ('4 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('50000 per 1/second' > '50000 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('50000 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('50000 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('10 per 1/second' > '50000 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('4 per 1/second' > '50000 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('4 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('4 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>delete>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>delete>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>delete>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>delete>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('50000 per 1/day' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('50000 per 1/day' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('10 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('6 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('6 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('6 per 1/second' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('6 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('60 per 1/minute' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('60 per 1/minute' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('60 per 1/minute' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>get>requests ('60 per 1/minute' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('50000 per 1/day' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('4 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>requests ('4 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('50000 per 1/day' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('4 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>requests ('4 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('50000 per 1/day' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('50000 per 1/day' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('10 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('6 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('6 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('6 per 1/second' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('6 per 1/second' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('60 per 1/minute' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('60 per 1/minute' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('60 per 1/minute' > '6 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('60 per 1/minute' > '60 per 1/minute' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('50000 per 1/day' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('4 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>requests ('4 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('50000 per 1/day' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('50000 per 1/day' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('10 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('10 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('10 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('4 per 1/second' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('4 per 1/second' > '10 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>requests ('4 per 1/second' > '4 per 1/second' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>maxUploadSize ('0.25 per 1/forever' > '5 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/content>post>storage ('10 per 1/forever' > '100 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions>post>requests ('50000 per 1/month' > '50000 per 1/month' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>maxUploadSize ('0.25 per 1/forever' > '5 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}>put>storage ('10 per 1/forever' > '100 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>maxUploadSize ('0.25 per 1/forever' > '5 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/commit>post>storage ('10 per 1/forever' > '100 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/upload_sessions/{SESSION_ID}/parts>get>requests ('50000 per 1/day' > '50000 per 1/day' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>maxUploadSize ('0.25 per 1/forever' > '5 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/content>post>storage ('10 per 1/forever' > '100 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>maxUploadSize ('0.25 per 1/forever' > '5 per 1/forever' AND NOT '0 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /files/{FILE_ID}/upload_sessions>post>storage ('10 per 1/forever' > '100 per 1/forever' AND NOT '0 >= 9')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\box.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\box.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\clarifai.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\clarifai.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\clarifai.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\cloudsight.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\cloudsight.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\cloudsight.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\currencylayer.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\currencylayer.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\currencylayer.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dblp.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\dblp.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dblp.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\debitoor.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\debitoor.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\debitoor.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\docusign.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\docusign.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\docusign.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             L4.2 COST CONSISTENCY CONFLICT in /2/contacts/delete_manual_contacts>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/contacts/delete_manual_contacts_batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/properties/add>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/properties/overwrite>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/properties/remove>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/properties/search>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/properties/search/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/properties/update>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/templates/add_for_user>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/templates/get_for_user>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/templates/list_for_user>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/templates/remove_for_user>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_properties/templates/update_for_user>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_requests/create>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_requests/get>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_requests/list>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/file_requests/update>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/alpha/get_metadata>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/copy_batch/check_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/copy_batch_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/copy_reference/get>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/copy_reference/save>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/copy_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/create_folder_batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/create_folder_batch/check>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/create_folder_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/delete_batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/delete_batch/check>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/delete_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/get_metadata>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/get_temporary_link>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/get_temporary_upload_link>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/list_folder>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/list_folder/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/list_folder/get_latest_cursor>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/list_revisions>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/move_batch/check_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/move_batch_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/move_v2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/permanently_delete>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/properties/add>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/properties/overwrite>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/properties/remove>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/properties/template/get>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/properties/template/list>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/properties/update>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/restore>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/save_url>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/save_url/check_job_status>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/search>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/upload_session/finish_batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/upload_session/finish_batch/check>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/archive>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/create>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/download>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/folder_users/list>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/folder_users/list/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/get_folder_info>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/list>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/list/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/permanently_delete>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/sharing_policy/get>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/sharing_policy/set>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/update>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/users/add>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/users/list>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/users/list/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/paper/docs/users/remove>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/add_file_member>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/add_folder_member>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/change_file_member_access>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/check_job_status>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/check_remove_member_job_status>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/check_share_job_status>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/create_shared_link>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/create_shared_link_with_settings>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/get_file_metadata>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/get_file_metadata/batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/get_folder_metadata>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/get_shared_link_metadata>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/get_shared_links>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_file_members>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_file_members/batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_file_members/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_folder_members>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_folder_members/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_folders>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_folders/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_mountable_folders>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_mountable_folders/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_received_files>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_received_files/continue>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/list_shared_links>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/modify_shared_link_settings>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/mount_folder>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/relinquish_file_membership>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/relinquish_folder_membership>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/remove_file_member>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/remove_file_member_2>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/remove_folder_member>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/revoke_shared_link>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/set_access_inheritance>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/share_folder>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/transfer_folder>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/unmount_folder>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/unshare_file>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/unshare_folder>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/update_file_member>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/update_folder_member>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/sharing/update_folder_policy>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/users/get_account>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/users/get_account_batch>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/users/get_current_account>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/users/get_space_usage>get>requests ('25000 per 1/month' > '1000 per 1/month' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/get_temporary_upload_link>get>storage ('3000 per 1/forever' > '2000 per 1/forever' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/get_temporary_upload_link>get>uploadSize ('350 per 1/forever' > '350 per 1/forever' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/upload_session/finish_batch>get>uploadSize ('350 per 1/forever' > '350 per 1/forever' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/upload_session/finish_batch>get>storage ('3000 per 1/forever' > '2000 per 1/forever' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/upload_session/finish_batch/check>get>uploadSize ('350 per 1/forever' > '350 per 1/forever' AND NOT '13 >= 21.99')
+             L4.2 COST CONSISTENCY CONFLICT in /2/files/upload_session/finish_batch/check>get>storage ('3000 per 1/forever' > '2000 per 1/forever' AND NOT '13 >= 21.99')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=true
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\dropbox.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploInconsistente.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             existsAmbiguityConflict_check in  Plan1>/method1>get>requests
+             L2.3 AMBIGUITY CONFLICT: (60 per 60/second and 1 per 1/second)
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0=60 per 60/second; l1=1 per 1/second; ) NOK
+           everyLimitIsValid=true
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=false
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploInconsistente.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploInconsistente.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\ejemploPablo.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\emaillabs.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\eversign.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\eversign.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\eversign.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\faceplusplus.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\faceplusplus.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\faceplusplus.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\flightstats.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\flightstats.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\flightstats.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\fullcontact.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\fullcontact.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\fullcontact.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/info.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/info.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/info.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/settings.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/settings.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/settings.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/account/settings.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/blognews.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/blognews.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/blognews.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/blognews.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/changelog.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/changelog.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/changelog.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/changelog.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/login.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/login.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/login.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/api/login.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/code.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/code.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/code.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/code.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/list.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/list.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/list.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/country/list.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/code.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/code.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/code.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/code.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/list.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/list.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/list.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/language/list.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/list.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/list.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/list.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/list.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/new.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/new.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/new.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/new.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/monitor/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/advertisers/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/advertisers/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/advertisers/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/advertisers/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/chart/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/chart/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/chart/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/chart/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/citations/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/citations/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/citations/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/citations/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/firstpage/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/firstpage/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/firstpage/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/firstpage/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/heatmap/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/heatmap/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/heatmap/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/heatmap/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/keywordprospecting/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/keywordprospecting/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/keywordprospecting/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/keywordprospecting/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/list.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/list.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/list.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/list.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/new.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/new.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/new.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/new.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/ranktracker/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/ranktracker/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/ranktracker/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/ranktracker/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/report/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/list.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/list.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/list.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/list.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/new.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/new.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/new.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/new.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/upgrade.json>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/upgrade.json>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/upgrade.json>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/upgrade.json>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/{id}>get>keywords ('100 per 1/month' > '500 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/{id}>get>credits ('120000 per 1/month' > '50000 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/{id}>get>results ('100 per 1/month' > '100 per 1/month' AND NOT '99 >= 249')
+             L4.2 COST CONSISTENCY CONFLICT in /v1/user/{id}>get>locations ('100 per 1/month' > '50 per 1/month' AND NOT '99 >= 249')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=true
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\github.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\goupdocs.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\here.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\here.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\here.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             L4.2 COST CONSISTENCY CONFLICT in /urltopdf>get>requests ('100 per 1/month' > '50 per 1/month' AND NOT '0 >= 8.15')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=true
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailchimp.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mailgun.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             L4.2 COST CONSISTENCY CONFLICT in /summarization-1.0>get>requests ('20000 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /lang-2.0>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /sentiment-2.1>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /class-1.1>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /topics-2.0>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /deepcategorization-1.0>get>globalRequests ('20000 per 1/month' > '120000 per 1/month' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /documentstructure-1.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /parser-2.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /reputation-1.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /clustering-1.1>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /summarization-1.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /lang-2.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /sentiment-2.1>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /class-1.1>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /topics-2.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+             L4.2 COST CONSISTENCY CONFLICT in /deepcategorization-1.0>get>requests ('2 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=true
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\meaningcloud.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\moz.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\moz.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\moz.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\nutritionix.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\nutritionix.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\nutritionix.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\openweathermap.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\openweathermap.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\openweathermap.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\quickblox.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\quickblox.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\quickblox.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\scopus.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\scopus.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\scopus.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+             L4.2 COST CONSISTENCY CONFLICT in /avs/v1/validateAddress>get>requests ('500 per 1/day' > '1200 per 1/month' AND NOT '5 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /avs/v1/validateAddress>get>requests ('500 per 1/day' > '120 per 1/day' AND NOT '5 >= 9')
+             L4.2 COST CONSISTENCY CONFLICT in /avs/v1/validateGlobalAddress>get>requests ('500 per 1/day' > '0 per 1/month' AND NOT '5 >= 9')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=true
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\sportradar.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\surveymonkey.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\tussam.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\tussam.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\tussam.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\twilio.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\twilio.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\twilio.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\yummly.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\yummly.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\yummly.yaml ------
+
+VALID FILES: [
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\accuweather.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\aiception.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\azuresearch.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\clarifai.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\cloudsight.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\currencylayer.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\dblp.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\debitoor.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\docusign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\ejemploPablo.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\emaillabs.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\eversign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\faceplusplus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\flightstats.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\fullcontact.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\github.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\goupdocs.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\here.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\lob.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailchimp.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailgun.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mapillary.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\moz.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\nutritionix.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\openweathermap.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\quickblox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\scopus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\shodan.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\soundcloud.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\sportradar.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\surveymonkey.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\tussam.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\twilio.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\yummly.yaml"
+]
+
+INVALID FILES: [
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\box.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\dropbox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\ejemploInconsistente.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\georanker.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\htm2pdf.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\meaningcloud.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\snapcx.yaml"
+]

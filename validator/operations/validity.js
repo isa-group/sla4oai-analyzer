@@ -347,6 +347,9 @@ function existsCostConsistencyConflict(plan1, plan2) {
                                                     // same (path, method, metric)
                                                     if (limitations1PathName === limitations2PathName && limitations1PathMethodName === limitations2PathMethodName && limitations1PathMethodMetricName === limitations2PathMethodMetricName) {
                                                         if (plan1.pricing && plan2.pricing) {
+                                                            // If no cost, cost defaults to 0
+                                                            plan1.pricing.cost = plan1.pricing.cost ?? 0;
+                                                            plan2.pricing.cost = plan2.pricing.cost ?? 0;
                                                             if (!isNaN(plan1.pricing.cost) && !isNaN(plan2.pricing.cost)) {
                                                                 // if PU_1 > PU_2 --> cost1 > cost2
                                                                 let N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
@@ -363,10 +366,10 @@ function existsCostConsistencyConflict(plan1, plan2) {
                                                                 }
                                                                 // if (existsCostConsistencyConflict) break firstLimitationLoop;
                                                             } else {
-                                                                // logger.validation(`Cannot compare pricing in (${plan1} and ${plan2})`);
+                                                                logger.warning(`existsCostConsistencyConflict - Cannot compare NaN pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                             }
                                                         } else { //FIXME: simple cost is the only supported cost so far
-                                                            // logger.warning(`existsCostConsistencyConflict - Cannot compare pricings in (${plan1} and ${plan2})`);
+                                                            // logger.warning(`existsCostConsistencyConflict - Cannot compare pricings in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                         }
                                                     }
                                                 }
@@ -404,7 +407,7 @@ function existsCostConsistencyConflict(plan1, plan2) {
 function normalizedPeriod(p) {
     switch (capacity.period.unit) {
         case "millisecond":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from millisecond to whatever is not supported");
             break;
         case "second":
             switch (p.unit) {
@@ -431,38 +434,38 @@ function normalizedPeriod(p) {
                 case "forever":
                     return Infinity;
                 default:
-                    logger.error("Not supported");
+                    logger.error(`normalizedPeriod - from millisecond to ${p.unit} is not supported`);
                     break;
             }
         case "minute":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from minute to whatever is not supported");
             break;
         case "hour":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from hour to whatever is not supported");
             break;
         case "day":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from day to whatever is not supported");
             break;
         case "week":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from week to whatever is not supported");
             break;
         case "month":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from month to whatever is not supported");
             break;
         case "year":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from year to whatever is not supported");
             break;
         case "decade":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from decade to whatever is not supported");
             break;
         case "century":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from century to whatever is not supported");
             break;
         case "forever":
-            logger.error("Not supported");
+            logger.error("normalizedPeriod - from forever to whatever is not supported");
             break;
         default:
-            logger.error("Not supported");
+            logger.error(`normalizedPeriod - from ${capacity.period.unit} to whatever is not supported`);
             break;
     }
 }
