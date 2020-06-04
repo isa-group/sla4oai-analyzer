@@ -181,19 +181,22 @@ function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, m
 
     let existsInconsistency;
 
-    // inconsistentes si el porcentaje de utilización de la "capacidad de la limitación con periodo más largo" es menor que "el porcentaje de utilización de la capacidad del periodo más corto"
-    if (N1 >= N2) {
-        // logger.debug(`${PU1} => ${PU2}: ${PU1 >= PU2}`);
-        existsInconsistency = PU1 > PU2;
+    if (PU1 !== Infinity && PU2 !== Infinity) {
+        // inconsistentes si el porcentaje de utilización de la "capacidad de la limitación con periodo más largo" es menor que "el porcentaje de utilización de la capacidad del periodo más corto"
+        if (N1 >= N2) {
+            // logger.debug(`${PU1} => ${PU2}: ${PU1 >= PU2}`);
+            existsInconsistency = PU1 > PU2;
 
-    } else if (N1 == N2 && PU1 == PU2) {
-        existsInconsistency = false;
+        } else if (N1 == N2 && PU1 == PU2) {
+            existsInconsistency = false;
+        } else {
+            // logger.debug(`${PU1} < ${PU2}: ${PU1 < PU2}`);
+            existsInconsistency = PU1 < PU2;
+        }
     } else {
-        // logger.debug(`${PU1} < ${PU2}: ${PU1 < PU2}`);
-        existsInconsistency = PU1 < PU2;
+        // logger.debug(`Skipping ${PU1} or ${PU2} due to max=unlimited`);
+        existsInconsistency = false;
     }
-
-    let aHasMorePUThanB = (limit1.max / N1 > limit2.max / N2);
 
     // Merge conditions
     const condition = existsInconsistency;
@@ -236,8 +239,7 @@ function existsAmbiguityConflict_check(limit1, limit2, planName, path, method, m
 
     if (condition) {
         // logger.info("\x1b[31m", `Limit "${limit1.max} per ${limit1.period.amount}/${limit1.period.unit}" and "Limit ${limit2.max} per ${limit2.period.amount}/${limit2.period.unit}" are inconsistent`, "\x1b[0m");
-        logger.validationWarning(`             existsAmbiguityConflict_check in  ${planName}>${path}>${method}>${metric}`);
-        logger.validationWarning(`             L2.3 AMBIGUITY CONFLICT: (${printLimit(limit1)} and ${printLimit(limit2)})`);
+        logger.validationWarning(`             L2.3 AMBIGUITY CONFLICT: in  ${planName}>${path}>${method}>${metric} (${printLimit(limit1)} and ${printLimit(limit2)})`);
     } else {
         // logger.validation(`             L2.3 NO AMBIGUITY CONFLICT (${printLimit(limit1)} and ${printLimit(limit1)})`);
     }
@@ -483,7 +485,7 @@ function normalizedPeriod(p) {
 
 // ercentage of Usage
 function PU(limit, normalizedPeriod) {
-    const limitMax = !isNaN(limit.max) ? limit.max: Infinity;
+    const limitMax = !isNaN(limit.max) ? limit.max : Infinity;
     if (normalizedPeriod) {
         return limitMax / normalizedPeriod;
     } else if (capacity.max) {
