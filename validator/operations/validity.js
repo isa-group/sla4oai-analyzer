@@ -28,7 +28,7 @@ function isValid_pricing(pricing) {
     for (let [plan1Name, plan1] of Object.entries(pricing.plans)) {
         for (let [plan2Name, plan2] of Object.entries(pricing.plans)) {
             if (plan1Name == plan2Name) continue;
-            existsCostConsistencyConflicts = existsCostConsistencyConflicts || existsCostConsistencyConflict(plan1, plan2);
+            existsCostConsistencyConflicts = existsCostConsistencyConflicts || existsCostConsistencyConflict(plan1, plan2, plan1Name, plan2Name, pricing.pricing);
             // if (existsCostConsistencyConflicts) break firstPlanLoop;
         }
     }
@@ -335,7 +335,7 @@ function existsConsistencyConflict_check(limitation1, limitation2, conversionFac
 }
 
 // [P1 L4.2] There are no {cost consistency conflicts} between any pair of its plans
-function existsCostConsistencyConflict(plan1, plan2) {
+function existsCostConsistencyConflict(plan1, plan2, plan1Name, plan2Name, pricing) {
 
     // [P1 L4.2] There are no {cost consistency conflicts} between any pair of its plans, that is, a {limitation} in one plan is less restrictive than the equivalent in another {plan} but the former {plan} is cheaper than the later.
 
@@ -370,21 +370,40 @@ function existsCostConsistencyConflict(plan1, plan2) {
                                                             plan2.pricing.cost = plan2.pricing.cost ?? 0;
                                                             if (!isNaN(plan1.pricing.cost) && !isNaN(plan2.pricing.cost)) {
                                                                 if (limitations1PathMethodMetricLimit.period && limitations2PathMethodMetricLimit.period) {
-                                                                    // if PU_1 > PU_2 --> cost1 > cost2
-                                                                    let N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
-                                                                    let N2 = normalizedPeriod(limitations2PathMethodMetricLimit.period);
 
-                                                                    let PU1 = PU(limitations1PathMethodMetricLimit, N1);
-                                                                    let PU2 = PU(limitations2PathMethodMetricLimit, N2);
-
-                                                                    let aHasMorePUThanB = PU1 > PU2;
-                                                                    let aIsMoreExpensiveThanB = plan1.pricing.cost >= plan2.pricing.cost;
-                                                                    let isCostConsistencyConflict = aHasMorePUThanB && !aIsMoreExpensiveThanB;
-                                                                    if (isCostConsistencyConflict) {
-                                                                        logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in ${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
+                                                                    for (let prop1 in pricing) {
+                                                                        if (pricing.hasOwnProperty(prop1) && !plan1.pricing.hasOwnProperty(prop1)) {
+                                                                            plan1.pricing[prop1] = pricing[prop1];
+                                                                        }
                                                                     }
-                                                                    existsCostConsistencyConflict = existsCostConsistencyConflict || isCostConsistencyConflict; //FIXME: expand to multiple limits
-                                                                    // if (existsCostConsistencyConflict) break firstLimitationLoop;
+                                                                    for (let prop2 in pricing) {
+                                                                        if (pricing.hasOwnProperty(prop2) && !plan2.pricing.hasOwnProperty(prop2)) {
+                                                                            plan2.pricing[prop2] = pricing[prop2];
+                                                                        }
+                                                                    }
+
+                                                                    if (plan1.pricing.period && plan2.pricing.period) {
+
+                                                                        let PL1 = normalizedPeriod(plan1.pricing.period);
+                                                                        let PL2 = normalizedPeriod(plan2.pricing.period);
+
+                                                                        // if PU_1 > PU_2 --> cost1 > cost2
+                                                                        let N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
+                                                                        let N2 = normalizedPeriod(limitations2PathMethodMetricLimit.period);
+
+                                                                        let PU1 = PU(limitations1PathMethodMetricLimit, N1);
+                                                                        let PU2 = PU(limitations2PathMethodMetricLimit, N2);
+
+                                                                        let aHasMorePUThanB = PU1 > PU2;
+                                                                        let aIsMoreExpensiveThanB = (plan1.pricing.cost / PL1) >= (plan2.pricing.cost / PL2);
+                                                                        let isCostConsistencyConflict = aHasMorePUThanB && !aIsMoreExpensiveThanB;
+                                                                        if (isCostConsistencyConflict) {
+                                                                            logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in plan ${plan1Name}|${plan2Name} in >${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
+                                                                        }
+                                                                        existsCostConsistencyConflict = existsCostConsistencyConflict || isCostConsistencyConflict;
+                                                                    } else {
+                                                                        logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings (pricing should exist: global or per plan) cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
+                                                                    }
                                                                 } else {
                                                                     // logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                                 }
