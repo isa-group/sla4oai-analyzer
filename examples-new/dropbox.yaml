@@ -14,11 +14,6 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
   storage:
     type: integer
     format: int64
@@ -26,12 +21,9 @@ metrics:
     resolution: consumption
   uploadSize:
     type: integer
-    format: int64
-    description: Number of uploadSize in GB
-    resolution: consumption
+    description: Number of transfer sizer in GB
 pricing:
-  cost: 0
-  currency: EUR
+  currency: USD
   period:
     amount: 1
     unit: month
@@ -849,17 +841,11 @@ plans:
                 amount: 1
                 unit: forever
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 0.100
       /2/files/upload_session/finish_batch:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 0.100
           storage:
             - max: 2
               period: 
@@ -868,10 +854,7 @@ plans:
       /2/files/upload_session/finish_batch/check:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 0.100
           storage:
             - max: 2
               period: 
@@ -879,7 +862,7 @@ plans:
                 unit: forever
   Plus:
     pricing:
-      cost: 10.99
+      cost: 11.99
     rates:
       /2/contacts/delete_manual_contacts:
         get:
@@ -1683,42 +1666,33 @@ plans:
       /2/files/get_temporary_upload_link:
         get:
           storage:
-            - max: 1000
+            - max: 2000
               period: 
                 amount: 1
                 unit: forever
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 2
       /2/files/upload_session/finish_batch:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 2
           storage:
-            - max: 1000
+            - max: 2000
               period: 
                 amount: 1
                 unit: forever
       /2/files/upload_session/finish_batch/check:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 2
           storage:
-            - max: 1000
+            - max: 2000
               period: 
                 amount: 1
                 unit: forever
   Professional:
     pricing:
-      cost: 21.99
+      cost: 19.99
     rates:
       /2/contacts/delete_manual_contacts:
         get:
@@ -2522,42 +2496,33 @@ plans:
       /2/files/get_temporary_upload_link:
         get:
           storage:
-            - max: 2000
+            - max: 3000
               period: 
                 amount: 1
                 unit: forever
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 100
       /2/files/upload_session/finish_batch:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 100
           storage:
-            - max: 2000
+            - max: 3000
               period: 
                 amount: 1
                 unit: forever
       /2/files/upload_session/finish_batch/check:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 100
           storage:
-            - max: 2000
+            - max: 3000
               period: 
                 amount: 1
                 unit: forever
   Standard:
     pricing:
-      cost: 13
+      cost: 36
     rates:
       /2/contacts/delete_manual_contacts:
         get:
@@ -3361,42 +3326,33 @@ plans:
       /2/files/get_temporary_upload_link:
         get:
           storage:
-            - max: 3000
+            - max: 5000
               period: 
                 amount: 1
                 unit: forever
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 2
       /2/files/upload_session/finish_batch:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 2
           storage:
-            - max: 3000
+            - max: 5000
               period: 
                 amount: 1
                 unit: forever
       /2/files/upload_session/finish_batch/check:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 2
           storage:
-            - max: 3000
+            - max: 5000
               period: 
                 amount: 1
                 unit: forever
   Advanced:
     pricing:
-      cost: 20
+      cost: 54
     rates:
       /2/contacts/delete_manual_contacts:
         get:
@@ -4200,23 +4156,14 @@ plans:
       /2/files/get_temporary_upload_link:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 100
      
       /2/files/upload_session/finish_batch:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 100
       /2/files/upload_session/finish_batch/check:
         get:
           uploadSize:
-            - max: 350
-              period: 
-                amount: 1
-                unit: forever
+            - max: 100
     

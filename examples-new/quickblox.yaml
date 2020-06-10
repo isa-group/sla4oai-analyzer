@@ -14,25 +14,20 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
   activeUsers:
     type: integer
     format: int64
     description: Number of monthly active users
     resolution: consumption
-  chatMessages:
+  storage:
     type: integer
     format: int64
-    description: Number of chat messages
+    description: Number of storage in GB
     resolution: consumption
-  pushNotifications:
+  fileSize:
     type: integer
     format: int64
-    description: Number of push notifications
+    description: Number file size limit in MB
     resolution: consumption
 pricing:
   cost: 0
@@ -43,803 +38,3762 @@ pricing:
 availability: '2009-10-09T21:30:00.00Z'
 configuration: {}
 plans:
-  Starter:
+  Basic:
     pricing:
       cost: 0
     quotas:
-      /users.json:
+     '/account_settings.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/by_email.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/session.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/by_facebook_id.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/login.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/by_full_name.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/{user_id}.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/by_login.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/by_login.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/by_tags.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/by_full_name.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/by_twitter_id.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/by_facebook_id.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      '/users/external/{external_user_id}.json':
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/by_email.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      /users/password/reset.json:
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/by_tags.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
-      '/users/{user_id}.json':
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/external/{external_user_id}.json':
         get:
           activeUsers:
-            - max: 20000
+            - max: 1000
               period:
                 amount: 1
-                unit: month
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/users/password/reset.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/chat/Dialog.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/chat/Dialog/{chat_dialog_id}.json':
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/chat/Dialog/{chat_dialog_id}/notifications.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/chat/Message.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/chat/Message/{chat_message_id}.json':
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/chat/Message/unread.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/blobs.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/qbprod.s3.amazonaws.com':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/blobs/{blob_id}/complete.json':
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/blobs/{blob_id}.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/blobs/{blob_uid}.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/subscriptions.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/subscriptions/{subscription_id}.json':
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/events.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/events/{event_id}.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/class.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/data/{class_name}.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     1158':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/data/{class_name}/{custom_object_record_id}.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/data/{class_name}/by_criteria.json':
+        put:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/data/{class_name}/{custom_object_record_id}/file.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        delete:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/address_book.json':
+        post:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
+     '/address_book/registered_users.json':
+        get:
+          activeUsers:
+            - max: 1000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 0.5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 10
     rates:
-      /chat/Dialog:
+     '/account_settings.json':
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id1}':
+     '/session.json':
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
+        post:
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-      '/chat/Dialog/{id}':
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/login.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/users.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id}/notifications.json':
+     '/users/{user_id}.json':
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
+        put:
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-      /chat/Message:
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/users/by_login.json':
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
-                amount: 1
-                unit: second
-      /chat/Message/unread:
+     '/users/by_full_name.json':
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Message/{message_id}':
+     '/users/by_facebook_id.json':
         get:
-          chatMessages:
-            - max: 20
-              period: 
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 20
-              period: 
+     '/users/by_email.json':
+        get:
+          requests:
+            - max: 80
+              period:
                 amount: 1
                 unit: second
-  Advanced:
+     '/users/by_tags.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/users/external/{external_user_id}.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/users/password/reset.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog/{chat_dialog_id}.json':
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog/{chat_dialog_id}/notifications.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message/{chat_message_id}.json':
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message/unread.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/blobs.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/qbprod.s3.amazonaws.com':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_id}/complete.json':
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_id}.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_uid}.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/subscriptions.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/subscriptions/{subscription_id}.json':
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/events.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/events/{event_id}.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/class.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/{custom_object_record_id}.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/by_criteria.json':
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/multi.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/{custom_object_record_id}/file.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/address_book.json':
+        post:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+     '/address_book/registered_users.json':
+        get:
+          requests:
+            - max: 80
+              period:
+                amount: 1
+                unit: second
+  Startup:
     pricing:
       cost: 49
     quotas:
-      /users.json:
+     '/account_settings.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/by_email.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/session.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/by_facebook_id.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/login.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/by_full_name.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/{user_id}.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/by_login.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/by_login.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/by_tags.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/by_full_name.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/by_twitter_id.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/by_facebook_id.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      '/users/external/{external_user_id}.json':
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/by_email.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      /users/password/reset.json:
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/by_tags.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
-      '/users/{user_id}.json':
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/external/{external_user_id}.json':
         get:
           activeUsers:
-            - max: 35000
+            - max: 10000
               period:
                 amount: 1
-                unit: month
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/users/password/reset.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/chat/Dialog.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/chat/Dialog/{chat_dialog_id}.json':
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/chat/Dialog/{chat_dialog_id}/notifications.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/chat/Message.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/chat/Message/{chat_message_id}.json':
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/chat/Message/unread.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/blobs.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/qbprod.s3.amazonaws.com':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/blobs/{blob_id}/complete.json':
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/blobs/{blob_id}.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/blobs/{blob_uid}.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/subscriptions.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/subscriptions/{subscription_id}.json':
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/events.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/events/{event_id}.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/class.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/data/{class_name}.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/data/{class_name}/{custom_object_record_id}.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/data/{class_name}/by_criteria.json':
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/data/{class_name}/multi.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        put:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/data/{class_name}/{custom_object_record_id}/file.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        delete:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/address_book.json':
+        post:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
+     '/address_book/registered_users.json':
+        get:
+          activeUsers:
+            - max: 10000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 5
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 25
     rates:
-      /chat/Dialog:
+     '/account_settings.json':
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id1}':
+     '/session.json':
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
+        post:
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-      '/chat/Dialog/{id}':
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/login.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/users.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id}/notifications.json':
+     '/users/{user_id}.json':
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
+        put:
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-      /chat/Message:
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/users/by_login.json':
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
-                amount: 1
-                unit: second
-      /chat/Message/unread:
+     '/users/by_full_name.json':
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Message/{message_id}':
+     '/users/by_facebook_id.json':
         get:
-          chatMessages:
-            - max: 35
-              period: 
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 35
-              period: 
+     '/users/by_email.json':
+        get:
+          requests:
+            - max: 120
+              period:
                 amount: 1
                 unit: second
-  Pro:
+     '/users/by_tags.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/users/external/{external_user_id}.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/users/password/reset.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog/{chat_dialog_id}.json':
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog/{chat_dialog_id}/notifications.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message/{chat_message_id}.json':
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message/unread.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/blobs.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/qbprod.s3.amazonaws.com':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_id}/complete.json':
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_id}.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_uid}.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/subscriptions.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/subscriptions/{subscription_id}.json':
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/events.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/events/{event_id}.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/class.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/{custom_object_record_id}.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/by_criteria.json':
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/multi.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/{custom_object_record_id}/file.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/address_book.json':
+        post:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+     '/address_book/registered_users.json':
+        get:
+          requests:
+            - max: 120
+              period:
+                amount: 1
+                unit: second
+  Growth:
     pricing:
       cost: 219
     quotas:
-      /users.json:
+     '/account_settings.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/by_email.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/session.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/by_facebook_id.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/login.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/by_full_name.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/{user_id}.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/by_login.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/by_login.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/by_tags.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/by_full_name.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/by_twitter_id.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/by_facebook_id.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      '/users/external/{external_user_id}.json':
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/by_email.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      /users/password/reset.json:
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/by_tags.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
-      '/users/{user_id}.json':
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/external/{external_user_id}.json':
         get:
           activeUsers:
-            - max: 75000
+            - max: 50000
               period:
                 amount: 1
-                unit: month
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/users/password/reset.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/chat/Dialog.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/chat/Dialog/{chat_dialog_id}.json':
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/chat/Dialog/{chat_dialog_id}/notifications.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/chat/Message.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/chat/Message/{chat_message_id}.json':
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/chat/Message/unread.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/blobs.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/qbprod.s3.amazonaws.com':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/blobs/{blob_id}/complete.json':
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/blobs/{blob_id}.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/blobs/{blob_uid}.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/subscriptions.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/subscriptions/{subscription_id}.json':
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/events.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/events/{event_id}.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/class.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/data/{class_name}.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/data/{class_name}/{custom_object_record_id}.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/data/{class_name}/by_criteria.json':
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/data/{class_name}/multi.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        put:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/data/{class_name}/{custom_object_record_id}/file.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        delete:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/address_book.json':
+        post:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
+     '/address_book/registered_users.json':
+        get:
+          activeUsers:
+            - max: 50000
+              period:
+                amount: 1
+                unit: second
+          storage:
+            - max: 50
+              period:
+                amount: 1
+                unit: forever
+          fileSize:
+            - max: 50
     rates:
-      /chat/Dialog:
+     '/account_settings.json':
         get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id1}':
-        get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id}':
-        get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id}/notifications.json':
-        get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-      /chat/Message:
-        get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-      /chat/Message/unread:
-        get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Message/{message_id}':
-        get:
-          chatMessages:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 50
-              period: 
-                amount: 1
-                unit: second
-  Small:
-    pricing:
-      cost: 599
-    quotas:
-      /users.json:
-        get:
-          activeUsers:
-            - max: 2500000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_email.json:
+                unit: second
+     '/session.json':
         get:
-          activeUsers:
-            - max: 2500000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_facebook_id.json:
-        get:
-          activeUsers:
-            - max: 2500000
+                unit: second
+        post:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_full_name.json:
-        get:
-          activeUsers:
-            - max: 2500000
+                unit: second
+        delete:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_login.json:
-        get:
-          activeUsers:
-            - max: 2500000
+                unit: second
+     '/login.json':
+        post:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_tags.json:
-        get:
-          activeUsers:
-            - max: 2500000
+                unit: second
+        delete:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_twitter_id.json:
-        get:
-          activeUsers:
-            - max: 2500000
+                unit: second
+     '/users.json':
+        post:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      '/users/external/{external_user_id}.json':
+                unit: second
         get:
-          activeUsers:
-            - max: 2500000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/password/reset.json:
+                unit: second
+     '/users/{user_id}.json':
         get:
-          activeUsers:
-            - max: 2500000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      '/users/{user_id}.json':
-        get:
-          activeUsers:
-            - max: 2500000
+                unit: second
+        put:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-    rates:
-      /chat/Dialog:
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
                 unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id1}':
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id}':
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Dialog/{id}/notifications.json':
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-      /chat/Message:
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-      /chat/Message/unread:
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-      '/chat/Message/{message_id}':
-        get:
-          chatMessages:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-          pushNotifications:
-            - max: 200
-              period: 
-                amount: 1
-                unit: second
-  Medium:
-    pricing:
-      cost: 1199
-    quotas:
-      /users.json:
-        get:
-          activeUsers:
-            - max: 5000000
+        delete:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_email.json:
+                unit: second
+     '/users/by_login.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_facebook_id.json:
+                unit: second
+     '/users/by_full_name.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_full_name.json:
+                unit: second
+     '/users/by_facebook_id.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_login.json:
+                unit: second
+     '/users/by_email.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_tags.json:
+                unit: second
+     '/users/by_tags.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/by_twitter_id.json:
+                unit: second
+     '/users/external/{external_user_id}.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      '/users/external/{external_user_id}.json':
-        get:
-          activeUsers:
-            - max: 5000000
+                unit: second
+        delete:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      /users/password/reset.json:
+                unit: second
+     '/users/password/reset.json':
         get:
-          activeUsers:
-            - max: 5000000
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-      '/users/{user_id}.json':
-        get:
-          activeUsers:
-            - max: 5000000
+                unit: second
+     '/chat/Dialog.json':
+        post:
+          requests:
+            - max: 160
               period:
                 amount: 1
-                unit: month
-    rates:
-      /chat/Dialog:
+                unit: second
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+     '/chat/Dialog/{chat_dialog_id}.json':
+        put:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-      '/chat/Dialog/{id1}':
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/chat/Dialog/{chat_dialog_id}/notifications.json':
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+        put:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-      '/chat/Dialog/{id}':
+     '/chat/Message.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+     '/chat/Message/{chat_message_id}.json':
+        put:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-      '/chat/Dialog/{id}/notifications.json':
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/chat/Message/unread.json':
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+     '/blobs.json':
+        post:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-      /chat/Message:
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+     '/qbprod.s3.amazonaws.com':
+        post:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-      /chat/Message/unread:
+     '/blobs/{blob_id}/complete.json':
+        put:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_id}.json':
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+        put:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-      '/chat/Message/{message_id}':
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/blobs/{blob_uid}.json':
         get:
-          chatMessages:
-            - max: 1000
-              period: 
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-          pushNotifications:
-            - max: 1000
-              period: 
+     '/subscriptions.json':
+        post:
+          requests:
+            - max: 160
+              period:
                 amount: 1
                 unit: second
-  Large:
-    pricing:
-      cost: 2399
-    
-    
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/subscriptions/{subscription_id}.json':
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/events.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/events/{event_id}.json':
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/class.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/{custom_object_record_id}.json':
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/by_criteria.json':
+        put:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/multi.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        put:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/data/{class_name}/{custom_object_record_id}/file.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        delete:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/address_book.json':
+        post:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second
+     '/address_book/registered_users.json':
+        get:
+          requests:
+            - max: 160
+              period:
+                amount: 1
+                unit: second

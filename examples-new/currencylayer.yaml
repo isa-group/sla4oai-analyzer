@@ -14,11 +14,7 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
+
 pricing:
   cost: 0
   currency: USD
@@ -31,19 +27,18 @@ plans:
   Free:
     pricing:
       cost: 0
-    
     quotas:
       /api/historical:
         get:
-          globalRequests:
-            - max: 1000
+          requests:
+            - max: 250
               period:
                 amount: 1
                 unit: month
       /api/live:
         get:
-          globalRequests:
-            - max: 1000
+          requests:
+            - max: 250
               period:
                 amount: 1
                 unit: month
@@ -71,26 +66,25 @@ plans:
   Basic:
     pricing:
       cost: 9.99
-    
     quotas:
       /api/historical:
         get:
-          globalRequests:
-            - max: 12000
+          requests:
+            - max: 10000
               period:
                 amount: 1
                 unit: month
       /api/live:
         get:
-          globalRequests:
-            - max: 12000
+          requests:
+            - max: 10000
               period:
                 amount: 1
                 unit: month
       /api/convert:
         get:
-          globalRequests:
-            - max: 12000
+          requests:
+            - max: 10000
               period:
                 amount: 1
                 unit: month
@@ -108,36 +102,35 @@ plans:
               period:
                 amount: 1
                 unit: month
-  Proffesional:
+  Professional:
     pricing:
       cost: 39.99
-    
     quotas:
       /api/historical:
         get:
-          globalRequests:
-            - max: 120000
+          requests:
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       /api/live:
         get:
-          globalRequests:
-            - max: 120000
+          requests:
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       /api/convert:
         get:
-          globalRequests:
-            - max: 120000
+          requests:
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       /api/timeframe:
         get:
-          globalRequests:
-            - max: 120000
+          requests:
+            - max: 100000
               period:
                 amount: 1
                 unit: month
@@ -148,9 +141,42 @@ plans:
               period:
                 amount: 1
                 unit: month
-  Enterprise:
+  Business:
     pricing:
       cost: 79.99
-    
-    
-    guarantees: {}
+    quotas:
+      /api/historical:
+        get:
+          requests:
+            - max: 500000
+              period:
+                amount: 1
+                unit: month
+      /api/live:
+        get:
+          requests:
+            - max: 500000
+              period:
+                amount: 1
+                unit: month
+      /api/convert:
+        get:
+          requests:
+            - max: 500000
+              period:
+                amount: 1
+                unit: month
+      /api/timeframe:
+        get:
+          requests:
+            - max: 500000
+              period:
+                amount: 1
+                unit: month
+      /api/change:
+        get:
+          requests:
+            - max: 500000
+              period:
+                amount: 1
+                unit: month

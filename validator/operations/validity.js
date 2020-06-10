@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable no-fallthrough */
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
@@ -33,6 +34,7 @@ function isValid_pricing(pricing) {
         }
     }
 
+    areMetricValid(pricing);
 
     // Merge conditions
     const condition = everyPlanIsValid && !existsCostConsistencyConflicts;
@@ -405,10 +407,12 @@ function existsCostConsistencyConflict(plan1, plan2, plan1Name, plan2Name, prici
                                                                         logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings (pricing should exist: global or per plan) cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                                     }
                                                                 } else {
+                                                                    continue;
                                                                     // logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                                 }
                                                             } else {
-                                                                logger.warning(`existsCostConsistencyConflict - Cannot compare NaN pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
+                                                                continue;
+                                                                // logger.warning(`existsCostConsistencyConflict - Cannot compare NaN pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                             }
                                                         } else { //FIXME: simple cost is the only supported cost so far
                                                             // logger.warning(`existsCostConsistencyConflict - Cannot compare pricings in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
@@ -544,9 +548,40 @@ function printLimit(limit) {
         return `Non formateable limit: ${JSON.stringify(limit)}`;
     }
 }
+
+function areMetricValid(pricing) {
+
+    const metricNames = Object.keys(pricing.metrics);
+    let hasUndefinedMetrics = false;
+
+    for (let [metricName, metric] of Object.entries(pricing.metrics)) {
+        let isUsed = false;
+        for (let [planName, plan] of Object.entries(pricing.plans)) {
+            for (let [planLimitationsName, planLimitations] of Object.entries(plan)) {
+                if (planLimitationsName == "quotas" || planLimitationsName == "rates") {
+                    for (let [limitationsPathName, limitationsPath] of Object.entries(planLimitations)) {
+                        for (let [limitationsPathMethodName, limitationsPathMethod] of Object.entries(limitationsPath)) {
+                            for (let [limitationsPathMethodMetricName, limitationsPathMethodMetric] of Object.entries(limitationsPathMethod)) {
+                                isUsed = isUsed || limitationsPathMethodMetricName === metricName;
+                                let isUndefinedMetric = !metricNames.includes(limitationsPathMethodMetricName);
+                                if (isUndefinedMetric) {
+                                    logger.validationWarning(`  UNDEFINED METRIC ${limitationsPathMethodMetricName} in in ${planName}>${limitationsPathName}>${limitationsPathMethodName}>${limitationsPathMethodMetricName} `);
+                                }
+                                hasUndefinedMetrics = hasUndefinedMetrics || isUndefinedMetric;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!isUsed) {
+            logger.validationWarning(`  UNUSED METRIC '${metricName}'`);
+        }
+    }
+}
+
+
 // ****************************** END AUX FUNCTIONS ****************************** //
-
-
 
 module.exports = {
     isValid: isValid_pricing,

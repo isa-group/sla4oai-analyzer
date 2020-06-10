@@ -9,59 +9,40 @@ infrastructure:
   supervisor: 'http://supervisor.oai.governify.io/api/v2'
   monitor: 'http://monitor.oai.governify.io/api/v1'
 metrics:
-  requests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regarding the resource'
-    resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
   credits:
     type: integer
     format: int64
     description: Number of credits
     resolution: consumption
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+    resolution: consumption
 pricing:
   cost: 0
-  currency: EUR
+  currency: USD
   period:
     amount: 1
     unit: month
 availability: '2009-10-09T21:30:00.00Z'
 configuration: {}
 plans:
-  Trial:
-    pricing:
-      cost: 0
-    
-    quotas:
-      /urltopdf:
-        get:
-          requests:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
   PaidTrial:
     pricing:
-      cost: 8.15
+      cost: 9
       billing: onepay
-    
     quotas:
       /urltopdf:
         get:
-          requests:
-            - max: 50
+          credits:
+            - max: 500
               period:
                 amount: 1
-                unit: month
+                unit: forever
   Starter:
     pricing:
       cost: 19
-    
     quotas:
       /urltopdf:
         get:
@@ -73,7 +54,6 @@ plans:
   Professional:
     pricing:
       cost: 39
-    
     quotas:
       /urltopdf:
         get:
@@ -85,7 +65,6 @@ plans:
   Advanced:
     pricing:
       cost: 79
-    
     quotas:
       /urltopdf:
         get:

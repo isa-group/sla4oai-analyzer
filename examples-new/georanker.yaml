@@ -14,2740 +14,1083 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
+  concurrentRequests:
     type: integer
     format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
-  keywords:
-    type: integer
-    format: int64
-    description: Number of keywords
-    resolution: consumption
-  campaigns:
-    type: integer
-    format: int64
-    description: Number of campaigns
+    description: 'Number of concurrent requests'
     resolution: consumption
   credits:
     type: integer
     format: int64
-    description: Number of credits
-    resolution: consumption
-  results:
-    type: integer
-    format: int64
-    description: Number of results
-    resolution: consumption
-  locations:
-    type: integer
-    format: int64
-    description: Number of locations
+    description: 'Number of credits'
     resolution: consumption
 pricing:
-  cost: 0
-  currency: EUR
+  currency: USD
   period:
     amount: 1
     unit: month
 availability: '2009-10-09T21:30:00.00Z'
 configuration: {}
 plans:
-  Free:
+  Small:
     pricing:
-      cost: 0
-    
+      cost: 300
     quotas:
-      /v1/account/info.json:
+      '/heartbeat':
         get:
-          keywords:
-            - max: 10
+          requests:
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
-          campaigns:
-            - max: 5
+      '/technologies/{domain}':
+        get:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/account/settings.json:
+              overage:
+                excess: 1
+                cost: 0.001
+      '/whois/{domain}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/api/blognews.json:
+              overage:
+                excess: 1
+                cost: 0.001
+      '/region/list':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/api/changelog.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+      '/keyword/new':
+        post:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/api/login.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+      '/keyword/new/list':
+        post:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/country/code.json:
+              overage:
+                excess: 1
+                cost: 0.001
+      '/keyword/{id}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/country/list.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+        delete:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/language/code.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+      '/keyword/list':
+        post:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/language/list.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+      '/serp/new':
+        post:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/list.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+      '/serp/new/list':
+        post:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/new.json:
+              overage:
+                excess: 1
+                cost: 0.001
+      '/serp/{id}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/monitor/{id}':
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+        delete:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/advertisers/{id}':
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+              overage:
+                excess: 1
+                cost: 0.001
+      '/serp/list':
+        post:
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/chart/{id}':
+              overage:
+                excess: 1
+                cost: 0.001
+      '/user':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
+          requests:
+            - max: 750000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 500
+            - max: 300000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/citations/{id}':
+              overage:
+                excess: 1
+                cost: 0.001
+    rates:
+      '/heartbeat':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/firstpage/{id}':
+                unit: hour
+      '/technologies/{domain}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/heatmap/{id}':
+                unit: hour
+      '/whois/{domain}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/keywordprospecting/{id}':
+                unit: hour
+      '/region/list':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
+                unit: hour
+      '/keyword/new':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 5
+                unit: hour
+      '/keyword/new/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      /v1/report/list.json:
+                unit: hour
+      '/keyword/{id}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
+                unit: hour
+        delete:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 5
+                unit: hour
+      '/keyword/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      /v1/report/new.json:
+                unit: hour
+      '/serp/new':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
+              period:
+                amount: 1
+                unit: hour
+      '/serp/new/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
+              period:
+                amount: 1
+                unit: hour
+      '/serp/{id}':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
+                unit: hour
+        delete:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 5
+                unit: hour
+      '/serp/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      '/v1/report/ranktracker/{id}':
+                unit: hour
+      '/user':
         get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 500
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/{id}':
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/user/list.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/user/new.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      /v1/user/upgrade.json:
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-      '/v1/user/{id}':
-        get:
-          keywords:
-            - max: 10
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 30
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 5
-              period:
-                amount: 1
-                unit: month
-  Agencies:
+                unit: hour
+  Medium:
     pricing:
-      cost: 249
-    
+      cost: 800
     quotas:
-      /v1/account/info.json:
+      '/heartbeat':
         get:
-          keywords:
-            - max: 500
+          requests:
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
-          campaigns:
-            - max: 100
+      '/technologies/{domain}':
+        get:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/account/settings.json:
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/whois/{domain}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/api/blognews.json:
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/region/list':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/api/changelog.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/keyword/new':
+        post:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/api/login.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/keyword/new/list':
+        post:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/country/code.json:
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/keyword/{id}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/country/list.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+        delete:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/language/code.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/keyword/list':
+        post:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/language/list.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/serp/new':
+        post:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/list.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/serp/new/list':
+        post:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/new.json:
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/serp/{id}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/monitor/{id}':
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+        delete:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/advertisers/{id}':
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/serp/list':
+        post:
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/chart/{id}':
+              overage:
+                excess: 1
+                cost: 0.0008
+      '/user':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
+          requests:
+            - max: 2000000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 50000
+            - max: 1000000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/citations/{id}':
+              overage:
+                excess: 1
+                cost: 0.0008
+    rates:
+      '/heartbeat':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/firstpage/{id}':
+                unit: hour
+      '/technologies/{domain}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/heatmap/{id}':
+                unit: hour
+      '/whois/{domain}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/keywordprospecting/{id}':
+                unit: hour
+      '/region/list':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
+                unit: hour
+      '/keyword/new':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 50
+                unit: hour
+      '/keyword/new/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      /v1/report/list.json:
+                unit: hour
+      '/keyword/{id}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
+                unit: hour
+        delete:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 50
+                unit: hour
+      '/keyword/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      /v1/report/new.json:
+                unit: hour
+      '/serp/new':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
+              period:
+                amount: 1
+                unit: hour
+      '/serp/new/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
+              period:
+                amount: 1
+                unit: hour
+      '/serp/{id}':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
+                unit: hour
+        delete:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 50
+                unit: hour
+      '/serp/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      '/v1/report/ranktracker/{id}':
+                unit: hour
+      '/user':
         get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 50000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/{id}':
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 50000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/user/list.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 50000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/user/new.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 50000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/user/upgrade.json:
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 50000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/user/{id}':
-        get:
-          keywords:
-            - max: 500
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 50000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-  Professionals:
+                unit: hour
+  Large:
     pricing:
-      cost: 99
-    
+      cost: 1500
     quotas:
-      /v1/account/info.json:
+      '/heartbeat':
         get:
-          keywords:
-            - max: 100
+          requests:
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
-          campaigns:
-            - max: 50
+      '/technologies/{domain}':
+        get:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/account/settings.json:
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/whois/{domain}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/api/blognews.json:
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/region/list':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/api/changelog.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/keyword/new':
+        post:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/api/login.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/keyword/new/list':
+        post:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/country/code.json:
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/keyword/{id}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/country/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+        delete:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/language/code.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/keyword/list':
+        post:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/language/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/serp/new':
+        post:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/serp/new/list':
+        post:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/new.json:
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/serp/{id}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/monitor/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+        delete:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/advertisers/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/serp/list':
+        post:
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/chart/{id}':
+              overage:
+                excess: 1
+                cost: 0.00067
+      '/user':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
+          requests:
+            - max: 4500000
               period:
                 amount: 1
                 unit: month
           credits:
-            - max: 5000
+            - max: 2500000
               period:
                 amount: 1
                 unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/citations/{id}':
+              overage:
+                excess: 1
+                cost: 0.00067
+    rates:
+      '/heartbeat':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/firstpage/{id}':
+                unit: hour
+      '/technologies/{domain}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/heatmap/{id}':
+                unit: hour
+      '/whois/{domain}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/keywordprospecting/{id}':
+                unit: hour
+      '/region/list':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
+                unit: hour
+      '/keyword/new':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 50
+                unit: hour
+      '/keyword/new/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      /v1/report/list.json:
+                unit: hour
+      '/keyword/{id}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
+                unit: hour
+        delete:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 50
+                unit: hour
+      '/keyword/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      /v1/report/new.json:
+                unit: hour
+      '/serp/new':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
+              period:
+                amount: 1
+                unit: hour
+      '/serp/new/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
+              period:
+                amount: 1
+                unit: hour
+      '/serp/{id}':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
+                unit: hour
+        delete:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          locations:
-            - max: 50
+                unit: hour
+      '/serp/list':
+        post:
+          concurrentRequests:
+            - max: 15
+          credits:
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-      '/v1/report/ranktracker/{id}':
+                unit: hour
+      '/user':
         get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
+          concurrentRequests:
+            - max: 15
           credits:
-            - max: 5000
+            - max: 100000
               period:
                 amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 5000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/user/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 5000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/user/new.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 5000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      /v1/user/upgrade.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 5000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-      '/v1/user/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          campaigns:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 5000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 50
-              period:
-                amount: 1
-                unit: month
-  Enterprises:
+                unit: hour
+  Enterprise:
     pricing:
-      cost: 99
-    
-    quotas:
-      /v1/account/info.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/account/settings.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/api/blognews.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/api/changelog.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/api/login.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/country/code.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/country/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/language/code.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/language/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/monitor/new.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/monitor/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/advertisers/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/chart/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/citations/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/firstpage/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/heatmap/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/keywordprospecting/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/report/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/report/new.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/ranktracker/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/report/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/user/list.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/user/new.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      /v1/user/upgrade.json:
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-      '/v1/user/{id}':
-        get:
-          keywords:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          credits:
-            - max: 120000
-              period:
-                amount: 1
-                unit: month
-          results:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
-          locations:
-            - max: 100
-              period:
-                amount: 1
-                unit: month
+      cost: custom

@@ -14,20 +14,15 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRquests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
-  exportCredits:
-    type: integer
-    format: int64
-    description: >-
-      1 export credit lets you download up to 10,000 results. They are
-      single-use which means that once you use them they don't automatically
-      renew at the start of the month. This is different than the query and scan
-      credits!
-    resolution: consumption
+  # exportCredits:
+  #   type: integer
+  #   format: int64
+  #   description: >-
+  #     1 export credit lets you download up to 10,000 results. They are
+  #     single-use which means that once you use them they don't automatically
+  #     renew at the start of the month. This is different than the query and scan
+  #     credits!
+  #   resolution: consumption
   queryCredits:
     type: integer
     format: int64

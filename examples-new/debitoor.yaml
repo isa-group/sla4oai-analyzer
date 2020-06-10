@@ -9,25 +9,10 @@ infrastructure:
   supervisor: 'http://supervisor.oai.governify.io/api/v2'
   monitor: 'http://monitor.oai.governify.io/api/v1'
 metrics:
-  requests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regarding the resource'
-    resolution: consumption
-  globalRquests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
   invoiceOrExpenseResource:
     type: integer
     format: int64
     description: invoice or expense resources
-    resolution: consumption
-  users:
-    type: integer
-    format: int64
-    description: user or expense resources
     resolution: consumption
 pricing:
   cost: 0
@@ -800,6 +785,261 @@ plans:
         get:
           invoiceOrExpenseResource:
             - max: 800
+              period: 
+                amount: 1
+                unit: year
+  L:
+    pricing:
+      cost: 20
+    
+    quotas:
+      '/api/invoices/{id}/recurring/v1':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/recurring/invoices/{id}/activate/v1':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/recurring/invoices/{id}/deactivate/v1':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/recurring/invoices/v1:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/draftinvoices/{id}/book/v3':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/draftinvoices/{id}/booksend/v3':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/draftinvoices/{id}/copy/v3':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/draftinvoices/{id}/email/v2':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/sales/draftinvoices/v3:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/sales/draftinvoices/validate/v3:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/invoices/{id}/copy/v3':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/invoices/{id}/email/v2':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/invoices/{id}/paymentreceipt/email/v1':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/invoices/{id}/share/v1':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/expenses/book/range/v4:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/expenses/v4:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/expenses/validate/v4:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/customers/export.datev/v1:
+        get:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/customers/v1:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/customers/validate/v1:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/income/v2:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/deliverynotes/{id}/copy/v2':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/sales/deliverynotes/v2:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/invoices/{id}/deliverynote/v2':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/quotes/{id}/deliverynote/v2':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/quotes/{id}/invoice/v3':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/sales/draftinvoices/headers/v3:
+        get:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/draftinvoices/{id}/v3':
+        delete:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+        put:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/recurring/invoices/{id}/v1':
+        delete:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/invoices/{id}/v3':
+        put:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+        delete:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/sales/invoices/headers/v3:
+        get:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      '/api/sales/quotes/{id}/copy/v3':
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/sales/quotes/v3:
+        post:
+          invoiceOrExpenseResource:
+            - max: unlimited
+              period: 
+                amount: 1
+                unit: year
+      /api/suppliers/export.datev/v1:
+        get:
+          invoiceOrExpenseResource:
+            - max: unlimited
               period: 
                 amount: 1
                 unit: year

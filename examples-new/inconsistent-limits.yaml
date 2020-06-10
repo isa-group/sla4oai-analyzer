@@ -8,12 +8,12 @@ infrastructure:
   supervisor: 'http://supervisor.oai.governify.io/api/v2'
   monitor: 'http://monitor.oai.governify.io/api/v1'
 metrics:
-  requesrs:
+  requests:
     type: integer
     format: int64
     description: Number of requests
 pricing:
-  currency: EUR
+  currency: USD
 plans:
     Plan1:
       pricing:

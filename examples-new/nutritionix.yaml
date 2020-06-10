@@ -14,10 +14,10 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
+  activeUsers:
     type: integer
     format: int64
-    description: 'Number of requests, regardless the resource'
+    description: 'Number of activeUsers'
     resolution: consumption
 pricing:
   cost: 0

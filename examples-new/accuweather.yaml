@@ -9,7 +9,7 @@ infrastructure:
   supervisor: 'http://supervisor.oai.governify.io/api/v2'
   monitor: 'http://monitor.oai.governify.io/api/v1'
 metrics:
-  globalRequests:
+  requests:
     type: integer
     format: int64
     description: 'Number the overall requests, regardeless the resource'
@@ -27,462 +27,462 @@ plans:
     quotas:
       '/alarms/v1/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/alarms/v1/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/alarms/v1/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/alarms/v1/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/alerts/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/currentconditions/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/currentconditions/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/currentconditions/v1/{locationKey}/historical':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/currentconditions/v1/{locationKey}/historical/24':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/hourly/1hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/hourly/12hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/hourly/24hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/hourly/72hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/forecasts/v1/hourly/120hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/imagery/v1/maps/radsat/{resolution}/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /indices/v1/daily:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/1day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/1day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/5day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/5day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/10day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/10day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/15day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/15day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /indices/v1/daily/groups:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/indices/v1/daily/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/adminareas/{countryCode}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/cities/autocomplete:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/cities/geoposition/search:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/cities/ipaddress:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/cities/neighbors/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/cities/search:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/cities/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/cities/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/countries/{regionCode}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/poi/search:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/poi/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/poi/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/postalcodes/search:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/postalcodes/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/regions:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /locations/v1/search:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/locations/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /translations/v1/groups:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/translations/v1/groups/{groupID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /translations/v1/languages:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       /tropical/v1/storms/active:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/active/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/active/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/{yyyy}/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/forecasts':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
                 unit: day
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions/current':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -498,7 +498,7 @@ plans:
     quotas:
       '/alarms/v1/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -509,7 +509,7 @@ plans:
                   cost: 0.00012
       '/alarms/v1/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -520,7 +520,7 @@ plans:
                   cost: 0.00012
       '/alarms/v1/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -531,7 +531,7 @@ plans:
                   cost: 0.00012
       '/alarms/v1/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -542,7 +542,7 @@ plans:
                   cost: 0.00012
       '/alerts/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -553,7 +553,7 @@ plans:
                   cost: 0.00012
       '/currentconditions/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -564,7 +564,7 @@ plans:
                   cost: 0.00012
       '/currentconditions/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -575,7 +575,7 @@ plans:
                   cost: 0.00012
       '/currentconditions/v1/{locationKey}/historical':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -586,7 +586,7 @@ plans:
                   cost: 0.00012
       '/currentconditions/v1/{locationKey}/historical/24':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -597,7 +597,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -608,7 +608,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -619,7 +619,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -630,7 +630,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -641,7 +641,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/hourly/1hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -652,7 +652,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/hourly/12hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -663,7 +663,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/hourly/24hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -674,7 +674,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/hourly/72hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -685,7 +685,7 @@ plans:
                   cost: 0.00012
       '/forecasts/v1/hourly/120hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -696,7 +696,7 @@ plans:
                   cost: 0.00012
       '/imagery/v1/maps/radsat/{resolution}/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -707,7 +707,7 @@ plans:
                   cost: 0.00012
       /indices/v1/daily:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -718,7 +718,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -729,7 +729,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/1day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -740,7 +740,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/1day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -751,7 +751,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -762,7 +762,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/5day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -773,7 +773,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/5day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -784,7 +784,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -795,7 +795,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/10day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -806,7 +806,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/10day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -817,7 +817,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -828,7 +828,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/15day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -839,7 +839,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/15day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -850,7 +850,7 @@ plans:
                   cost: 0.00012
       /indices/v1/daily/groups:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -861,7 +861,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -872,7 +872,7 @@ plans:
                   cost: 0.00012
       '/indices/v1/daily/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -883,7 +883,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/adminareas/{countryCode}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -894,7 +894,7 @@ plans:
                   cost: 0.00012
       /locations/v1/cities/autocomplete:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -905,7 +905,7 @@ plans:
                   cost: 0.00012
       /locations/v1/cities/geoposition/search:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -916,7 +916,7 @@ plans:
                   cost: 0.00012
       /locations/v1/cities/ipaddress:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -927,7 +927,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/cities/neighbors/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -938,7 +938,7 @@ plans:
                   cost: 0.00012
       /locations/v1/cities/search:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -949,7 +949,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/cities/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -960,7 +960,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/cities/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -971,7 +971,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/countries/{regionCode}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -982,7 +982,7 @@ plans:
                   cost: 0.00012
       /locations/v1/poi/search:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -993,7 +993,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/poi/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1004,7 +1004,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/poi/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1015,7 +1015,7 @@ plans:
                   cost: 0.00012
       /locations/v1/postalcodes/search:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1026,7 +1026,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/postalcodes/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1037,7 +1037,7 @@ plans:
                   cost: 0.00012
       /locations/v1/regions:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1048,7 +1048,7 @@ plans:
                   cost: 0.00012
       /locations/v1/search:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1059,7 +1059,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1070,7 +1070,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1081,7 +1081,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1092,7 +1092,7 @@ plans:
                   cost: 0.00012
       '/locations/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1103,7 +1103,7 @@ plans:
                   cost: 0.00012
       /translations/v1/groups:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1114,7 +1114,7 @@ plans:
                   cost: 0.00012
       '/translations/v1/groups/{groupID}':
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1125,7 +1125,7 @@ plans:
                   cost: 0.00012
       /translations/v1/languages:
         get:
-          globalRequests:
+          requests:
             - max: 225000
               period: 
                 amount: 1
@@ -1136,7 +1136,7 @@ plans:
                   cost: 0.00012
       /tropical/v1/storms/active:
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1147,7 +1147,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/active/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1158,7 +1158,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/active/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1169,7 +1169,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/{yyyy}/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1180,7 +1180,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1191,7 +1191,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/forecasts':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1202,7 +1202,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1213,7 +1213,7 @@ plans:
                   cost: 0.00012
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions/current':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1234,7 +1234,7 @@ plans:
     quotas:
       '/alarms/v1/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1245,7 +1245,7 @@ plans:
                   cost: 0.00015
       '/alarms/v1/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1256,7 +1256,7 @@ plans:
                   cost: 0.00015
       '/alarms/v1/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1267,7 +1267,7 @@ plans:
                   cost: 0.00015
       '/alarms/v1/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1278,7 +1278,7 @@ plans:
                   cost: 0.00015
       '/alerts/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1289,7 +1289,7 @@ plans:
                   cost: 0.00015
       '/currentconditions/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1300,7 +1300,7 @@ plans:
                   cost: 0.00015
       '/currentconditions/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1311,7 +1311,7 @@ plans:
                   cost: 0.00015
       '/currentconditions/v1/{locationKey}/historical':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1322,7 +1322,7 @@ plans:
                   cost: 0.00015
       '/currentconditions/v1/{locationKey}/historical/24':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1333,7 +1333,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1344,7 +1344,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1355,7 +1355,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1366,7 +1366,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1377,7 +1377,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/hourly/1hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1388,7 +1388,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/hourly/12hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1399,7 +1399,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/hourly/24hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1410,7 +1410,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/hourly/72hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1421,7 +1421,7 @@ plans:
                   cost: 0.00015
       '/forecasts/v1/hourly/120hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1432,7 +1432,7 @@ plans:
                   cost: 0.00015
       '/imagery/v1/maps/radsat/{resolution}/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1443,7 +1443,7 @@ plans:
                   cost: 0.00015
       /indices/v1/daily:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1454,7 +1454,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1465,7 +1465,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/1day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1476,7 +1476,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/1day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1487,7 +1487,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1498,7 +1498,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/5day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1509,7 +1509,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/5day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1520,7 +1520,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1531,7 +1531,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/10day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1542,7 +1542,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/10day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1553,7 +1553,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1564,7 +1564,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/15day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1575,7 +1575,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/15day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 50
               period: 
                 amount: 1
@@ -1586,7 +1586,7 @@ plans:
                   cost: 0.00015
       /indices/v1/daily/groups:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1597,7 +1597,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1608,7 +1608,7 @@ plans:
                   cost: 0.00015
       '/indices/v1/daily/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1619,7 +1619,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/adminareas/{countryCode}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1630,7 +1630,7 @@ plans:
                   cost: 0.00015
       /locations/v1/cities/autocomplete:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1641,7 +1641,7 @@ plans:
                   cost: 0.00015
       /locations/v1/cities/geoposition/search:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1652,7 +1652,7 @@ plans:
                   cost: 0.00015
       /locations/v1/cities/ipaddress:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1663,7 +1663,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/cities/neighbors/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1674,7 +1674,7 @@ plans:
                   cost: 0.00015
       /locations/v1/cities/search:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1685,7 +1685,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/cities/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1696,7 +1696,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/cities/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1707,7 +1707,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/countries/{regionCode}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1718,7 +1718,7 @@ plans:
                   cost: 0.00015
       /locations/v1/poi/search:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1729,7 +1729,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/poi/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1740,7 +1740,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/poi/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1751,7 +1751,7 @@ plans:
                   cost: 0.00015
       /locations/v1/postalcodes/search:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1762,7 +1762,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/postalcodes/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1773,7 +1773,7 @@ plans:
                   cost: 0.00015
       /locations/v1/regions:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1784,7 +1784,7 @@ plans:
                   cost: 0.00015
       /locations/v1/search:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1795,7 +1795,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1806,7 +1806,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1817,7 +1817,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1828,7 +1828,7 @@ plans:
                   cost: 0.00015
       '/locations/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1839,7 +1839,7 @@ plans:
                   cost: 0.00015
       /translations/v1/groups:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1850,7 +1850,7 @@ plans:
                   cost: 0.00015
       '/translations/v1/groups/{groupID}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1861,7 +1861,7 @@ plans:
                   cost: 0.00015
       /translations/v1/languages:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1872,7 +1872,7 @@ plans:
                   cost: 0.00015
       /tropical/v1/storms/active:
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1883,7 +1883,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/active/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1894,7 +1894,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/active/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1905,7 +1905,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/{yyyy}/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1916,7 +1916,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1927,7 +1927,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/forecasts':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1938,7 +1938,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1949,7 +1949,7 @@ plans:
                   cost: 0.00015
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions/current':
         get:
-          globalRequests:
+          requests:
             - max: 1800000
               period: 
                 amount: 1
@@ -1969,7 +1969,7 @@ plans:
     quotas:
       '/alarms/v1/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -1980,7 +1980,7 @@ plans:
                   cost: 0.00022
       '/alarms/v1/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -1991,7 +1991,7 @@ plans:
                   cost: 0.00022
       '/alarms/v1/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2002,7 +2002,7 @@ plans:
                   cost: 0.00022
       '/alarms/v1/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2013,7 +2013,7 @@ plans:
                   cost: 0.00022
       '/alerts/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2024,7 +2024,7 @@ plans:
                   cost: 0.00022
       '/currentconditions/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2035,7 +2035,7 @@ plans:
                   cost: 0.00022
       '/currentconditions/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2046,7 +2046,7 @@ plans:
                   cost: 0.00022
       '/currentconditions/v1/{locationKey}/historical':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2057,7 +2057,7 @@ plans:
                   cost: 0.00022
       '/currentconditions/v1/{locationKey}/historical/24':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2068,7 +2068,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2079,7 +2079,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2090,7 +2090,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2101,7 +2101,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2112,7 +2112,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/hourly/1hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2123,7 +2123,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/hourly/12hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2134,7 +2134,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/hourly/24hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2145,7 +2145,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/hourly/72hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2156,7 +2156,7 @@ plans:
                   cost: 0.00022
       '/forecasts/v1/hourly/120hour/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2167,7 +2167,7 @@ plans:
                   cost: 0.00022
       '/imagery/v1/maps/radsat/{resolution}/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2178,7 +2178,7 @@ plans:
                   cost: 0.00022
       /indices/v1/daily:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2189,7 +2189,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/1day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2200,7 +2200,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/1day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2211,7 +2211,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/1day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2222,7 +2222,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/5day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2233,7 +2233,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/5day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2244,7 +2244,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/5day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2255,7 +2255,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/10day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2266,7 +2266,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/10day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2277,7 +2277,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/10day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2288,7 +2288,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/15day/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2299,7 +2299,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/15day/{locationKey}/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2310,7 +2310,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/15day/{locationKey}/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2321,7 +2321,7 @@ plans:
                   cost: 0.00022
       /indices/v1/daily/groups:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2332,7 +2332,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/groups/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2343,7 +2343,7 @@ plans:
                   cost: 0.00022
       '/indices/v1/daily/{ID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2354,7 +2354,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/adminareas/{countryCode}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2365,7 +2365,7 @@ plans:
                   cost: 0.00022
       /locations/v1/cities/autocomplete:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2376,7 +2376,7 @@ plans:
                   cost: 0.00022
       /locations/v1/cities/geoposition/search:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2387,7 +2387,7 @@ plans:
                   cost: 0.00022
       /locations/v1/cities/ipaddress:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2398,7 +2398,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/cities/neighbors/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2409,7 +2409,7 @@ plans:
                   cost: 0.00022
       /locations/v1/cities/search:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2420,7 +2420,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/cities/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2431,7 +2431,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/cities/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2442,7 +2442,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/countries/{regionCode}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2453,7 +2453,7 @@ plans:
                   cost: 0.00022
       /locations/v1/poi/search:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2464,7 +2464,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/poi/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2475,7 +2475,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/poi/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2486,7 +2486,7 @@ plans:
                   cost: 0.00022
       /locations/v1/postalcodes/search:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2497,7 +2497,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/postalcodes/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2508,7 +2508,7 @@ plans:
                   cost: 0.00022
       /locations/v1/regions:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2519,7 +2519,7 @@ plans:
                   cost: 0.00022
       /locations/v1/search:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2530,7 +2530,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/topcities/{group}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2541,7 +2541,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/{countryCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2552,7 +2552,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/{countryCode}/{adminCode}/search':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2563,7 +2563,7 @@ plans:
                   cost: 0.00022
       '/locations/v1/{locationKey}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2574,7 +2574,7 @@ plans:
                   cost: 0.00022
       /translations/v1/groups:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2585,7 +2585,7 @@ plans:
                   cost: 0.00022
       '/translations/v1/groups/{groupID}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2596,7 +2596,7 @@ plans:
                   cost: 0.00022
       /translations/v1/languages:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2607,7 +2607,7 @@ plans:
                   cost: 0.00022
       /tropical/v1/storms/active:
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2618,7 +2618,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/active/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2629,7 +2629,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/active/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2640,7 +2640,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/{yyyy}/{basinId}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2651,7 +2651,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2662,7 +2662,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/forecasts':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2673,7 +2673,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1
@@ -2684,7 +2684,7 @@ plans:
                   cost: 0.00022
       '/tropical/v1/storms/{yyyy}/{basinId}/{depressionId}/positions/current':
         get:
-          globalRequests:
+          requests:
             - max: 2400000
               period: 
                 amount: 1

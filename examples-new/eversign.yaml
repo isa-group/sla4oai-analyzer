@@ -9,16 +9,6 @@ infrastructure:
   supervisor: 'http://supervisor.oai.governify.io/api/v2'
   monitor: 'http://monitor.oai.governify.io/api/v1'
 metrics:
-  requests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regarding the resource'
-    resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
   templates:
     type: integer
     format: int64
@@ -31,7 +21,7 @@ metrics:
     resolution: consumption
 pricing:
   cost: 0
-  currency: EUR
+  currency: USD
   period:
     amount: 1
     unit: month
@@ -41,7 +31,6 @@ plans:
   API-Light:
     pricing:
       cost: 49.99
-    
     quotas:
       /api/document:
         get:
@@ -70,7 +59,6 @@ plans:
   API-Business:
     pricing:
       cost: 179.99
-    
     quotas:
       /api/document:
         get:
@@ -99,7 +87,6 @@ plans:
   API-BusinessPro:
     pricing:
       cost: 399.99
-    
     quotas:
       /api/document:
         get:
@@ -125,3 +112,6 @@ plans:
               period: 
                 amount: 1
                 unit: forever
+  API-Custom:
+    pricing:
+      cost: custom

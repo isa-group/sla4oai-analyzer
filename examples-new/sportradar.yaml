@@ -19,3000 +19,1614 @@ plans:
   Basic:
     pricing:
       currency: USD
+      cost: custom
       period:
         amount: 1
         unit: month
     quotas:
-      /NFL:
+      'Australian_Football':
         get:
           requests:
-            - max: 750
+            - max: 1000
               period:
-                amount: 1
-                unit: month
-      /MLB:
+                amount: 30
+                unit: day
+      'Badminton':
         get:
           requests:
-            - max: 3000
+            - max: 12500
               period:
-                amount: 1
-                unit: month
-      /NBA:
+                amount: 30
+                unit: day
+      'Bandy':
         get:
           requests:
-            - max: 3500
+            - max: 1900
               period:
-                amount: 1
-                unit: month
-      /NHL:
-        get:
-          requests:
-            - max: 4500
-              period:
-                amount: 1
-                unit: month
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 1850
-              period:
-                amount: 1
-                unit: month
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 7500
-              period:
-                amount: 1
-                unit: month
-      /Golf:
+                amount: 30
+                unit: day
+      'Beach_Soccer':
         get:
           requests:
             - max: 600
               period:
-                amount: 1
-                unit: month
-      /NASCAR:
-        get:
-          requests:
-            - max: 125
-              period:
-                amount: 1
-                unit: month
-      /Soccer-Europe:
+                amount: 30
+                unit: day
+      'Beach_Volleyball':
         get:
           requests:
             - max: 3500
               period:
-                amount: 1
-                unit: month
-      /Soccer-Americas:
-        get:
-          requests:
-            - max: 4000
-              period:
-                amount: 1
-                unit: month
-      /Soccer-International:
-        get:
-          requests:
-            - max: 3500
-              period:
-                amount: 1
-                unit: month
-      /Soccer-Asia:
+                amount: 30
+                unit: day
+      'BIG3':
         get:
           requests:
             - max: 2500
               period:
-                amount: 1
-                unit: month
-      /Soccer-Other:
-        get:
-          requests:
-            - max: 3500
-              period:
-                amount: 1
-                unit: month
-      /NCAA-WB:
-        get:
-          requests:
-            - max: 4500
-              period:
-                amount: 1
-                unit: month
-      /NCAA-MH:
-        get:
-          requests:
-            - max: 3000
-              period:
-                amount: 1
-                unit: month
-      /WNBA:
-        get:
-          requests:
-            - max: 1750
-              period:
-                amount: 1
-                unit: month
-      /NBA-G-League:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Cricket:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Rugby:
-        get:
-          requests:
-            - max: 2500
-              period:
-                amount: 1
-                unit: month
-      /Tennis:
-        get:
-          requests:
-            - max: 10000
-              period:
-                amount: 1
-                unit: month
-      '/Counter-Strike:-Global-Offensive':
+                amount: 30
+                unit: day
+      'Counter-Strike:_Global_Offensive':
         get:
           requests:
             - max: 1500
               period:
-                amount: 1
-                unit: month
-      /League-of-Legends:
+                amount: 30
+                unit: day
+      'Curling':
+        get:
+          requests:
+            - max: 500
+              period:
+                amount: 30
+                unit: day
+      'Darts':
+        get:
+          requests:
+            - max: 3000
+              period:
+                amount: 30
+                unit: day
+      'DOTA2':
+        get:
+          requests:
+            - max: 1000
+              period:
+                amount: 30
+                unit: day
+      'Field_Hockey':
+        get:
+          requests:
+            - max: 300
+              period:
+                amount: 30
+                unit: day
+      'Floorball':
+        get:
+          requests:
+            - max: 3300
+              period:
+                amount: 30
+                unit: day
+      'Formula_1':
+        get:
+          requests:
+            - max: 1000
+              period:
+                amount: 30
+                unit: day
+      'Formula_E':
+        get:
+          requests:
+            - max: 2000
+              period:
+                amount: 30
+                unit: day
+      'Futsal':
+        get:
+          requests:
+            - max: 3400
+              period:
+                amount: 30
+                unit: day
+      'Global_American_Football':
+        get:
+          requests:
+            - max: 2700
+              period:
+                amount: 30
+                unit: day
+      'Global_Baseball':
+        get:
+          requests:
+            - max: 12200
+              period:
+                amount: 30
+                unit: day
+      'Global_Basketball':
+        get:
+          requests:
+            - max: 4500
+              period:
+                amount: 30
+                unit: day
+      'Global_Ice_Hockey':
+        get:
+          requests:
+            - max: 4500
+              period:
+                amount: 30
+                unit: day
+      'Golf':
+        get:
+          requests:
+            - max: 600
+              period:
+                amount: 30
+                unit: day
+      'Handball':
+        get:
+          requests:
+            - max: 17600
+              period:
+                amount: 30
+                unit: day
+      'Horse_Racing':
+        get:
+          requests:
+            - max: 2000
+              period:
+                amount: 30
+                unit: day
+      'Indoor_Volleyball':
+        get:
+          requests:
+            - max: 14700
+              period:
+                amount: 30
+                unit: day
+      'IndyCar':
+        get:
+          requests:
+            - max: 2000
+              period:
+                amount: 30
+                unit: day
+      'League_of_Legends':
         get:
           requests:
             - max: 1200
               period:
-                amount: 1
-                unit: month
-      /DOTA2:
+                amount: 30
+                unit: day
+      'MLB':
         get:
           requests:
-            - max: 1000
+            - max: 3000
               period:
-                amount: 1
-                unit: month
-      /Olympics:
+                amount: 30
+                unit: day
+      'MotoGP':
         get:
           requests:
-            - max: 0
+            - max: 2000
               period:
-                amount: 1
-                unit: month
-      /Arena-Football-League:
+                amount: 30
+                unit: day
+      'Motorsports':
         get:
           requests:
-            - max: 0
+            - max: 300
               period:
-                amount: 1
-                unit: month
-      /Australian-Football:
+                amount: 30
+                unit: day
+      'NASCAR':
         get:
           requests:
-            - max: 0
+            - max: 125
               period:
-                amount: 1
-                unit: month
-      /Badminton:
+                amount: 30
+                unit: day
+      'NBA':
         get:
           requests:
-            - max: 0
+            - max: 3500
               period:
-                amount: 1
-                unit: month
-      /Bandy:
+                amount: 30
+                unit: day
+      'NBA_G_League':
         get:
           requests:
-            - max: 0
+            - max: 2000
               period:
-                amount: 1
-                unit: month
-      /Beach-Soccer:
+                amount: 30
+                unit: day
+      'NCAA_FB':
         get:
           requests:
-            - max: 0
+            - max: 1850
               period:
-                amount: 1
-                unit: month
-      /Beach-Volleyball:
+                amount: 30
+                unit: day
+      'NCAA_MB':
         get:
           requests:
-            - max: 0
+            - max: 7500
               period:
-                amount: 1
-                unit: month
-      /Curling:
+                amount: 30
+                unit: day
+      'NCAA_MH':
         get:
           requests:
-            - max: 0
+            - max: 3000
               period:
-                amount: 1
-                unit: month
-      /Cycling:
+                amount: 30
+                unit: day
+      'NCAA_WB':
         get:
           requests:
-            - max: 0
+            - max: 4500
               period:
-                amount: 1
-                unit: month
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-    rates:
-      /NFL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MLB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NHL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Golf:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NASCAR:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Europe:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Americas:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-International:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Asia:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Other:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-WB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MH:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /WNBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA-G-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cricket:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Rugby:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Tennis:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      '/Counter-Strike:-Global-Offensive':
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /League-of-Legends:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /DOTA2:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Olympics:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Arena-Football-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Australian-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Badminton:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Bandy:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Soccer:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Curling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cycling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-  Standard:
-    pricing:
-      currency: USD
-      period:
-        amount: 1
-        unit: month
-    quotas:
-      /NFL:
-        get:
-          requests:
-            - max: 7000
-              period:
-                amount: 1
-                unit: month
-      /MLB:
-        get:
-          requests:
-            - max: 45000
-              period:
-                amount: 1
-                unit: month
-      /NBA:
-        get:
-          requests:
-            - max: 25000
-              period:
-                amount: 1
-                unit: month
-      /NHL:
-        get:
-          requests:
-            - max: 45000
-              period:
-                amount: 1
-                unit: month
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 22000
-              period:
-                amount: 1
-                unit: month
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 75000
-              period:
-                amount: 1
-                unit: month
-      /Golf:
-        get:
-          requests:
-            - max: 16000
-              period:
-                amount: 1
-                unit: month
-      /NASCAR:
-        get:
-          requests:
-            - max: 1000
-              period:
-                amount: 1
-                unit: month
-      /Soccer-Europe:
-        get:
-          requests:
-            - max: 28000
-              period:
-                amount: 1
-                unit: month
-      /Soccer-Americas:
-        get:
-          requests:
-            - max: 27000
-              period:
-                amount: 1
-                unit: month
-      /Soccer-International:
-        get:
-          requests:
-            - max: 28000
-              period:
-                amount: 1
-                unit: month
-      /Soccer-Asia:
-        get:
-          requests:
-            - max: 15000
-              period:
-                amount: 1
-                unit: month
-      /Soccer-Other:
-        get:
-          requests:
-            - max: 28000
-              period:
-                amount: 1
-                unit: month
-      /NCAA-WB:
-        get:
-          requests:
-            - max: 62000
-              period:
-                amount: 1
-                unit: month
-      /NCAA-MH:
-        get:
-          requests:
-            - max: 30000
-              period:
-                amount: 1
-                unit: month
-      /WNBA:
-        get:
-          requests:
-            - max: 10000
-              period:
-                amount: 1
-                unit: month
-      /NBA-G-League:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Cricket:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Rugby:
-        get:
-          requests:
-            - max: 25000
-              period:
-                amount: 1
-                unit: month
-      /Tennis:
-        get:
-          requests:
-            - max: 50000
-              period:
-                amount: 1
-                unit: month
-      '/Counter-Strike:-Global-Offensive':
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /League-of-Legends:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /DOTA2:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Olympics:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Arena-Football-League:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Australian-Football:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Badminton:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Bandy:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Beach-Soccer:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Beach-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Curling:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Cycling:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-    rates:
-      /NFL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MLB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NHL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Golf:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NASCAR:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Europe:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Americas:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-International:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Asia:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Other:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-WB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MH:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /WNBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA-G-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cricket:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Rugby:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Tennis:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      '/Counter-Strike:-Global-Offensive':
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /League-of-Legends:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /DOTA2:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Olympics:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Arena-Football-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Australian-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Badminton:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Bandy:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Soccer:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Curling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cycling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-  Premium:
-    pricing:
-      period:
-        amount: 1
-        unit: month
-      currency: USD
-    quotas:
-      /NFL:
-        get:
-          requests:
-            - max: 35000
-              period:
-                amount: 1
-                unit: month
-      /MLB:
-        get:
-          requests:
-            - max: 225000
-              period:
-                amount: 1
-                unit: month
-      /NBA:
-        get:
-          requests:
-            - max: 110000
-              period:
-                amount: 1
-                unit: month
-      /NHL:
-        get:
-          requests:
-            - max: 235000
-              period:
-                amount: 1
-                unit: month
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 100000
-              period:
-                amount: 1
-                unit: month
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 350000
-              period:
-                amount: 1
-                unit: month
-      /Golf:
-        get:
-          requests:
-            - max: 64000
-              period:
-                amount: 1
-                unit: month
-      /NASCAR:
+                amount: 30
+                unit: day
+      'NFL':
         get:
           requests:
             - max: 2500
               period:
-                amount: 1
-                unit: month
-      /Soccer-Europe:
+                amount: 30
+                unit: day
+      'NHL':
         get:
           requests:
-            - max: 140000
+            - max: 4500
               period:
-                amount: 1
-                unit: month
-      /Soccer-Americas:
+                amount: 30
+                unit: day
+      'Odds':
         get:
           requests:
-            - max: 160000
+            - max: 50
               period:
-                amount: 1
-                unit: month
-      /Soccer-International:
+                amount: 30
+                unit: day
+      'Pesapallo':
         get:
           requests:
-            - max: 140000
+            - max: 1100
               period:
-                amount: 1
-                unit: month
-      /Soccer-Asia:
+                amount: 30
+                unit: day
+      'Rugby':
         get:
           requests:
-            - max: 100000
+            - max: 2500
               period:
-                amount: 1
-                unit: month
-      /Soccer-Other:
+                amount: 30
+                unit: day
+      'Snooker':
         get:
           requests:
-            - max: 140000
+            - max: 5700
               period:
-                amount: 1
-                unit: month
-      /NCAA-WB:
+                amount: 30
+                unit: day
+      'Soccer_Americas':
         get:
           requests:
-            - max: 205000
+            - max: 4000
               period:
-                amount: 1
-                unit: month
-      /NCAA-MH:
+                amount: 30
+                unit: day
+      'Soccer_Asia':
         get:
           requests:
-            - max: 53000
+            - max: 3500
               period:
-                amount: 1
-                unit: month
-      /WNBA:
+                amount: 30
+                unit: day
+      'Soccer_Europe':
         get:
           requests:
-            - max: 55000
+            - max: 3500
               period:
-                amount: 1
-                unit: month
-      /NBA-G-League:
+                amount: 30
+                unit: day
+      'Soccer_International':
         get:
           requests:
-            - max: 0
+            - max: 3500
               period:
-                amount: 1
-                unit: month
-      /Cricket:
+                amount: 30
+                unit: day
+      'Soccer_Other':
         get:
           requests:
-            - max: 0
+            - max: 3500
               period:
-                amount: 1
-                unit: month
-      /Rugby:
+                amount: 30
+                unit: day
+      'Squash':
         get:
           requests:
-            - max: 125000
+            - max: 400
               period:
-                amount: 1
-                unit: month
-      /Tennis:
+                amount: 30
+                unit: day
+      'Table_Tennis':
         get:
           requests:
-            - max: 300000
+            - max: 33
               period:
-                amount: 1
-                unit: month
-      '/Counter-Strike:-Global-Offensive':
+                amount: 30
+                unit: day
+      'Tennis':
         get:
           requests:
-            - max: 40000
+            - max: 10000
               period:
-                amount: 1
-                unit: month
-      /League-of-Legends:
+                amount: 30
+                unit: day
+      'UFC':
         get:
           requests:
-            - max: 22000
+            - max: 1000
               period:
-                amount: 1
-                unit: month
-      /DOTA2:
+                amount: 30
+                unit: day
+      'Waterpolo':
         get:
           requests:
-            - max: 19000
+            - max: 1400
               period:
-                amount: 1
-                unit: month
-      /Olympics:
+                amount: 30
+                unit: day
+      'Winter_Sports':
         get:
           requests:
-            - max: 0
+            - max: 5000
               period:
-                amount: 1
-                unit: month
-      /Arena-Football-League:
+                amount: 30
+                unit: day
+      'WNBA':
         get:
           requests:
-            - max: 0
+            - max: 1750
               period:
-                amount: 1
-                unit: month
-      /Australian-Football:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Badminton:
+                amount: 30
+                unit: day
+      'Cycling':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Bandy:
+                amount: 30
+                unit: day
+      'Cricket':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Beach-Soccer:
+                amount: 30
+                unit: day
+      'Olympics':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Beach-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Curling:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Cycling:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-    rates:
-      /NFL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MLB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NHL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Golf:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NASCAR:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Europe:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Americas:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-International:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Asia:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Other:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-WB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MH:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /WNBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA-G-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cricket:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Rugby:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Tennis:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      '/Counter-Strike:-Global-Offensive':
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /League-of-Legends:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /DOTA2:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Olympics:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Arena-Football-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Australian-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Badminton:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Bandy:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Soccer:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Curling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cycling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-  RealTime:
+                amount: 30
+                unit: day
+  Standard:
     pricing:
       currency: USD
+      cost: custom
       period:
         amount: 1
         unit: month
     quotas:
-      /NFL:
+      'Australian_Football':
         get:
           requests:
-            - max: 2000000
+            - max: 5000
               period:
-                amount: 1
-                unit: month
-      /MLB:
+                amount: 30
+                unit: day
+      'BIG3':
         get:
           requests:
-            - max: 2000000
+            - max: 9000
               period:
-                amount: 1
-                unit: month
-      /NBA:
+                amount: 30
+                unit: day
+      'Cycling':
         get:
           requests:
-            - max: 2000000
+            - max: 4000
               period:
-                amount: 1
-                unit: month
-      /NHL:
+                amount: 30
+                unit: day
+      'Darts':
         get:
           requests:
-            - max: 2000000
+            - max: 30000
               period:
-                amount: 1
-                unit: month
-      /NCAA-FB:
+                amount: 30
+                unit: day
+      'Global_Basketball':
         get:
           requests:
-            - max: 900000
+            - max: 45000
               period:
-                amount: 1
-                unit: month
-      /NCAA-MB:
+                amount: 30
+                unit: day
+      'Global_Ice_Hockey':
         get:
           requests:
-            - max: 4000000
+            - max: 45000
               period:
-                amount: 1
-                unit: month
-      /Golf:
+                amount: 30
+                unit: day
+      'Golf':
         get:
           requests:
-            - max: 560000
+            - max: 16000
               period:
-                amount: 1
-                unit: month
-      /NASCAR:
+                amount: 30
+                unit: day
+      'MLB':
+        get:
+          requests:
+            - max: 45000
+              period:
+                amount: 30
+                unit: day
+      'NASCAR':
+        get:
+          requests:
+            - max: 1000
+              period:
+                amount: 30
+                unit: day
+      'NBA':
+        get:
+          requests:
+            - max: 25000
+              period:
+                amount: 30
+                unit: day
+      'NBA_G_League':
+        get:
+          requests:
+            - max: 20000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_FB':
+        get:
+          requests:
+            - max: 22000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_MB':
+        get:
+          requests:
+            - max: 75000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_MH':
+        get:
+          requests:
+            - max: 30000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_WB':
+        get:
+          requests:
+            - max: 62000
+              period:
+                amount: 30
+                unit: day
+      'NFL':
+        get:
+          requests:
+            - max: 8000
+              period:
+                amount: 30
+                unit: day
+      'NHL':
+        get:
+          requests:
+            - max: 45000
+              period:
+                amount: 30
+                unit: day
+      'Odds':
+        get:
+          requests:
+            - max: 500
+              period:
+                amount: 30
+                unit: day
+      'Rugby':
+        get:
+          requests:
+            - max: 25000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Americas':
+        get:
+          requests:
+            - max: 27000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Asia':
+        get:
+          requests:
+            - max: 15000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Europe':
+        get:
+          requests:
+            - max: 28000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_International':
+        get:
+          requests:
+            - max: 28000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Other':
+        get:
+          requests:
+            - max: 28000
+              period:
+                amount: 30
+                unit: day
+      'Table_Tennis':
+        get:
+          requests:
+            - max: 6000
+              period:
+                amount: 30
+                unit: day
+      'Tennis':
+        get:
+          requests:
+            - max: 50000
+              period:
+                amount: 30
+                unit: day
+      'UFC':
+        get:
+          requests:
+            - max: 5000
+              period:
+                amount: 30
+                unit: day
+      # 'WNBA':
+      #   get:
+      #     requests:
+      #       - max: 10000
+      #         period:
+      #           amount: 30
+      #           unit: day
+      'Badminton':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Bandy':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Beach_Volleyball':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Counter-Strike:_Global_Offensive':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'DOTA2':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Field_Hockey':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Floorball':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Futsal':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Global_American_Football':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Global_Baseball':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Handball':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Indoor_Volleyball':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'League_of_Legends':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Motorsports':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Snooker':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Waterpolo':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'WNBA':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Formula_1':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Cricket':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Olympics':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Beach_Soccer':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Curling':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Formula_E':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Horse_Racing':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'IndyCar':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'MotoGP':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Pesapallo':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Squash':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Winter_Sports':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+  Premium:
+    pricing:
+      currency: USD
+      cost: custom
+      period:
+        amount: 1
+        unit: month
+    quotas:
+      'Australian_Football':
+        get:
+          requests:
+            - max: 50000
+              period:
+                amount: 30
+                unit: day
+      'Badminton':
+        get:
+          requests:
+            - max: 300000
+              period:
+                amount: 30
+                unit: day
+      'Bandy':
+        get:
+          requests:
+            - max: 76000
+              period:
+                amount: 30
+                unit: day
+      'Beach_Volleyball':
+        get:
+          requests:
+            - max: 131000
+              period:
+                amount: 30
+                unit: day
+      'Counter-Strike:_Global_Offensive':
+        get:
+          requests:
+            - max: 40000
+              period:
+                amount: 30
+                unit: day
+      'Darts':
+        get:
+          requests:
+            - max: 150000
+              period:
+                amount: 30
+                unit: day
+      'DOTA2':
+        get:
+          requests:
+            - max: 19000
+              period:
+                amount: 30
+                unit: day
+      'Field_Hockey':
+        get:
+          requests:
+            - max: 9300
+              period:
+                amount: 30
+                unit: day
+      'Floorball':
+        get:
+          requests:
+            - max: 60900
+              period:
+                amount: 30
+                unit: day
+      'Formula_1':
+        get:
+          requests:
+            - max: 15000
+              period:
+                amount: 30
+                unit: day
+      'Futsal':
+        get:
+          requests:
+            - max: 67800
+              period:
+                amount: 30
+                unit: day
+      'Global_American_Football':
+        get:
+          requests:
+            - max: 50000
+              period:
+                amount: 30
+                unit: day
+      'Global_Baseball':
+        get:
+          requests:
+            - max: 170000
+              period:
+                amount: 30
+                unit: day
+      'Global_Basketball':
+        get:
+          requests:
+            - max: 235000
+              period:
+                amount: 30
+                unit: day
+      'Global_Ice_Hockey':
+        get:
+          requests:
+            - max: 235000
+              period:
+                amount: 30
+                unit: day
+      'Golf':
+        get:
+          requests:
+            - max: 64000
+              period:
+                amount: 30
+                unit: day
+      'Handball':
+        get:
+          requests:
+            - max: 183000
+              period:
+                amount: 30
+                unit: day
+      'Indoor_Volleyball':
+        get:
+          requests:
+            - max: 144000
+              period:
+                amount: 30
+                unit: day
+      'League_of_Legends':
+        get:
+          requests:
+            - max: 22000
+              period:
+                amount: 30
+                unit: day
+      'MLB':
+        get:
+          requests:
+            - max: 225000
+              period:
+                amount: 30
+                unit: day
+      'Motorsports':
+        get:
+          requests:
+            - max: 16500
+              period:
+                amount: 30
+                unit: day
+      'NASCAR':
+        get:
+          requests:
+            - max: 2500
+              period:
+                amount: 30
+                unit: day
+      'NBA':
+        get:
+          requests:
+            - max: 110000
+              period:
+                amount: 30
+                unit: day
+      'NBA_G_League':
+        get:
+          requests:
+            - max: 75000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_FB':
         get:
           requests:
             - max: 100000
               period:
-                amount: 1
-                unit: month
-      /Soccer-Europe:
+                amount: 30
+                unit: day
+      'NCAA_MB':
         get:
           requests:
-            - max: 1050000
+            - max: 350000
               period:
-                amount: 1
-                unit: month
-      /Soccer-Americas:
+                amount: 30
+                unit: day
+      'NCAA_MH':
         get:
           requests:
-            - max: 1200000
+            - max: 53000
               period:
-                amount: 1
-                unit: month
-      /Soccer-International:
+                amount: 30
+                unit: day
+      'NCAA_WB':
         get:
           requests:
-            - max: 1050000
+            - max: 205000
               period:
-                amount: 1
-                unit: month
-      /Soccer-Asia:
+                amount: 30
+                unit: day
+      'NFL':
         get:
           requests:
-            - max: 750000
+            - max: 40000
               period:
-                amount: 1
-                unit: month
-      /Soccer-Other:
+                amount: 30
+                unit: day
+      'NHL':
         get:
           requests:
-            - max: 1050000
+            - max: 235000
               period:
-                amount: 1
-                unit: month
-      /NCAA-WB:
+                amount: 30
+                unit: day
+      # 'Odds':
+      #   get:
+      #     requests:
+      #       - max: 5000
+      #         period:
+      #           amount: 30
+      #           unit: day
+      'Rugby':
+        get:
+          requests:
+            - max: 125000
+              period:
+                amount: 30
+                unit: day
+      'Snooker':
+        get:
+          requests:
+            - max: 174300
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Americas':
+        get:
+          requests:
+            - max: 160000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Asia':
+        get:
+          requests:
+            - max: 100000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Europe':
+        get:
+          requests:
+            - max: 140000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_International':
+        get:
+          requests:
+            - max: 140000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Other':
+        get:
+          requests:
+            - max: 140000
+              period:
+                amount: 30
+                unit: day
+      'Tennis':
+        get:
+          requests:
+            - max: 300000
+              period:
+                amount: 30
+                unit: day
+      'Waterpolo':
+        get:
+          requests:
+            - max: 20000
+              period:
+                amount: 30
+                unit: day
+      'WNBA':
+        get:
+          requests:
+            - max: 55000
+              period:
+                amount: 30
+                unit: day
+      'Cricket':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /NCAA-MH:
+                amount: 30
+                unit: day
+      'Olympics':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /WNBA:
-        get:
-          requests:
-            - max: 455000
-              period:
-                amount: 1
-                unit: month
-      /NBA-G-League:
+                amount: 30
+                unit: day
+      'Table_Tennis':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Cricket:
+                amount: 30
+                unit: day
+      'Beach_Soccer':
         get:
           requests:
-            - max: 450000
+            - max: 0
               period:
-                amount: 1
-                unit: month
-      /Rugby:
+                amount: 30
+                unit: day
+      'BIG3':
         get:
           requests:
-            - max: 1000000
+            - max: 0
               period:
-                amount: 1
-                unit: month
-      /Tennis:
+                amount: 30
+                unit: day
+      'Curling':
         get:
           requests:
-            - max: 3000000
+            - max: 0
               period:
-                amount: 1
-                unit: month
-      '/Counter-Strike:-Global-Offensive':
+                amount: 30
+                unit: day
+      'Cycling':
         get:
           requests:
-            - max: 575000
+            - max: 0
               period:
-                amount: 1
-                unit: month
-      /League-of-Legends:
+                amount: 30
+                unit: day
+      'Formula_E':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Horse_Racing':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'IndyCar':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'MotoGP':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Odds':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Pesapallo':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Squash':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'UFC':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+      'Winter_Sports':
+        get:
+          requests:
+            - max: 0
+              period:
+                amount: 30
+                unit: day
+  RealTime:
+    pricing:
+      currency: USD
+      cost: custom
+      period:
+        amount: 1
+        unit: month
+    quotas:
+      'Australian_Football':
         get:
           requests:
             - max: 550000
               period:
-                amount: 1
-                unit: month
-      /DOTA2:
+                amount: 30
+                unit: day
+      'Badminton':
+        get:
+          requests:
+            - max: 1001000
+              period:
+                amount: 30
+                unit: day
+      'Bandy':
+        get:
+          requests:
+            - max: 253000
+              period:
+                amount: 30
+                unit: day
+      'Beach_Volleyball':
+        get:
+          requests:
+            - max: 436000
+              period:
+                amount: 30
+                unit: day
+      'Counter-Strike:_Global_Offensive':
+        get:
+          requests:
+            - max: 575000
+              period:
+                amount: 30
+                unit: day
+      'Cricket':
+        get:
+          requests:
+            - max: 450000
+              period:
+                amount: 30
+                unit: day
+      'Darts':
+        get:
+          requests:
+            - max: 1500000
+              period:
+                amount: 30
+                unit: day
+      'DOTA2':
         get:
           requests:
             - max: 500000
               period:
-                amount: 1
-                unit: month
-      /Olympics:
+                amount: 30
+                unit: day
+      'Field_Hockey':
+        get:
+          requests:
+            - max: 31000
+              period:
+                amount: 30
+                unit: day
+      'Floorball':
+        get:
+          requests:
+            - max: 203000
+              period:
+                amount: 30
+                unit: day
+      'Futsal':
+        get:
+          requests:
+            - max: 226000
+              period:
+                amount: 30
+                unit: day
+      'Global_American_Football':
+        get:
+          requests:
+            - max: 170000
+              period:
+                amount: 30
+                unit: day
+      'Global_Baseball':
+        get:
+          requests:
+            - max: 560000
+              period:
+                amount: 30
+                unit: day
+      'Global_Basketball':
+        get:
+          requests:
+            - max: 2200000
+              period:
+                amount: 30
+                unit: day
+      'Global_Ice_Hockey':
         get:
           requests:
             - max: 2000000
               period:
-                amount: 1
-                unit: month
-      /Arena-Football-League:
+                amount: 30
+                unit: day
+      'Golf':
+        get:
+          requests:
+            - max: 560000
+              period:
+                amount: 30
+                unit: day
+      'Handball':
+        get:
+          requests:
+            - max: 610000
+              period:
+                amount: 30
+                unit: day
+      'Indoor_Volleyball':
+        get:
+          requests:
+            - max: 479000
+              period:
+                amount: 30
+                unit: day
+      'League_of_Legends':
+        get:
+          requests:
+            - max: 550000
+              period:
+                amount: 30
+                unit: day
+      'MLB':
+        get:
+          requests:
+            - max: 2000000
+              period:
+                amount: 30
+                unit: day
+      'Motorsports':
+        get:
+          requests:
+            - max: 55000
+              period:
+                amount: 30
+                unit: day
+      'NASCAR':
+        get:
+          requests:
+            - max: 100000
+              period:
+                amount: 30
+                unit: day
+      'NBA':
+        get:
+          requests:
+            - max: 2000000
+              period:
+                amount: 30
+                unit: day
+      'NBA_G_League':
+        get:
+          requests:
+            - max: 1250000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_FB':
+        get:
+          requests:
+            - max: 900000
+              period:
+                amount: 30
+                unit: day
+      'NCAA_MB':
+        get:
+          requests:
+            - max: 4000000
+              period:
+                amount: 30
+                unit: day
+      'NFL':
+        get:
+          requests:
+            - max: 2000000
+              period:
+                amount: 30
+                unit: day
+      'NHL':
+        get:
+          requests:
+            - max: 2000000
+              period:
+                amount: 30
+                unit: day
+      'Olympics':
+        get:
+          requests:
+            - max: 2000000
+              period:
+                amount: 30
+                unit: day
+      'Rugby':
+        get:
+          requests:
+            - max: 1000000
+              period:
+                amount: 30
+                unit: day
+      'Snooker':
+        get:
+          requests:
+            - max: 581000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Americas':
+        get:
+          requests:
+            - max: 1200000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Asia':
+        get:
+          requests:
+            - max: 750000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Europe':
+        get:
+          requests:
+            - max: 1050000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_International':
+        get:
+          requests:
+            - max: 1050000
+              period:
+                amount: 30
+                unit: day
+      'Soccer_Other':
+        get:
+          requests:
+            - max: 1050000
+              period:
+                amount: 30
+                unit: day
+      'Table_Tennis':
+        get:
+          requests:
+            - max: 691000
+              period:
+                amount: 30
+                unit: day
+      'Tennis':
+        get:
+          requests:
+            - max: 3000000
+              period:
+                amount: 30
+                unit: day
+      'Waterpolo':
+        get:
+          requests:
+            - max: 67000
+              period:
+                amount: 30
+                unit: day
+      'WNBA':
+        get:
+          requests:
+            - max: 455000
+              period:
+                amount: 30
+                unit: day
+      'Beach_Soccer':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Australian-Football:
+                amount: 30
+                unit: day
+      'BIG3':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Badminton:
+                amount: 30
+                unit: day
+      'Curling':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Bandy:
+                amount: 30
+                unit: day
+      'Cycling':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Beach-Soccer:
+                amount: 30
+                unit: day
+      'Formula_1':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Beach-Volleyball:
+                amount: 30
+                unit: day
+      'Formula_E':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Curling:
+                amount: 30
+                unit: day
+      'Horse_Racing':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Cycling:
+                amount: 30
+                unit: day
+      'IndyCar':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Darts:
+                amount: 30
+                unit: day
+      'MotoGP':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Field-Hockey:
+                amount: 30
+                unit: day
+      'NCAA_MH':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Floorball:
+                amount: 30
+                unit: day
+      'NCAA_WB':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Formula-1:
+                amount: 30
+                unit: day
+      'Odds':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Formula-E:
+                amount: 30
+                unit: day
+      'Pesapallo':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Futsal:
+                amount: 30
+                unit: day
+      'Squash':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Global-American-Football:
+                amount: 30
+                unit: day
+      'UFC':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Global-Baseball:
+                amount: 30
+                unit: day
+      'Winter_Sports':
         get:
           requests:
             - max: 0
               period:
-                amount: 1
-                unit: month
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period:
-                amount: 1
-                unit: month
-    rates:
-      /NFL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MLB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NHL:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-FB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Golf:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NASCAR:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Europe:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Americas:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-International:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Asia:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Soccer-Other:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-WB:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NCAA-MH:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /WNBA:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /NBA-G-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cricket:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Rugby:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Tennis:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      '/Counter-Strike:-Global-Offensive':
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /League-of-Legends:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /DOTA2:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Olympics:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Arena-Football-League:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Australian-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Badminton:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Bandy:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Soccer:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Beach-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Curling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Cycling:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Darts:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Field-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Floorball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-1:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Formula-E:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Futsal:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-American-Football:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Baseball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Basketball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Global-Ice-Hockey:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Handball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Indoor-Volleyball:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /IndyCar:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /MotoGP:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Motorsports:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Odds:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Pesapallo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Snooker:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Squash:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /UFC:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
-      /Waterpolo:
-        get:
-          requests:
-            - max: 0
-              period: 
-                amount: 1
-                unit: second
+                amount: 30
+                unit: day

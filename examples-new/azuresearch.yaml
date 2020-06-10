@@ -9,7 +9,7 @@ infrastructure:
   supervisor: 'http://supervisor.oai.governify.io/api/v2'
   monitor: 'http://monitor.oai.governify.io/api/v1'
 metrics:
-  globalRequests:
+  requests:
     type: integer
     format: int64
     description: 'Number of requests, regardeless the resource'
@@ -26,126 +26,126 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 1000
               period:
                 amount: 1
                 unit: month
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 1000
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 1000
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 1000
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -153,35 +153,35 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
@@ -195,7 +195,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -206,7 +206,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -217,7 +217,7 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -228,7 +228,7 @@ plans:
                   volume: 1000
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -239,7 +239,7 @@ plans:
                   volume: 1000
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -250,7 +250,7 @@ plans:
                   volume: 1000
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -261,7 +261,7 @@ plans:
                   volume: 1000
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -272,7 +272,7 @@ plans:
                   volume: 1000
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -283,7 +283,7 @@ plans:
                   volume: 1000
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -294,7 +294,7 @@ plans:
                   volume: 1000
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -305,7 +305,7 @@ plans:
                   volume: 1000
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -316,7 +316,7 @@ plans:
                   volume: 25000
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -327,7 +327,7 @@ plans:
                   volume: 1000
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -338,7 +338,7 @@ plans:
                   volume: 25000
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -349,28 +349,28 @@ plans:
                   volume: 1000
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -378,84 +378,84 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
                 unit: second
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
@@ -463,7 +463,7 @@ plans:
  
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
@@ -471,7 +471,7 @@ plans:
      
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 250
               period:
                 amount: 1
@@ -485,7 +485,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -496,7 +496,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -507,63 +507,63 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -574,7 +574,7 @@ plans:
                   volume: 10000
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -585,7 +585,7 @@ plans:
                   volume: 1000
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -596,7 +596,7 @@ plans:
                   volume: 10000
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -607,28 +607,28 @@ plans:
                   volume: 1000
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -636,35 +636,35 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
@@ -672,7 +672,7 @@ plans:
      
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
@@ -686,7 +686,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -697,7 +697,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -708,7 +708,7 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -719,7 +719,7 @@ plans:
                   volume: 1000
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -730,98 +730,98 @@ plans:
                   volume: 1000
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -829,28 +829,28 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
@@ -864,7 +864,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -875,7 +875,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -886,35 +886,35 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -925,7 +925,7 @@ plans:
                   volume: 1000
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -936,70 +936,70 @@ plans:
                   volume: 1000
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -1007,28 +1007,28 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
@@ -1042,7 +1042,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1053,7 +1053,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1064,21 +1064,21 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1089,7 +1089,7 @@ plans:
                   volume: 1000
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1100,84 +1100,84 @@ plans:
                   volume: 1000
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -1185,28 +1185,28 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
@@ -1220,7 +1220,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1231,7 +1231,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1242,49 +1242,49 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1295,7 +1295,7 @@ plans:
                   volume: 1000
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1306,56 +1306,56 @@ plans:
                   volume: 1000
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -1363,28 +1363,28 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
@@ -1398,7 +1398,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1409,7 +1409,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1420,7 +1420,7 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1431,7 +1431,7 @@ plans:
                   volume: 1000
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1442,21 +1442,21 @@ plans:
                   volume: 1000
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1467,7 +1467,7 @@ plans:
                   volume: 1000
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1478,70 +1478,70 @@ plans:
                   volume: 1000
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -1549,42 +1549,42 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
@@ -1598,7 +1598,7 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1609,7 +1609,7 @@ plans:
                   volume: 1000
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1620,7 +1620,7 @@ plans:
                   volume: 1000
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1631,7 +1631,7 @@ plans:
                   volume: 1000
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1642,7 +1642,7 @@ plans:
                   volume: 1000
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1653,7 +1653,7 @@ plans:
                   volume: 1000
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1664,7 +1664,7 @@ plans:
                   volume: 1000
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1675,7 +1675,7 @@ plans:
                   volume: 1000
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1686,70 +1686,70 @@ plans:
                   volume: 1000
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -1757,56 +1757,56 @@ plans:
     rates:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
                 unit: second
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 150
               period:
                 amount: 1
@@ -1820,105 +1820,105 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1929,7 +1929,7 @@ plans:
                   volume: 1000
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -1940,14 +1940,14 @@ plans:
                   volume: 1000
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -1955,14 +1955,14 @@ plans:
     rates:
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 30
               period:
                 amount: 1
                 unit: second
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 30
               period:
                 amount: 1
@@ -1976,112 +1976,112 @@ plans:
     quotas:
      /BingWebSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingWebSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingImageSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingNewsSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVideoSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingEntitySearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingAutosuggestSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingSpellSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
                 unit: month
      /BingVisualSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 0
               period:
                 amount: 1
@@ -2089,7 +2089,7 @@ plans:
 
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -2100,7 +2100,7 @@ plans:
                   volume: 1000
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: unlimited
               period:
                 amount: 1
@@ -2112,14 +2112,14 @@ plans:
     rates:
      /BingLocalBusinessSearch:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1
                 unit: second
      /BingLocalBusinessSearch/stats:
         get:
-          globalRequests:
+          requests:
             - max: 100
               period:
                 amount: 1

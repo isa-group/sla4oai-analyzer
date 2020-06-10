@@ -14,11 +14,7 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
+
   globalFlightsReturned:
     type: integer
     format: int64
@@ -26,7 +22,7 @@ metrics:
     resolution: consumption
 pricing:
   cost: 0
-  currency: EUR
+  currency: USD
   period:
     amount: 1
     unit: month
@@ -39,300 +35,289 @@ plans:
     quotas:
       /flex/airlines/rest/v1/json/active:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airlines/rest/v1/json/all:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airlines/rest/v1/json/fs:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airlines/rest/v1/json/iata:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airlines/rest/v1/json/icao:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/active:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/all:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/fs:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/citiCode:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/countryCode:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/iata:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/icao:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/airports/rest/v1/json/withinRadius:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/alerts/rest/v1/json/create:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/alerts/rest/v1/json/delete:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/alerts/rest/v1/json/get:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/connections/rest/v1/json/firstflightin:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/connections/rest/v1/json/firstflightout:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/connections/rest/v1/json/lastflightin:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/connections/rest/v1/json/lastflightout:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 500
               period: 
                 amount: 1
                 unit: forever
       /flex/delayindex/rest/v1/json/airports:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/delayindex/rest/v1/json/country:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/delayindex/rest/v1/json/region:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/delayindex/rest/v1/json/state:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/equipment/rest/v1/json/all:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/equipment/rest/v1/json/iata:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/rest/v1/json/flight/status:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/rest/v1/json/flight/tracks:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/rest/v1/json/airport/status:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/rest/v1/json/airport/tracks:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/rest/v1/json/route/status:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/rest/v1/json/flightNear:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
       /flex/fids/rest/v1/json/fids:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
       /flex/flightstatus/historical/rest/v1/json/flight:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
@@ -344,7 +329,7 @@ plans:
                 unit: forever
       /flex/flightstatus/historical/rest/v1/json/airport:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
@@ -356,7 +341,7 @@ plans:
                 unit: forever
       /flex/flightstatus/historical/rest/v1/json/route:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
@@ -368,82 +353,81 @@ plans:
                 unit: forever
       /flex/ratings/rest/v1/json/flight:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/ratings/rest/v1/json/route:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/schedules/rest/v1/json/flight:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/schedules/rest/v1/json/route:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/schedules/rest/v1/json/airport:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
-          requests:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
       /flex/schedules/rest/v1/json/direct:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/schedules/rest/v1/json/connecting:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/weather/rest/v1/json/all:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/weather/rest/v1/json/metar:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/weather/rest/v1/json/taf:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
                 unit: forever
       /flex/weather/rest/v1/json/zf:
         get:
-          globalRequests:
+          requests:
             - max: 20000
               period: 
                 amount: 1
@@ -453,112 +437,112 @@ plans:
       /flex/alerts/rest/v1/json/create:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/alerts/rest/v1/json/delete:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/alerts/rest/v1/json/get:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/firstflightin:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/firstflightout:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/lastflightin:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/lastflightout:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/airport/status:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/airport/tracks:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/route/status:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/fids/rest/v1/json/fids:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/historical/rest/v1/json/flight:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/historical/rest/v1/json/airport:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/historical/rest/v1/json/route:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/route:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/airport:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
@@ -567,315 +551,315 @@ plans:
       /flex/airlines/rest/v1/json/active:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airlines/rest/v1/json/all:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airlines/rest/v1/json/fs:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airlines/rest/v1/json/iata:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airlines/rest/v1/json/icao:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/active:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/all:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/fs:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/citiCode:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/countryCode:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/iata:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/icao:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/airports/rest/v1/json/withinRadius:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/alerts/rest/v1/json/create:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/alerts/rest/v1/json/delete:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/alerts/rest/v1/json/get:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/firstflightin:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/firstflightout:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/lastflightin:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/connections/rest/v1/json/lastflightout:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/delayindex/rest/v1/json/airports:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/delayindex/rest/v1/json/country:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/delayindex/rest/v1/json/region:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/delayindex/rest/v1/json/state:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/equipment/rest/v1/json/all:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/equipment/rest/v1/json/iata:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/flight/status:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/flight/tracks:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/airport/status:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/airport/tracks:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/route/status:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/flightstatus/rest/v1/json/flightNear:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/fids/rest/v1/json/fids:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/ratings/rest/v1/json/flight:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/ratings/rest/v1/json/route:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/flight:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/route:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/airport:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/direct:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/schedules/rest/v1/json/connecting:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/weather/rest/v1/json/all:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/weather/rest/v1/json/metar:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/weather/rest/v1/json/taf:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month
       /flex/weather/rest/v1/json/zf:
         get:
           requests:
-            - max: 0
+            - max: unlimited
               period:
                 amount: 1
                 unit: month

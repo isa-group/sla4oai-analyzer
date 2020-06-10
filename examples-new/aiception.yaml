@@ -19,7 +19,7 @@ plans:
   Free:
     pricing:
       cost: 0
-      currency: EUR
+      currency: USD
       period:
         amount: 1
         unit: month

@@ -14,11 +14,6 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
   updateFrequency:
     type: integer
     format: int64
@@ -26,9 +21,6 @@ metrics:
     resolution: consumption
   timeBack:
     type: integer
-    format: int64
-    description: Time back frequency (months)
-    resolution: consumption
 pricing:
   cost: 0
   currency: USD
@@ -152,44 +144,26 @@ plans:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/weather:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/box/city:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/group:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/weather/{op}/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/relief/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
           requests:
             - max: 0
               period:
@@ -337,44 +311,26 @@ plans:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/weather:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/box/city:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/group:
         get:
           updateFrequency:
             - max: 2
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/weather/{op}/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/relief/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
           requests:
             - max: 0
               period:
@@ -515,37 +471,22 @@ plans:
         get:
           updateFrequency:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/weather:
         get:
           updateFrequency:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/box/city:
         get:
           updateFrequency:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/group:
         get:
           updateFrequency:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/weather/{op}/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/accumulated_precipitation:
         get:
           requests:
@@ -681,37 +622,22 @@ plans:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/weather:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/box/city:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/group:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/weather/{op}/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/accumulated_precipitation:
         get:
           requests:
@@ -847,37 +773,22 @@ plans:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/weather:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/box/city:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/group:
         get:
           updateFrequency:
             - max: 0.167
-              period: 
-                amount: 1
-                unit: forever
       '/maps/2.0/weather/{op}/{z}/{x}/{y}':
         get:
           updateFrequency:
             - max: 3
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/accumulated_precipitation:
         get:
           requests:
@@ -1034,23 +945,14 @@ plans:
         get:
           timeBack:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/accumulated_temperature:
         get:
           timeBack:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/city:
         get:
           timeBack:
             - max: 1
-              period: 
-                amount: 1
-                unit: forever
   Historical-Medium:
     pricing:
       cost: 950
@@ -1186,23 +1088,14 @@ plans:
         get:
           timeBack:
             - max: 12
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/accumulated_temperature:
         get:
           timeBack:
             - max: 12
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/city:
         get:
           timeBack:
             - max: 12
-              period: 
-                amount: 1
-                unit: forever
   Historical-Advanced:
     rates:
       /data/2.5/history/accumulated_precipitation:
@@ -1336,20 +1229,11 @@ plans:
         get:
           timeBack:
             - max: 72
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/accumulated_temperature:
         get:
           timeBack:
             - max: 72
-              period: 
-                amount: 1
-                unit: forever
       /data/2.5/history/city:
         get:
           timeBack:
             - max: 72
-              period: 
-                amount: 1
-                unit: forever

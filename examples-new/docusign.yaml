@@ -14,11 +14,7 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-  globalRequests:
-    type: integer
-    format: int64
-    description: 'Number of requests, regardless the resource'
-    resolution: consumption
+
   documents:
     type: integer
     format: int64
@@ -26,7 +22,7 @@ metrics:
     resolution: consumption
 pricing:
   cost: 0
-  currency: EUR
+  currency: USD
   period:
     amount: 1
     unit: month
@@ -35,7 +31,10 @@ configuration: {}
 plans:
   BasicAPI:
     pricing:
-      cost: 50
+      cost: 75
+      period:
+        amount: 1
+        unit: month
     rates:
       '/v2/accounts/{accountId}/templates/{templateId}/custom_fields':
         get:
@@ -544,7 +543,10 @@ plans:
                 unit: month
   IntermediateAPI:
     pricing:
-      cost: 300
+      cost: 450
+      period:
+        amount: 1
+        unit: month
     rates:
       '/v2/accounts/{accountId}/templates/{templateId}/custom_fields':
         get:
@@ -1053,7 +1055,10 @@ plans:
                 unit: month
   AdvancedAPI:
     pricing:
-      cost: 480
+      cost: 720
+      period:
+        amount: 1
+        unit: month
     rates:
       '/v2/accounts/{accountId}/templates/{templateId}/custom_fields':
         get:
