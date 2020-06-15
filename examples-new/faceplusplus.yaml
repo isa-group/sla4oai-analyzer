@@ -47,169 +47,161 @@ plans:
     pricing:
       cost: 0
     quotas:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           fileSize:
             - max: 2
     rates:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getfacesets':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
- 
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/delete':
+      '/facepp/v3/faceset/getfacesets':
         post:
           QPS:
             - max: 1
@@ -217,7 +209,7 @@ plans:
                 amount: 1
                 unit: second
  
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getdetail':
+      '/facepp/v3/faceset/delete':
         post:
           QPS:
             - max: 1
@@ -225,7 +217,7 @@ plans:
                 amount: 1
                 unit: second
  
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/update':
+      '/facepp/v3/faceset/getdetail':
         post:
           QPS:
             - max: 1
@@ -233,7 +225,7 @@ plans:
                 amount: 1
                 unit: second
  
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/removeface':
+      '/facepp/v3/faceset/update':
         post:
           QPS:
             - max: 1
@@ -241,224 +233,232 @@ plans:
                 amount: 1
                 unit: second
  
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/removeface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+ 
+      '/facepp/v3/faceset/addface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/create':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/addface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/face/analyze':
+      '/facepp/v3/faceset/async/task_status':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/face/getdetail':
+      '/facepp/v3/face/analyze':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v3/face/setuserid':
+      '/facepp/v3/face/getdetail':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v3/face/setuserid':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/face/thousandlandmark':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/skinanalyze':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/facepp/v1/3dface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/detect':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v1/skeleton':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v2/segment':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/segment':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/humanbodypp/v1/gesture':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/mergeface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/addimage':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/sdk/v3/auth':
+      '/imagepp/v1/facealbum/updateface':
         post:
           QPS:
             - max: 1
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/sdk/v2/auth':
+      '/sdk/v3/auth':
+        post:
+          QPS:
+            - max: 1
+              period: 
+                amount: 1
+                unit: second
+      '/sdk/v2/auth':
         post:
           QPS:
             - max: 1
@@ -469,140 +469,140 @@ plans:
     pricing:
       cost: 0
     quotas:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           fileSize:
             - max: 2
     rates:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -625,7 +625,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post: 
           QPS_invalidParam:
             - max: unlimited
@@ -648,7 +648,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.002
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -671,7 +671,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.002
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getfacesets':
+      '/facepp/v3/faceset/getfacesets':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -694,7 +694,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/delete':
+      '/facepp/v3/faceset/delete':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -717,7 +717,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getdetail':
+      '/facepp/v3/faceset/getdetail':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -740,7 +740,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/update':
+      '/facepp/v3/faceset/update':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -763,7 +763,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/removeface':
+      '/facepp/v3/faceset/removeface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -786,7 +786,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -809,7 +809,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -832,7 +832,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -855,7 +855,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -878,7 +878,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0
-      'https://api-us.faceplusplus.com/facepp/v3/face/analyze':
+      '/facepp/v3/face/analyze':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -901,7 +901,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/facepp/v3/face/getdetail':
+      '/facepp/v3/face/getdetail':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -924,7 +924,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v3/face/setuserid':
+      '/facepp/v3/face/setuserid':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -947,7 +947,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0001
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -970,7 +970,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.03
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -993,7 +993,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.10
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1016,7 +1016,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1039,7 +1039,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.001
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1062,7 +1062,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.002
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1085,7 +1085,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.004
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1108,7 +1108,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.004
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1131,7 +1131,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.01
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1154,7 +1154,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.10
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1177,7 +1177,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1200,7 +1200,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1223,7 +1223,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1246,7 +1246,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0025
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1269,7 +1269,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1292,7 +1292,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0025
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1315,7 +1315,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.01
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1338,7 +1338,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1361,7 +1361,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.01
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1384,7 +1384,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1407,7 +1407,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1430,7 +1430,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1453,7 +1453,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1476,7 +1476,7 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      'https://api-us.faceplusplus.com/sdk/v3/auth':
+      '/sdk/v3/auth':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1495,7 +1495,7 @@ plans:
               period: 
                 amount: 1
                 unit: second
-      'https://api-us.faceplusplus.com/sdk/v2/auth':
+      '/sdk/v2/auth':
         post:
           QPS_invalidParam:
             - max: unlimited
@@ -1521,140 +1521,140 @@ plans:
         amount: 1
         unit: day
     quotas:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           fileSize:
             - max: 2
     rates:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           QPS:
             - max: 1
@@ -1665,7 +1665,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post: 
           QPS:
             - max: 1
@@ -1676,7 +1676,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           QPS:
             - max: 1
@@ -1687,7 +1687,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getfacesets':
+      '/facepp/v3/faceset/getfacesets':
         post:
           QPS:
             - max: 1
@@ -1698,7 +1698,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/delete':
+      '/facepp/v3/faceset/delete':
         post:
           QPS:
             - max: 1
@@ -1709,7 +1709,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getdetail':
+      '/facepp/v3/faceset/getdetail':
         post:
           QPS:
             - max: 1
@@ -1720,7 +1720,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/update':
+      '/facepp/v3/faceset/update':
         post:
           QPS:
             - max: 1
@@ -1731,7 +1731,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/removeface':
+      '/facepp/v3/faceset/removeface':
         post:
           QPS:
             - max: 1
@@ -1742,7 +1742,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           QPS:
             - max: 1
@@ -1753,7 +1753,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           QPS:
             - max: 1
@@ -1764,7 +1764,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           QPS:
             - max: 1
@@ -1775,7 +1775,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           QPS:
             - max: 1
@@ -1786,7 +1786,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/face/analyze':
+      '/facepp/v3/face/analyze':
         post:
           QPS:
             - max: 1
@@ -1797,7 +1797,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/face/getdetail':
+      '/facepp/v3/face/getdetail':
         post:
           QPS:
             - max: 1
@@ -1808,7 +1808,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/face/setuserid':
+      '/facepp/v3/face/setuserid':
         post:
           QPS:
             - max: 1
@@ -1819,7 +1819,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           QPS:
             - max: 1
@@ -1830,7 +1830,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           QPS:
             - max: 1
@@ -1841,7 +1841,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           QPS:
             - max: 1
@@ -1852,7 +1852,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           QPS:
             - max: 1
@@ -1863,7 +1863,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           QPS:
             - max: 1
@@ -1874,7 +1874,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           QPS:
             - max: 1
@@ -1885,7 +1885,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           QPS:
             - max: 1
@@ -1896,7 +1896,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           QPS:
             - max: 1
@@ -1907,7 +1907,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           QPS:
             - max: 1
@@ -1918,7 +1918,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           QPS:
             - max: 1
@@ -1929,7 +1929,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           QPS:
             - max: 1
@@ -1940,7 +1940,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           QPS:
             - max: 1
@@ -1951,7 +1951,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           QPS:
             - max: 1
@@ -1962,7 +1962,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           QPS:
             - max: 1
@@ -1973,7 +1973,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           QPS:
             - max: 1
@@ -1984,7 +1984,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           QPS:
             - max: 1
@@ -1995,7 +1995,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           QPS:
             - max: 1
@@ -2006,7 +2006,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           QPS:
             - max: 1
@@ -2017,7 +2017,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           QPS:
             - max: 1
@@ -2028,7 +2028,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           QPS:
             - max: 1
@@ -2039,7 +2039,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           QPS:
             - max: 1
@@ -2050,7 +2050,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           QPS:
             - max: 1
@@ -2061,7 +2061,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           QPS:
             - max: 1
@@ -2072,7 +2072,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/sdk/v3/auth':
+      '/sdk/v3/auth':
         post:
           QPS:
             - max: 1
@@ -2083,7 +2083,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/sdk/v2/auth':
+      '/sdk/v2/auth':
         post:
           QPS:
             - max: 1
@@ -2101,140 +2101,140 @@ plans:
         amount: 1
         unit: month
     quotas:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           faceSets:
             - max: 1000
               period: 
                 amount: 1
                 unit: forever
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           fileSize:
             - max: 2
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           fileSize:
             - max: 2
     rates:
-      'https://api-us.faceplusplus.com/facepp/v3/detect':
+      '/facepp/v3/detect':
         post:
           QPS:
             - max: 1
@@ -2245,7 +2245,7 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      'https://api-us.faceplusplus.com/facepp/v3/compare':
+      '/facepp/v3/compare':
         post: 
           QPS:
             - max: 1
@@ -2256,7 +2256,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/search':
+      '/facepp/v3/search':
         post:
           QPS:
             - max: 1
@@ -2267,7 +2267,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getfacesets':
+      '/facepp/v3/faceset/getfacesets':
         post:
           QPS:
             - max: 1
@@ -2278,7 +2278,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/delete':
+      '/facepp/v3/faceset/delete':
         post:
           QPS:
             - max: 1
@@ -2289,7 +2289,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/getdetail':
+      '/facepp/v3/faceset/getdetail':
         post:
           QPS:
             - max: 1
@@ -2300,7 +2300,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/update':
+      '/facepp/v3/faceset/update':
         post:
           QPS:
             - max: 1
@@ -2311,7 +2311,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/removeface':
+      '/facepp/v3/faceset/removeface':
         post:
           QPS:
             - max: 1
@@ -2322,7 +2322,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/addface':
+      '/facepp/v3/faceset/addface':
         post:
           QPS:
             - max: 1
@@ -2333,7 +2333,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/create':
+      '/facepp/v3/faceset/create':
         post:
           QPS:
             - max: 1
@@ -2344,7 +2344,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/addface':
+      '/facepp/v3/faceset/async/addface':
         post:
           QPS:
             - max: 1
@@ -2355,7 +2355,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/faceset/async/task_status':
+      '/facepp/v3/faceset/async/task_status':
         post:
           QPS:
             - max: 1
@@ -2366,7 +2366,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/face/analyze':
+      '/facepp/v3/face/analyze':
         post:
           QPS:
             - max: 1
@@ -2377,7 +2377,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/face/getdetail':
+      '/facepp/v3/face/getdetail':
         post:
           QPS:
             - max: 1
@@ -2388,7 +2388,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v3/face/setuserid':
+      '/facepp/v3/face/setuserid':
         post:
           QPS:
             - max: 1
@@ -2399,7 +2399,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark':
+      '/facepp/v1/face/thousandlandmark':
         post:
           QPS:
             - max: 1
@@ -2410,7 +2410,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v1/skinanalyze':
+      '/facepp/v1/skinanalyze':
         post:
           QPS:
             - max: 1
@@ -2421,7 +2421,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/facepp/v1/3dface':
+      '/facepp/v1/3dface':
         post:
           QPS:
             - max: 1
@@ -2432,7 +2432,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/humanbodypp/v1/detect':
+      '/humanbodypp/v1/detect':
         post:
           QPS:
             - max: 1
@@ -2443,7 +2443,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/humanbodypp/v1/skeleton':
+      '/humanbodypp/v1/skeleton':
         post:
           QPS:
             - max: 1
@@ -2454,7 +2454,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/humanbodypp/v2/segment':
+      '/humanbodypp/v2/segment':
         post:
           QPS:
             - max: 1
@@ -2465,7 +2465,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/humanbodypp/v1/segment':
+      '/humanbodypp/v1/segment':
         post:
           QPS:
             - max: 1
@@ -2476,7 +2476,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/humanbodypp/v1/gesture':
+      '/humanbodypp/v1/gesture':
         post:
           QPS:
             - max: 1
@@ -2487,7 +2487,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/mergeface':
+      '/imagepp/v1/mergeface':
         post:
           QPS:
             - max: 1
@@ -2498,7 +2498,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/createalbum':
+      '/imagepp/v1/facealbum/createalbum':
         post:
           QPS:
             - max: 1
@@ -2509,7 +2509,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deletealbum':
+      '/imagepp/v1/facealbum/deletealbum':
         post:
           QPS:
             - max: 1
@@ -2520,7 +2520,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacealbums':
+      '/imagepp/v1/facealbum/getfacealbums':
         post:
           QPS:
             - max: 1
@@ -2531,7 +2531,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/addimage':
+      '/imagepp/v1/facealbum/addimage':
         post:
           QPS:
             - max: 1
@@ -2542,7 +2542,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/deleteface':
+      '/imagepp/v1/facealbum/deleteface':
         post:
           QPS:
             - max: 1
@@ -2553,7 +2553,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/findcandidate':
+      '/imagepp/v1/facealbum/findcandidate':
         post:
           QPS:
             - max: 1
@@ -2564,7 +2564,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupface':
+      '/imagepp/v1/facealbum/groupface':
         post:
           QPS:
             - max: 1
@@ -2575,7 +2575,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/groupfacetaskquery':
+      '/imagepp/v1/facealbum/groupfacetaskquery':
         post:
           QPS:
             - max: 1
@@ -2586,7 +2586,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/searchimage':
+      '/imagepp/v1/facealbum/searchimage':
         post:
           QPS:
             - max: 1
@@ -2597,7 +2597,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/searchimagetaskquery':
+      '/imagepp/v1/searchimagetaskquery':
         post:
           QPS:
             - max: 1
@@ -2608,7 +2608,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getfacedetail':
+      '/imagepp/v1/facealbum/getfacedetail':
         post:
           QPS:
             - max: 1
@@ -2619,7 +2619,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getimagedetail':
+      '/imagepp/v1/facealbum/getimagedetail':
         post:
           QPS:
             - max: 1
@@ -2630,7 +2630,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/getalbumdetail':
+      '/imagepp/v1/facealbum/getalbumdetail':
         post:
           QPS:
             - max: 1
@@ -2641,7 +2641,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/imagepp/v1/facealbum/updateface':
+      '/imagepp/v1/facealbum/updateface':
         post:
           QPS:
             - max: 1
@@ -2652,7 +2652,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/sdk/v3/auth':
+      '/sdk/v3/auth':
         post:
           QPS:
             - max: 1
@@ -2663,7 +2663,7 @@ plans:
               period: 
                 amount: 1
                 unit: month
-      'https://api-us.faceplusplus.com/sdk/v2/auth':
+      '/sdk/v2/auth':
         post:
           QPS:
             - max: 1
