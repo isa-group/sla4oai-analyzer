@@ -9412,14 +9412,8 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\shodan.yaml
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L4.2 COST CONSISTENCY CONFLICT in plan 'StreetValidation-Global'|'StreetValidation-Startup' in >quotas>/avs/v1/validateAddress>get>requests ('500 per 1/day' > '1200 per 1/month' AND NOT '5 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'StreetValidation-Global'|'StreetValidation-Startup' in >quotas>/avs/v1/validateAddress>get>requests ('500 per 1/day' > '120 per 1/day' AND NOT '5 >= 9')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'StreetValidation-Global'|'StreetValidation-Startup' in >quotas>/avs/v1/validateGlobalAddress>get>requests ('500 per 1/day' > '0 per 1/month' AND NOT '5 >= 9')
   UNUSED METRIC 'globalRequests'
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=true
-       !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\snapcx.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.yaml ------
 CHECKING SYNTAX...
@@ -9574,6 +9568,7 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\quickblox.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\scopus.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\shodan.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\snapcx.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\soundcloud.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\surveymonkey.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\twilio.yaml",
@@ -9591,6 +9586,5 @@ INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\inconsistent-limits.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\mailchimp.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\meaningcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\snapcx.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\sportradar.yaml"
 ]

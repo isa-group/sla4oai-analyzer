@@ -377,22 +377,27 @@ function existsCostConsistencyConflict(plan1, plan2, plan1Name, plan2Name, prici
                                                             // If no cost, cost defaults to 0
                                                             plan1.pricing.cost = plan1.pricing.cost ?? 0;
                                                             plan2.pricing.cost = plan2.pricing.cost ?? 0;
-                                                            if (!isNaN(plan1.pricing.cost) && !isNaN(plan2.pricing.cost)) {
-                                                                if (limitations1PathMethodMetricLimit.period && limitations2PathMethodMetricLimit.period) {
-                                                                    let existsCostConsistencyConflict = existsCostConsistencyConflict_check(pricing, plan1, plan2, limitations1PathMethodMetricLimit, limitations2PathMethodMetricLimit, plan1Name, plan2Name, plan1LimitationsName, limitations1PathName, limitations1PathMethodName, limitations1PathMethodMetricName);
-                                                                    isCostConsistencyConflict_2 = isCostConsistencyConflict_2 && existsCostConsistencyConflict;
-                                                                    isCostConsistencyConflict_1 = isCostConsistencyConflict_1 || isCostConsistencyConflict_2;
-                                                                    // conflictText = `>${plan1LimitationsName}>${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`;
-                                                                    if (isCostConsistencyConflict_1 === true && isCostConsistencyConflict_2 === true) {
-                                                                        logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in plan '${plan1Name}'|'${plan2Name}' in >${plan1LimitationsName}>${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
+                                                            if (!limitations1PathMethodMetricLimit.cost && !limitations2PathMethodMetricLimit.cost) {
+                                                                if (!isNaN(plan1.pricing.cost) && !isNaN(plan2.pricing.cost)) {
+                                                                    if (limitations1PathMethodMetricLimit.period && limitations2PathMethodMetricLimit.period) {
+                                                                        let existsCostConsistencyConflict = existsCostConsistencyConflict_check(pricing, plan1, plan2, limitations1PathMethodMetricLimit, limitations2PathMethodMetricLimit, plan1Name, plan2Name, plan1LimitationsName, limitations1PathName, limitations1PathMethodName, limitations1PathMethodMetricName);
+                                                                        isCostConsistencyConflict_2 = isCostConsistencyConflict_2 && existsCostConsistencyConflict;
+                                                                        isCostConsistencyConflict_1 = isCostConsistencyConflict_1 || isCostConsistencyConflict_2;
+                                                                        // conflictText = `>${plan1LimitationsName}>${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`;
+                                                                        if (isCostConsistencyConflict_1 === true && isCostConsistencyConflict_2 === true) {
+                                                                            logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in plan '${plan1Name}'|'${plan2Name}' in >${plan1LimitationsName}>${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
+                                                                        }
+                                                                    } else {
+                                                                        logger.debug(`existsCostConsistencyConflict - Cannot compare non-period pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
+                                                                        continue;
                                                                     }
                                                                 } else {
+                                                                    logger.debug(`existsCostConsistencyConflict - Cannot compare NaN pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                                     continue;
-                                                                    // logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                                 }
                                                             } else {
+                                                                logger.debug(`existsCostConsistencyConflict - Cannot compare operationCost or overageCost pricings cost in plan '${plan1Name}'|'${plan2Name}' in >${plan1LimitationsName}>${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
                                                                 continue;
-                                                                // logger.warning(`existsCostConsistencyConflict - Cannot compare NaN pricings cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
                                                             }
                                                         } else { //FIXME: simple cost is the only supported cost so far
                                                             // logger.warning(`existsCostConsistencyConflict - Cannot compare pricings in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
