@@ -37,14 +37,14 @@ function isValid_pricing(pricing) {
     areMetricValid(pricing);
 
     // Merge conditions
-    const condition = everyPlanIsValid && !existsCostConsistencyConflicts;
+    const condition = everyPlanIsValid === true && existsCostConsistencyConflicts !== true;
 
     if (condition !== true) {
         // logger.info("\x1b[31m", "isValid_pricing", condition, "\x1b[0m");
         // logger.info(`In isValid_pricing: ${condition}\n    everyPlanIsValid=${everyPlanIsValid} && !existsCostConsistencyConflicts=${!existsCostConsistencyConflicts}`);
         logger.validationWarning("     NOK PRICING VALIDITY NOK");
         logger.validationWarning(`       everyPlanIsValid=${everyPlanIsValid}`);
-        logger.validationWarning(`       !existsCostConsistencyConflicts=${!existsCostConsistencyConflicts}`);
+        logger.validationWarning(`       !existsCostConsistencyConflicts=${existsCostConsistencyConflicts !== true}`);
     } else {
         logger.validation("     PRICING VALIDITY OK");
     }
@@ -74,14 +74,14 @@ function isValid_plan(plan, planName) {
     const existsConsistencyConflicts = existsPlanConsistencyConflict(plan, planName);
 
     // Merge conditions
-    const condition = everyLimitationIsValid && !existsConsistencyConflicts;
+    const condition = everyLimitationIsValid === true && existsConsistencyConflicts !== true;
 
     if (condition !== true) {
         // logger.info("\x1b[31m", "isValid_plan", condition, "\x1b[0m");
         // logger.info(`In isValid_plan: ${condition}\n    everyLimitationIsValid=${everyLimitationIsValid} && !existsConsistencyConflicts=${!existsConsistencyConflicts}`);
         logger.validationWarning(`       NOK PLAN VALIDITY in (${planName}) NOK`);
         logger.validationWarning(`         everyLimitationIsValid=${everyLimitationIsValid}`);
-        logger.validationWarning(`         !existsConsistencyConflicts=${!existsConsistencyConflicts}`);
+        logger.validationWarning(`         !existsConsistencyConflicts=${existsConsistencyConflicts !== true}`);
     } else {
         logger.validation(`       PLAN VALIDITY (${planName}) OK`);
     }
@@ -95,7 +95,11 @@ function isValid_limitation(limitation, planName, path, method, metric) {
     logger.validation(`       CHECKING LIMITATION VALIDITY (${printLimitatation(limitation)})...`);
 
     // [P1 L2.1] All its {limits} are valid.
-    const everyLimitIsValid = limitation.every((limit) => isValid_limit(limit, planName, path, method, metric));
+    let everyLimitIsValid = true;
+    for (let limit of limitation) {
+        let isValidLimit = isValid_limit(limit, planName, path, method, metric);
+        everyLimitIsValid = everyLimitIsValid && isValidLimit;
+    }
 
     // [P1 L2.2] There are no {consistency conflicts} between any pair of its {limits}, that is, a possible situation allowed by one limit implies the violation of the other {limit}.
     const existsConsistencyConflicts = existsLimitsConsistencyConflict(limitation, planName, path, method, metric);
@@ -106,15 +110,15 @@ function isValid_limitation(limitation, planName, path, method, metric) {
 
 
     // Merge conditions
-    const condition = everyLimitIsValid && !existsConsistencyConflicts && !existsAmbiguityConflicts;
+    const condition = everyLimitIsValid === true && existsConsistencyConflicts !== true && existsAmbiguityConflicts !== true;
 
     if (condition !== true) {
         // logger.info("\x1b[31m", "isValid_limitation", condition, "\x1b[0m");
         // logger.info(`In isValid_limitation: ${condition}\n    everyLimitIsValid=${everyLimitIsValid} && !existsConsistencyConflicts=${!existsConsistencyConflicts} && !existsAmbiguityConflicts=${!existsAmbiguityConflicts}`);
         logger.validationWarning(`         NOK LIMITATION VALIDITY in ${planName}>${path}>${method}>${metric} (${printLimitatation(limitation)}) NOK`);
         logger.validationWarning(`           everyLimitIsValid=${everyLimitIsValid}`);
-        logger.validationWarning(`           !existsConsistencyConflicts=${!existsConsistencyConflicts}`);
-        logger.validationWarning(`           !existsAmbiguityConflicts=${!existsAmbiguityConflicts}`);
+        logger.validationWarning(`           !existsConsistencyConflicts=${existsConsistencyConflicts !== true}`);
+        logger.validationWarning(`           !existsAmbiguityConflicts=${existsAmbiguityConflicts !== true}`);
     } else {
         logger.validation(`         LIMITATION VALIDITY (${printLimitatation(limitation)}) OK`);
     }
@@ -134,20 +138,19 @@ function isValid_limit(limit, planName, path, method, metric) {
     // [P1 L1.2] It is consistent with its associated {capacity}, that is, it does not surpases the associated {capacity}.
     const existsLimitsConsistencyConflictCapacity = existsLimitsConsistencyConflict_check(limit, capacity, planName, path, method, metric);
 
-    const condition = isNaturalNumber && !existsLimitsConsistencyConflictCapacity;
+    const condition = isNaturalNumber === true && existsLimitsConsistencyConflictCapacity !== true;
 
     if (condition !== true) {
         // logger.info("\x1b[31m", "isValid_limit", condition, "\x1b[0m");
         // logger.info(`In isValid_limit: ${condition}\n    isNaturalNumber=${isNaturalNumber} && !existsLimitsConsistencyConflictCapacity=${!existsLimitsConsistencyConflictCapacity}`);
         logger.validationWarning(`           NOK LIMIT VALIDITY in ${planName}>${path}>${method}>${metric} (${printLimit(limit)}) NOK`);
         logger.validationWarning(`             isNaturalNumber=${isNaturalNumber}`);
-        logger.validationWarning(`             !existsLimitsConsistencyConflictCapacity=${!existsLimitsConsistencyConflictCapacity}`);
+        logger.validationWarning(`             !existsLimitsConsistencyConflictCapacity=${existsLimitsConsistencyConflictCapacity !== true}`);
     } else {
         // logger.validation(`           LIMIT VALIDITY (${printLimit(limit)}) OK`);
     }
 
     return condition;
-
 }
 
 // ************************************* BEGIN CONFLICT DETECTION ************************************* //
@@ -170,12 +173,6 @@ function existsLimitsConsistencyConflict(limits, planName, path, method, metric)
     }
     return existsConsistencyConflicts;
 }
-
-
-function ssss(limitations1PathName, limitations2PathName, limitations1PathMethodName, limitations2PathMethodName, limitations1PathMethodMetricName, limitations2PathMethodMetricName, plan1, plan2) {
-
-}
-
 
 // [P1 L2.2] There are no {consistency conflicts} (aux function)
 function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, method, metric) {
@@ -213,11 +210,11 @@ function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, m
     }
 
     // Merge conditions
-    const condition = existsInconsistency;
+    const condition = existsInconsistency === true;
 
     if (condition === true) {
         // logger.info("\x1b[31m", `Limit "${limit1.max} per ${limit1.period.amount}/${limit1.period.unit}" and "Limit ${limit2.max} per ${limit2.period.amount}/${limit2.period.unit}" are inconsistent`, "\x1b[0m");
-        // logger.validationWarning(`             L2.2 LIMIT CONSISTENCY CONFLICT: in ${planName}>${path}>${method}>${metric} (${printLimit(limit1)} and ${printLimit(limit2)})`);
+        logger.validationWarning(`             L2.2 LIMIT CONSISTENCY CONFLICT: in ${planName}>${path}>${method}>${metric} ('${printLimit(limit1)}' and '${printLimit(limit2)}')`);
     } else {
         // logger.validation(`             L2.2 NO LIMIT CONSISTENCY CONFLICT (${printLimit(limit1)} and ${printLimit(limit2)}) OK`);
     }
@@ -242,7 +239,7 @@ function existsAmbiguityConflict(limits, planName, path, method, metric) {
     }
 
     // Merge conditions
-    const condition = existsAmbiguityConflicts;
+    const condition = existsAmbiguityConflicts === true;
     return condition;
 
 }
@@ -253,7 +250,7 @@ function existsAmbiguityConflict_check(limit1, limit2, planName, path, method, m
 
     if (condition === true) {
         // logger.info("\x1b[31m", `Limit "${limit1.max} per ${limit1.period.amount}/${limit1.period.unit}" and "Limit ${limit2.max} per ${limit2.period.amount}/${limit2.period.unit}" are inconsistent`, "\x1b[0m");
-        logger.validationWarning(`             L2.3 AMBIGUITY CONFLICT: in  ${planName}>${path}>${method}>${metric} (${printLimit(limit1)} and ${printLimit(limit2)})`);
+        logger.validationWarning(`             L2.3 AMBIGUITY CONFLICT: in  ${planName}>${path}>${method}>${metric} ('${printLimit(limit1)}' and '${printLimit(limit2)}')`);
     } else {
         // logger.validation(`             L2.3 NO AMBIGUITY CONFLICT (${printLimit(limit1)} and ${printLimit(limit1)})`);
     }
@@ -282,7 +279,7 @@ function existsPlanConsistencyConflict(plan, planName) {
                                                     if (planLimitationsName1 !== planLimitationsName2 && limitationsPathName1 === limitationsPathName2 && limitationsPathMethodName1 === limitationsPathMethodName2 && limitationsPathMethodMetricName1 === limitationsPathMethodMetricName2) {
                                                         let isLimitsConsistencyConflict = existsLimitsConsistencyConflict_check(limit1, limit2, planName, limitationsPathName2, limitationsPathMethodName2, limitationsPathMethodMetricName2);
                                                         if (isLimitsConsistencyConflict === true) {
-                                                            logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT in >${planName}>${planLimitationsName1}>${limitationsPathName1}>${limitationsPathMethodName1}>${limitationsPathMethodMetricName1} (${printLimit(limit1)}) AND ${planName}>${planLimitationsName2}>${limitationsPathName2}>${limitationsPathMethodName2}>${limitationsPathMethodMetricName2} (${printLimit(limit2)})`);
+                                                            logger.validationWarning(`                L3.2 CONSISTENCY CONFLICT in >${planName}>${planLimitationsName1}>${limitationsPathName1}>${limitationsPathMethodName1}>${limitationsPathMethodMetricName1} ('${printLimit(limit1)}') AND ${planName}>${planLimitationsName2}>${limitationsPathName2}>${limitationsPathMethodName2}>${limitationsPathMethodMetricName2} ('${printLimit(limit2)}')`);
                                                         }
                                                         existsConsistencyConflict = existsConsistencyConflict || isLimitsConsistencyConflict;
                                                         //TODO: implement related metrics
@@ -320,7 +317,7 @@ function existsPlanConsistencyConflict(plan, planName) {
     }
 
     // Merge conditions
-    const condition = existsConsistencyConflict || existsConsistencyRelatedMetricsConflict;
+    const condition = existsConsistencyConflict === true || existsConsistencyRelatedMetricsConflict === true;
 
     if (condition === true) {
         // logger.validationWarning(`             L3.2 CONSISTENCY CONFLICT (${planName})`);
@@ -419,7 +416,7 @@ function existsCostConsistencyConflict(plan1, plan2, plan1Name, plan2Name, prici
     }
 
     // Merge conditions
-    const condition = existsCostConsistencyConflicts;
+    const condition = existsCostConsistencyConflicts === true;
 
     if (condition === true) {
         // logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT: (${plan1} and ${plan2})`);
@@ -488,19 +485,19 @@ function normalizedPeriod(p) {
                 case "minute":
                     return capacity.period.amount * 60;
                 case "hour":
-                    return (capacity.period.amount * 60 * 60);
+                    return (capacity.period.amount * 3600); //60 * 60);
                 case "day":
-                    return (capacity.period.amount * 60 * 60 * 24);
+                    return (capacity.period.amount * 86400); //60 * 60 * 24);
                 case "week":
-                    return (capacity.period.amount * 60 * 60 * 24 * 7);
+                    return (capacity.period.amount * 604800); //60 * 60 * 24 * 7);
                 case "month":
-                    return (capacity.period.amount * 60 * 60 * 24 * 7 * 4);
+                    return (capacity.period.amount * 2628000); //60 * 60 * 24 * 7 * 4); 
                 case "year":
-                    return (capacity.period.amount * 60 * 60 * 24 * 7 * 4 * 12);
+                    return (capacity.period.amount * 31556952); //60 * 60 * 24 * 7 * 4 * 12);
                 case "decade":
-                    return (capacity.period.amount * 60 * 60 * 24 * 7 * 4 * 12 * 10);
+                    return (capacity.period.amount * 315569520); //60 * 60 * 24 * 7 * 4 * 12 * 10);
                 case "century":
-                    return (capacity.period.amount * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10);
+                    return (capacity.period.amount * 3155695200); //60 * 60 * 24 * 7 * 4 * 12 * 10 * 10);
                 case "forever":
                     return Infinity;
                 default:
@@ -557,7 +554,7 @@ function printLimitatation(limitation) {
     let i = 0;
     let res = "";
     limitation.forEach(limit => {
-        res += `l${i}=${printLimit(limit)}; `;
+        res += `l${i}='${printLimit(limit)}'; `;
         i++;
     });
     return res;

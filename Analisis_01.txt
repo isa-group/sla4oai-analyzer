@@ -20,8 +20,9 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\azuresearch.y
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L2.3 AMBIGUITY CONFLICT: in  Individual>/files/content>post>requests (10 per 1/second and 4 per 1/second)
-         NOK LIMITATION VALIDITY in Individual>/files/content>post>requests (l0=50000 per 1/day; l1=10 per 1/second; l2=4 per 1/second; ) NOK
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Individual>/files/content>post>requests ('10 per 1/second' and '4 per 1/second')
+             L2.3 AMBIGUITY CONFLICT: in  Individual>/files/content>post>requests ('10 per 1/second' and '4 per 1/second')
+         NOK LIMITATION VALIDITY in Individual>/files/content>post>requests (l0='50000 per 1/day'; l1='10 per 1/second'; l2='4 per 1/second'; ) NOK
            everyLimitIsValid=true
            !existsConsistencyConflicts=false
            !existsAmbiguityConflicts=false
@@ -9110,7 +9111,8 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\georanker.
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-         NOK LIMITATION VALIDITY in Free>/legacy/issues/search/{owner}/{repository}/{state}/{keyword}>get>authenticatedRequests (l0=5000 per 1/hour; l1=30 per 1/minute; ) NOK
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Free>/legacy/issues/search/{owner}/{repository}/{state}/{keyword}>get>authenticatedRequests ('5000 per 1/hour' and '30 per 1/minute')
+         NOK LIMITATION VALIDITY in Free>/legacy/issues/search/{owner}/{repository}/{state}/{keyword}>get>authenticatedRequests (l0='5000 per 1/hour'; l1='30 per 1/minute'; ) NOK
            everyLimitIsValid=true
            !existsConsistencyConflicts=false
            !existsAmbiguityConflicts=true
@@ -9154,7 +9156,8 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\htm2pdf.ya
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-                L3.2 CONSISTENCY CONFLICT in >Plan1>quotas>/method1>get>requests (60 per 60/second) AND Plan1>rates>/method1>get>requests (1 per 1/second)
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Plan1>quotas>/method1>get>requests ('60 per 60/second') AND Plan1>rates>/method1>get>requests ('1 per 1/second')
        NOK PLAN VALIDITY in (Plan1) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
@@ -9170,8 +9173,9 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\inconsiste
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests (60 per 60/second and 1 per 1/second)
-         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0=60 per 60/second; l1=1 per 1/second; ) NOK
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
+             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='60 per 60/second'; l1='1 per 1/second'; ) NOK
            everyLimitIsValid=true
            !existsConsistencyConflicts=false
            !existsAmbiguityConflicts=false
@@ -9196,7 +9200,8 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\lob.yaml
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-                L3.2 CONSISTENCY CONFLICT in >Free>quotas>/templates/{template_id}/default-content>get>emailPerMonth (1200000 per 1/month) AND Free>rates>/templates/{template_id}/default-content>get>emailPerMonth (190000 per 1/month)
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Free>/templates/{template_id}/default-content>get>emailPerMonth ('1200000 per 1/month' and '190000 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Free>quotas>/templates/{template_id}/default-content>get>emailPerMonth ('1200000 per 1/month') AND Free>rates>/templates/{template_id}/default-content>get>emailPerMonth ('190000 per 1/month')
        NOK PLAN VALIDITY in (Free) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
@@ -9224,7 +9229,8 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\mapillary.yam
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-                L3.2 CONSISTENCY CONFLICT in >Free>quotas>/summarization-1.0>get>requests (20000 per 1/second) AND Free>rates>/summarization-1.0>get>requests (2 per 1/second)
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Free>/summarization-1.0>get>requests ('20000 per 1/second' and '2 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Free>quotas>/summarization-1.0>get>requests ('20000 per 1/second') AND Free>rates>/summarization-1.0>get>requests ('2 per 1/second')
        NOK PLAN VALIDITY in (Free) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
@@ -9426,48 +9432,90 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\soundcloud.ya
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NFL>get>requests (750 per 1/month) AND Basic>rates>/NFL>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/MLB>get>requests (3000 per 1/month) AND Basic>rates>/MLB>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NBA>get>requests (3500 per 1/month) AND Basic>rates>/NBA>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NHL>get>requests (4500 per 1/month) AND Basic>rates>/NHL>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-FB>get>requests (1850 per 1/month) AND Basic>rates>/NCAA-FB>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-MB>get>requests (7500 per 1/month) AND Basic>rates>/NCAA-MB>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Golf>get>requests (600 per 1/month) AND Basic>rates>/Golf>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NASCAR>get>requests (125 per 1/month) AND Basic>rates>/NASCAR>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Europe>get>requests (3500 per 1/month) AND Basic>rates>/Soccer-Europe>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Americas>get>requests (4000 per 1/month) AND Basic>rates>/Soccer-Americas>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-International>get>requests (3500 per 1/month) AND Basic>rates>/Soccer-International>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Asia>get>requests (2500 per 1/month) AND Basic>rates>/Soccer-Asia>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Other>get>requests (3500 per 1/month) AND Basic>rates>/Soccer-Other>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-WB>get>requests (4500 per 1/month) AND Basic>rates>/NCAA-WB>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-MH>get>requests (3000 per 1/month) AND Basic>rates>/NCAA-MH>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/WNBA>get>requests (1750 per 1/month) AND Basic>rates>/WNBA>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Rugby>get>requests (2500 per 1/month) AND Basic>rates>/Rugby>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Tennis>get>requests (10000 per 1/month) AND Basic>rates>/Tennis>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Counter-Strike:-Global-Offensive>get>requests (1500 per 1/month) AND Basic>rates>/Counter-Strike:-Global-Offensive>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/League-of-Legends>get>requests (1200 per 1/month) AND Basic>rates>/League-of-Legends>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/DOTA2>get>requests (1000 per 1/month) AND Basic>rates>/DOTA2>get>requests (0 per 1/second)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NFL>get>requests (0 per 1/second) AND Basic>quotas>/NFL>get>requests (750 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/MLB>get>requests (0 per 1/second) AND Basic>quotas>/MLB>get>requests (3000 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NBA>get>requests (0 per 1/second) AND Basic>quotas>/NBA>get>requests (3500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NHL>get>requests (0 per 1/second) AND Basic>quotas>/NHL>get>requests (4500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-FB>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-FB>get>requests (1850 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-MB>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-MB>get>requests (7500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Golf>get>requests (0 per 1/second) AND Basic>quotas>/Golf>get>requests (600 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NASCAR>get>requests (0 per 1/second) AND Basic>quotas>/NASCAR>get>requests (125 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Europe>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Europe>get>requests (3500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Americas>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Americas>get>requests (4000 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-International>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-International>get>requests (3500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Asia>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Asia>get>requests (2500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Other>get>requests (0 per 1/second) AND Basic>quotas>/Soccer-Other>get>requests (3500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-WB>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-WB>get>requests (4500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-MH>get>requests (0 per 1/second) AND Basic>quotas>/NCAA-MH>get>requests (3000 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/WNBA>get>requests (0 per 1/second) AND Basic>quotas>/WNBA>get>requests (1750 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Rugby>get>requests (0 per 1/second) AND Basic>quotas>/Rugby>get>requests (2500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Tennis>get>requests (0 per 1/second) AND Basic>quotas>/Tennis>get>requests (10000 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Counter-Strike:-Global-Offensive>get>requests (0 per 1/second) AND Basic>quotas>/Counter-Strike:-Global-Offensive>get>requests (1500 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/League-of-Legends>get>requests (0 per 1/second) AND Basic>quotas>/League-of-Legends>get>requests (1200 per 1/month)
-                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/DOTA2>get>requests (0 per 1/second) AND Basic>quotas>/DOTA2>get>requests (1000 per 1/month)
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NFL>get>requests ('750 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NFL>get>requests ('750 per 1/month') AND Basic>rates>/NFL>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/MLB>get>requests ('3000 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/MLB>get>requests ('3000 per 1/month') AND Basic>rates>/MLB>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NBA>get>requests ('3500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NBA>get>requests ('3500 per 1/month') AND Basic>rates>/NBA>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NHL>get>requests ('4500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NHL>get>requests ('4500 per 1/month') AND Basic>rates>/NHL>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-FB>get>requests ('1850 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-FB>get>requests ('1850 per 1/month') AND Basic>rates>/NCAA-FB>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-MB>get>requests ('7500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-MB>get>requests ('7500 per 1/month') AND Basic>rates>/NCAA-MB>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Golf>get>requests ('600 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Golf>get>requests ('600 per 1/month') AND Basic>rates>/Golf>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NASCAR>get>requests ('125 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NASCAR>get>requests ('125 per 1/month') AND Basic>rates>/NASCAR>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Europe>get>requests ('3500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Europe>get>requests ('3500 per 1/month') AND Basic>rates>/Soccer-Europe>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Americas>get>requests ('4000 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Americas>get>requests ('4000 per 1/month') AND Basic>rates>/Soccer-Americas>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-International>get>requests ('3500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-International>get>requests ('3500 per 1/month') AND Basic>rates>/Soccer-International>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Asia>get>requests ('2500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Asia>get>requests ('2500 per 1/month') AND Basic>rates>/Soccer-Asia>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Other>get>requests ('3500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Soccer-Other>get>requests ('3500 per 1/month') AND Basic>rates>/Soccer-Other>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-WB>get>requests ('4500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-WB>get>requests ('4500 per 1/month') AND Basic>rates>/NCAA-WB>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-MH>get>requests ('3000 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/NCAA-MH>get>requests ('3000 per 1/month') AND Basic>rates>/NCAA-MH>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/WNBA>get>requests ('1750 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/WNBA>get>requests ('1750 per 1/month') AND Basic>rates>/WNBA>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Rugby>get>requests ('2500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Rugby>get>requests ('2500 per 1/month') AND Basic>rates>/Rugby>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Tennis>get>requests ('10000 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Tennis>get>requests ('10000 per 1/month') AND Basic>rates>/Tennis>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Counter-Strike:-Global-Offensive>get>requests ('1500 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/Counter-Strike:-Global-Offensive>get>requests ('1500 per 1/month') AND Basic>rates>/Counter-Strike:-Global-Offensive>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/League-of-Legends>get>requests ('1200 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/League-of-Legends>get>requests ('1200 per 1/month') AND Basic>rates>/League-of-Legends>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/DOTA2>get>requests ('1000 per 1/month' and '0 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Basic>quotas>/DOTA2>get>requests ('1000 per 1/month') AND Basic>rates>/DOTA2>get>requests ('0 per 1/second')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NFL>get>requests ('0 per 1/second' and '750 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NFL>get>requests ('0 per 1/second') AND Basic>quotas>/NFL>get>requests ('750 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/MLB>get>requests ('0 per 1/second' and '3000 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/MLB>get>requests ('0 per 1/second') AND Basic>quotas>/MLB>get>requests ('3000 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NBA>get>requests ('0 per 1/second' and '3500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NBA>get>requests ('0 per 1/second') AND Basic>quotas>/NBA>get>requests ('3500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NHL>get>requests ('0 per 1/second' and '4500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NHL>get>requests ('0 per 1/second') AND Basic>quotas>/NHL>get>requests ('4500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-FB>get>requests ('0 per 1/second' and '1850 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-FB>get>requests ('0 per 1/second') AND Basic>quotas>/NCAA-FB>get>requests ('1850 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-MB>get>requests ('0 per 1/second' and '7500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-MB>get>requests ('0 per 1/second') AND Basic>quotas>/NCAA-MB>get>requests ('7500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Golf>get>requests ('0 per 1/second' and '600 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Golf>get>requests ('0 per 1/second') AND Basic>quotas>/Golf>get>requests ('600 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NASCAR>get>requests ('0 per 1/second' and '125 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NASCAR>get>requests ('0 per 1/second') AND Basic>quotas>/NASCAR>get>requests ('125 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Europe>get>requests ('0 per 1/second' and '3500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Europe>get>requests ('0 per 1/second') AND Basic>quotas>/Soccer-Europe>get>requests ('3500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Americas>get>requests ('0 per 1/second' and '4000 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Americas>get>requests ('0 per 1/second') AND Basic>quotas>/Soccer-Americas>get>requests ('4000 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-International>get>requests ('0 per 1/second' and '3500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-International>get>requests ('0 per 1/second') AND Basic>quotas>/Soccer-International>get>requests ('3500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Asia>get>requests ('0 per 1/second' and '2500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Asia>get>requests ('0 per 1/second') AND Basic>quotas>/Soccer-Asia>get>requests ('2500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Soccer-Other>get>requests ('0 per 1/second' and '3500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Soccer-Other>get>requests ('0 per 1/second') AND Basic>quotas>/Soccer-Other>get>requests ('3500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-WB>get>requests ('0 per 1/second' and '4500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-WB>get>requests ('0 per 1/second') AND Basic>quotas>/NCAA-WB>get>requests ('4500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/NCAA-MH>get>requests ('0 per 1/second' and '3000 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/NCAA-MH>get>requests ('0 per 1/second') AND Basic>quotas>/NCAA-MH>get>requests ('3000 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/WNBA>get>requests ('0 per 1/second' and '1750 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/WNBA>get>requests ('0 per 1/second') AND Basic>quotas>/WNBA>get>requests ('1750 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Rugby>get>requests ('0 per 1/second' and '2500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Rugby>get>requests ('0 per 1/second') AND Basic>quotas>/Rugby>get>requests ('2500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Tennis>get>requests ('0 per 1/second' and '10000 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Tennis>get>requests ('0 per 1/second') AND Basic>quotas>/Tennis>get>requests ('10000 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/Counter-Strike:-Global-Offensive>get>requests ('0 per 1/second' and '1500 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/Counter-Strike:-Global-Offensive>get>requests ('0 per 1/second') AND Basic>quotas>/Counter-Strike:-Global-Offensive>get>requests ('1500 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/League-of-Legends>get>requests ('0 per 1/second' and '1200 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/League-of-Legends>get>requests ('0 per 1/second') AND Basic>quotas>/League-of-Legends>get>requests ('1200 per 1/month')
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Basic>/DOTA2>get>requests ('0 per 1/second' and '1000 per 1/month')
+                L3.2 CONSISTENCY CONFLICT in >Basic>rates>/DOTA2>get>requests ('0 per 1/second') AND Basic>quotas>/DOTA2>get>requests ('1000 per 1/month')
        NOK PLAN VALIDITY in (Basic) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
