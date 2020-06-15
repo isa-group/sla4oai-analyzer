@@ -40,7 +40,7 @@ configuration: {}
 plans:
   Individual:
     pricing:
-      cost: 0
+      cost: 0.0
     rates:
       '/authorize':
         get:
@@ -8102,7 +8102,7 @@ plans:
                 unit: month
   Starter:
     pricing:
-      cost: 4.50
+      cost: 13.50
     rates:
       '/authorize':
         get:
@@ -12133,7 +12133,7 @@ plans:
                 unit: month
   Business:
     pricing:
-      cost: 13.50
+      cost: 40.50
     rates:
       '/authorize':
         get:
@@ -16164,7 +16164,7 @@ plans:
                 unit: month
   Business Plus:
     pricing:
-      cost: 22.50
+      cost: 67.50
     rates:
       '/authorize':
         get:
@@ -20195,7 +20195,7 @@ plans:
                 unit: month
   Enterprise:
     pricing:
-      cost: 31.50
+      cost: 94.50
     rates:
       '/authorize':
         get:
