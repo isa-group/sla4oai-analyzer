@@ -73,59 +73,7 @@ SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemplo
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-         NOK LIMITATION VALIDITY in Startup>/add_template>post>emails (l0=800 per 1/day; l1=24000 per 1/month; ) NOK
-           everyLimitIsValid=true
-           !existsConsistencyConflicts=false
-           !existsAmbiguityConflicts=true
-       NOK PLAN VALIDITY in (Startup) NOK
-         everyLimitationIsValid=false
-         !existsConsistencyConflicts=true
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/add_template>post>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/add_template>post>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/agregate>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/agregate>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/agregate_tags>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/agregate_tags>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklist_reasons>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklist_reasons>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists_multi>post>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists_multi>post>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists/email/{adres_e-mail}>delete>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists/email/{adres_e-mail}>delete>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists/email/{e-mail}>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/blacklists/email/{e-mail}>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/clicks>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/clicks>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/delete_temlate/{template_id}>delete>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/delete_temlate/{template_id}>delete>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/emails>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/emails>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/get_event_api>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/get_event_api>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/get_event_api_logs>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/get_event_api_logs>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/is_mail_tmp/email/{e-mail}>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/is_mail_tmp/email/{e-mail}>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/new_sendmail>post>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/new_sendmail>post>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/opens>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/opens>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/sendmail_templates>post>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/sendmail_templates>post>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/smtp>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/smtp>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/smtp_events/{status}>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/smtp_events/{status}>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/smtp/>post>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/smtp/>post>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/vps/>get>emails ('800 per 1/day' > '10000 per 1/month' AND NOT '0 >= 92.78')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'Startup'|'Pro' in >quotas>/vps/>get>emails ('24000 per 1/month' > '10000 per 1/month' AND NOT '0 >= 92.78')
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
-       !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\eversign.yaml ------
 CHECKING SYNTAX...
@@ -137,13 +85,6 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\eversign.
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-         NOK LIMITATION VALIDITY in Monthly_1QPS>/facepp/v3/compare>post>QPS (l0=1 per 1/second; l1=2628000 per 1/month; ) NOK
-           everyLimitIsValid=true
-           !existsConsistencyConflicts=false
-           !existsAmbiguityConflicts=true
-       NOK PLAN VALIDITY in (Monthly_1QPS) NOK
-         everyLimitationIsValid=false
-         !existsConsistencyConflicts=true
              L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/detect>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
              L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/detect>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
              L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/compare>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
@@ -225,7 +166,7 @@ CHECKING VALIDITY...
              L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/sdk/v2/auth>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
              L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/sdk/v2/auth>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
      NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
+       everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
 VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml ------
@@ -233,8 +174,8 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\facepl
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L2.3 AMBIGUITY CONFLICT: in  EvaluationPlan>/flex/alerts/rest/v1/json/create>get>requests (20000 per 1/forever and 500 per 1/forever)
-         NOK LIMITATION VALIDITY in EvaluationPlan>/flex/alerts/rest/v1/json/create>get>requests (l0=20000 per 1/forever; l1=500 per 1/forever; ) NOK
+             L2.3 AMBIGUITY CONFLICT: in  EvaluationPlan>/flex/alerts/rest/v1/json/create>get>requests ('20000 per 1/forever' and '500 per 1/forever')
+         NOK LIMITATION VALIDITY in EvaluationPlan>/flex/alerts/rest/v1/json/create>get>requests (l0='20000 per 1/forever'; l1='500 per 1/forever'; ) NOK
            everyLimitIsValid=true
            !existsConsistencyConflicts=true
            !existsAmbiguityConflicts=false
@@ -286,7 +227,8 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\htm2pdf.y
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-                L3.2 CONSISTENCY CONFLICT in >Plan1>quotas>/method1>get>requests (60 per 60/second) AND Plan1>rates>/method1>get>requests (1 per 1/second)
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
+                L3.2 CONSISTENCY CONFLICT in >Plan1>quotas>/method1>get>requests ('60 per 60/second') AND Plan1>rates>/method1>get>requests ('1 per 1/second')
        NOK PLAN VALIDITY in (Plan1) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
@@ -299,8 +241,9 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\incons
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests (60 per 60/second and 1 per 1/second)
-         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0=60 per 60/second; l1=1 per 1/second; ) NOK
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
+             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='60 per 60/second'; l1='1 per 1/second'; ) NOK
            everyLimitIsValid=true
            !existsConsistencyConflicts=false
            !existsAmbiguityConflicts=false
@@ -421,6 +364,7 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\debitoor.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\docusign.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\dropbox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\emaillabs.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\eversign.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\fullcontact.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\georanker.yaml",
@@ -448,7 +392,6 @@ VALID FILES: [
 
 INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\ejemploPablo.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\emaillabs.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\faceplusplus.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\flightstats.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limitations.yaml",

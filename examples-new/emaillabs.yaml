@@ -454,14 +454,14 @@ plans:
       '/add_template':
         post:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/agregate':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
@@ -470,7 +470,7 @@ plans:
       '/agregate_tags':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
@@ -479,84 +479,84 @@ plans:
       '/blacklist_reasons':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/blacklists':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/blacklists_multi':
         post:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/blacklists/email/{adres_e-mail}':
         delete:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/blacklists/email/{e-mail}':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/clicks':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/delete_temlate/{template_id}':
         delete:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/emails':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/get_event_api':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/get_event_api_logs':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/is_mail_tmp/email/{e-mail}':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/new_sendmail':
         post:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
@@ -567,14 +567,14 @@ plans:
       '/opens':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/sendmail_templates':
         post:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
@@ -585,28 +585,28 @@ plans:
       '/smtp':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/smtp_events/{status}':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/smtp/':
         post:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
       '/vps/':
         get:
           emails:
-            - max: 10000
+            - max: 100000
               period:
                 amount: 1
                 unit: month
