@@ -85,90 +85,7 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\eversign.
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/detect>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/detect>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/compare>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/compare>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/search>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/search>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/getfacesets>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/getfacesets>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/delete>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/delete>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/getdetail>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/getdetail>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/update>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/update>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/removeface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/removeface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/addface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/addface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/create>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/create>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/async/addface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/async/addface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/async/task_status>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/faceset/async/task_status>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/face/analyze>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/face/analyze>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/face/getdetail>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/face/getdetail>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/face/setuserid>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v3/face/setuserid>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v1/face/thousandlandmark>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v1/face/thousandlandmark>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v1/skinanalyze>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v1/skinanalyze>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v1/3dface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/facepp/v1/3dface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/detect>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/detect>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/skeleton>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/skeleton>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v2/segment>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v2/segment>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/segment>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/segment>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/gesture>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/humanbodypp/v1/gesture>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/mergeface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/mergeface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/createalbum>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/createalbum>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/deletealbum>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/deletealbum>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getfacealbums>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getfacealbums>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/addimage>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/addimage>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/deleteface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/deleteface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/findcandidate>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/findcandidate>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/groupface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/groupface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/groupfacetaskquery>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/groupfacetaskquery>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/searchimage>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/searchimage>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/searchimagetaskquery>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/searchimagetaskquery>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getfacedetail>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getfacedetail>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getimagedetail>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getimagedetail>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getalbumdetail>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/getalbumdetail>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/updateface>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/imagepp/v1/facealbum/updateface>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/sdk/v3/auth>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/sdk/v3/auth>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/sdk/v2/auth>post>QPS ('10 per 1/second' > '1 per 1/second' AND NOT '0 >= 4307')
-             L4.2 COST CONSISTENCY CONFLICT in plan 'PayAsYouGo'|'Daily_1QPS' in >rates>/sdk/v2/auth>post>QPS ('10 per 1/second' > '86400 per 1/day' AND NOT '0 >= 4307')
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=true
-       !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusplus.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml ------
 CHECKING SYNTAX...
@@ -366,6 +283,7 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\dropbox.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\emaillabs.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\eversign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\faceplusplus.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\fullcontact.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\georanker.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\github.yaml",
@@ -392,7 +310,6 @@ VALID FILES: [
 
 INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\ejemploPablo.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\faceplusplus.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\flightstats.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limitations.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limits.yaml"

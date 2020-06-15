@@ -451,20 +451,6 @@ plans:
               period: 
                 amount: 1
                 unit: second
-      '/sdk/v3/auth':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
-      '/sdk/v2/auth':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
   PayAsYouGo:
     pricing:
       cost: 0
@@ -1476,44 +1462,6 @@ plans:
                 operation:
                   volume: 1
                   cost: 0.0005
-      '/sdk/v3/auth':
-        post:
-          QPS_invalidParam:
-            - max: unlimited
-              cost:
-                operation:
-                  volume: 1
-                  cost: 0.0001
-          QPS_timeout:
-            - max: unlimited
-              cost:
-                operation:
-                  volume: 1
-                  cost: 0.0002
-          QPS:
-            - max: 10
-              period: 
-                amount: 1
-                unit: second
-      '/sdk/v2/auth':
-        post:
-          QPS_invalidParam:
-            - max: unlimited
-              cost:
-                operation:
-                  volume: 1
-                  cost: 0.0001
-          QPS_timeout:
-            - max: unlimited
-              cost:
-                operation:
-                  volume: 1
-                  cost: 0.0002
-          QPS:
-            - max: 10
-              period: 
-                amount: 1
-                unit: second
   Daily_1QPS:
     pricing:
       cost: 4307 # Not a real plan. It's the sum of purchasing every API resource
@@ -2072,28 +2020,6 @@ plans:
               period: 
                 amount: 1
                 unit: day
-      '/sdk/v3/auth':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
-            - max: 86400
-              period: 
-                amount: 1
-                unit: day
-      '/sdk/v2/auth':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
-            - max: 86400
-              period: 
-                amount: 1
-                unit: day
   Monthly_1QPS:
     pricing:
       cost: 84500 # Not a real plan. It's the sum of purchasing every API resource
@@ -2642,28 +2568,6 @@ plans:
                 amount: 1
                 unit: month
       '/imagepp/v1/facealbum/updateface':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
-            - max: 2628000
-              period: 
-                amount: 1
-                unit: month
-      '/sdk/v3/auth':
-        post:
-          QPS:
-            - max: 1
-              period: 
-                amount: 1
-                unit: second
-            - max: 2628000
-              period: 
-                amount: 1
-                unit: month
-      '/sdk/v2/auth':
         post:
           QPS:
             - max: 1
