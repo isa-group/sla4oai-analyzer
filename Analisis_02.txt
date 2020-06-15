@@ -91,18 +91,7 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\faceplusp
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-             L2.3 AMBIGUITY CONFLICT: in  EvaluationPlan>/flex/alerts/rest/v1/json/create>get>requests ('20000 per 1/forever' and '500 per 1/forever')
-         NOK LIMITATION VALIDITY in EvaluationPlan>/flex/alerts/rest/v1/json/create>get>requests (l0='20000 per 1/forever'; l1='500 per 1/forever'; ) NOK
-           everyLimitIsValid=true
-           !existsConsistencyConflicts=true
-           !existsAmbiguityConflicts=false
-       NOK PLAN VALIDITY in (EvaluationPlan) NOK
-         everyLimitationIsValid=false
-         !existsConsistencyConflicts=true
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
-       !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\flightstats.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\fullcontact.yaml ------
 CHECKING SYNTAX...
@@ -284,6 +273,7 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\emaillabs.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\eversign.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\faceplusplus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\flightstats.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\fullcontact.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\georanker.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\github.yaml",
@@ -310,7 +300,6 @@ VALID FILES: [
 
 INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\ejemploPablo.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\flightstats.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limitations.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limits.yaml"
 ]
