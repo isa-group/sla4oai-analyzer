@@ -1,0 +1,50 @@
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: 'null'
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+  bandwidth:
+    type: integer
+    format: int64
+    description: Number of MB
+pricing:
+  currency: USD
+  period: 
+    amount: 1
+    unit: month  
+plans:
+    Plan1:
+      pricing:
+        cost: 1
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 1000
+                period: 
+                  amount: 1
+                  unit: second
+                relatedMetrics:
+                  bandwidth:
+                    factor: 0.5
+            bandwidth:
+              - max: 1 #MB
+                period: 
+                  amount: 1
+                  unit: second
+                relatedMetrics:
+                  requests:
+                    factor: 2
+
+# Example~\ref{lst:p1c3b} has as an answer: \textbf{There is no consistency conflict between limitations},
+# because if each request consumes 0.5 KB, in 1000 KB (1 MB) we would have, at most, $1000/0.5=2000$ requests.
+# Given that $1000<2000$, the value of the limit on requests would not enter into any conflict.

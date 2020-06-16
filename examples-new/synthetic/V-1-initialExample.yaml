@@ -1,0 +1,63 @@
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: "null"
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  matches:
+    requests:
+      type: integer
+      format: int64
+      description: Number of matches
+pricing:
+  currency: USD
+plans:
+  Free:
+    pricing:
+      cost: 0
+      period:
+        amount: 1
+        unit: month
+    rates:
+      /v3/person.enrich:
+        get:
+          matches:
+            - max: 100
+              period:
+                amount: 1
+                unit: second
+              cost:
+                operation:
+                  volume: 1000
+                  cost: 0.1
+  Premium:
+    pricing:
+      cost: 10
+      period:
+        amount: 1
+        unit: month
+    rates:
+      /v3/person.enrich:
+        get:
+          matches:
+            - max: 100
+              period:
+                amount: 1
+                unit: second
+    quotas:
+      /v3/person.enrich:
+        get:
+          matches:
+            - max: 15000
+              period:
+                amount: 1
+                unit: month
+              cost:
+                overage: 
+                  excess: 1
+                  cost: 0.001
+    

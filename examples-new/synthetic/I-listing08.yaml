@@ -1,0 +1,38 @@
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: 'null'
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+pricing:
+  currency: USD
+  period: 
+    amount: 1
+    unit: month  
+plans:
+    Plan1:
+      pricing:
+        cost: 1
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 1
+                period: 
+                  amount: 1
+                  unit: second
+              - max: 100
+                period: 
+                  amount: 1
+                  unit: day
+
+# Example~\ref{lst:p1c2a}  has as an answer: \textbf{There is a consistency conflict},
+# because there are two constraints with the same unit, both "1 request every 1 second" and "100 requests every 1 second" use the same unit, 1 second.

@@ -1,0 +1,41 @@
+capacity:
+  max: 10
+  period:
+    amount: 1
+    unit: second
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: 'null'
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+pricing:
+  currency: USD
+  period: 
+    amount: 1
+    unit: month  
+plans:
+    Plan1:
+      pricing:
+        cost: 1
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 870000
+                period: 
+                  amount: 1
+                  unit: day
+
+# Example~\ref{lst:p1c1.2a} has as an answer: \textbf{There is an conflict of consistency with capacity}.
+# First, we calculate the utilization percentage of the limit of 864001 requests every 1 day (86400 seconds), 864001 requests / 86400 seconds,
+# that is, $864001/86400=10,069$; we divide by the capacity $10.069/10=1.0069=100.69\%$.
+# Since the utilization percentage is greater than 100\%, $100.69\% > 100\%$, there is a conflict of consistency with capacity.

@@ -1,0 +1,56 @@
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: 'null'
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+pricing:
+  currency: USD
+  period: 
+    amount: 1
+    unit: month  
+plans:
+    Plan1:
+      pricing:
+        cost: 10
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 10
+                period: 
+                  amount: 1
+                  unit: second
+              - max: 100
+                period: 
+                  amount: 1
+                  unit: day
+    Plan2:
+      pricing:
+        cost: 1
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 1
+                period: 
+                  amount: 1
+                  unit: second
+              - max: 1000
+                period: 
+                  amount: 1
+                  unit: day
+
+# Example~\ref{lst:p1c4a} has as an answer: \textbf{There is a cost consistency conflict},
+# because if the limit of a plan "100 requests every 1 day (plan 1)" 
+# has an equivalence in the other of "1000 requests / 1 day (plan 2)", it does not make sense: 
+# 1) to reduce it from 10 to 1 request every 1 second in plan 2;
+# 2) to reduce the price from \$10 to \$1.

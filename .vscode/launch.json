@@ -25,7 +25,6 @@
             // "args": ["examples-new/debitoor.yaml"]
             // "args": ["examples-new/docusign.yaml"]
             // "args": ["examples-new/dropbox.yaml"]
-            // "args": ["examples-new/ejemploPablo.yaml"]
             // "args": ["examples-new/emaillabs.yaml"]
             // "args": ["examples-new/eversign.yaml"]
             // "args": ["examples-new/faceplusplus.yaml"]
@@ -36,8 +35,6 @@
             // "args": ["examples-new/groupdocs.yaml"]
             // "args": ["examples-new/here.yaml"]
             // "args": ["examples-new/htm2pdf.yaml"]
-            // "args": ["examples-new/inconsistent-limitations.yaml"]
-            // "args": ["examples-new/inconsistent-limits.yaml"]
             // "args": ["examples-new/lob.yaml"]
             // "args": ["examples-new/mailchimp.yaml"]
             // "args": ["examples-new/mailgun.yaml"]
@@ -56,7 +53,8 @@
             // "args": ["examples-new/yummly.yaml"]
 
             // "args": ["-d", "examples/"]
-            "args": ["-d", "examples-new/"]
+            // "args": ["-d", "examples-new/"]
+            "args": ["-d", "examples-new/synthetic"]
         }
     ]
 }

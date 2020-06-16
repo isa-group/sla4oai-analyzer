@@ -1,0 +1,41 @@
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: 'null'
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+pricing:
+  currency: USD
+  period: 
+    amount: 1
+    unit: month  
+plans:
+    Plan1:
+      pricing:
+        cost: 1
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 100
+                period: 
+                  amount: 1
+                  unit: day
+              - max: 10
+                period: 
+                  amount: 1
+                  unit: week
+
+# Example~\ref{lst:p1c1.1b} has as an answer: \textbf{There is no consistency conflict}.
+# First, let us assume that the capacity of the service is $10^6$.
+# The limit with the highest period (1 week) is "1000 requests / 1 week" and the usage percentage is $1000/10^6=0.1\%$.
+# The limit with the smallest period (1 day) is "100 requests / 1 day" and the utilization percentage is $100/10^6=0.01\%$.
+# Since $0.1\% \not< 0.01\%$, we claim that these two limitations are consistent.
