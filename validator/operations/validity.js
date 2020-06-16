@@ -8,7 +8,7 @@ const config = require("./../configurations");
 const logger = config.logger;
 
 // ****************************** BEGIN P1 VALIDITY DETECTION ****************************** //
-var capacity = { "max": Infinity, "period": { "amount": 1, "unit": "second" } };
+var capacity = { "requests": { "max": "Infinity", "period": { "amount": 1, "unit": "second" } } };
 
 // P1   [L4   Valid pricing] A {pricing} is valid if: 
 function isValid_pricing(pricing) {
@@ -16,11 +16,11 @@ function isValid_pricing(pricing) {
     logger.validation("   CHECKING PRICING VALIDITY...");
 
     if (pricing.capacity) {
-        logger.validationWarning(`   UPDATING CAPACITY FROM '${printLimit(capacity)}'...`);
+        logger.validationWarning(`   UPDATING CAPACITY FROM '${JSON.stringify(capacity)}'...`);
         setCapacity(pricing.capacity);
-        logger.validationWarning(`     UPDATED TO '${printLimit(capacity)}'`);
-    }else{
-        logger.validationWarning(`   USING DEFAULT CAPACITY '${printLimit(capacity)}'`);
+        logger.validationWarning(`     UPDATED TO '${JSON.stringify(capacity)}'`);
+    } else {
+        logger.validationWarning(`   USING DEFAULT CAPACITY '${JSON.stringify(capacity)}'`);
     }
 
     // [P1 L4.1] All its {plans} are valid.
@@ -144,8 +144,11 @@ function isValid_limit(limit, planName, path, method, metric) {
     }
 
     // [P1 L1.2] It is consistent with its associated {capacity}, that is, it does not surpases the associated {capacity}.
-    const existsLimitsConsistencyConflictCapacity = existsLimitsConsistencyConflict_check(limit, capacity, planName, path, method, metric);
-
+    let existsLimitsConsistencyConflictCapacity = false;
+    if (capacity[metric]) {
+        const metricCapacity = capacity[metric];
+        existsLimitsConsistencyConflictCapacity = existsLimitsConsistencyConflict_check(limit, metricCapacity, planName, path, method, metric);
+    }
     const condition = isNaturalNumber === true && existsLimitsConsistencyConflictCapacity !== true;
 
     if (condition !== true) {
@@ -190,11 +193,11 @@ function existsLimitsConsistencyConflict_check(limit1, limit2, planName, path, m
 
     if (limit1.period && limit2.period) {
 
-        let N1 = normalizedPeriod(limit1.period);
-        let N2 = normalizedPeriod(limit2.period);
+        let N1 = normalizedPeriod(limit1.period, metric);
+        let N2 = normalizedPeriod(limit2.period, metric);
 
-        let PU1 = PU(limit1, N1);
-        let PU2 = PU(limit2, N2);
+        let PU1 = PU(limit1, N1, metric);
+        let PU2 = PU(limit2, N2, metric);
 
 
         if (PU1 !== Infinity && PU2 !== Infinity) {
@@ -484,33 +487,43 @@ function existsCostConsistencyConflict_check(pricing, plan1, plan2, limitations1
 
 // ****************************** BEGIN AUX FUNCTIONS ****************************** //
 // Normalize period
-function normalizedPeriod(p) {
-    switch (capacity.period.unit) {
+function normalizedPeriod(p, metric) {
+    let unit;
+    let amount;
+    if (metric && capacity[metric] && capacity[metric].period && capacity[metric].period.unit) {
+        unit = capacity[metric].period.unit;
+        amount = capacity[metric].period.amount;
+    } else {
+        unit = "second";
+        amount = 1;
+        logger.debug("Using default normalization unit");
+    }
+    switch (unit) {
         case "millisecond":
             logger.error("normalizedPeriod - from millisecond to whatever is not supported");
             break;
         case "second":
             switch (p.unit) {
                 case "millisecond":
-                    return capacity.period.amount / 1000;
+                    return amount / 1000;
                 case "second":
-                    return capacity.period.amount;
+                    return amount;
                 case "minute":
-                    return capacity.period.amount * 60;
+                    return amount * 60;
                 case "hour":
-                    return (capacity.period.amount * 3600); //60 * 60);
+                    return (amount * 3600); //60 * 60);
                 case "day":
-                    return (capacity.period.amount * 86400); //60 * 60 * 24);
+                    return (amount * 86400); //60 * 60 * 24);
                 case "week":
-                    return (capacity.period.amount * 604800); //60 * 60 * 24 * 7);
+                    return (amount * 604800); //60 * 60 * 24 * 7);
                 case "month":
-                    return (capacity.period.amount * 2628000); //60 * 60 * 24 * 7 * 4); 
+                    return (amount * 2628000); //60 * 60 * 24 * 7 * 4); 
                 case "year":
-                    return (capacity.period.amount * 31556952); //60 * 60 * 24 * 7 * 4 * 12);
+                    return (amount * 31556952); //60 * 60 * 24 * 7 * 4 * 12);
                 case "decade":
-                    return (capacity.period.amount * 315569520); //60 * 60 * 24 * 7 * 4 * 12 * 10);
+                    return (amount * 315569520); //60 * 60 * 24 * 7 * 4 * 12 * 10);
                 case "century":
-                    return (capacity.period.amount * 3155695200); //60 * 60 * 24 * 7 * 4 * 12 * 10 * 10);
+                    return (amount * 3155695200); //60 * 60 * 24 * 7 * 4 * 12 * 10 * 10);
                 case "forever":
                     return Infinity;
                 default:
@@ -545,18 +558,18 @@ function normalizedPeriod(p) {
             logger.error("normalizedPeriod - from forever to whatever is not supported");
             break;
         default:
-            logger.error(`normalizedPeriod - from ${capacity.period.unit} to whatever is not supported`);
+            logger.error(`normalizedPeriod - from ${unit} to whatever is not supported`);
             break;
     }
 }
 
 // percentage of Usage
-function PU(limit, normalizedPeriod) {
+function PU(limit, normalizedPeriod, metric) {
     const limitMax = !isNaN(limit.max) ? limit.max : Infinity;
     if (normalizedPeriod) {
         return limitMax / normalizedPeriod;
-    } else if (capacity.max) {
-        return limitMax / capacity.max;
+    } else if (capacity[metric] && capacity[metric].max) {
+        return limitMax /capacity[metric].max;
     } else {
         logger.error("Cannot calculate PU, missing capacity or normalized period");
         return null;
@@ -615,7 +628,7 @@ function areMetricValid(pricing) {
 }
 
 function setCapacity(cap) {
-     capacity = cap;
+    capacity = cap;
 }
 
 

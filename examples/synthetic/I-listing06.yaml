@@ -1,8 +1,9 @@
 capacity:
-  max: 10
-  period:
-    amount: 1
-    unit: second
+  requests:
+    max: Infinity
+    period:
+      amount: 1
+      unit: second
 context:
     id: plans
     sla: '1.0'

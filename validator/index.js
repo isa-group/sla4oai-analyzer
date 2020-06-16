@@ -58,7 +58,7 @@ function validate(argPath, cmd) {
                         if (fs.lstatSync(file).isFile()) {
                             logger.validationProcess(`------ BEGIN CHECKING FILE: ${file} ------`);
                             let res = validateFile(file, cmd);
-                            if (res) { validFiles.push(file); } else { invalidFiles.push(file); }
+                            if (res === true) { validFiles.push(file); } else { invalidFiles.push(file); }
                             logger.validationProcess(`------ END CHECKING FILE: ${file} ------`);
                         } else {
                             logger.warning(`Skipping folder '${file}', recursive mode is not yet supported`);
@@ -72,7 +72,7 @@ function validate(argPath, cmd) {
                 let file = argPath;
                 logger.validationProcess(`------ BEGIN CHECKING FILE: ${file} ------`);
                 let res = validateFile(file, cmd);
-                if (res) { validFiles.push(file); } else { invalidFiles.push(file); }
+                if (res === true) { validFiles.push(file); } else { invalidFiles.push(file); }
                 logger.validationProcess(`------ END CHECKING FILE: ${file} ------`);
                 return res;
             } else {
@@ -104,7 +104,7 @@ function validateFile(file, cmd) {
         logger.validationProcess("SYNTAX OK");
         logger.validationProcess("CHECKING VALIDITY...");
         const isValid = validityOperations.isValid(sla4oaiObject);
-        if (isValid) {
+        if (isValid === true) {
             logger.validationProcess(`VALIDITY OK in ${file}`);
             return true;
         } else {
