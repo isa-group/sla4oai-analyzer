@@ -15,6 +15,14 @@ function isValid_pricing(pricing) {
 
     logger.validation("   CHECKING PRICING VALIDITY...");
 
+    if (pricing.capacity) {
+        logger.validationWarning(`   UPDATING CAPACITY FROM '${printLimit(capacity)}'...`);
+        setCapacity(pricing.capacity);
+        logger.validationWarning(`     UPDATED TO '${printLimit(capacity)}'`);
+    }else{
+        logger.validationWarning(`   USING DEFAULT CAPACITY '${printLimit(capacity)}'`);
+    }
+
     // [P1 L4.1] All its {plans} are valid.
     let everyPlanIsValid = true;
     for (const planName in pricing.plans) {
@@ -604,6 +612,10 @@ function areMetricValid(pricing) {
             logger.validationWarning(`  UNUSED METRIC '${metricName}'`);
         }
     }
+}
+
+function setCapacity(cap) {
+     capacity = cap;
 }
 
 
