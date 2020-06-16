@@ -64,11 +64,6 @@ SYNTAX OK
 CHECKING VALIDITY...
 VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dropbox.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\dropbox.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemploPablo.yaml ------
-CHECKING SYNTAX...
-SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemploPablo.yaml
-  SYNTAX ERROR: (OBJECT_MISSING_REQUIRED_PROPERTY) in path "#/": Missing required property: infrastructure
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\ejemploPablo.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\emaillabs.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
@@ -129,38 +124,6 @@ SYNTAX OK
 CHECKING VALIDITY...
 VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\htm2pdf.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\htm2pdf.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limitations.yaml ------
-CHECKING SYNTAX...
-SYNTAX OK
-CHECKING VALIDITY...
-             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
-                L3.2 CONSISTENCY CONFLICT in >Plan1>quotas>/method1>get>requests ('60 per 60/second') AND Plan1>rates>/method1>get>requests ('1 per 1/second')
-       NOK PLAN VALIDITY in (Plan1) NOK
-         everyLimitationIsValid=true
-         !existsConsistencyConflicts=false
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
-       !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limitations.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limitations.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limits.yaml ------
-CHECKING SYNTAX...
-SYNTAX OK
-CHECKING VALIDITY...
-             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
-             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests ('60 per 60/second' and '1 per 1/second')
-         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='60 per 60/second'; l1='1 per 1/second'; ) NOK
-           everyLimitIsValid=true
-           !existsConsistencyConflicts=false
-           !existsAmbiguityConflicts=false
-       NOK PLAN VALIDITY in (Plan1) NOK
-         everyLimitationIsValid=false
-         !existsConsistencyConflicts=true
-     NOK PRICING VALIDITY NOK
-       everyPlanIsValid=false
-       !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limits.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\inconsistent-limits.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples-new\lob.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
@@ -298,8 +261,4 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\yummly.yaml"
 ]
 
-INVALID FILES: [
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\ejemploPablo.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limitations.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples-new\\inconsistent-limits.yaml"
-]
+INVALID FILES: []

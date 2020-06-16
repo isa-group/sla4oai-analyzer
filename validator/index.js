@@ -53,10 +53,14 @@ function validate(argPath, cmd) {
             fs.readdir(argPath, (err, files) => {
                 files.forEach(file => {
                     file = path.resolve(argPath, file);
-                    logger.validationProcess(`------ BEGIN CHECKING FILE: ${file} ------`);
-                    let res = validateFile(file, cmd);
-                    if (res) { validFiles.push(file); } else { invalidFiles.push(file); }
-                    logger.validationProcess(`------ END CHECKING FILE: ${file} ------`);
+                    if (fs.lstatSync(file).isFile()) {
+                        logger.validationProcess(`------ BEGIN CHECKING FILE: ${file} ------`);
+                        let res = validateFile(file, cmd);
+                        if (res) { validFiles.push(file); } else { invalidFiles.push(file); }
+                        logger.validationProcess(`------ END CHECKING FILE: ${file} ------`);
+                    }else{
+                        logger.warning(`Skipping folder '${file}', recursive mode is not yet supported`);
+                    }
                 });
                 logger.validationProcess(`\nVALID FILES: ${JSON.stringify(validFiles, null, 2)}`);
                 logger.validationProcess(`\nINVALID FILES: ${JSON.stringify(invalidFiles, null, 2)}`);
