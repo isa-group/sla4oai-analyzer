@@ -55,28 +55,72 @@ CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    UPDATING CAPACITY FROM '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'...
-     UPDATED TO '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing06.yaml
+     UPDATED TO '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('870000 per 1/day' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan1>/method1>get>requests (870000 per 1/day) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='870000 per 1/day'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing06.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing06.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing08.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing08.yaml
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('100 per 1/second' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan1>/method1>get>requests (100 per 1/second) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('100 per 1/second' and '1 per 1/second')
+             L2.3 AMBIGUITY CONFLICT: in  Plan1>/method1>get>requests ('1 per 1/second' and '100 per 1/second')
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='1 per 1/second'; l1='100 per 1/second'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=false
+           !existsAmbiguityConflicts=false
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing08.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing08.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing10.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing10.yaml
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('5000 per 1/second' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan1>/method1>get>requests (5000 per 1/second) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='5000 per 1/second'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing10.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing10.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing12.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
              L4.2 COST CONSISTENCY CONFLICT in plan 'Plan1'|'Plan2' in >quotas>/method1>get>requests ('100 per 1/day' > '1000 per 1/day' AND NOT '10 >= 1')
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
@@ -87,77 +131,133 @@ VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-02-consistent-limits.yaml
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan1>/method1>get>requests (60 per 60/second) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='60 per 60/second'; l1='10000 per 1/week'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-02-consistent-limits.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-02-consistent-limits.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-03-consistent-limitations.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-03-consistent-limitations.yaml
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('60 per 60/second' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan1>/method1>get>requests (60 per 60/second) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='60 per 60/second'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-03-consistent-limitations.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-03-consistent-limitations.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-1-initialExample.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
 VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-1-initialExample.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-1-initialExample.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing03.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
 VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing03.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing03.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing05.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   UPDATING CAPACITY FROM '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'...
-     UPDATED TO '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+   UPDATING CAPACITY FROM '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'...
+     UPDATED TO '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
 VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing05.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing05.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing07.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
 VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing07.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing07.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing09.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing09.yaml
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan1>/method1>get>requests ('1000 per 1/second' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan1>/method1>get>requests (1000 per 1/second) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+         NOK LIMITATION VALIDITY in Plan1>/method1>get>requests (l0='1000 per 1/second'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Plan1) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing09.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing09.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing11.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
-   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing11.yaml
+   USING DEFAULT CAPACITY '{"requests":{"max":10,"period":{"amount":1,"unit":"second"}}}'
+             L2.2 LIMIT CONSISTENCY CONFLICT: in Plan2>/method1>get>requests ('100 per 1/second' and '10 per 1/second')
+           NOK LIMIT VALIDITY in Plan2>/method1>get>requests (100 per 1/second) NOK
+             isNaturalNumber=true
+             !existsLimitsConsistencyConflictCapacity=false
+         NOK LIMITATION VALIDITY in Plan2>/method1>get>requests (l0='100 per 1/second'; l1='1000 per 1/day'; ) NOK
+           everyLimitIsValid=false
+           !existsConsistencyConflicts=true
+           !existsAmbiguityConflicts=true
+       NOK PLAN VALIDITY in (Plan2) NOK
+         everyLimitationIsValid=false
+         !existsConsistencyConflicts=true
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=false
+       !existsCostConsistencyConflicts=true
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing11.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing11.yaml ------
 
 VALID FILES: [
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing06.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing08.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing10.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-02-consistent-limits.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-03-consistent-limitations.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-1-initialExample.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing03.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing05.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing07.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing09.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing11.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing07.yaml"
 ]
 
 INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-02-inconsistent-limits.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-03-inconsistent-limitations.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing04.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing12.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing06.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing08.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing10.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing12.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-02-consistent-limits.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-03-consistent-limitations.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing09.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-listing11.yaml"
 ]

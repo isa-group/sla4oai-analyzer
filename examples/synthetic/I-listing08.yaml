@@ -32,7 +32,7 @@ plans:
               - max: 100
                 period: 
                   amount: 1
-                  unit: day
+                  unit: second
 
 # Example~\ref{lst:p1c2a}  has as an answer: \textbf{There is a consistency conflict},
 # because there are two constraints with the same unit, both "1 request every 1 second" and "100 requests every 1 second" use the same unit, 1 second.
