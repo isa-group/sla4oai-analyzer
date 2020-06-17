@@ -37,13 +37,13 @@ plans:
                   bandwidth:
                     factor: 0.5
             bandwidth:
-              - max: 1 #MB
+              - max: 1000 #KB
                 period: 
                   amount: 1
                   unit: second
-                relatedMetrics:
-                  requests:
-                    factor: 2
+                # relatedMetrics:
+                #   requests:
+                #     factor: 2
 
 # Example~\ref{lst:p1c3a} has as an answer: \textbf{There is a consistency conflict between limitations},
 # because if each request consumes 0.5 KB, in 1000 KB (1 MB) we would have, at most, $1000/0.5=2000$ requests.
