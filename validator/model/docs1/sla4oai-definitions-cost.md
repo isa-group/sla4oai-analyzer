@@ -17,27 +17,10 @@ Cost associated to this plan.
 
 # Cost Properties
 
-| Property                  | Type          | Required | Nullable       | Defined by                                                                                                               |
-| :------------------------ | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| [calculated](#calculated) | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-cost-properties-calculated.md "SLA4OAI#/definitions/Cost/properties/calculated") |
-| [operation](#operation)   | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-cost-properties-operation.md "SLA4OAI#/definitions/Cost/properties/operation")   |
-| [overage](#overage)       | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-cost-properties-overage.md "SLA4OAI#/definitions/Cost/properties/overage")       |
-
-## calculated
-
-Calculated cost
-
-
-`calculated`
-
--   is optional
--   Type: `string` ([calculated](sla4oai-definitions-cost-properties-calculated.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-cost-properties-calculated.md "SLA4OAI#/definitions/Cost/properties/calculated")
-
-### calculated Type
-
-`string` ([calculated](sla4oai-definitions-cost-properties-calculated.md))
+| Property                | Type          | Required | Nullable       | Defined by                                                                                                             |
+| :---------------------- | ------------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| [operation](#operation) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-cost-properties-operation.md "SLA4OAI#/definitions/Cost/properties/operation") |
+| [overage](#overage)     | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-cost-properties-overage.md "SLA4OAI#/definitions/Cost/properties/overage")     |
 
 ## operation
 

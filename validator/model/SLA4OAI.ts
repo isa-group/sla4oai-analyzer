@@ -485,11 +485,6 @@ class Cost {
     * The overage cost
     */
     overage?: OverageCost
-
-    /**
-    * Calculated cost
-    */
-    calculated?: string
 }
 
 /**

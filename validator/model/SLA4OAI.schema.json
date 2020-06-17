@@ -91,11 +91,6 @@
             "description": "Cost associated to this plan.",
             "id": "Cost",
             "properties": {
-                "calculated": {
-                    "description": "Calculated cost",
-                    "title": "calculated",
-                    "type": "string"
-                },
                 "operation": {
                     "$ref": "#/definitions/OperationCost",
                     "description": "The operation cost",
