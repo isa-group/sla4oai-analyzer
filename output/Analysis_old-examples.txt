@@ -33,6 +33,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Individual) NOK
          everyLimitationIsValid=false
          !existsConsistencyConflicts=true
+         !existsRelatedMetricConsistencyConflict=true
              L4.2 COST CONSISTENCY CONFLICT in plan 'Individual'|'Starter' in >rates>/files/upload_sessions/{SESSION_ID}>get>requests ('60 per 1/minute' > '12 per 1/minute' AND NOT '0 >= 4.5')
              L4.2 COST CONSISTENCY CONFLICT in plan 'Individual'|'Starter' in >rates>/files/upload_sessions/{SESSION_ID}/parts>get>requests ('60 per 1/minute' > '12 per 1/minute' AND NOT '0 >= 4.5')
   UNUSED METRIC 'users'
@@ -9122,6 +9123,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Free) NOK
          everyLimitationIsValid=false
          !existsConsistencyConflicts=true
+         !existsRelatedMetricConsistencyConflict=true
   UNUSED METRIC 'globalRequests'
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
@@ -9168,6 +9170,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Plan1) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
+         !existsRelatedMetricConsistencyConflict=true
   UNDEFINED METRIC requests in Plan1>/method1>get>requests 
   UNDEFINED METRIC requests in Plan1>/method1>get>requests 
   UNUSED METRIC 'requesrs'
@@ -9190,6 +9193,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Plan1) NOK
          everyLimitationIsValid=false
          !existsConsistencyConflicts=true
+         !existsRelatedMetricConsistencyConflict=true
   UNDEFINED METRIC requests in Plan1>/method1>get>requests 
   UNUSED METRIC 'requesrs'
      NOK PRICING VALIDITY NOK
@@ -9215,6 +9219,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Free) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
+         !existsRelatedMetricConsistencyConflict=true
   UNUSED METRIC 'globalRquests'
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
@@ -9247,6 +9252,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Free) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
+         !existsRelatedMetricConsistencyConflict=true
              L4.2 COST CONSISTENCY CONFLICT in plan 'Free'|'Start-Up' in >quotas>/summarization-1.0>get>requests ('20000 per 1/second' > '5 per 1/second' AND NOT '0 >= 99')
   UNDEFINED METRIC globalRequests in Free>/documentstructure-1.0>get>globalRequests 
   UNDEFINED METRIC globalRequests in Free>/parser-2.0>get>globalRequests 
@@ -9535,6 +9541,7 @@ CHECKING VALIDITY...
        NOK PLAN VALIDITY in (Basic) NOK
          everyLimitationIsValid=true
          !existsConsistencyConflicts=false
+         !existsRelatedMetricConsistencyConflict=true
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
