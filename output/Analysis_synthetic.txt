@@ -77,7 +77,11 @@ CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing12.yaml
+             L4.2 COST CONSISTENCY CONFLICT in plan 'Plan1'|'Plan2' in >quotas>/method1>get>requests ('100 per 1/day' > '1000 per 1/day' AND NOT '10 >= 1')
+     NOK PRICING VALIDITY NOK
+       everyPlanIsValid=true
+       !existsCostConsistencyConflicts=false
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing12.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing12.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-02-consistent-limits.yaml ------
 CHECKING SYNTAX...
@@ -141,7 +145,6 @@ VALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing06.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing08.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing10.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing12.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-02-consistent-limits.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-03-consistent-limitations.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-1-initialExample.yaml",
@@ -155,5 +158,6 @@ VALID FILES: [
 INVALID FILES: [
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-02-inconsistent-limits.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-03-inconsistent-limitations.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing04.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing04.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\I-listing12.yaml"
 ]
