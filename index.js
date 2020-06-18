@@ -13,7 +13,8 @@ program
   .arguments("<file>")
   .version("1.0.0", "-v, --vers", "output the current version")
   .option("-d, --directory", "if it is a directory instead of a single file")
-  .option("-s, --syntax", "only checks syntax errors")
+  .option("-s, --onlysyntax", "only checks syntax errors")
+  .option("-V, --verbose", "verbose syntax")
   // .option('-n, --projectName <projectName>', 'Name for the generated folder')
   .action(function (file, cmd) {
     validator.validate(file,cmd);

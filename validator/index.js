@@ -14,8 +14,9 @@ const semver = require("semver");
 
 var config = require("./configurations");
 var validityOperations = require("./operations/validity");
+var sintaxVerbose = require("./operations/checkElements");
 
-const validator = new ZSchema({
+const syntax = new ZSchema({
     ignoreUnresolvableReferences: true,
     ignoreUnknownFormats: false,
     // strictMode: true,
@@ -92,15 +93,18 @@ function validateFile(file, cmd) {
     logger.info(`Input oas-doc ${file}`);
     // logger.debug("Input oas-doc %s: %s", file, sla4oaiObject);
 
-    var err = validator.validate(sla4oaiObject, sla4oaiSchema);
     logger.validationProcess("CHECKING SYNTAX...");
+    var err = syntax.validate(sla4oaiObject, sla4oaiSchema);
+    if (cmd.verbose) {
+        sintaxVerbose.listProperties(sla4oaiObject);
+    }
     if (err == false) {
         logger.validationProcess(`SYNTAX ERRORS in ${file}`);
         for (const key of validator.getLastErrors()) {
             logger.validationProcess(`  SYNTAX ERROR: (${key.code}) in path "${key.path}": ${key.message}`);
         }
         return false;
-    } else if (!cmd.syntax) {
+    } else if (!cmd.onlysyntax) {
         logger.validationProcess("SYNTAX OK");
         logger.validationProcess("CHECKING VALIDITY...");
         const isValid = validityOperations.isValid(sla4oaiObject);
