@@ -73,7 +73,6 @@ plans:
                   excess: 2500000
                   cost: 0.002
     
-    guarantees: {}
   PrixFixe:
     availability: '2009-10-09T21:30:00.00Z'
     pricing:
@@ -125,7 +124,6 @@ plans:
                   excess: 4000000
                   cost: 0.001
     
-    guarantees: {}
   Academic:
     availability: '2009-10-09T21:30:00.00Z'
     pricing:
@@ -217,7 +215,6 @@ plans:
               period: 
                 amount: 1
                 unit: forever
-    guarantees: {}
   Hackathon:
     availability: '2009-10-09T21:30:00.00Z'
     pricing:
@@ -309,4 +306,3 @@ plans:
               period: 
                 amount: 1
                 unit: forever
-    guarantees: {}

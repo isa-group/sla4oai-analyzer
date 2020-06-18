@@ -1222,7 +1222,6 @@ plans:
                 overage:
                   excess: 1
                   cost: 0.00012
-    guarantees: {}
   Prime:
     pricing:
       cost: 250.0

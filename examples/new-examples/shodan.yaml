@@ -518,7 +518,6 @@ plans:
               period:
                 amount: 1
                 unit: month
-    guarantees: {}
   freelancer:
     pricing:
       cost: 59
@@ -755,7 +754,6 @@ plans:
               period:
                 amount: 1
                 unit: month
-    guarantees: {}
   smallBusiness:
     pricing:
       cost: 299
@@ -992,7 +990,7 @@ plans:
               period:
                   amount: 1
                   unit: month
-    guarantees: {}
+    : {}
   corporate:
     pricing:
       cost: 899
@@ -1208,4 +1206,3 @@ plans:
               period:
                 amount: 1
                 unit: month
-    guarantees: {}
