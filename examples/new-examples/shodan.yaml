@@ -990,7 +990,6 @@ plans:
               period:
                   amount: 1
                   unit: month
-    : {}
   corporate:
     pricing:
       cost: 899

@@ -100,7 +100,7 @@ function validateFile(file, cmd) {
     }
     if (err == false) {
         logger.validationProcess(`SYNTAX ERRORS in ${file}`);
-        for (const key of validator.getLastErrors()) {
+        for (const key of syntax.getLastErrors()) {
             logger.validationProcess(`  SYNTAX ERROR: (${key.code}) in path "${key.path}": ${key.message}`);
         }
         return false;
