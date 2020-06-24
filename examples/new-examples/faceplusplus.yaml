@@ -29,6 +29,7 @@ metrics:
     format: int64
     description: Upload file size in MB
     resolution: consumption
+    unit: MB
   faceSets:
     type: integer
     format: int64

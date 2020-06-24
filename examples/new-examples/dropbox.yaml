@@ -19,9 +19,11 @@ metrics:
     format: int64
     description: Number of storage in GB
     resolution: consumption
+    unit: GB
   uploadSize:
     type: integer
     description: Number of transfer sizer in GB
+    unit: GB
 pricing:
   currency: USD
   period:

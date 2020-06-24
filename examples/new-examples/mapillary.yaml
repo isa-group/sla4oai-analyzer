@@ -19,16 +19,19 @@ metrics:
     format: int64
     description: 'Number of imageryKilometers'
     resolution: consumption
+    unit: km
   objectDetectionsKilometers:
     type: integer
     format: int64
     description: 'Number of objectDetectionsKilometers'
     resolution: consumption
+    unit: km
   mapFeaturesKilometers:
     type: integer
     format: int64
     description: 'Number of mapFeaturesKilometers'
     resolution: consumption
+    unit: km
 pricing:
   cost: 0
   currency: USD

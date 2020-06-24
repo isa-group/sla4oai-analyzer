@@ -14,6 +14,7 @@ metrics:
     format: int64
     description: Number of storage in GB
     resolution: consumption
+    unit: GB
   operations:
     type: integer
     format: int64
@@ -24,6 +25,7 @@ metrics:
     format: int64
     description: Number of fileSize in MB
     resolution: consumption
+    unit: MB
   files:
     type: integer
     format: int64

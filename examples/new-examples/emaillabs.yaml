@@ -14,11 +14,13 @@ metrics:
     format: int64
     description: Query size in MB
     resolution: consumption
+    unit: MB
   querySizeSum:
     type: integer
     format: int64
     description: Aggregated query size in MB
     resolution: consumption
+    unit: MB
   history:
     type: integer
     format: int64

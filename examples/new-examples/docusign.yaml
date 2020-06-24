@@ -14,7 +14,6 @@ metrics:
     format: int64
     description: 'Number of requests, regarding the resource'
     resolution: consumption
-
   documents:
     type: integer
     format: int64

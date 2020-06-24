@@ -19,6 +19,7 @@ metrics:
     format: int64
     description: Update frequency (hours)
     resolution: consumption
+    unit: hour
   timeBack:
     type: integer
 pricing:

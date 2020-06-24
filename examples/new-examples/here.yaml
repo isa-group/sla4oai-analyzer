@@ -27,13 +27,15 @@ metrics:
   dataTransfer:
     type: integer
     format: int64
-    description: Number of dataTransfer
+    description: Number of dataTransfer in MB
     resolution: consumption
+    unit: MB
   dataStorage:
     type: integer
     format: int64
-    description: Number of dataStorage
+    description: Number of dataStorage in GB
     resolution: consumption
+    unit: GB
 pricing:
   cost: 0
   currency: USD

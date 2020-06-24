@@ -19,11 +19,13 @@ metrics:
     format: int64
     description: GB of storage
     resolution: consumption
+    unit: GB
   maxUploadSize:
     type: integer
     format: int64
     description: maximium GB of upload size
     resolution: consumption
+    unit: GB
   history:
     type: integer
     format: int64

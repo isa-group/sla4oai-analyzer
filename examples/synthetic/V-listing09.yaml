@@ -16,6 +16,7 @@ metrics:
     type: integer
     format: int64
     description: Number of MB
+    unit: MB
 pricing:
   currency: USD
   period: 
