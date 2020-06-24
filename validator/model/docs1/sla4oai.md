@@ -295,177 +295,6 @@ The overage cost
 
 unknown ([overage](sla4oai-definitions-cost-properties-overage.md))
 
-## Definitions group Guarantee
-
-Reference this group by using
-
-```json
-{"$ref":"SLA4OAI#/definitions/Guarantee"}
-```
-
-| Property              | Type    | Required | Nullable       | Defined by                                                                                                                       |
-| :-------------------- | ------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| Additional Properties | `array` | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-guarantee-additionalproperties.md "SLA4OAI#/definitions/Guarantee/additionalProperties") |
-
-### Additional Properties
-
-Additional properties are allowed, as long as they follow this schema:
-
-
-
-
--   is optional
--   Type: unknown\[]
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-guarantee-additionalproperties.md "SLA4OAI#/definitions/Guarantee/additionalProperties")
-
-#### additionalProperties Type
-
-unknown\[]
-
-## Definitions group GuaranteeObjective
-
-Reference this group by using
-
-```json
-{"$ref":"SLA4OAI#/definitions/GuaranteeObjective"}
-```
-
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                         |
-| :---------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objective](#objective) | `string`      | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-objective.md "SLA4OAI#/definitions/GuaranteeObjective/properties/objective") |
-| [period](#period)       | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-period.md "SLA4OAI#/definitions/GuaranteeObjective/properties/period")       |
-| [scope](#scope)         | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-scope.md "SLA4OAI#/definitions/GuaranteeObjective/properties/scope")         |
-| [window](#window)       | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-window.md "SLA4OAI#/definitions/GuaranteeObjective/properties/window")       |
-
-### objective
-
-The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value
-// _ @pattern \\w+\\s_((!=)?|(&lt;=)?|(>=)?|(==)?|(&lt;)?|(>)?)?\\s\*\\d+
-
-
-`objective`
-
--   is required
--   Type: `string` ([objective](sla4oai-definitions-guaranteeobjective-properties-objective.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-objective.md "SLA4OAI#/definitions/GuaranteeObjective/properties/objective")
-
-#### objective Type
-
-`string` ([objective](sla4oai-definitions-guaranteeobjective-properties-objective.md))
-
-#### objective Examples
-
-```json
-"avgResponseTimeMs <= 250"
-```
-
-### period
-
-The period of the objective
-
-
-`period`
-
--   is optional
--   Type: unknown ([period](sla4oai-definitions-guaranteeobjective-properties-period.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-period.md "SLA4OAI#/definitions/GuaranteeObjective/properties/period")
-
-#### period Type
-
-unknown ([period](sla4oai-definitions-guaranteeobjective-properties-period.md))
-
-### scope
-
-The scope of who request the service.
-
-
-`scope`
-
--   is optional
--   Type: `string` ([scope](sla4oai-definitions-guaranteeobjective-properties-scope.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-scope.md "SLA4OAI#/definitions/GuaranteeObjective/properties/scope")
-
-#### scope Type
-
-`string` ([scope](sla4oai-definitions-guaranteeobjective-properties-scope.md))
-
-#### scope Examples
-
-```json
-"account"
-```
-
-```json
-"tenant"
-```
-
-### window
-
-The state of the Objective (dynamic or static)
-
-
-`window`
-
--   is optional
--   Type: `string` ([window](sla4oai-definitions-guaranteeobjective-properties-window.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-guaranteeobjective-properties-window.md "SLA4OAI#/definitions/GuaranteeObjective/properties/window")
-
-#### window Type
-
-`string` ([window](sla4oai-definitions-guaranteeobjective-properties-window.md))
-
-#### window Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value       | Explanation |
-| :---------- | ----------- |
-| `"dynamic"` |             |
-| `"static"`  |             |
-
-#### window Examples
-
-```json
-"dynamic "
-```
-
-```json
-"static"
-```
-
-## Definitions group Guarantees
-
-Reference this group by using
-
-```json
-{"$ref":"SLA4OAI#/definitions/Guarantees"}
-```
-
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                         |
-| :-------------------- | ------------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| Additional Properties | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-guarantees-additionalproperties.md "SLA4OAI#/definitions/Guarantees/additionalProperties") |
-
-### Additional Properties
-
-Additional properties are allowed, as long as they follow this schema:
-
-
-
-
--   is optional
--   Type: unknown
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-guarantees-additionalproperties.md "SLA4OAI#/definitions/Guarantees/additionalProperties")
-
-#### additionalProperties Type
-
-unknown
-
 ## Definitions group Infrastructure
 
 Reference this group by using
@@ -561,7 +390,6 @@ Reference this group by using
 | [cost](#cost)     | Merged        | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-cost.md "SLA4OAI#/definitions/Limit/properties/cost")     |
 | [max](#max)       | Merged        | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-max.md "SLA4OAI#/definitions/Limit/properties/max")       |
 | [period](#period) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-period.md "SLA4OAI#/definitions/Limit/properties/period") |
-| [scope](#scope)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-scope.md "SLA4OAI#/definitions/Limit/properties/scope")   |
 
 ### cost
 
@@ -648,32 +476,6 @@ The period of the limit.
 #### period Type
 
 unknown ([period](sla4oai-definitions-limit-properties-period.md))
-
-### scope
-
-The scope of who request the service.
-
-
-`scope`
-
--   is optional
--   Type: `string` ([scope](sla4oai-definitions-limit-properties-scope.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-limit-properties-scope.md "SLA4OAI#/definitions/Limit/properties/scope")
-
-#### scope Type
-
-`string` ([scope](sla4oai-definitions-limit-properties-scope.md))
-
-#### scope Examples
-
-```json
-"account"
-```
-
-```json
-"tenant"
-```
 
 ## Definitions group Metric
 
@@ -1236,7 +1038,6 @@ Reference this group by using
 | :------------------------------ | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | [availability](#availability)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-availability.md "SLA4OAI#/definitions/Plan/properties/availability")   |
 | [configuration](#configuration) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-configuration.md "SLA4OAI#/definitions/Plan/properties/configuration") |
-| [guarantees](#guarantees)       | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-guarantees.md "SLA4OAI#/definitions/Plan/properties/guarantees")       |
 | [pricing](#pricing)             | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-pricing.md "SLA4OAI#/definitions/Plan/properties/pricing")             |
 | [quotas](#quotas)               | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-quotas.md "SLA4OAI#/definitions/Plan/properties/quotas")               |
 | [rates](#rates)                 | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-rates.md "SLA4OAI#/definitions/Plan/properties/rates")                 |
@@ -1282,22 +1083,6 @@ Configuration parameters for the service tailored for the plan.
 #### configuration Type
 
 unknown ([configuration](sla4oai-definitions-plan-properties-configuration.md))
-
-### guarantees
-
-Specific guarantees data for this plan. Overrides default guarantees data defined before.
-
-
-`guarantees`
-
--   is optional
--   Type: unknown ([guarantees](sla4oai-definitions-plan-properties-guarantees.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-plan-properties-guarantees.md "SLA4OAI#/definitions/Plan/properties/guarantees")
-
-#### guarantees Type
-
-unknown ([guarantees](sla4oai-definitions-plan-properties-guarantees.md))
 
 ### pricing
 
@@ -1385,73 +1170,9 @@ Reference this group by using
 
 | Property              | Type          | Required | Nullable       | Defined by                                                                                                                 |
 | :-------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| [billing](#billing)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-billing.md "SLA4OAI#/definitions/Pricing/properties/billing")   |
 | [cost](#cost)         | Merged        | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-cost.md "SLA4OAI#/definitions/Pricing/properties/cost")         |
 | [currency](#currency) | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-currency.md "SLA4OAI#/definitions/Pricing/properties/currency") |
 | [period](#period)     | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-period.md "SLA4OAI#/definitions/Pricing/properties/period")     |
-
-### billing
-
-(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
-
-
-`billing`
-
--   is optional
--   Type: `string` ([billing](sla4oai-definitions-pricing-properties-billing.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-pricing-properties-billing.md "SLA4OAI#/definitions/Pricing/properties/billing")
-
-#### billing Type
-
-`string` ([billing](sla4oai-definitions-pricing-properties-billing.md))
-
-#### billing Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value         | Explanation |
-| :------------ | ----------- |
-| `"daily"`     |             |
-| `"monthly"`   |             |
-| `"onepay"`    |             |
-| `"quarterly"` |             |
-| `"weekly"`    |             |
-| `"yearly"`    |             |
-
-#### billing Default Value
-
-The default value is:
-
-```json
-"monthly"
-```
-
-#### billing Examples
-
-```json
-"onepay"
-```
-
-```json
-"daily"
-```
-
-```json
-"weekly"
-```
-
-```json
-"monthly"
-```
-
-```json
-"quarterly"
-```
-
-```json
-"yearly"
-```
 
 ### cost
 
@@ -1678,7 +1399,6 @@ The expiration date of the SLA agreement using the ISO 8601 time intervals forma
 | [availability](#availability)     | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-properties-availability.md "SLA4OAI#/properties/availability")     |
 | [configuration](#configuration)   | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-properties-configuration.md "SLA4OAI#/properties/configuration")   |
 | [context](#context)               | Not specified | Required | cannot be null | [SLA4OAI schema](sla4oai-properties-context.md "SLA4OAI#/properties/context")               |
-| [guarantees](#guarantees)         | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-properties-guarantees.md "SLA4OAI#/properties/guarantees")         |
 | [infrastructure](#infrastructure) | Not specified | Required | cannot be null | [SLA4OAI schema](sla4oai-properties-infrastructure.md "SLA4OAI#/properties/infrastructure") |
 | [metrics](#metrics)               | Not specified | Required | cannot be null | [SLA4OAI schema](sla4oai-properties-metrics.md "SLA4OAI#/properties/metrics")               |
 | [plans](#plans)                   | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-properties-plans.md "SLA4OAI#/properties/plans")                   |
@@ -1743,22 +1463,6 @@ Holds the main information of the SLA context.
 ### context Type
 
 unknown ([context](sla4oai-properties-context.md))
-
-## guarantees
-
-Global guarantees, these are the default guarantees, but they could be overridden by each plan later.
-
-
-`guarantees`
-
--   is optional
--   Type: unknown ([guarantees](sla4oai-properties-guarantees.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-properties-guarantees.md "SLA4OAI#/properties/guarantees")
-
-### guarantees Type
-
-unknown ([guarantees](sla4oai-properties-guarantees.md))
 
 ## infrastructure
 

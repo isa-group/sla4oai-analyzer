@@ -61,21 +61,6 @@
                                             
                                         </div>
                                     </dd>
-                                    <dt data-property-name="guarantees">
-                                        <span class="json-property-name">guarantees:</span>
-                                        
-                                        <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Guarantees">Guarantees</a>
-                                        </span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                    </dt>
-                                    <dd>
-                                        <p>Global guarantees, these are the default guarantees, but they could be overridden by each plan later.</p>
-                        
-                                        <div class="json-inner-schema">
-                                            
-                                        </div>
-                                    </dd>
                                     <dt data-property-name="infrastructure">
                                         <span class="json-property-name">infrastructure:</span>
                                         
@@ -380,152 +365,6 @@
                                         </dl>
                                     </section>
                     </div>
-                </div>        <div id="definition-Guarantee" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Guarantee"></a>Guarantee:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                                <section class="json-schema-description">
-                                    <p>Describes a guarantee level supported by the plan.</p>
-                            
-                                </section>
-                            
-                                        <section class="json-schema-additionalProperties">
-                                            <span class="json-property-type">
-                                        <span class="json-property-type">object[]</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                        </span>
-                                            
-                                                            <section class="json-schema-array-items">
-                                                                
-                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/GuaranteeObjective">GuaranteeObjective</a>
-                                                                </span>
-                                                                <span class="json-property-range" title="Value limits"></span>
-                                                                
-                                                                <div class="json-inner-schema">
-                                                                    
-                                                                </div>
-                                                            </section></section>
-                    </div>
-                </div>        <div id="definition-GuaranteeObjective" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/GuaranteeObjective"></a>GuaranteeObjective:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                                <section class="json-schema-description">
-                                    <p>An object describes the guarantee level.</p>
-                            
-                                </section>
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="objective">
-                                                    <span class="json-property-name">objective:</span>
-                                                    
-                                                    <span class="json-property-type">string</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                        <span class="json-property-required"></span>
-                                                </dt>
-                                                <dd>
-                                                    <p>The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value
-                                    // * @pattern \w+\s<em>((!=)?|(&lt;=)?|(&gt;=)?|(==)?|(&lt;)?|(&gt;)?)?\s</em>\d+</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="period">
-                                                    <span class="json-property-name">period:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Period">Period</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    <p>The period of the objective</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="scope">
-                                                    <span class="json-property-name">scope:</span>
-                                                    
-                                                    <span class="json-property-type">string</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    <p>The scope of who request the service.</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="window">
-                                                    <span class="json-property-name">window:</span>
-                                                    
-                                                    <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
-                                                                    <span class="json-property-enum-item">dynamic</span>
-                                                                ,
-                                                                    <span class="json-property-enum-item">static</span>
-                                                                
-                                                            }
-                                                            </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    <p>The state of the Objective (dynamic or static)</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        <div id="definition-Guarantees" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Guarantees"></a>Guarantees:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                                <section class="json-schema-description">
-                                    <p>Global guarantees, these are the default guarantees, but they could be overridden by each plan later.</p>
-                            
-                                </section>
-                            
-                                        <section class="json-schema-additionalProperties">
-                                            <span class="json-property-type">
-                                        <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Guarantee">Guarantee</a>
-                                        </span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                        </span>
-                                            
-                                        </section>
-                    </div>
                 </div>        <div id="definition-Infrastructure" class="panel panel-definition">
                         <div class="panel-heading">
                                 <h3 class="panel-title"><a name="/definitions/Infrastructure"></a>Infrastructure:
@@ -693,20 +532,6 @@
                                                 </dt>
                                                 <dd>
                                                     <p>The period of the limit.</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="scope">
-                                                    <span class="json-property-name">scope:</span>
-                                                    
-                                                    <span class="json-property-type">string</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    <p>The scope of who request the service.</p>
                                     
                                                     <div class="json-inner-schema">
                                                         
@@ -1163,7 +988,7 @@
                         </div>
                     <div class="panel-body">
                                 <section class="json-schema-description">
-                                    <p>Describes a usage plan for the API with its associate costs, availability and guarantees.</p>
+                                    <p>Describes a usage plan for the API with its associate costs and availability.</p>
                             
                                 </section>
                             
@@ -1193,21 +1018,6 @@
                                                 </dt>
                                                 <dd>
                                                     <p>Configuration parameters for the service tailored for the plan.</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="guarantees">
-                                                    <span class="json-property-name">guarantees:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Guarantees">Guarantees</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    <p>Specific guarantees data for this plan. Overrides default guarantees data defined before.</p>
                                     
                                                     <div class="json-inner-schema">
                                                         
@@ -1305,35 +1115,6 @@
                             
                                     <section class="json-schema-properties">
                                         <dl>
-                                                <dt data-property-name="billing">
-                                                    <span class="json-property-name">billing:</span>
-                                                    
-                                                    <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
-                                                                    <span class="json-property-enum-item">daily</span>
-                                                                ,
-                                                                    <span class="json-property-enum-item">monthly</span>
-                                                                    (default)
-                                                                ,
-                                                                    <span class="json-property-enum-item">onepay</span>
-                                                                ,
-                                                                    <span class="json-property-enum-item">quarterly</span>
-                                                                ,
-                                                                    <span class="json-property-enum-item">weekly</span>
-                                                                ,
-                                                                    <span class="json-property-enum-item">yearly</span>
-                                                                
-                                                            }
-                                                            </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    <p>(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.</p>
-                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
                                                 <dt data-property-name="cost">
                                                     <span class="json-property-name">cost:</span>
                                                     

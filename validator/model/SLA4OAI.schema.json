@@ -107,74 +107,6 @@
             "title": "Cost",
             "type": "object"
         },
-        "Guarantee": {
-            "additionalProperties": {
-                "items": {
-                    "$ref": "#/definitions/GuaranteeObjective"
-                },
-                "type": "array"
-            },
-            "description": "Describes a guarantee level supported by the plan.",
-            "id": "Guarantee",
-            "title": "Guarantee",
-            "type": "object"
-        },
-        "GuaranteeObjective": {
-            "description": "An object describes the guarantee level.",
-            "id": "GuaranteeObjective",
-            "properties": {
-                "objective": {
-                    "description": "The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value\n// * @pattern \\w+\\s*((!=)?|(<=)?|(>=)?|(==)?|(<)?|(>)?)?\\s*\\d+",
-                    "examples": [
-                        "avgResponseTimeMs <= 250"
-                    ],
-                    "title": "objective",
-                    "type": "string"
-                },
-                "period": {
-                    "$ref": "#/definitions/Period",
-                    "description": "The period of the objective",
-                    "id": "Period",
-                    "title": "period"
-                },
-                "scope": {
-                    "description": "The scope of who request the service.",
-                    "examples": [
-                        "account",
-                        "tenant"
-                    ],
-                    "title": "scope",
-                    "type": "string"
-                },
-                "window": {
-                    "description": "The state of the Objective (dynamic or static)",
-                    "enum": [
-                        "dynamic",
-                        "static"
-                    ],
-                    "examples": [
-                        "dynamic ",
-                        "static"
-                    ],
-                    "title": "window",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "objective"
-            ],
-            "title": "GuaranteeObjective",
-            "type": "object"
-        },
-        "Guarantees": {
-            "additionalProperties": {
-                "$ref": "#/definitions/Guarantee"
-            },
-            "description": "Global guarantees, these are the default guarantees, but they could be overridden by each plan later.",
-            "id": "Guarantees",
-            "title": "Guarantees",
-            "type": "object"
-        },
         "Infrastructure": {
             "additionalProperties": {
                 "type": "string"
@@ -255,15 +187,6 @@
                     "description": "The period of the limit.",
                     "id": "Period",
                     "title": "period"
-                },
-                "scope": {
-                    "description": "The scope of who request the service.",
-                    "examples": [
-                        "account",
-                        "tenant"
-                    ],
-                    "title": "scope",
-                    "type": "string"
                 }
             },
             "required": [
@@ -506,7 +429,7 @@
             "type": "object"
         },
         "Plan": {
-            "description": "Describes a usage plan for the API with its associate costs, availability and guarantees.",
+            "description": "Describes a usage plan for the API with its associate costs and availability.",
             "id": "Plan",
             "properties": {
                 "availability": {
@@ -523,12 +446,6 @@
                     "description": "Configuration parameters for the service tailored for the plan.",
                     "id": "Configuration",
                     "title": "configuration"
-                },
-                "guarantees": {
-                    "$ref": "#/definitions/Guarantees",
-                    "description": "Specific guarantees data for this plan. Overrides default guarantees data defined before.",
-                    "id": "Guarantees",
-                    "title": "guarantees"
                 },
                 "pricing": {
                     "$ref": "#/definitions/Pricing",
@@ -565,28 +482,6 @@
             "description": "Global pricing data.",
             "id": "Pricing",
             "properties": {
-                "billing": {
-                    "default": "monthly",
-                    "description": "(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.",
-                    "enum": [
-                        "daily",
-                        "monthly",
-                        "onepay",
-                        "quarterly",
-                        "weekly",
-                        "yearly"
-                    ],
-                    "examples": [
-                        "onepay",
-                        "daily",
-                        "weekly",
-                        "monthly",
-                        "quarterly",
-                        "yearly"
-                    ],
-                    "title": "billing",
-                    "type": "string"
-                },
                 "cost": {
                     "anyOf": [
                         {
@@ -702,12 +597,6 @@
             "$ref": "#/definitions/Context",
             "description": "Holds the main information of the SLA context.",
             "title": "context"
-        },
-        "guarantees": {
-            "$ref": "#/definitions/Guarantees",
-            "description": "Global guarantees, these are the default guarantees, but they could be overridden by each plan later.",
-            "id": "Guarantees",
-            "title": "guarantees"
         },
         "infrastructure": {
             "$ref": "#/definitions/Infrastructure",

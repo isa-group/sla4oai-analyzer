@@ -19,73 +19,9 @@ Global pricing data.
 
 | Property              | Type          | Required | Nullable       | Defined by                                                                                                                 |
 | :-------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| [billing](#billing)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-billing.md "SLA4OAI#/definitions/Pricing/properties/billing")   |
 | [cost](#cost)         | Merged        | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-cost.md "SLA4OAI#/definitions/Pricing/properties/cost")         |
 | [currency](#currency) | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-currency.md "SLA4OAI#/definitions/Pricing/properties/currency") |
 | [period](#period)     | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-pricing-properties-period.md "SLA4OAI#/definitions/Pricing/properties/period")     |
-
-## billing
-
-(DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
-
-
-`billing`
-
--   is optional
--   Type: `string` ([billing](sla4oai-definitions-pricing-properties-billing.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-pricing-properties-billing.md "SLA4OAI#/definitions/Pricing/properties/billing")
-
-### billing Type
-
-`string` ([billing](sla4oai-definitions-pricing-properties-billing.md))
-
-### billing Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value         | Explanation |
-| :------------ | ----------- |
-| `"daily"`     |             |
-| `"monthly"`   |             |
-| `"onepay"`    |             |
-| `"quarterly"` |             |
-| `"weekly"`    |             |
-| `"yearly"`    |             |
-
-### billing Default Value
-
-The default value is:
-
-```json
-"monthly"
-```
-
-### billing Examples
-
-```json
-"onepay"
-```
-
-```json
-"daily"
-```
-
-```json
-"weekly"
-```
-
-```json
-"monthly"
-```
-
-```json
-"quarterly"
-```
-
-```json
-"yearly"
-```
 
 ## cost
 

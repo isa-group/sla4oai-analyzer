@@ -43,11 +43,6 @@ class SLA4OAI {
     rates?: Rates
 
     /**
-     * Global guarantees, these are the default guarantees, but they could be overridden by each plan later.
-     */
-    guarantees?: Guarantees
-
-    /**
      * Define the default configurations, later each plan can be override it.
      */
     configuration?: Configuration
@@ -164,14 +159,6 @@ class Pricing {
     currency?: string
 
     /**
-     * (DEPRECATED) Period used for billing. Supported values are: - onepay Unique payment before start using the service. - daily Billing at end of the day. - weekly Billing at end of the week. - monthly Billing at end of the month. - quarterly Billing at end of the quarter. - yearly Billing at end of the year. Default to monthly if unspecified.
-     * @default monthly
-     * @deprecated
-     * @TJS-examples ["onepay","daily","weekly","monthly","quarterly","yearly"]
-     */
-    billing?: "onepay" | "daily" | "weekly" | "monthly" | "quarterly" | "yearly"
-
-    /**
     * The period of the limit
     */
     period?: Period
@@ -197,7 +184,7 @@ class Metrics {
 class Plans {
 
     /**
-    * Describes a usage plan for the API with its associate costs, availability and guarantees.
+    * Describes a usage plan for the API with its associate costs and availability.
     */
     [planName: string]: Plan
 }
@@ -224,18 +211,6 @@ class Rates {
     * Describes the API endpoint path rate configurations.
     */
     [pathName: string]: Path
-}
-
-/**
- * @id Guarantees
- * @description Global guarantees, these are the default guarantees, but they could be overridden by each plan later.
- */
-class Guarantees {
-
-    /**
-    * Describes a guarantee level supported by the plan.
-    */
-    [pathName: string]: Guarantee
 }
 
 /**
@@ -284,18 +259,6 @@ class Path {
 }
 
 /**
- * @id Guarantee
- * @description Describes a guarantee level supported by the plan.
- */
-class Guarantee {
-
-    /**
-    * An object describes the guarantee level.
-    */
-    [methodName: string]: GuaranteeObjective[]
-}
-
-/**
  * @id Metric
  * @description Definitions of metrics with name, types and descriptions
  */
@@ -338,7 +301,7 @@ class Metric {
 
 /**
  * @id Plan
- * @description Describes a usage plan for the API with its associate costs, availability and guarantees.
+ * @description Describes a usage plan for the API with its associate costs and availability.
  */
 class Plan {
 
@@ -369,11 +332,6 @@ class Plan {
     * Specific rates data for this plan. Overrides default rates data defined before.
     */
     rates?: Rates
-
-    /**
-    * Specific guarantees data for this plan. Overrides default guarantees data defined before.
-    */
-    guarantees?: Guarantees
 }
 
 /**
@@ -385,36 +343,6 @@ class Operation {
     * The allowed limits of the request.
     */
     [metricName: string]: Limit[]
-}
-
-/**
- * @id GuaranteeObjective
- * @description An object describes the guarantee level.
- */
-class GuaranteeObjective {
-    /**
-    * The objective of the guarantee. Supported expression syntax has a single form: Property + Operator + Value
-    // * @pattern \w+\s*((!=)?|(<=)?|(>=)?|(==)?|(<)?|(>)?)?\s*\d+
-    * @TJS-examples ["avgResponseTimeMs <= 250"]
-    */
-    objective: string
-
-    /**
-    * The period of the objective
-    */
-    period?: Period
-
-    /**
-    * The state of the Objective (dynamic or static)
-    * @TJS-examples ["dynamic ","static"]
-    */
-    window?: "dynamic" | "static"
-
-    /**
-    * The scope of who request the service.
-    * @TJS-examples ["account", "tenant"]
-    */
-    scope?: string
 }
 
 /**
@@ -456,11 +384,6 @@ class Limit {
     */
     period?: Period
 
-    /**
-    * The scope of who request the service.
-    * @TJS-examples ["account", "tenant"]
-    */
-    scope?: string
     /**
      * Cost associated to this plan. Defaults to 0 if unspecified.
      * @default 0

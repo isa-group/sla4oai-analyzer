@@ -4,7 +4,7 @@
 SLA4OAI#/definitions/Plan
 ```
 
-Describes a usage plan for the API with its associate costs, availability and guarantees.
+Describes a usage plan for the API with its associate costs and availability.
 
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
@@ -21,7 +21,6 @@ Describes a usage plan for the API with its associate costs, availability and gu
 | :------------------------------ | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | [availability](#availability)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-availability.md "SLA4OAI#/definitions/Plan/properties/availability")   |
 | [configuration](#configuration) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-configuration.md "SLA4OAI#/definitions/Plan/properties/configuration") |
-| [guarantees](#guarantees)       | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-guarantees.md "SLA4OAI#/definitions/Plan/properties/guarantees")       |
 | [pricing](#pricing)             | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-pricing.md "SLA4OAI#/definitions/Plan/properties/pricing")             |
 | [quotas](#quotas)               | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-quotas.md "SLA4OAI#/definitions/Plan/properties/quotas")               |
 | [rates](#rates)                 | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-plan-properties-rates.md "SLA4OAI#/definitions/Plan/properties/rates")                 |
@@ -67,22 +66,6 @@ Configuration parameters for the service tailored for the plan.
 ### configuration Type
 
 unknown ([configuration](sla4oai-definitions-plan-properties-configuration.md))
-
-## guarantees
-
-Specific guarantees data for this plan. Overrides default guarantees data defined before.
-
-
-`guarantees`
-
--   is optional
--   Type: unknown ([guarantees](sla4oai-definitions-plan-properties-guarantees.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-plan-properties-guarantees.md "SLA4OAI#/definitions/Plan/properties/guarantees")
-
-### guarantees Type
-
-unknown ([guarantees](sla4oai-definitions-plan-properties-guarantees.md))
 
 ## pricing
 

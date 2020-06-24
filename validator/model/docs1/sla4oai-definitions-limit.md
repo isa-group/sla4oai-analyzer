@@ -22,7 +22,6 @@ The allowed limits of the request.
 | [cost](#cost)     | Merged        | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-cost.md "SLA4OAI#/definitions/Limit/properties/cost")     |
 | [max](#max)       | Merged        | Required | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-max.md "SLA4OAI#/definitions/Limit/properties/max")       |
 | [period](#period) | Not specified | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-period.md "SLA4OAI#/definitions/Limit/properties/period") |
-| [scope](#scope)   | `string`      | Optional | cannot be null | [SLA4OAI schema](sla4oai-definitions-limit-properties-scope.md "SLA4OAI#/definitions/Limit/properties/scope")   |
 
 ## cost
 
@@ -109,29 +108,3 @@ The period of the limit.
 ### period Type
 
 unknown ([period](sla4oai-definitions-limit-properties-period.md))
-
-## scope
-
-The scope of who request the service.
-
-
-`scope`
-
--   is optional
--   Type: `string` ([scope](sla4oai-definitions-limit-properties-scope.md))
--   cannot be null
--   defined in: [SLA4OAI schema](sla4oai-definitions-limit-properties-scope.md "SLA4OAI#/definitions/Limit/properties/scope")
-
-### scope Type
-
-`string` ([scope](sla4oai-definitions-limit-properties-scope.md))
-
-### scope Examples
-
-```json
-"account"
-```
-
-```json
-"tenant"
-```
