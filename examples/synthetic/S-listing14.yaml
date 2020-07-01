@@ -1,0 +1,47 @@
+context:
+    id: plans
+    sla: '1.0'
+    type: plans
+    provider: ISA Group
+    api: 'null'
+infrastructure:
+  supervisor: 'http://supervisor.oai.governify.io/api/v2'
+  monitor: 'http://monitor.oai.governify.io/api/v1'
+metrics:
+  requests:
+    type: integer
+    format: int64
+    description: Number of requests
+pricing:
+  currency: USD
+  period: 
+    amount: 1
+    unit: month  
+plans:
+    plan1:
+      pricing:
+        cost: 0
+      quotas:
+        /method1:
+          get:
+            requests:
+              - max: 100
+                period: 
+                  amount: 1
+                  unit: day
+      rates:
+        /method1:
+          get:
+            requests:
+              - max: 2
+                period: 
+                  amount: 1
+                  unit: second
+
+# Needs:
+#   50 requests / 1 day
+#   1 request / 1 second
+
+# Example~\ref{lst:p3a1} has as an answer: \textbf{the plan is compliant with the user needs}.
+# Therefore the needs of 50 requests every 1 day are covered by what is offered in the plan, 100 requests every 1 day.
+# Similarly, the need for 1 request for every 1 second is covered by what is offered, 2 requests per second.

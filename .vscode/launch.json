@@ -65,7 +65,8 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\node_modules\\mocha\\bin\\_mocha",
-            "args": ["test/validator.test.js"]
+            // "args": ["test/validator.test.js"]
+            "args": ["test/validity.test.js"]
         }
     ]
 }

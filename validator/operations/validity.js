@@ -7,6 +7,135 @@
 const config = require("./../configurations");
 const logger = config.logger;
 
+
+function project_burst(N, M, Mp) {
+    if (Mp >= M)
+        return N * Math.ceil(Mp / M);
+    else
+        return N;
+}
+function project_uniform(N, M, Mp) {
+    if (Mp < M)
+        return Math.ceil(N / Math.ceil(M / Mp));
+    else
+        return N;
+}
+
+function effectiveLimitation_calc(limits, period) {
+    var projections_burst = [];
+    var projections_uniform = [];
+    limits.forEach(limitElement => {
+        var N = limitElement.max;
+        var M = normalizedPeriod(limitElement.period);
+        var Mp = normalizedPeriod(period);
+        projections_burst.push(project_burst(N, M, Mp));
+        projections_uniform.push(project_uniform(N, M, Mp));
+    });
+
+    var res = {
+        "burst": Math.min.apply(Math, projections_burst),
+        "uniform": Math.max.apply(Math, projections_uniform),
+    };
+
+    return res;
+}
+
+function effectiveLimitation(pricing, period, mode) {
+
+    if (mode && (mode !== "burst" && mode !== "uniform")) {
+        logger.error(`Mode ${mode} unrecognized`);
+        return -1;
+    } else if (!mode) {
+        mode = "uniform";
+    }
+    logger.debug(`   USING MODE '${mode}'`);
+
+    var limitationsPerPlan = new Map();
+    var effectiveLimitationsPerPlan = new Map();
+    for (const planName in pricing.plans) {
+        let plan = pricing.plans[planName];
+
+        limitationsPerPlan.set(planName, []);
+        var limitationsPerMetric = new Map();
+        var effectiveLimitationsPerMetric = new Map();
+        for (let [planLimitationsName, planLimitations] of Object.entries(plan)) {
+            if (planLimitationsName === "quotas" || planLimitationsName === "rates") {
+                for (let [limitationsPathName, limitationsPath] of Object.entries(planLimitations)) {
+                    for (let [limitationsPathMethodName, limitationsPathMethod] of Object.entries(limitationsPath)) {
+                        for (let [limitationsPathMethodMetricName, limitationsPathMethodMetric] of Object.entries(limitationsPathMethod)) {
+                            if (!limitationsPerMetric.get(limitationsPathMethodMetricName) || !limitationsPerMetric.get(limitationsPathMethodMetricName).length > 0) {
+                                limitationsPerMetric.set(limitationsPathMethodMetricName, []);
+                            }
+                            for (let limitationsPathMethodMetricLimit of limitationsPathMethodMetric) {
+                                if (limitationsPathMethodMetricLimit.period) {
+                                    limitationsPerMetric.get(limitationsPathMethodMetricName).push(limitationsPathMethodMetricLimit);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            limitationsPerPlan.set(planName, limitationsPerMetric);
+        }
+    }
+    // logger.validationWarning(`   CALCULATING EFFECTIVE LIMITATIONS FOR PERIOD '${period.unit}'...`);
+    limitationsPerPlan.forEach((limitationsPlan, planName) => {
+        effectiveLimitationsPerPlan.set(planName, []);
+        // logger.validationWarning(`     IN PLAN '${planName}'...`);
+        var effectiveLimitationsPerMetric = new Map();
+        limitationsPlan.forEach((limits, metricName) => {
+            if (!effectiveLimitationsPerMetric.get(metricName) || !effectiveLimitationsPerMetric.get(metricName).length > 0) {
+                effectiveLimitationsPerMetric.set(metricName, []);
+            }
+            var res = effectiveLimitation_calc(limits, period);
+            // logger.validationWarning(`       FOR METRIC '${metricName}' (burst): ${res["burst"]}`);
+            // logger.validationWarning(`       FOR METRIC '${metricName}' (uniform): ${res["uniform"]}`);
+            effectiveLimitationsPerMetric.get(metricName).push(res[mode]);
+        });
+        effectiveLimitationsPerPlan.set(planName, effectiveLimitationsPerMetric);
+    });
+
+    return effectiveLimitationsPerPlan;
+}
+
+
+function satisfactionUserNeeds(pricing, userNeeds) {
+
+    // var everyUserNeedIsSatisfied = true;
+    var compliance = {};
+    userNeeds.forEach(userNeed => {
+        // var existsCompliantPlan = false;
+        Object.keys(userNeed).forEach(userNeedMetric => {
+            var effectiveLimitations = effectiveLimitation(pricing, userNeed[userNeedMetric].period);
+            effectiveLimitations.forEach((limitationsPlan, planName) => {
+                compliance[planName] = false;
+                limitationsPlan.forEach((limits, metricName) => {
+                    if (metricName === userNeedMetric) {
+                        let isUserNeedSatisfied_check = userNeed[userNeedMetric].max <= limits[0];
+                        compliance[planName] = compliance[planName] || isUserNeedSatisfied_check;
+                        if (isUserNeedSatisfied_check === true) {
+                            logger.validation(`      NEED '${userNeed[userNeedMetric].max} ${metricName} per ${userNeed[userNeedMetric].period.amount} ${userNeed[userNeedMetric].period.unit}' IS SATISFIED BY '${limits[0]} ${metricName} per ${userNeed[userNeedMetric].period.amount} ${userNeed[userNeedMetric].period.unit}' IN PLAN '${planName}'`);
+                        } else {
+                            logger.validationWarning(`      NEED '${userNeed[userNeedMetric].max} ${metricName} per ${userNeed[userNeedMetric].period.amount} ${userNeed[userNeedMetric].period.unit}' IS NOT SATISFIED BY '${limits[0]} ${metricName} per ${userNeed[userNeedMetric].period.amount} ${userNeed[userNeedMetric].period.unit}' IN PLAN '${planName}'`);
+                        }
+                    }
+                });
+            });
+        });
+    });
+
+    let everyUserNeedIsSatisfied = false;
+    for (let [planName, isCompliant] of Object.entries(compliance)) {
+        everyUserNeedIsSatisfied = everyUserNeedIsSatisfied || isCompliant;
+        if (isCompliant === true) {
+            logger.validationWarning(`    PLAN '${planName}' SATISFIY EVERY USER NEED`);
+        } else {
+            logger.validationWarning(`    PLAN '${planName}' DO NOT SATISFY EVERY USER NEED`);
+        }
+    }
+    return everyUserNeedIsSatisfied;
+}
+
 // ****************************** BEGIN P1 VALIDITY DETECTION ****************************** //
 var capacity;
 
@@ -681,5 +810,7 @@ function resetCapacity() {
 
 module.exports = {
     isValid: isValid_pricing,
+    effectiveLimitation: effectiveLimitation,
+    satisfactionUserNeeds: satisfactionUserNeeds,
 };
 

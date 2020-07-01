@@ -1,3 +1,17 @@
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\E-listing13.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\E-listing13.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\E-listing13.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\E-pablo.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\E-pablo.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\E-pablo.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-02-inconsistent-limits.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
@@ -122,6 +136,27 @@ CHECKING VALIDITY...
        !existsCostConsistencyConflicts=false
 VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing12.yaml
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\I-listing12.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-listing14.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-listing14.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-listing14.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-listing15.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-listing15.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-listing15.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-pablo.yaml ------
+CHECKING SYNTAX...
+SYNTAX OK
+CHECKING VALIDITY...
+   USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-pablo.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\S-pablo.yaml ------
 ------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-02-consistent-limits.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
@@ -181,6 +216,11 @@ VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-l
 ------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\synthetic\V-listing11.yaml ------
 
 VALID FILES: [
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\E-listing13.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\E-pablo.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\S-listing14.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\S-listing15.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\S-pablo.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-02-consistent-limits.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-03-consistent-limitations.yaml",
   "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\synthetic\\V-1-initialExample.yaml",

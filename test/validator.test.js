@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 /* eslint-disable no-undef */
 
 const validator = require("../validator");
