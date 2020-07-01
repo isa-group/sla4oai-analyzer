@@ -966,7 +966,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -3812,7 +3812,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 100
@@ -6846,7 +6846,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -10248,7 +10248,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 40000
@@ -13986,7 +13986,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -17388,7 +17388,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 100000
@@ -21126,7 +21126,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -24528,7 +24528,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 100000
@@ -28266,7 +28266,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -31668,7 +31668,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 300000
@@ -35406,7 +35406,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -38808,7 +38808,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 700000
@@ -42546,7 +42546,7 @@ plans:
               period: 
                 amount: 1
                 unit: minute
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           requests:
             - max: 600
@@ -45948,7 +45948,7 @@ plans:
               period:
                 amount: 1
                 unit: month
-      '/mail_settings/spam_check':
+      '/mail_settings/spamCheck':
         get:
           emails:
             - max: 1500000

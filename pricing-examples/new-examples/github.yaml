@@ -2178,7 +2178,7 @@ plans:
                 amount: 1
                 unit: hour
           
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks':
         delete:
           requests:
             - max: 60
@@ -2216,7 +2216,7 @@ plans:
                 amount: 1
                 unit: hour
           
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks/contexts':
         delete:
           requests:
             - max: 60
@@ -8163,7 +8163,7 @@ plans:
               period:
                 amount: 1
                 unit: forever
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks':
         delete:
 
           actionMinutes:
@@ -8201,7 +8201,7 @@ plans:
               period:
                 amount: 1
                 unit: forever
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks/contexts':
         delete:
 
           actionMinutes:
@@ -14152,7 +14152,7 @@ plans:
                 amount: 1
                 unit: hour
           
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks':
         delete:
           requests:
             - max: 60
@@ -14190,7 +14190,7 @@ plans:
                 amount: 1
                 unit: hour
           
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks/contexts':
         delete:
           requests:
             - max: 60
@@ -20137,7 +20137,7 @@ plans:
               period:
                 amount: 1
                 unit: forever
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks':
         delete:
 
           actionMinutes:
@@ -20175,7 +20175,7 @@ plans:
               period:
                 amount: 1
                 unit: forever
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks/contexts':
         delete:
 
           actionMinutes:
@@ -26126,7 +26126,7 @@ plans:
                 amount: 1
                 unit: hour
           
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks':
         delete:
           requests:
             - max: 60
@@ -26164,7 +26164,7 @@ plans:
                 amount: 1
                 unit: hour
           
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks/contexts':
         delete:
           requests:
             - max: 60
@@ -32111,7 +32111,7 @@ plans:
               period:
                 amount: 1
                 unit: forever
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks':
         delete:
 
           actionMinutes:
@@ -32149,7 +32149,7 @@ plans:
               period:
                 amount: 1
                 unit: forever
-      '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts':
+      '/repos/{owner}/{repo}/branches/{branch}/protection/required_statusChecks/contexts':
         delete:
 
           actionMinutes:

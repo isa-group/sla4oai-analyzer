@@ -1,60 +1,57 @@
 /* eslint-disable no-undef */
-"use strict";
 
 /**
  * Module dependecies.
  */
-var jsyaml = require("js-yaml");
-var fs = require("fs");
-var path = require("path");
-var winston = require("winston");
-
+const jsyaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
+const winston = require('winston');
 
 /*
  * Export functions and Objects
  */
-var config = {
+const config = {
     setConfigurations: _setConfigurations  //eslint-disable-line
 };
 
 module.exports = config;
 
-module.exports.setProperty = function (propertyName, newValue) {
+module.exports.setProperty = (propertyName, newValue) => {
     this[propertyName] = newValue;
 };
-
 
 /**
  * Implement the functions
  */
 function _setConfigurations(options, encoding) { //eslint-disable-line
-
+    let newConfigurations = null;
     if (!options) {
-        throw new Error("Configurations parameter is required");
-    } else if (typeof options == "string") {
+        throw new Error('Configurations parameter is required');
+    } else if (typeof options === 'string') {
         try {
             var configString = fs.readFileSync(options, encoding); // eslint-disable-line
-            var newConfigurations = jsyaml.safeLoad(configString)[process.env.NODE_ENV ? process.env.NODE_ENV : "development"];
+            newConfigurations = jsyaml.safeLoad(configString)[process.env.NODE_ENV ? process.env.NODE_ENV : 'development'];
         } catch (err) {
             console.log("The specified configuration file wasn't found at " + options + ".  Default configurations will be set"); // eslint-disable-line
-            config.setConfigurations(path.join(__dirname, "configs.yaml"), "utf8");
+            config.setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
         }
     } else {
         newConfigurations = options;
     }
 
-    for (var c in newConfigurations) {
+    Object.keys(newConfigurations).forEach((c) => {
         this.setProperty(c, newConfigurations[c]);   //eslint-disable-line
-        if (c == "loglevel") { //loglevel changes, then new logger is needed
+        if (c === 'loglevel') { // loglevel changes, then new logger is needed
             createNewLogger(); // eslint-disable-line
         }
-    }
+    });
 }
 
 /**
  * Setup default configurations
  */
-config.setConfigurations(path.join(__dirname, "configs.yaml"), "utf8");
+config.setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
 
 function consoleLogger(customLevels, customFormat) {
     module.exports.logger = winston.createLogger({
@@ -68,22 +65,22 @@ function consoleLogger(customLevels, customFormat) {
                     winston.format.colorize(),
                     winston.format.timestamp(),
                     winston.format.splat(),
-                    customFormat
-                )
-            })
+                    customFormat,
+                ),
+            }),
         ],
-        exitOnError: false
+        exitOnError: false,
     });
 }
 
 function createNewLogger() {
     // var customFormat = winston.format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`);
-    var customFormat = winston.format.printf((info) => `${info.message}`);
+    const customFormat = winston.format.printf((info) => `${info.message}`);
 
     /**
      * Configure here your custom levels.
      */
-    var customLevels = {
+    const customLevels = {
         levels: {
             error: 8,
             warning: 9,
@@ -91,20 +88,20 @@ function createNewLogger() {
             validationWarning: 10,
             validation: 11,
             info: 12,
-            debug: 13
+            debug: 13,
         },
         colors: {
-            error: "red",
-            warning: "yellow",
-            validationProcess: "white",
-            validationWarning: "yellow",
-            validation: "magenta",
-            info: "white",
-            debug: "blue"
-        }
+            error: 'red',
+            warning: 'yellow',
+            validationProcess: 'white',
+            validationWarning: 'yellow',
+            validation: 'magenta',
+            info: 'white',
+            debug: 'blue',
+        },
     };
 
-    if (config.logfile != undefined) {
+    if (config.logfile !== undefined) {
         module.exports.logger = winston.createLogger({
             levels: customLevels.levels,
             transports: [
@@ -112,12 +109,12 @@ function createNewLogger() {
                     level: config.loglevel,
                     filename: config.logfile,
                     handleExceptions: true,
-                    maxsize: 5242880, //5MB
+                    maxsize: 5242880, // 5MB
                     format: winston.format.combine(
                         winston.format.timestamp(),
                         winston.format.splat(),
-                        customFormat
-                    )
+                        customFormat,
+                    ),
                 }),
                 new winston.transports.Console({
                     level: config.loglevel,
@@ -127,11 +124,11 @@ function createNewLogger() {
                         winston.format.colorize(),
                         winston.format.timestamp(),
                         winston.format.splat(),
-                        customFormat
-                    )
-                })
+                        customFormat,
+                    ),
+                }),
             ],
-            exitOnError: false
+            exitOnError: false,
         });
     } else {
         consoleLogger(customLevels, customFormat);

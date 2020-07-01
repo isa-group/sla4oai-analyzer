@@ -8,16 +8,18 @@
   },
   "scripts": {
     "lint": "eslint **/*.js --fix",
-    "start": "node src/index.js",
+    "start": "node index.js",
     "test": "mocha",
-    "coverage": "nyc --reporter=html npm run test"
+    "coverage": "nyc --reporter=html npm run test",
+    "generate-schema": "typescript-json-schema .\\model\\tsconfig.json SLA4OAI --titles  --required > .\\model\\SLA4OAI.schema.json",
+    "generate-docs": "bootprint json-schema .\\model\\SLA4OAI.schema.json .\\model\\docs",
+    "generate-docs1": "jsonschema2md -d .\\model\\ -o .\\model\\docs1"
   },
   "author": "Antonio Gamez <antoniogamez@us.es> ISA Resarch Group",
   "dependencies": {
     "commander": "^5.1.0",
     "js-yaml": "^3.14.0",
     "semver": "^7.3.2",
-    "typescript-json-schema": "^0.42.0",
     "winston": "^3.2.1",
     "z-schema": "^4.2.3"
   },
@@ -26,9 +28,16 @@
     "url": "git+https://github.com/isa-group/sla4oai-analyzer"
   },
   "devDependencies": {
+    "@adobe/jsonschema2md": "^4.1.5",
+    "bootprint": "^4.0.4",
+    "bootprint-json-schema": "^4.0.4",
     "chai": "^4.2.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "mocha": "^8.0.1",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "typescript-json-schema": "^0.42.0"
   },
   "license": "Apache-2.0"
 }

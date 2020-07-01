@@ -50,11 +50,11 @@
             // "args": ["examples/new-examples/sportradar.yaml"]
             // "args": ["examples/new-examples/surveymonkey.yaml"]
             // "args": ["examples/new-examples/twilio.yaml"]
-            // "args": ["examples/new-examples/yummly.yaml"]
+            "args": ["examples/new-examples/yummly.yaml"]
 
             // "args": ["-d", "examples/"]
             // "args": ["-d", "examples/new-examples/"]
-            "args": ["-d", "examples/synthetic"]
+            // "args": ["-d", "examples/synthetic"]
         },
         {
             "type": "node",
