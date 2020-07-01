@@ -1,25 +1,25 @@
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\accuweather.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\accuweather.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\accuweather.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\accuweather.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\aiception.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\accuweather.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\accuweather.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\aiception.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\aiception.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\aiception.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\azuresearch.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\aiception.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\aiception.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\azuresearch.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\azuresearch.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\azuresearch.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\box.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\azuresearch.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\azuresearch.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\box.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -40,9 +40,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\box.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\box.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\clarifai.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\box.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\box.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\clarifai.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -8832,31 +8832,31 @@ CHECKING VALIDITY...
   UNDEFINED METRIC videoPredictRequests in PublicSector>/v2/models/{model_id}/versions/{version_id}/inputs>get>videoPredictRequests 
   UNDEFINED METRIC searchRequests in PublicSector>/v2/models/{model_id}/versions/{version_id}/inputs>get>searchRequests 
   UNDEFINED METRIC otherRequests in PublicSector>/v2/models/{model_id}/versions/{version_id}/inputs>get>otherRequests 
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\clarifai.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\clarifai.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\cloudsight.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\clarifai.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\clarifai.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\cloudsight.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\cloudsight.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\cloudsight.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\currencylayer.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\cloudsight.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\cloudsight.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\currencylayer.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\currencylayer.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\currencylayer.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\dblp.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\currencylayer.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\currencylayer.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\dblp.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\dblp.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\dblp.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\debitoor.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\dblp.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\dblp.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\debitoor.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -8864,17 +8864,17 @@ CHECKING VALIDITY...
   UNUSED METRIC 'requests'
   UNUSED METRIC 'globalRquests'
   UNUSED METRIC 'users'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\debitoor.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\debitoor.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\docusign.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\debitoor.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\debitoor.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\docusign.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\docusign.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\docusign.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\dropbox.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\docusign.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\docusign.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\dropbox.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -8997,56 +8997,56 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\dropbox.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\dropbox.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\ejemploPablo.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\dropbox.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\dropbox.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\ejemploPablo.yaml ------
 CHECKING SYNTAX...
-SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\ejemploPablo.yaml
+SYNTAX ERRORS in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\ejemploPablo.yaml
   SYNTAX ERROR: (OBJECT_MISSING_REQUIRED_PROPERTY) in path "#/": Missing required property: infrastructure
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\ejemploPablo.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\emaillabs.yaml ------
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\ejemploPablo.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\emaillabs.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'responseTime'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\emaillabs.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\emaillabs.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\eversign.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\emaillabs.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\emaillabs.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\eversign.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\eversign.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\eversign.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\faceplusplus.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\eversign.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\eversign.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\faceplusplus.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'responseTime'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\faceplusplus.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\faceplusplus.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\flightstats.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\faceplusplus.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\faceplusplus.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\flightstats.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\flightstats.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\flightstats.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\fullcontact.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\flightstats.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\flightstats.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\fullcontact.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\fullcontact.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\fullcontact.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\georanker.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\fullcontact.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\fullcontact.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\georanker.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9108,9 +9108,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\georanker.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\georanker.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\github.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\georanker.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\georanker.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\github.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9128,26 +9128,26 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\github.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\github.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\groupdocs.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\github.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\github.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\groupdocs.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'responseTime'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\groupdocs.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\groupdocs.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\here.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\groupdocs.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\groupdocs.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\here.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\here.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\here.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\htm2pdf.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\here.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\here.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\htm2pdf.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9158,9 +9158,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=true
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\htm2pdf.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\htm2pdf.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\inconsistent-limitations.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\htm2pdf.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\htm2pdf.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\inconsistent-limitations.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9177,9 +9177,9 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\inconsistent-limitations.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\inconsistent-limitations.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\inconsistent-limits.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\inconsistent-limitations.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\inconsistent-limitations.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\inconsistent-limits.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9199,17 +9199,17 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\inconsistent-limits.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\inconsistent-limits.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\lob.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\inconsistent-limits.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\inconsistent-limits.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\lob.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRquests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\lob.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\lob.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mailchimp.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\lob.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\lob.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mailchimp.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9224,25 +9224,25 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mailchimp.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mailchimp.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mailgun.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mailchimp.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mailchimp.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mailgun.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mailgun.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mailgun.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mapillary.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mailgun.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mailgun.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mapillary.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRquests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mapillary.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\mapillary.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\meaningcloud.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mapillary.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\mapillary.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\meaningcloud.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9330,18 +9330,18 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=false
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\meaningcloud.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\meaningcloud.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\moz.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\meaningcloud.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\meaningcloud.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\moz.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'rows'
   UNUSED METRIC 'requests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\moz.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\moz.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\nutritionix.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\moz.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\moz.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\nutritionix.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9395,26 +9395,26 @@ CHECKING VALIDITY...
   UNDEFINED METRIC activeUsers in MVP>/v2/search/instant>get>activeUsers 
   UNDEFINED METRIC activeUsers in MVP>/v2/search/item>get>activeUsers 
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\nutritionix.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\nutritionix.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\openweathermap.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\nutritionix.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\nutritionix.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\openweathermap.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\openweathermap.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\openweathermap.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\quickblox.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\openweathermap.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\openweathermap.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\quickblox.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\quickblox.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\quickblox.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\scopus.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\quickblox.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\quickblox.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\scopus.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9422,34 +9422,34 @@ CHECKING VALIDITY...
   UNUSED METRIC 'responseTime'
   UNUSED METRIC 'results'
   UNUSED METRIC 'type'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\scopus.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\scopus.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\shodan.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\scopus.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\scopus.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\shodan.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRquests'
   UNUSED METRIC 'exportCredits'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\shodan.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\shodan.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\snapcx.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\shodan.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\shodan.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\snapcx.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\snapcx.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\snapcx.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\soundcloud.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\snapcx.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\snapcx.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\soundcloud.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'globalRquests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\soundcloud.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\soundcloud.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\sportradar.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\soundcloud.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\soundcloud.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\sportradar.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
@@ -9545,78 +9545,78 @@ CHECKING VALIDITY...
      NOK PRICING VALIDITY NOK
        everyPlanIsValid=false
        !existsCostConsistencyConflicts=true
-VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\sportradar.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\sportradar.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\surveymonkey.yaml ------
+VALIDITY ERROR in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\sportradar.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\sportradar.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\surveymonkey.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'globalRquests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\surveymonkey.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\surveymonkey.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\twilio.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\surveymonkey.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\surveymonkey.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\twilio.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
   UNUSED METRIC 'globalRequests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\twilio.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\twilio.yaml ------
------- BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\yummly.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\twilio.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\twilio.yaml ------
+------ BEGIN CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\yummly.yaml ------
 CHECKING SYNTAX...
 SYNTAX OK
 CHECKING VALIDITY...
    USING DEFAULT CAPACITY '{"requests":{"max":"Infinity","period":{"amount":1,"unit":"second"}}}'
   UNUSED METRIC 'requests'
-VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\yummly.yaml
------- END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-validator\examples\old-examples\yummly.yaml ------
+VALIDITY OK in C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\yummly.yaml
+------ END CHECKING FILE: C:\Users\Antonio\Desktop\sla4oai-analyzer\pricing-examples\old-examples\yummly.yaml ------
 
 VALID FILES: [
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\accuweather.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\aiception.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\azuresearch.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\clarifai.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\cloudsight.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\currencylayer.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\dblp.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\debitoor.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\docusign.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\emaillabs.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\eversign.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\faceplusplus.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\flightstats.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\fullcontact.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\groupdocs.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\here.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\lob.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\mailgun.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\mapillary.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\moz.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\nutritionix.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\openweathermap.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\quickblox.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\scopus.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\shodan.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\snapcx.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\soundcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\surveymonkey.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\twilio.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\yummly.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\accuweather.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\aiception.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\azuresearch.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\clarifai.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\cloudsight.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\currencylayer.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\dblp.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\debitoor.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\docusign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\emaillabs.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\eversign.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\faceplusplus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\flightstats.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\fullcontact.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\groupdocs.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\here.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\lob.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\mailgun.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\mapillary.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\moz.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\nutritionix.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\openweathermap.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\quickblox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\scopus.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\shodan.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\snapcx.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\soundcloud.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\surveymonkey.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\twilio.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\yummly.yaml"
 ]
 
 INVALID FILES: [
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\box.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\dropbox.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\ejemploPablo.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\georanker.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\github.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\htm2pdf.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\inconsistent-limitations.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\inconsistent-limits.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\mailchimp.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\meaningcloud.yaml",
-  "C:\\Users\\Antonio\\Desktop\\sla4oai-validator\\examples\\old-examples\\sportradar.yaml"
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\box.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\dropbox.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\ejemploPablo.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\georanker.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\github.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\htm2pdf.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\inconsistent-limitations.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\inconsistent-limits.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\mailchimp.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\meaningcloud.yaml",
+  "C:\\Users\\Antonio\\Desktop\\sla4oai-analyzer\\pricing-examples\\old-examples\\sportradar.yaml"
 ]

@@ -425,7 +425,7 @@ function list_properties(pricing) {
         // logger.validationWarning("-- HAS ${Object.keys(pricing.configuration).length} CONFIGURATIONS");
     }
     checkProperty(pricing, "availability", "root/availability");
-    
+
     // logger.validationWarning("-- END VERBOSE LIST OF PROPERTIES --");
 }
 

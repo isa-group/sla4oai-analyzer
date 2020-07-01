@@ -8,7 +8,7 @@ const program = require("commander");
 const validator = require("./validator");
 
 program
-  .name("sla4oai-validator")
+  .name("sla4oai-analyzer")
   .usage("<sla4oai file in YAML")
   .arguments("<file>")
   .version("1.0.0", "-v, --vers", "output the current version")

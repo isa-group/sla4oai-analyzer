@@ -1,10 +1,10 @@
 {
-  "name": "sla4oai-validator",
+  "name": "sla4oai-analyzer",
   "version": "1.0.0",
-  "description": "Validator for SLA4OAI files",
+  "description": "Analysis operations for SLA4OAI files",
   "main": "index.js",
   "bin": {
-    "sla4oai-validator": "./src/index.js"
+    "sla4oai-analyzer": "./src/index.js"
   },
   "scripts": {
     "lint": "eslint **/*.js --fix",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isa-group/XXXXXXX"
+    "url": "git+https://github.com/isa-group/sla4oai-analyzer"
   },
   "devDependencies": {
     "chai": "^4.2.0",

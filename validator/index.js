@@ -13,7 +13,7 @@ const ZSchema = require("z-schema");
 const semver = require("semver");
 
 var config = require("./configurations");
-var validityOperations = require("./operations/validity");
+var validityOperations = require("./operations/index");
 var sintaxVerbose = require("./operations/checkElements");
 
 const syntax = new ZSchema({
@@ -33,7 +33,7 @@ const logger = config.logger;
 
 
 try {
-    var schemaPath = path.join(__dirname, "./model/SLA4OAI.schema.json");
+    var schemaPath = path.join(__dirname, "./../model/SLA4OAI.schema.json");
     var sla4oaiSchema = fs.readFileSync(schemaPath, "utf8");
     sla4oaiSchema = jsyaml.safeLoad(sla4oaiSchema);
 } catch (err) {

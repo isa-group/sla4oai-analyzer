@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-labels */
 
-const config = require("./../configurations");
+const config = require("../configurations");
 const logger = config.logger;
 
 
