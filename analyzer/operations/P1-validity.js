@@ -485,10 +485,16 @@ function isValidPlan(plan, planName) {
 }
 
 // P1   [L4   Valid pricing] A {pricing} is valid if:
-function isValidPricing(pricing) {
+function isValidPricing(pricing, configuration) {
+    for (const prop in configuration) {
+        if (!Object.prototype.hasOwnProperty.call(pricing, prop)) {
+            pricing[prop] = configuration[prop];
+        }
+    }
     logger.validation('   CHECKING PRICING VALIDITY...');
 
     if (pricing.capacity) {
+        resetCapacity();
         logger.validationWarning(`   UPDATING CAPACITY FROM '${JSON.stringify(capacity)}'...`);
         setCapacity(pricing.capacity);
         logger.validationWarning(`     UPDATED TO '${JSON.stringify(capacity)}'`);

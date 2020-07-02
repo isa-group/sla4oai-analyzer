@@ -1,0 +1,6 @@
+capacity:
+  requests:
+    max: 10
+    period:
+      amount: 1
+      unit: second

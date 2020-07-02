@@ -1,0 +1,10 @@
+- requests:
+    max: 50
+    period:
+      amount: '1'
+      unit: day
+- requests:
+    max: 1
+    period:
+      amount: '1'
+      unit: second

@@ -7,7 +7,6 @@
 // const config = require("../configurations");
 // const logger = config.logger;
 
-
 // function project_burst(N, M, Mp) {
 //     if (Mp >= M)
 //         return N * Math.ceil(Mp / M);
@@ -98,7 +97,6 @@
 //     return effectiveLimitationsPerPlan;
 // }
 
-
 // function satisfactionUserNeeds(pricing, userNeeds) {
 
 //     // var everyUserNeedIsSatisfied = true;
@@ -139,7 +137,7 @@
 // // ************************** BEGIN P1 VALIDITY DETECTION ************************** //
 // var capacity;
 
-// // P1   [L4   Valid pricing] A {pricing} is valid if: 
+// // P1   [L4   Valid pricing] A {pricing} is valid if:
 // function isValid_pricing(pricing) {
 
 //     logger.validation("   CHECKING PRICING VALIDITY...");
@@ -190,7 +188,7 @@
 //     return condition;
 // }
 
-// // P1   [L3   Valid plan] A {plan} is valid if: 
+// // P1   [L3   Valid plan] A {plan} is valid if:
 // function isValid_plan(plan, planName) {
 //     logger.validation(`     CHECKING PLAN VALIDITY (${planName})...`);
 
@@ -271,7 +269,7 @@
 //     return condition;
 // }
 
-// // P1   [L2   Valid limitation] A {limitation} is valid if: 
+// // P1   [L2   Valid limitation] A {limitation} is valid if:
 // function isValid_limitation(limitation, planName, path, method, metric) {
 
 //     logger.validation(`       CHECKING LIMITATION VALIDITY (${printLimitatation(limitation)})...`);
@@ -285,7 +283,6 @@
 
 //     // [P1 L2.2] There are no {consistency conflicts} between any pair of its {limits}, that is, a possible situation allowed by one limit implies the violation of the other {limit}.
 //     const existsConsistencyConflicts = existsLimitsConsistencyConflict(limitation, planName, path, method, metric);
-
 
 //     // [P1 L2.3] There are no {ambiguity conflict} between any pair of its {limits}, that is, two limits use the same period.
 //     const existsAmbiguityConflicts = existsAmbiguityConflict(limitation, planName, path, method, metric);
@@ -306,7 +303,7 @@
 //     return condition;
 // }
 
-// // P1   [L1   Valid limit] A {limit} is valid if: 
+// // P1   [L1   Valid limit] A {limit} is valid if:
 // function isValid_limit(limit, planName, path, method, metric) {
 
 //     logger.validation(`         CHECKING LIMIT VALIDITY (${printLimit(limit)})...`);
@@ -340,8 +337,7 @@
 
 // // ********************************* BEGIN CONFLICT DETECTION ********************************* //
 
-
-// // [P1 L2.2] There are no {consistency conflicts} 
+// // [P1 L2.2] There are no {consistency conflicts}
 // function existsLimitsConsistencyConflict(limits, planName, path, method, metric) {
 
 //     // [P1 L2.2] There are no {consistency conflicts} between any pair of its {limits}
@@ -372,7 +368,6 @@
 
 //         let PU1 = PU(limit1, N1, metric);
 //         let PU2 = PU(limit2, N2, metric);
-
 
 //         if (PU1 !== Infinity && PU2 !== Infinity) {
 //             // inconsistentes si el porcentaje de utilización de la "capacidad de la limitación con periodo más largo" es menor que "el porcentaje de utilización de la capacidad del periodo más corto"
@@ -613,7 +608,6 @@
 //         }
 //     }
 
-
 //     if (plan1.pricing.period && plan2.pricing.period) {
 
 //         const PL1 = normalizedPeriod(plan1.pricing.period);
@@ -621,7 +615,6 @@
 
 //         const CU1 = plan1.pricing.cost / PL1;
 //         const CU2 = plan2.pricing.cost / PL2;
-
 
 //         // if PU_1 > PU_2 --> cost1 > cost2
 //         const N1 = normalizedPeriod(limitations1PathMethodMetricLimit.period);
@@ -642,7 +635,6 @@
 //         //     logger.validationWarning(`             L4.2 COST CONSISTENCY CONFLICT in plan ${plan1Name}|${plan2Name} in >${plan1LimitationsName}>${limitations1PathName}>${limitations1PathMethodName}>${limitations1PathMethodMetricName} ('${printLimit(limitations1PathMethodMetricLimit)}' > '${printLimit(limitations2PathMethodMetricLimit)}' AND NOT '${plan1.pricing.cost} >= ${plan2.pricing.cost}')`);
 //         // }
 
-
 //     } else {
 //         logger.warning(`existsCostConsistencyConflict - Cannot compare non-period pricings (pricing should exist: global or per plan) cost in (${JSON.stringify(plan1.pricing)} and ${JSON.stringify(plan2.pricing)})`);
 //     }
@@ -653,7 +645,6 @@
 // // ********************************* END CONFLICT DETECTION ********************************* //
 
 // // ************************** END P1 VALIDITY DETECTION ************************** //
-
 
 // // ************************** BEGIN AUX FUNCTIONS ************************** //
 // // Normalize period
@@ -687,7 +678,7 @@
 //                 case "week":
 //                     return (amount * 604800); //60 * 60 * 24 * 7);
 //                 case "month":
-//                     return (amount * 2628000); //60 * 60 * 24 * 7 * 4); 
+//                     return (amount * 2628000); //60 * 60 * 24 * 7 * 4);
 //                 case "year":
 //                     return (amount * 31556952); //60 * 60 * 24 * 7 * 4 * 12);
 //                 case "decade":
@@ -804,7 +795,6 @@
 // function resetCapacity() {
 //     capacity = { "requests": { "max": "Infinity", "period": { "amount": 1, "unit": "second" } } };
 // }
-
 
 // // ************************** END AUX FUNCTIONS ************************** //
 

@@ -7,66 +7,274 @@
         {
             "type": "node",
             "request": "launch",
-   
             "name": "Normal run",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\index.js",
-            
-            // "args": ["examples/new-examples/accuweather.yaml"]
-            // "args": ["examples/new-examples/aiception.yaml"]
-            // "args": ["examples/new-examples/azuresearch.yaml"]
-            // "args": ["examples/new-examples/box.yaml"]
-            // "args": ["examples/new-examples/clarifai.yaml"]
-            // "args": ["examples/new-examples/cloudsight.yaml"]
-            // "args": ["examples/new-examples/currencylayer.yaml"]
-            // "args": ["examples/new-examples/dblp.yaml"]
-            // "args": ["examples/new-examples/debitoor.yaml"]
-            // "args": ["examples/new-examples/docusign.yaml"]
-            // "args": ["examples/new-examples/dropbox.yaml"]
-            // "args": ["examples/new-examples/emaillabs.yaml"]
-            // "args": ["examples/new-examples/eversign.yaml"]
-            // "args": ["examples/new-examples/faceplusplus.yaml"]
-            // "args": ["examples/new-examples/flightstats.yaml"]
-            // "args": ["examples/new-examples/fullcontact.yaml"]
-            // "args": ["examples/new-examples/georanker.yaml"]
-            // "args": ["examples/new-examples/github.yaml"]
-            // "args": ["examples/new-examples/groupdocs.yaml"]
-            // "args": ["examples/new-examples/here.yaml"]
-            // "args": ["examples/new-examples/htm2pdf.yaml"]
-            // "args": ["examples/new-examples/lob.yaml"]
-            // "args": ["examples/new-examples/mailchimp.yaml"]
-            // "args": ["examples/new-examples/mailgun.yaml"]
-            // "args": ["examples/new-examples/mapillary.yaml"]
-            // "args": ["examples/new-examples/meaningcloud.yaml"]
-            // "args": ["examples/new-examples/moz.yaml"]
-            // "args": ["examples/new-examples/nutritionix.yaml"]
-            // "args": ["examples/new-examples/openweathermap.yaml"]
-            // "args": ["examples/new-examples/quickblox.yaml"]
-            // "args": ["examples/new-examples/scopus.yaml"]
-            // "args": ["examples/new-examples/shodan.yaml"]
-            // "args": ["examples/new-examples/soundcloud.yaml"]
-            // "args": ["examples/new-examples/sportradar.yaml"]
-            // "args": ["examples/new-examples/surveymonkey.yaml"]
-            // "args": ["examples/new-examples/twilio.yaml"]
-            "args": ["examples/new-examples/yummly.yaml"]
-
-            // "args": ["-d", "examples/"]
-            // "args": ["-d", "examples/new-examples/"]
-            // "args": ["-d", "examples/synthetic"]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/accuweather.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/aiception.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/azuresearch.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/box.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/clarifai.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/cloudsight.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/currencylayer.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/dblp.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/debitoor.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/docusign.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/dropbox.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/emaillabs.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/eversign.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/faceplusplus.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/flightstats.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/fullcontact.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/georanker.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/github.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/groupdocs.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/here.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/htm2pdf.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/lob.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/mailchimp.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/mailgun.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/mapillary.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/meaningcloud.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/moz.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/nutritionix.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/openweathermap.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/quickblox.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/scopus.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/shodan.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/soundcloud.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/sportradar.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/surveymonkey.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/twilio.yaml"
+            // ]
+            // "args": [
+            // "-o",
+            // "validity",
+            //     "-f",
+            //     "pricing-examples/new-examples/yummly.yaml"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-d",
+            //     "pricing-examples/old-examples"
+            // ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-d",
+            //     "pricing-examples/new-examples/"
+            // ]
+            "args": [
+                "-o",
+                "validity",
+                "-d",
+                "pricing-examples/synthetic"
+            ]
+            // "args": [
+            //     "-o",
+            //     "validity",
+            //     "-f",
+            //     "pricing-examples/synthetic/V-listing05.yaml",
+            //     "-c",
+            //     "pricing-examples/synthetic/config/V-listing05.config.yaml"
+            // ]
         },
         {
             "type": "node",
             "request": "launch",
-   
             "name": "Test run",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\node_modules\\mocha\\bin\\_mocha",
-            // "args": ["test/validator.test.js"]
-            "args": ["test/validity.test.js"]
+            "args": [
+                "test/analyzer.test.js"
+            ]
+            // "args": [
+            //     "test/operations.test.js"
+            // ]
         }
     ]
 }
