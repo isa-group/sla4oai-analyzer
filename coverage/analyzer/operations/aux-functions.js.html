@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.71% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>39/70</span>
+                <span class='fraction'>42/70</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.54% </span>
+                <span class="strong">67.31% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>32/52</span>
+                <span class='fraction'>35/52</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.41% </span>
+                <span class="strong">58.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/68</span>
+                <span class='fraction'>40/68</span>
             </div>
         
             
@@ -200,24 +200,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">411938x</span>
+<span class="cline-any cline-yes">411994x</span>
 <span class="cline-any cline-yes">29704x</span>
 <span class="cline-any cline-yes">29704x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">382234x</span>
-<span class="cline-any cline-yes">382234x</span>
-<span class="cline-any cline-yes">382234x</span>
+<span class="cline-any cline-yes">382290x</span>
+<span class="cline-any cline-yes">382290x</span>
+<span class="cline-any cline-yes">382290x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">411938x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">411938x</span>
+<span class="cline-any cline-yes">411994x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">26367x</span>
+<span class="cline-any cline-yes">411994x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26385x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">52266x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,15 +225,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1363x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">412x</span>
+<span class="cline-any cline-yes">430x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">281643x</span>
+<span class="cline-any cline-yes">281647x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2600x</span>
+<span class="cline-any cline-yes">2604x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">32014x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -285,13 +285,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">78x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">78x</span>
+<span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -347,8 +347,8 @@ function normalizedPeriod(p, metric, capacity) {
 <span class="cstat-no" title="statement not covered" >            return -1;</span>
         case 'second':
             switch (p.unit) {
-<span class="branch-0 cbranch-no" title="branch not covered" >                case 'millisecond':</span>
-<span class="cstat-no" title="statement not covered" >                    return amount / 1000;</span>
+                case 'millisecond':
+                    return amount / 1000;
                 case 'second':
                     return amount;
                 case 'minute':
@@ -363,10 +363,10 @@ function normalizedPeriod(p, metric, capacity) {
                     return (amount * 2628000); // 60 * 60 * 24 * 7 * 4);
                 case 'year':
                     return (amount * 31556952); // 60 * 60 * 24 * 7 * 4 * 12);
-<span class="branch-8 cbranch-no" title="branch not covered" >                case 'decade':</span>
-<span class="cstat-no" title="statement not covered" >                    return (amount * 315569520); </span>// 60 * 60 * 24 * 7 * 4 * 12 * 10);
-<span class="branch-9 cbranch-no" title="branch not covered" >                case 'century':</span>
-<span class="cstat-no" title="statement not covered" >                    return (amount * 3155695200); </span>// 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10);
+                case 'decade':
+                    return (amount * 315569520); // 60 * 60 * 24 * 7 * 4 * 12 * 10);
+                case 'century':
+                    return (amount * 3155695200); // 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10);
                 case 'forever':
                     return Infinity;
 <span class="branch-11 cbranch-no" title="branch not covered" >                default:</span>
@@ -463,7 +463,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jul 02 2020 13:05:42 GMT+0200 (hora de verano de Europa central)
+                at Thu Jul 02 2020 16:18:35 GMT+0200 (hora de verano de Europa central)
             </div>
         </div>
         <script src="../../prettify.js"></script>
