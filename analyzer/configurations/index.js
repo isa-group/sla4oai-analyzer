@@ -1,64 +1,51 @@
-/* eslint-disable no-undef */
-
-/**
- * Module dependecies.
- */
 const jsyaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 const winston = require('winston');
 
-/*
- * Export functions and Objects
- */
-const config = {
-    setConfigurations: _setConfigurations  //eslint-disable-line
-};
+const configuration = {};
 
-module.exports = config;
-
-module.exports.setProperty = (propertyName, newValue) => {
-    this[propertyName] = newValue;
-};
-
-/**
- * Implement the functions
- */
-function _setConfigurations(options, encoding) { //eslint-disable-line
-    let newConfigurations = null;
-    if (!options) {
-        throw new Error('Configurations parameter is required');
-    } else if (typeof options === 'string') {
-        try {
-            var configString = fs.readFileSync(options, encoding); // eslint-disable-line
-            newConfigurations = jsyaml.safeLoad(configString)[process.env.NODE_ENV ? process.env.NODE_ENV : 'development'];
-        } catch (err) {
-            console.log("The specified configuration file wasn't found at " + options + ".  Default configurations will be set"); // eslint-disable-line
-            config.setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
-        }
-    } else {
-        newConfigurations = options;
-    }
-
-    Object.keys(newConfigurations).forEach((c) => {
-        this.setProperty(c, newConfigurations[c]);   //eslint-disable-line
-        if (c === 'loglevel') { // loglevel changes, then new logger is needed
-            createNewLogger(); // eslint-disable-line
-        }
-    });
+function setProperty(propertyName, newValue) {
+    configuration[propertyName] = newValue;
 }
 
-/**
- * Setup default configurations
- */
-config.setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
-
-function consoleLogger(customLevels, customFormat) {
+function exportConsoleLogger(customLevels, customFormat) {
     module.exports.logger = winston.createLogger({
         levels: customLevels.levels,
         transports: [
             new winston.transports.Console({
-                level: config.loglevel,
+                level: configuration.loglevel,
+                handleExceptions: true,
+                json: false,
+                format: winston.format.combine(
+                    winston.format.colorize(),
+                    winston.format.timestamp(),
+                    winston.format.splat(),
+                    customFormat,
+                ),
+            }),
+        ],
+        exitOnError: false,
+    });
+}
+
+function exportConsoleAndFileLogger(customLevels, customFormat) {
+    module.exports.logger = winston.createLogger({
+        levels: customLevels.levels,
+        transports: [
+            new winston.transports.File({
+                level: configuration.loglevel,
+                filename: configuration.logfile,
+                handleExceptions: true,
+                maxsize: 5242880, // 5MB
+                format: winston.format.combine(
+                    winston.format.timestamp(),
+                    winston.format.splat(),
+                    customFormat,
+                ),
+            }),
+            new winston.transports.Console({
+                level: configuration.loglevel,
                 handleExceptions: true,
                 json: false,
                 format: winston.format.combine(
@@ -77,9 +64,6 @@ function createNewLogger() {
     // var customFormat = winston.format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`);
     const customFormat = winston.format.printf((info) => `${info.message}`);
 
-    /**
-     * Configure here your custom levels.
-     */
     const customLevels = {
         levels: {
             error: 8,
@@ -100,41 +84,37 @@ function createNewLogger() {
             debug: 'blue',
         },
     };
-
-    if (config.logfile !== undefined) {
-        module.exports.logger = winston.createLogger({
-            levels: customLevels.levels,
-            transports: [
-                new winston.transports.File({
-                    level: config.loglevel,
-                    filename: config.logfile,
-                    handleExceptions: true,
-                    maxsize: 5242880, // 5MB
-                    format: winston.format.combine(
-                        winston.format.timestamp(),
-                        winston.format.splat(),
-                        customFormat,
-                    ),
-                }),
-                new winston.transports.Console({
-                    level: config.loglevel,
-                    handleExceptions: true,
-                    json: false,
-                    format: winston.format.combine(
-                        winston.format.colorize(),
-                        winston.format.timestamp(),
-                        winston.format.splat(),
-                        customFormat,
-                    ),
-                }),
-            ],
-            exitOnError: false,
-        });
+    if (configuration.logfile !== undefined) {
+        exportConsoleAndFileLogger(customLevels, customFormat);
     } else {
-        consoleLogger(customLevels, customFormat);
+        exportConsoleLogger(customLevels, customFormat);
     }
-
     winston.addColors(customLevels.colors);
 }
 
-createNewLogger();
+function setConfigurations(options, encoding) {
+    let newConfigurations = null;
+    if (!options) {
+        throw new Error('Configurations parameter is required');
+    } else if (typeof options === 'string') {
+        try {
+            const configString = fs.readFileSync(options, encoding);
+            newConfigurations = jsyaml.safeLoad(configString)[process.env.NODE_ENV ? process.env.NODE_ENV : 'development'];
+        } catch (err) {
+            // eslint-disable-next-line no-console
+            console.log(`The specified configuration file wasn't found at ${options}.  Default configurations will be set`);
+            setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
+        }
+    } else {
+        newConfigurations = options;
+    }
+
+    Object.keys(newConfigurations).forEach((c) => {
+        setProperty(c, newConfigurations[c]);
+        if (c === 'loglevel') {
+            createNewLogger();
+        }
+    });
+}
+
+setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
