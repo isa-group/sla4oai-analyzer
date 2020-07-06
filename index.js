@@ -10,7 +10,7 @@ program
     .option('-d, --directory <directory>', 'path to the directory with the yaml/json files')
     .option('-c, --config <config>', 'path to the yaml/json configuration file')
     .option('-p, --period <period>', 'period, for example "1 month"')
-    .option('-d, --needs <needs>', 'path to the yaml/json needs file')
+    .option('-n, --needs <needs>', 'path to the yaml/json needs file')
     .action((cmd) => {
         analyzer.exec(cmd);
     })

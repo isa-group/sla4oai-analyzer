@@ -71,8 +71,8 @@ function effectiveLimitation(pricing, period, modeParam) {
                 effectiveLimitationsPerMetric.set(metricName, []);
             }
             const res = effectiveLimitationCalc(limits, period);
-            // logger.validationWarning(`       FOR METRIC '${metricName}' (burst): ${res["burst"]}`);
-            // logger.validationWarning(`       FOR METRIC '${metricName}' (uniform): ${res["uniform"]}`);
+            logger.validation(`       IN PLAN '${planName}' FOR METRIC '${metricName}' (burst): ${res.burst}`);
+            logger.validation(`       IN PLAN '${planName}' FOR METRIC '${metricName}' (uniform): ${res.uniform}`);
             effectiveLimitationsPerMetric.get(metricName).push(res[mode]);
         });
         effectiveLimitationsPerPlan.set(planName, effectiveLimitationsPerMetric);

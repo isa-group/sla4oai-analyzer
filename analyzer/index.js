@@ -140,7 +140,7 @@ function analyzeFile(file, cmd) {
         logger.validationProcess('SYNTAX OK');
         logger.validationProcess('CHECKING EFFECTIVE LIMITATION...');
         const effectiveLimitation = operations.effectiveLimitation(sla4oaiObject, argPeriod);
-        logger.validationProcess(`EFFECTIVE LIMITATION ${effectiveLimitation} IN ${file}`);
+        logger.validationProcess(`EFFECTIVE LIMITATION CALCULATED IN ${effectiveLimitation.size} PLANS IN ${file}`);
         return effectiveLimitation;
         // END EFFECTIVELIMITATION OPERATION HANDLER
 
