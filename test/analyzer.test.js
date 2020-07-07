@@ -159,13 +159,13 @@ describe('P2 - Effective capacity', () => {
         assert.ok(res);
         expect(res).to.include.all.keys(['QuotaWithTwoLimitsMod', 'QuotaWithTwoLimits', 'QuotasRateWithOneLimit']);
         expect(res.get('QuotaWithTwoLimitsMod')).to.include.all.keys('requests');
-        expect(res.get('QuotaWithTwoLimitsMod').get('requests')).to.be.an('array').that.includes(100);
+        expect(res.get('QuotaWithTwoLimitsMod').get('requests')).equals(100);
 
         expect(res.get('QuotaWithTwoLimits')).to.include.all.keys('requests');
-        expect(res.get('QuotaWithTwoLimits').get('requests')).to.be.an('array').that.includes(715);
+        expect(res.get('QuotaWithTwoLimits').get('requests')).equals(715);
 
         expect(res.get('QuotasRateWithOneLimit')).to.include.all.keys('requests');
-        expect(res.get('QuotasRateWithOneLimit').get('requests')).to.be.an('array').that.includes(715);
+        expect(res.get('QuotasRateWithOneLimit').get('requests')).equals(715);
     });
     it('should calculate effective limitation 1 second', () => {
         const cmd = {
@@ -177,13 +177,13 @@ describe('P2 - Effective capacity', () => {
         assert.ok(res);
         expect(res).to.include.all.keys(['QuotaWithTwoLimitsMod', 'QuotaWithTwoLimits', 'QuotasRateWithOneLimit']);
         expect(res.get('QuotaWithTwoLimitsMod')).to.include.all.keys('requests');
-        expect(res.get('QuotaWithTwoLimitsMod').get('requests')).to.be.an('array').that.includes(1);
+        expect(res.get('QuotaWithTwoLimitsMod').get('requests')).equals(1);
 
         expect(res.get('QuotaWithTwoLimits')).to.include.all.keys('requests');
-        expect(res.get('QuotaWithTwoLimits').get('requests')).to.be.an('array').that.includes(6);
+        expect(res.get('QuotaWithTwoLimits').get('requests')).equals(6);
 
         expect(res.get('QuotasRateWithOneLimit')).to.include.all.keys('requests');
-        expect(res.get('QuotasRateWithOneLimit').get('requests')).to.be.an('array').that.includes(6);
+        expect(res.get('QuotasRateWithOneLimit').get('requests')).equals(6);
     });
     it('should calculate effective limitation 1 month', () => {
         const cmd = {
@@ -195,13 +195,13 @@ describe('P2 - Effective capacity', () => {
         assert.ok(res);
         expect(res).to.include.all.keys(['QuotaWithTwoLimitsMod', 'QuotaWithTwoLimits', 'QuotasRateWithOneLimit']);
         expect(res.get('QuotaWithTwoLimitsMod')).to.include.all.keys('requests');
-        expect(res.get('QuotaWithTwoLimitsMod').get('requests')).to.be.an('array').that.includes(700);
+        expect(res.get('QuotaWithTwoLimitsMod').get('requests')).equals(700);
 
         expect(res.get('QuotaWithTwoLimits')).to.include.all.keys('requests');
-        expect(res.get('QuotaWithTwoLimits').get('requests')).to.be.an('array').that.includes(5000);
+        expect(res.get('QuotaWithTwoLimits').get('requests')).equals(5000);
 
         expect(res.get('QuotasRateWithOneLimit')).to.include.all.keys('requests');
-        expect(res.get('QuotasRateWithOneLimit').get('requests')).to.be.an('array').that.includes(5000);
+        expect(res.get('QuotasRateWithOneLimit').get('requests')).equals(5000);
     });
 });
 

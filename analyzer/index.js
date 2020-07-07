@@ -139,9 +139,15 @@ function analyzeFile(file, cmd) {
         // No syntax errors; continue with operation
         logger.validationProcess('SYNTAX OK');
         logger.validationProcess('CHECKING EFFECTIVE LIMITATION...');
-        const effectiveLimitation = operations.effectiveLimitation(sla4oaiObject, argPeriod);
-        logger.validationProcess(`EFFECTIVE LIMITATION CALCULATED IN ${effectiveLimitation.size} PLANS IN ${file}`);
-        return effectiveLimitation;
+        const effectiveLimitationsPerPlan = operations.effectiveLimitation(sla4oaiObject, argPeriod);
+        logger.validationProcess(`EFFECTIVE LIMITATION CALCULATED IN ${effectiveLimitationsPerPlan.size} PLANS IN '${file}`);
+
+        effectiveLimitationsPerPlan.forEach((value, planName) => {
+            value.forEach((effectiveLimitation, metricName) => {
+                logger.validationWarning(`  IN ${planName}': '${effectiveLimitation} ${metricName}' PER '${argPeriod.amount} ${argPeriod.unit}'`);
+            });
+        });
+        return effectiveLimitationsPerPlan;
         // END EFFECTIVELIMITATION OPERATION HANDLER
 
         // BEGIN COMPLIANCE OPERATION HANDLER

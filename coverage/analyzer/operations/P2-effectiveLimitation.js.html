@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/46</span>
+                <span class='fraction'>45/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.61% </span>
+                <span class="strong">81.82% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/23</span>
+                <span class='fraction'>18/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/46</span>
+                <span class='fraction'>45/48</span>
             </div>
         
             
@@ -145,7 +145,10 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -215,12 +218,15 @@
 <span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -260,7 +266,7 @@ function effectiveLimitationCalc(limits, period) {
 }
 &nbsp;
 function effectiveLimitation(pricing, period, modeParam) {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (modeParam &amp;&amp; (modeParam !== 'burst' &amp;&amp; modeParam !== 'uniform')) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (modeParam &amp;&amp; (modeParam !== 'burst' &amp;&amp; modeParam !== 'uniform' &amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >modeParam !== 'all')</span>) {
 <span class="cstat-no" title="statement not covered" >        logger.error(`Mode ${modeParam} unrecognized`);</span>
 <span class="cstat-no" title="statement not covered" >        return -1;</span>
     }
@@ -302,13 +308,16 @@ function effectiveLimitation(pricing, period, modeParam) {
         // logger.validationWarning(`     IN PLAN '${planName}'...`);
         const effectiveLimitationsPerMetric = new Map();
         limitationsPlan.forEach((limits, metricName) =&gt; {
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (!effectiveLimitationsPerMetric.get(metricName) || <span class="branch-1 cbranch-no" title="branch not covered" >!effectiveLimitationsPerMetric.get(metricName).length &gt; 0)</span> {
-                effectiveLimitationsPerMetric.set(metricName, []);
-            }
             const res = effectiveLimitationCalc(limits, period);
-            // logger.validationWarning(`       FOR METRIC '${metricName}' (burst): ${res["burst"]}`);
-            // logger.validationWarning(`       FOR METRIC '${metricName}' (uniform): ${res["uniform"]}`);
-            effectiveLimitationsPerMetric.get(metricName).push(res[mode]);
+&nbsp;
+            logger.validation(`       IN PLAN '${planName}' FOR METRIC '${metricName}' (burst): ${res.burst}`);
+            logger.validation(`       IN PLAN '${planName}' FOR METRIC '${metricName}' (uniform): ${res.uniform}`);
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (mode === 'all') {
+<span class="cstat-no" title="statement not covered" >                effectiveLimitationsPerMetric.set(metricName, res);</span>
+            } else {
+                effectiveLimitationsPerMetric.set(metricName, res[mode]);
+            }
         });
         effectiveLimitationsPerPlan.set(planName, effectiveLimitationsPerMetric);
     });
@@ -328,7 +337,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jul 02 2020 16:18:35 GMT+0200 (hora de verano de Europa central)
+                at Tue Jul 07 2020 16:19:50 GMT+0200 (hora de verano de Europa central)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -39,13 +39,13 @@ describe('operation test: effective limitation', () => {
         const effectiveLimitation = operations.effectiveLimitation(sla4oaiObject, { amount: 1, unit: 'day' });
         expect(effectiveLimitation).to.include.all.keys(['QuotaWithTwoLimitsMod', 'QuotaWithTwoLimits', 'QuotasRateWithOneLimit']);
         expect(effectiveLimitation.get('QuotaWithTwoLimitsMod')).to.include.all.keys('requests');
-        expect(effectiveLimitation.get('QuotaWithTwoLimitsMod').get('requests')).to.be.an('array').that.includes(100);
+        expect(effectiveLimitation.get('QuotaWithTwoLimitsMod').get('requests')).equals(100);
 
         expect(effectiveLimitation.get('QuotaWithTwoLimits')).to.include.all.keys('requests');
-        expect(effectiveLimitation.get('QuotaWithTwoLimits').get('requests')).to.be.an('array').that.includes(715);
+        expect(effectiveLimitation.get('QuotaWithTwoLimits').get('requests')).equals(715);
 
         expect(effectiveLimitation.get('QuotasRateWithOneLimit')).to.include.all.keys('requests');
-        expect(effectiveLimitation.get('QuotasRateWithOneLimit').get('requests')).to.be.an('array').that.includes(715);
+        expect(effectiveLimitation.get('QuotasRateWithOneLimit').get('requests')).equals(715);
     });
 
     it('should calculate effective limitation burst/uniform', () => {
@@ -77,84 +77,84 @@ describe('operation test: effective limitation', () => {
         // UNIFORM
         expect(effectiveLimitationMillisecondUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationMillisecondUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationMillisecondUniform.get('plan1').get('requests')).to.be.an('array').that.includes(1);
+        expect(effectiveLimitationMillisecondUniform.get('plan1').get('requests')).equals(1);
 
         expect(effectiveLimitationSecondUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationSecondUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationSecondUniform.get('plan1').get('requests')).to.be.an('array').that.includes(6);
+        expect(effectiveLimitationSecondUniform.get('plan1').get('requests')).equals(6);
 
         expect(effectiveLimitationMinuteUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationMinuteUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationMinuteUniform.get('plan1').get('requests')).to.be.an('array').that.includes(6);
+        expect(effectiveLimitationMinuteUniform.get('plan1').get('requests')).equals(6);
 
         expect(effectiveLimitationHourUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationHourUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationHourUniform.get('plan1').get('requests')).to.be.an('array').that.includes(298);
+        expect(effectiveLimitationHourUniform.get('plan1').get('requests')).equals(298);
 
         expect(effectiveLimitationDayUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationDayUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationDayUniform.get('plan1').get('requests')).to.be.an('array').that.includes(7143);
+        expect(effectiveLimitationDayUniform.get('plan1').get('requests')).equals(7143);
 
         expect(effectiveLimitationWeekUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationWeekUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationWeekUniform.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationWeekUniform.get('plan1').get('requests')).equals(50000);
 
         expect(effectiveLimitationMonthUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationMonthUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationMonthUniform.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationMonthUniform.get('plan1').get('requests')).equals(50000);
 
         expect(effectiveLimitationYearUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationYearUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationYearUniform.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationYearUniform.get('plan1').get('requests')).equals(50000);
 
         expect(effectiveLimitationDecadeUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationDecadeUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationDecadeUniform.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationDecadeUniform.get('plan1').get('requests')).equals(50000);
 
         expect(effectiveLimitationCenturyUniform).to.include.all.keys(['plan1']);
         expect(effectiveLimitationCenturyUniform.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationCenturyUniform.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationCenturyUniform.get('plan1').get('requests')).equals(50000);
 
         // BURST
         expect(effectiveLimitationMillisecondBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationMillisecondBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationMillisecondBurst.get('plan1').get('requests')).to.be.an('array').that.includes(6);
+        expect(effectiveLimitationMillisecondBurst.get('plan1').get('requests')).equals(6);
 
         expect(effectiveLimitationSecondBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationSecondBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationSecondBurst.get('plan1').get('requests')).to.be.an('array').that.includes(6);
+        expect(effectiveLimitationSecondBurst.get('plan1').get('requests')).equals(6);
 
         expect(effectiveLimitationMinuteBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationMinuteBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationMinuteBurst.get('plan1').get('requests')).to.be.an('array').that.includes(360);
+        expect(effectiveLimitationMinuteBurst.get('plan1').get('requests')).equals(360);
 
         expect(effectiveLimitationHourBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationHourBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationHourBurst.get('plan1').get('requests')).to.be.an('array').that.includes(21600);
+        expect(effectiveLimitationHourBurst.get('plan1').get('requests')).equals(21600);
 
         expect(effectiveLimitationDayBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationDayBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationDayBurst.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationDayBurst.get('plan1').get('requests')).equals(50000);
 
         expect(effectiveLimitationWeekBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationWeekBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationWeekBurst.get('plan1').get('requests')).to.be.an('array').that.includes(50000);
+        expect(effectiveLimitationWeekBurst.get('plan1').get('requests')).equals(50000);
 
         expect(effectiveLimitationMonthBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationMonthBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationMonthBurst.get('plan1').get('requests')).to.be.an('array').that.includes(250000);
+        expect(effectiveLimitationMonthBurst.get('plan1').get('requests')).equals(250000);
 
         expect(effectiveLimitationYearBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationYearBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationYearBurst.get('plan1').get('requests')).to.be.an('array').that.includes(2650000);
+        expect(effectiveLimitationYearBurst.get('plan1').get('requests')).equals(2650000);
 
         expect(effectiveLimitationDecadeBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationDecadeBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationDecadeBurst.get('plan1').get('requests')).to.be.an('array').that.includes(26100000);
+        expect(effectiveLimitationDecadeBurst.get('plan1').get('requests')).equals(26100000);
 
         expect(effectiveLimitationCenturyBurst).to.include.all.keys(['plan1']);
         expect(effectiveLimitationCenturyBurst.get('plan1')).to.include.all.keys('requests');
-        expect(effectiveLimitationCenturyBurst.get('plan1').get('requests')).to.be.an('array').that.includes(260900000);
+        expect(effectiveLimitationCenturyBurst.get('plan1').get('requests')).equals(260900000);
     });
 });
 

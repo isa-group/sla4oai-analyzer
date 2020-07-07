@@ -25,7 +25,7 @@ function effectiveLimitationCalc(limits, period) {
 }
 
 function effectiveLimitation(pricing, period, modeParam) {
-    if (modeParam && (modeParam !== 'burst' && modeParam !== 'uniform')) {
+    if (modeParam && (modeParam !== 'burst' && modeParam !== 'uniform' && modeParam !== 'all')) {
         logger.error(`Mode ${modeParam} unrecognized`);
         return -1;
     }
@@ -67,13 +67,16 @@ function effectiveLimitation(pricing, period, modeParam) {
         // logger.validationWarning(`     IN PLAN '${planName}'...`);
         const effectiveLimitationsPerMetric = new Map();
         limitationsPlan.forEach((limits, metricName) => {
-            if (!effectiveLimitationsPerMetric.get(metricName) || !effectiveLimitationsPerMetric.get(metricName).length > 0) {
-                effectiveLimitationsPerMetric.set(metricName, []);
-            }
             const res = effectiveLimitationCalc(limits, period);
+
             logger.validation(`       IN PLAN '${planName}' FOR METRIC '${metricName}' (burst): ${res.burst}`);
             logger.validation(`       IN PLAN '${planName}' FOR METRIC '${metricName}' (uniform): ${res.uniform}`);
-            effectiveLimitationsPerMetric.get(metricName).push(res[mode]);
+
+            if (mode === 'all') {
+                effectiveLimitationsPerMetric.set(metricName, res);
+            } else {
+                effectiveLimitationsPerMetric.set(metricName, res[mode]);
+            }
         });
         effectiveLimitationsPerPlan.set(planName, effectiveLimitationsPerMetric);
     });
