@@ -10,6 +10,7 @@ const { logger } = config;
 
 function analyzeFile(file, cmd) {
     const argOperation = cmd.operation;
+    const argMode = cmd.mode;
     // const argFile = cmd.file;
     // const argDirectory = cmd.directory;
     const argConfigFile = cmd.config;
@@ -136,11 +137,12 @@ function analyzeFile(file, cmd) {
             logger.validationProcess(`SYNTAX ERRORS in ${file}`);
             return false;
         }
+
         // No syntax errors; continue with operation
         logger.validationProcess('SYNTAX OK');
         logger.validationProcess('CHECKING EFFECTIVE LIMITATION...');
-        const effectiveLimitationsPerPlan = operations.effectiveLimitation(sla4oaiObject, argPeriod);
-        logger.validationProcess(`EFFECTIVE LIMITATION CALCULATED IN ${effectiveLimitationsPerPlan.size} PLANS IN '${file}`);
+        const effectiveLimitationsPerPlan = operations.effectiveLimitation(sla4oaiObject, argPeriod, argMode);
+        logger.validationProcess(`EFFECTIVE LIMITATION CALCULATED (mode: ${argMode}) IN ${effectiveLimitationsPerPlan.size} PLANS IN '${file}`);
 
         effectiveLimitationsPerPlan.forEach((value, planName) => {
             value.forEach((effectiveLimitation, metricName) => {

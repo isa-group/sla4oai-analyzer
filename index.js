@@ -11,6 +11,7 @@ program
     .option('-c, --config <config>', 'path to the yaml/json configuration file')
     .option('-p, --period <period>', 'period, for example "1 month"')
     .option('-n, --needs <needs>', 'path to the yaml/json needs file')
+    .option('-m, --mode <mode>', 'mode for the effective limitation (either burst/uniform)')
     .action((cmd) => {
         analyzer.exec(cmd);
     })
