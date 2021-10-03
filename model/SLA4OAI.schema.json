@@ -161,6 +161,15 @@
                     ],
                     "title": "cost"
                 },
+                "custom": {
+                    "type": "boolean",
+                    "description": "Whether this limit has a custom value. Defaults to false.",
+                    "examples": [
+                        "true",
+                        "false"
+                    ],
+                    "title": "custom"
+                },
                 "max": {
                     "anyOf": [
                         {
@@ -189,9 +198,6 @@
                     "title": "period"
                 }
             },
-            "required": [
-                "max"
-            ],
             "title": "Limit",
             "type": "object"
         },
@@ -505,6 +511,15 @@
                         "custom"
                     ],
                     "title": "cost"
+                },
+                "custom": {
+                    "type": "boolean",
+                    "description": "Whether this plan has a custom price. Defaults to false.",
+                    "examples": [
+                        "true",
+                        "false"
+                    ],
+                    "title": "custom"
                 },
                 "currency": {
                     "default": "USD",

@@ -82,16 +82,6 @@ describe('P1 - Positive validation', () => {
         expect(res).to.not.equal(0);
         expect(res).to.be.true;
     });
-    it("should detect NO 'consistency conflict with capacity'", () => {
-        const cmd = {
-            operation: 'validity',
-            file: 'pricing-examples/synthetic/V-listing05.yaml',
-            config: 'pricing-examples/synthetic/config/V-listing05.config.yaml',
-        };
-        const res = analyzer.exec(cmd);
-        expect(res).to.not.equal(0);
-        expect(res).to.be.true;
-    });
     it("should detect NO 'ambiguity conflict'", () => {
         const cmd = {
             operation: 'validity',
