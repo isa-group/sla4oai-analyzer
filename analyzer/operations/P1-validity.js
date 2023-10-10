@@ -28,19 +28,19 @@ function existsLimitsConsistencyConflictCheck(limit1, limit2, planName, path, me
         const N1 = aux.normalizedPeriod(limit1.period, metric, capacity);
         const N2 = aux.normalizedPeriod(limit2.period, metric, capacity);
 
-        const PU1 = aux.PU(limit1, N1, metric, capacity);
-        const PU2 = aux.PU(limit2, N2, metric, capacity);
+        const PU1 = !Number.isNaN(Number(limit1.max)) ? limit1.max : Infinity;
+        const PU2 = !Number.isNaN(Number(limit2.max)) ? limit2.max : Infinity;
 
         if (PU1 !== Infinity && PU2 !== Infinity) {
             // inconsistentes si el porcentaje de utilización de la "capacidad de la limitación con periodo más largo" es menor que "el porcentaje de utilización de la capacidad del periodo más corto"
             if (N1 >= N2) {
                 // logger.debug(`${PU1} => ${PU2}: ${PU1 >= PU2}`);
-                existsInconsistency = PU1 > PU2;
+                existsInconsistency = PU1 < PU2;
             } else if (N1 === N2 && PU1 === PU2) {
                 existsInconsistency = false;
             } else {
                 // logger.debug(`${PU1} < ${PU2}: ${PU1 < PU2}`);
-                existsInconsistency = PU1 < PU2;
+                existsInconsistency = PU1 > PU2;
             }
         } else {
             // logger.debug(`Skipping ${PU1} or ${PU2} due to max=unlimited`);
@@ -112,44 +112,55 @@ function existsAmbiguityConflict(limits, planName, path, method, metric) {
     return condition;
 }
 
-function existsCapacityConflictCheck(limit1, planName, path, method, metric) {
+function existsCapacityConflictCheck(limits, planName, path, method, metric, ratesAndQuotas, limName) {
     // [P1 L2.4] There is no {capacity conflict}, that is, the limitation does not surpass the associated {capacity}.
-    let existsInconsistency;
+    let existsInconsistency = false;
+    let minPUs = [];
+    let maxPUs = [];
 
-    if (limit1.period && capacity[metric] && capacity[metric].max && capacity[metric].max !== 'Infinity') {
-        const N1 = aux.normalizedPeriod(limit1.period, metric, capacity);
+    for (let i = 0; i < limits.length; i += 1) {
+        if (limits[i].period && capacity[metric] && capacity[metric].max && capacity[metric].max !== 'Infinity') {
+            const N1 = aux.normalizedPeriod(limits[i].period, metric, capacity);
 
-        const PU1 = aux.PU(limit1, N1, metric, capacity);
-        const PU2 = aux.PU(limit1, null, metric, capacity);
-
-        if (PU1 !== Infinity && PU2 !== Infinity) {
-            existsInconsistency = PU1 > 1 || PU2 > 1;
+            const PU1 = aux.PU(limits[i], N1, metric, capacity);
+            minPUs.push(PU1);
+            const PU2 = aux.PU(limits[i], null, metric, capacity);
+            maxPUs.push(PU2);
+        }
+    }
+    if (capacity[metric] && capacity[metric].max && capacity[metric].max !== 'Infinity') {
+        let maxminPU = Math.max(...minPUs);
+        let minmaxPU = Math.min(...maxPUs);
+        if (maxminPU !== Infinity && minmaxPU !== Infinity) {
+            existsInconsistency = maxminPU > 1 || minmaxPU > 1;
         } else {
             existsInconsistency = true;
         }
-    } else {
-        existsInconsistency = false;
     }
-
     const condition = existsInconsistency === true;
-
-    if (condition === true) {
-        logger.validationWarning(`             L2.4 CAPACITY CONFLICT: in ${planName}>${path}>${method}>${metric} ('${aux.printLimit(limit1)}')`);
-    } else {
-        // logger.validation(`             L2.4 NO CAPACITY CONFLICT (${aux.printLimit(limit1)}) OK`);
+    if (condition === true && (!ratesAndQuotas || (ratesAndQuotas && limName === 'rates'))) {
+        for (let i = 0; i < limits.length; i += 1) {
+            logger.validationWarning(`             L2.4 CAPACITY CONFLICT: in ${planName}>${path}>${method}>${metric} ('${aux.printLimit(limits[i])}')`);
+        }
     }
 
     return condition;
 }
 
 // [P1 L2.4] There are no {capacity conflicts}
-function existsCapacityConflict(limits, planName, path, method, metric) {
+function existsCapacityConflict(limits, planName, path, method, metric, plan, limName) {
     // [P1 L2.4] There is no {capacity conflict}, that is, the limitation does not surpass the associated {capacity}
     let existsCapacityConflicts = false;
-    for (let i = 0; i < limits.length; i += 1) {
-        const limit1 = limits[i];
-        existsCapacityConflicts = existsCapacityConflicts || existsCapacityConflictCheck(limit1, planName, path, method, metric);
+    let ratesAndQuotas = false;
+    if (limName === 'rates' && plan.quotas && plan.quotas[path] && plan.quotas[path][method] && plan.quotas[path][method][metric]) {
+        ratesAndQuotas = true;
+        limits.push(...plan.quotas[path][method][metric]);
     }
+    else if (limName === 'quotas' && plan.rates && plan.rates[path] && plan.rates[path][method] && plan.rates[path][method][metric]) {
+        ratesAndQuotas = true;
+        limits.push(...plan.rates[path][method][metric]);
+    }
+    existsCapacityConflicts = existsCapacityConflicts || existsCapacityConflictCheck(limits, planName, path, method, metric, ratesAndQuotas, limName);
     return existsCapacityConflicts;
 }
 
@@ -411,7 +422,7 @@ function isValidLimit(limit, planName, path, method, metric) {
 }
 
 // P1   [L2   Valid limitation] A {limitation} is valid if:
-function isValidLimitation(limitation, planName, path, method, metric) {
+function isValidLimitation(limitation, planName, path, method, metric, plan, limName) {
     logger.validation(`       CHECKING LIMITATION VALIDITY (${aux.printLimitatation(limitation)})...`);
 
     // [P1 L2.1] All its {limits} are valid.
@@ -429,7 +440,7 @@ function isValidLimitation(limitation, planName, path, method, metric) {
     const existsAmbiguityConflicts = existsAmbiguityConflict(limitation, planName, path, method, metric);
 
     // [P1 L2.4] There is no {capacity conflict}, that is, the limitation does not surpass the associated {capacity}.
-    const existsCapacityConflicts = existsCapacityConflict(limitation, planName, path, method, metric);
+    const existsCapacityConflicts = existsCapacityConflict(limitation, planName, path, method, metric, plan, limName);
 
     // Merge conditions
     const condition = everyLimitIsValid === true && existsConsistencyConflicts !== true && existsAmbiguityConflicts !== true && existsCapacityConflicts !== true;
@@ -459,7 +470,7 @@ function isValidPlan(plan, planName) {
             for (const [limitationsPathName, limitationsPath] of Object.entries(planLimitations)) {
                 for (const [limitationsPathMethodName, limitationsPathMethod] of Object.entries(limitationsPath)) {
                     for (const [limitationsPathMethodMetricName, limitationsPathMethodMetric] of Object.entries(limitationsPathMethod)) {
-                        everyLimitationIsValid = everyLimitationIsValid && isValidLimitation(limitationsPathMethodMetric, planName, limitationsPathName, limitationsPathMethodName, limitationsPathMethodMetricName);
+                        everyLimitationIsValid = everyLimitationIsValid && isValidLimitation(limitationsPathMethodMetric, planName, limitationsPathName, limitationsPathMethodName, limitationsPathMethodMetricName, plan, planLimitationsName);
                     }
                 }
             }
@@ -530,23 +541,26 @@ function isValidPlan(plan, planName) {
 }
 
 // P1   [L4   Valid pricing] A {pricing} is valid if:
-function isValidPricing(pricing, configuration) {
+function isValidPricing(globbedPricing, configuration) {
+
     for (const prop in configuration) {
-        if (!Object.prototype.hasOwnProperty.call(pricing, prop)) {
-            pricing[prop] = configuration[prop];
+        if (!Object.prototype.hasOwnProperty.call(globbedPricing, prop)) {
+            globbedPricing[prop] = configuration[prop];
         }
     }
     logger.validation('   CHECKING PRICING VALIDITY...');
 
-    if (pricing.capacity) {
+    if (globbedPricing.capacity) {
         resetCapacity();
         logger.validationWarning(`   UPDATING CAPACITY FROM '${JSON.stringify(capacity)}'...`);
-        setCapacity(pricing.capacity);
+        setCapacity(globbedPricing.capacity);
         logger.validationWarning(`     UPDATED TO '${JSON.stringify(capacity)}'`);
     } else {
         resetCapacity();
         logger.validationWarning(`   USING DEFAULT CAPACITY '${JSON.stringify(capacity)}'`);
     }
+
+    const pricing = aux.deglobPricing(globbedPricing);
 
     // [P1 L4.1] All its {plans} are valid.
     let everyPlanIsValid = true;

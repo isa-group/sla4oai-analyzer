@@ -29,7 +29,7 @@ plans:
                 period: 
                   amount: 1
                   unit: day
-              - max: 1000
+              - max: 10
                 period: 
                   amount: 1
                   unit: week
